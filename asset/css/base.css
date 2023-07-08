@@ -1,5 +1,9 @@
 :root {
+    --primary-color:#000;
     --second-color: #737373;
+    --third-color:#939393;
+    --discount-color:#d40f0f;
+    --shit-color:#d78100;
   }
   * {
     box-sizing: inherit;
@@ -10,5 +14,5 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Roboto Condensed','Arial', sans-serif;;
   }
