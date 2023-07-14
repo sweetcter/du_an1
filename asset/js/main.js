@@ -1,16 +1,26 @@
 // open categry
 let filterCategory = document.querySelectorAll(".filter-category");
+let filterList = document.querySelectorAll(".filter-list");
+let listPadding = 18;
+// fist element always open 
+filterList[0].style.height = (filterList[0].scrollHeight + listPadding) + 'px';
+filterList[0].style.maxHeight = (filterList[0].scrollHeight + listPadding) + 'px';
 
+//
 for (let i = 0; i < filterCategory.length; i++) {
   filterCategory[i].onclick = function (e) {
-    console.log("Button clicked");
-    if (e.target.closest(".active")) {
-      filterCategory[i].classList.remove("active");
+    console.log(e.target);
+    if (!e.target.closest(".active")) {
+      filterCategory[i].classList.add('active');
+      filterList[i].style.height = filterList[i].scrollHeight + listPadding + 'px';
+      filterList[i].style.maxHeight = filterList[i].scrollHeight + listPadding + 'px';
     } else {
-      filterCategory[i].classList.add("active");
+      filterCategory[i].classList.remove('active');
+      filterList[i].style.maxHeight = '0';
     }
   };
 }
+
 // open the menu sidebar
 function menuSidebar(className) {
   let menuClassName = `.${className}`;
@@ -25,7 +35,7 @@ function menuSidebar(className) {
     hiddenBodyScollbar.style.overflowY = `hidden`;
   };
 }
-// menuSidebar("header-menu-sidebar");
+menuSidebar("header-menu-sidebar");
 // close the menu sidebar
 function closeMenuSidebar(className) {
   let menuClassName = `.${className}`;
@@ -40,7 +50,7 @@ function closeMenuSidebar(className) {
     hiddenBodyScollbar.style.overflowY = `auto`;
   };
 }
-// closeMenuSidebar("header-menu-sidebar");
+closeMenuSidebar("header-menu-sidebar");
 // bắt sự kiện onscoll ở trình duyệt để hiển thị menu
 function hiddenMenubar() {
   document.onscroll = function () {
@@ -55,4 +65,4 @@ function hiddenMenubar() {
     }
   };
 }
-// hiddenMenubar();
+hiddenMenubar();
