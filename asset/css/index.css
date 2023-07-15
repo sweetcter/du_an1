@@ -7,6 +7,9 @@ body{
     position: relative;
 
 }
+.header1{
+    font-size: 18px;
+}
 .font{
     font-family: inherit;
 }
