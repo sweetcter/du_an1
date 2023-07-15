@@ -1,34 +1,37 @@
 function productFilter() {
- // open categry
-let filterCategory = document.querySelectorAll(".filter-category");
-let filterList = document.querySelectorAll(".filter-list");
-let listPadding = 18;
-// fist element always open 
-filterList[0].style.height = (filterList[0].scrollHeight + listPadding) + 'px';
-filterList[0].style.maxHeight = (filterList[0].scrollHeight + listPadding) + 'px';
+  // open categry
+  let filterCategory = document.querySelectorAll(".filter-category");
+  let filterList = document.querySelectorAll(".filter-list");
+  let listPadding = 18;
+  // fist element always open
+  filterList[0].style.height = filterList[0].scrollHeight + listPadding + "px";
+  filterList[0].style.maxHeight =
+    filterList[0].scrollHeight + listPadding + "px";
 
-//
-for (let i = 0; i < filterCategory.length; i++) {
-  filterCategory[i].onclick = function (e) {
-    let filterListHeight = filterList[i].scrollHeight;
-    let paddingB = 18;
-    console.log(e.target);
-    if (!e.target.closest(".active")) {
-      filterCategory[i].classList.add('active');
-      if(filterListHeight >= 300){
-        filterList[i].style.height = Math.ceil(filterListHeight / 2) + paddingB + listPadding + 'px';
-        filterList[i].style.maxHeight = filterListHeight + listPadding + 'px';
-        filterList[i].style.overflowY = `auto`;
-      }else {
-        filterList[i].style.height = filterListHeight + listPadding + 'px';
-        filterList[i].style.maxHeight = filterListHeight + listPadding + 'px';
+  //
+  for (let i = 0; i < filterCategory.length; i++) {
+    filterCategory[i].onclick = function (e) {
+      let filterListHeight = filterList[i].scrollHeight;
+      let paddingB = 20;
+      console.log(e.target);
+      if (!e.target.closest(".active")) {
+        filterCategory[i].classList.add("active");
+        if (filterListHeight >= 300) {
+          filterList[i].style.height =
+          Math.ceil(filterListHeight / 2) + paddingB + listPadding + "px";
+          filterList[i].style.maxHeight = filterListHeight + listPadding + "px";
+          filterList[i].style.overflowY = `auto`;
+        } else {
+          filterList[i].style.height = filterListHeight + listPadding + "px";
+          filterList[i].style.maxHeight = filterListHeight + listPadding + "px";
+        }
+      } else {
+        filterCategory[i].classList.remove("active");
+        filterList[i].style.maxHeight = "0";
+        filterList[i].style.height = "0";
       }
-    } else {
-      filterCategory[i].classList.remove('active');
-      filterList[i].style.maxHeight = '0';
-    }
-  };
-}
+    };
+  }
 }
 productFilter();
 

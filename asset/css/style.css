@@ -347,6 +347,7 @@
 .filter-category ul {
   padding-left: 0;
   list-style: none;
+  text-transform: uppercase;
 }
 .filter-block {
   cursor: pointer;
@@ -356,24 +357,28 @@
 .filter-block + .filter-block {
   border-top: 1px solid #d6d6d6;
 }
-/* .filter-list{
-  overflow-y: auto;
-} */
+.filter-list .filter-list-size{
+  text-align: center;
+  height: 32px;
+  min-width: 52px;
+  border: 1px solid #bfbfbf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.filter-list.flex-col-4{
+  padding-bottom: 14px;
+}
 .filter-category + .filter-list {
   max-height: 0;
-  transition: max-height linear 0.6s;
+  transition: all linear 0.6s;
 }
-/* .filter-category.fast-close + .filter-list {
-  max-height: 0;
-  transition: max-height linear 0.3s;
-} */
+
 .filter-category.active + .filter-list {
-  transition: max-height linear 0.3s;
+  transition: all linear 0.5s;
 } 
-/* .filter-category.veryFast-active + .filter-list {
-  overflow-y: auto;
-  transition: max-height linear 3s;
-} */
 .filter-dropdown {
   font-size: 1.8rem;
   cursor: pointer;
@@ -402,14 +407,12 @@
 .filter-category-name + .filter-category-name {
   margin-top: 1.4rem;
 }
-/* .filter-category-name:last-child {
-  margin-bottom: 2.8rem;
-} */
 .filter-category-name input[type="checkbox"] {
   display: none;
 }
-.filter-list.row-col-2 li {
+.filter-list.row-col-2 li{
   margin: 0;
+  padding-bottom: 6px;
 }
 .filter-list.row-col-2 {
   overflow-y: auto;
@@ -522,7 +525,7 @@ input[type="range"]:focus::-moz-range-thumb {
 }
 .filter-sidebar {
   background-color: #fff;
-  flex-basis: 27%;
+  flex-basis: 23%;
   overflow-y: auto;
 }
 .filter-category-name input {
@@ -532,7 +535,7 @@ input[type="range"]:focus::-moz-range-thumb {
   display: block;
 }
 .product-colum {
-  flex-basis: 73%;
+  flex-basis: 77%;
   padding: 0 0 4.2rem 3.2rem;
 }
 
@@ -678,6 +681,7 @@ input[type="range"]:focus::-moz-range-thumb {
   width: 100px;
   height: auto;
   padding: 4px;
+  border-radius: 4px;
 }
 .product-color:hover .product-color-hover {
   display: block;
