@@ -12,38 +12,25 @@ function productFilter() {
   for (let i = 0; i < filterCategory.length; i++) {
     filterCategory[i].onclick = function (e) {
       let filterListHeight = filterList[i].scrollHeight;
-<<<<<<< HEAD
       let paddingB = 18;
-=======
-      let paddingB = 20;
->>>>>>> eef8de0eb3a304f07039c0a1321ac20f3eccd30a
       console.log(e.target);
       if (!e.target.closest(".active")) {
-        filterCategory[i].classList.add("active");
-        if (filterListHeight >= 300) {
-          filterList[i].style.height =
-<<<<<<< HEAD
-            Math.ceil(filterListHeight / 2) + paddingB + listPadding + "px";
-=======
-          Math.ceil(filterListHeight / 2) + paddingB + listPadding + "px";
->>>>>>> eef8de0eb3a304f07039c0a1321ac20f3eccd30a
-          filterList[i].style.maxHeight = filterListHeight + listPadding + "px";
+        filterCategory[i].classList.add('active');
+        if(filterListHeight >= 300){
+          filterList[i].style.height = Math.ceil(filterListHeight / 2) + paddingB + listPadding + 'px';
+          filterList[i].style.maxHeight = filterListHeight + listPadding + 'px';
           filterList[i].style.overflowY = `auto`;
-        } else {
-          filterList[i].style.height = filterListHeight + listPadding + "px";
-          filterList[i].style.maxHeight = filterListHeight + listPadding + "px";
+        }else {
+          filterList[i].style.height = filterListHeight + listPadding + 'px';
+          filterList[i].style.maxHeight = filterListHeight + listPadding + 'px';
         }
       } else {
-        filterCategory[i].classList.remove("active");
-        filterList[i].style.maxHeight = "0";
-<<<<<<< HEAD
-=======
-        filterList[i].style.height = "0";
->>>>>>> eef8de0eb3a304f07039c0a1321ac20f3eccd30a
+        filterCategory[i].classList.remove('active');
+        filterList[i].style.maxHeight = '0';
       }
     };
   }
-}
+  }
 productFilter();
 
 // open the menu sidebar
