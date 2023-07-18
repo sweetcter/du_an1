@@ -368,9 +368,16 @@
   font-size: 1.6rem;
   text-transform: uppercase;
 }
-.filter-list.flex-col-4{
-  padding-bottom: 14px;
+.filter-list .filter-list-size:hover {
+  outline: 1px solid #999;
 }
+.filter-category.active + .filter-list.flex-col-4{
+  padding-left: 1px;
+  padding-bottom: 18px;
+}
+/* .filter-list.flex-col-4{
+  padding:0;
+} */
 .filter-category + .filter-list {
   max-height: 0;
   transition: all linear 0.6s;
