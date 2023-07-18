@@ -356,6 +356,27 @@
 .filter-block + .filter-block {
   border-top: 1px solid #d6d6d6;
 }
+.filter-list .filter-list-size{
+  text-align: center;
+  height: 32px;
+  min-width: 52px;
+  border: 1px solid #bfbfbf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.filter-list .filter-list-size:hover {
+  outline: 1px solid #999;
+}
+.filter-category.active + .filter-list.flex-col-4{
+  padding-left: 1px;
+  padding-bottom: 18px;
+}
+/* .filter-list.flex-col-4{
+  padding:0;
+} */
 /* .filter-list{
   overflow-y: auto;
 } */
@@ -778,15 +799,13 @@ footer {
   color: var(--primary-color);
 }
 .modal {
-  display: none;
   position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  top: -150%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: top linear 0.4s,opacity linear 0.4s;
 }
 
 /* Modal Content/Box */
@@ -795,11 +814,17 @@ footer {
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 60%;
+  border-radius: 8px;
 }
 
 /* Close Button */
 .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.sign-in-close {
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -814,7 +839,14 @@ footer {
 }
 
 #my-modal{
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 50%;
+  width: 40%;
+  transform: translateX(-50%);
   display: none;
+
 }
 /* Form Input */
 .form-group {
@@ -859,7 +891,7 @@ footer {
   font-weight: bold;
   margin-top: 10px;
 }
-.open{
+/* .open{
   display: block;
   margin: 0;
   padding: 10px 20px;
@@ -869,7 +901,7 @@ footer {
   border-radius: 5px;
   font-size: 16px;
   margin-top: 10px;
-}
+} */
 
 
 .close {
@@ -891,7 +923,7 @@ label {
   margin-bottom: 5px;
 }
 
-input[type="text"],
+input[type="text"] .name,
 input[type="password"] {
   
   display: block;

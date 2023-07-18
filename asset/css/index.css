@@ -10,17 +10,14 @@ body{
 .header1{
     font-size: 18px;
 }
-.font{
-    font-family: inherit;
-}
-.font_roboto{
+/* .font_roboto{
     font-family: 'Roboto', sans-serif;
 }
 .font_roboto_base{
     font-size: 62.5%;
     line-height: 1.6rem;
     font-family:'Roboto Condensed','Arial', sans-serif;
-}
+} */
 .x{
     width: 100%;
 }
