@@ -21,9 +21,9 @@ function productFilter() {
             Math.ceil(filterListHeight / 2) + paddingB + listPadding + "px";
           filterList[i].style.maxHeight = filterListHeight + listPadding + "px";
           filterList[i].style.overflowY = `auto`;
-        } else {
-          filterList[i].style.height = filterListHeight + listPadding + "px";
-          filterList[i].style.maxHeight = filterListHeight + listPadding + "px";
+        }else {
+          filterList[i].style.height = filterListHeight + listPadding + 'px';
+          filterList[i].style.maxHeight = filterListHeight + listPadding + 'px';
         }
       } else {
         filterCategory[i].classList.remove("active");
@@ -31,7 +31,7 @@ function productFilter() {
       }
     };
   }
-}
+  }
 productFilter();
 
 // open the menu sidebar
