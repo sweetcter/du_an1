@@ -12,21 +12,13 @@ function productFilter() {
   for (let i = 0; i < filterCategory.length; i++) {
     filterCategory[i].onclick = function (e) {
       let filterListHeight = filterList[i].scrollHeight;
-<<<<<<< HEAD
       let paddingB = 18;
-=======
-      let paddingB = 20;
->>>>>>> eef8de0eb3a304f07039c0a1321ac20f3eccd30a
       console.log(e.target);
       if (!e.target.closest(".active")) {
         filterCategory[i].classList.add("active");
         if (filterListHeight >= 300) {
           filterList[i].style.height =
-<<<<<<< HEAD
             Math.ceil(filterListHeight / 2) + paddingB + listPadding + "px";
-=======
-          Math.ceil(filterListHeight / 2) + paddingB + listPadding + "px";
->>>>>>> eef8de0eb3a304f07039c0a1321ac20f3eccd30a
           filterList[i].style.maxHeight = filterListHeight + listPadding + "px";
           filterList[i].style.overflowY = `auto`;
         } else {
@@ -36,10 +28,6 @@ function productFilter() {
       } else {
         filterCategory[i].classList.remove("active");
         filterList[i].style.maxHeight = "0";
-<<<<<<< HEAD
-=======
-        filterList[i].style.height = "0";
->>>>>>> eef8de0eb3a304f07039c0a1321ac20f3eccd30a
       }
     };
   }
@@ -71,6 +59,12 @@ function closeMenuSidebar(className) {
     menuSidebar.style.transform = `translateX(-100%)`;
     menuSidebar.style.opacity = `0`;
     overlay.style.display = `none`;
+    if (modal1.style.display == "block") {
+      modal1.style.display = "none";
+    }
+    if (signUp.style.display == "block") {
+      signUp.style.display = "none";
+    }
     hiddenBodyScollbar.style.overflowY = `auto`;
   };
 }
@@ -92,28 +86,36 @@ function hiddenMenubar() {
 hiddenMenubar();
 const openModalBtn = document.getElementById("open-modal-btn");
 const modal1 = document.getElementById("my-modal");
-const closeBtn = document.getElementsByClassName("close")[0];
+const closeBtn = document.querySelector(".sign-in-close");
 const form = document.querySelector("form");
 const message = document.getElementById("message");
 
 openModalBtn.addEventListener("click", () => {
   modal1.style.display = "block";
   let menuSidebar = document.querySelector(".header-menu-sidebar");
+  let hiddenBodyScollbar = document.querySelector("body");
   menuSidebar.style.transform = `translateX(-100%)`;
   menuSidebar.style.opacity = `1`;
-  let overlay = document.querySelector(".overlay");
-  overlay.style.display = `none`;
+  hiddenBodyScollbar.style.overflowY = `auto`;
 });
 
 closeBtn.addEventListener("click", () => {
   modal1.style.display = "none";
+  let overlay = document.querySelector(".overlay");
+  overlay.style.display = `none`;
 });
 
-window.addEventListener("click", (e) => {
-  if (e.target === modal1) {
-    modal1.style.display = "none";
-  }
-});
+let openRegister = document.getElementById("register-button");
+let signUp = document.getElementById("register-modal");
+console.log(openRegister);
+openRegister.onclick = function () {
+  let menuSidebar = document.querySelector(".header-menu-sidebar");
+  console.log("hehe");
+  signUp.style.top = "0";
+  signUp.style.opacity = "1";
+  menuSidebar.style.transform = `translateX(-100%)`;
+  menuSidebar.style.opacity = `1`;
+};
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -127,36 +129,36 @@ form.addEventListener("submit", (e) => {
     message.textContent = "Sai tài khoản hoặc mật khẩu!";
   }
 });
-var modal = document.getElementById("register-modal");
+// var modal = document.getElementById("register-modal");
 
-// Get the button that opens the modal
-var registerButton = document.getElementById("register-button");
+// // Get the button that opens the modal
+// var registerButton = document.getElementById("register-button");
 
-// Get the close button element
-var closeButton = document.getElementById("close-button");
+// // Get the close button element
+// var closeButton = document.getElementById("close-button");
 
-// When the user clicks the register button, open the modal
-registerButton.onclick = function() {
-  modal.style.display = "block";
-}
+// // When the user clicks the register button, open the modal
+// registerButton.onclick = function () {
+//   modal.style.display = "block";
+// };
 
-// When the user clicks on close button, close the modal
-closeButton.onclick = function() {
-  modal.style.display = "none";
-}
+// // When the user clicks on close button, close the modal
+// closeButton.onclick = function () {
+//   modal.style.display = "none";
+// };
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
 
 // Get the register form element
 var registerForm = document.getElementById("register-form");
 
 // When the user submits the register form
-registerForm.onsubmit = function(event) {
+registerForm.onsubmit = function (event) {
   // Get form values
   var password = document.getElementById("password").value;
   var confirmPassword = document.getElementById("confirm-password").value;
@@ -170,7 +172,7 @@ registerForm.onsubmit = function(event) {
     for (var i = 0; i < errorElements.length; i++) {
       errorElements[i].innerHTML = "";
     }
-      // Perform additional validation and submit form if everything is valid
+    // Perform additional validation and submit form if everything is valid
     // ...
   }
-}
+};
