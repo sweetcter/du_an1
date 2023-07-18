@@ -133,13 +133,14 @@ header{
     border-bottom: 1px solid rgb(221, 221, 227); */
 
 }
-.search_input > input{
+.search_input > .search_input_nav{
     width: 100%;
     border: 0;
     /* opacity: 0; */
     /* background-color: rgba(0,0,0,0.5); */
     outline: none;
     background-color: transparent;
+    padding: 0 !important;
     
 }
 .search_submit{
@@ -190,6 +191,9 @@ header{
     color: #000;
     position: relative;
 
+}
+.button1__cart > a{
+    color: #000;
 }
 .button1__cart > i{
     width: 25px;
