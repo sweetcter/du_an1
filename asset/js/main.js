@@ -21,9 +21,9 @@ function productFilter() {
             Math.ceil(filterListHeight / 2) + paddingB + listPadding + "px";
           filterList[i].style.maxHeight = filterListHeight + listPadding + "px";
           filterList[i].style.overflowY = `auto`;
-        }else {
-          filterList[i].style.height = filterListHeight + listPadding + 'px';
-          filterList[i].style.maxHeight = filterListHeight + listPadding + 'px';
+        } else {
+          filterList[i].style.height = filterListHeight + listPadding + "px";
+          filterList[i].style.maxHeight = filterListHeight + listPadding + "px";
         }
       } else {
         filterCategory[i].classList.remove("active");
@@ -31,7 +31,7 @@ function productFilter() {
       }
     };
   }
-  }
+}
 productFilter();
 
 // open the menu sidebar
@@ -107,15 +107,33 @@ closeBtn.addEventListener("click", () => {
 
 let openRegister = document.getElementById("register-button");
 let signUp = document.getElementById("register-modal");
+let closeButton = document.getElementById("close-button");
+
 console.log(openRegister);
 openRegister.onclick = function () {
   let menuSidebar = document.querySelector(".header-menu-sidebar");
-  console.log("hehe");
   signUp.style.top = "0";
   signUp.style.opacity = "1";
   menuSidebar.style.transform = `translateX(-100%)`;
   menuSidebar.style.opacity = `1`;
+  openRegister.onclick = function () {
+    signUp.style.display = "block";
+  };
+  
+  // When the user clicks on close button, close the modal
+  closeButton.onclick = function () {
+    signUp.style.display = "none";
+  };
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == signUp) {
+      signUp.style.display = "none";
+    }
+  };
 };
+
+// When the user clicks the register button, open the modal
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -129,30 +147,9 @@ form.addEventListener("submit", (e) => {
     message.textContent = "Sai tài khoản hoặc mật khẩu!";
   }
 });
-// var modal = document.getElementById("register-modal");
 
-// // Get the button that opens the modal
-// var registerButton = document.getElementById("register-button");
+// Get the close button element
 
-// // Get the close button element
-// var closeButton = document.getElementById("close-button");
-
-// // When the user clicks the register button, open the modal
-// registerButton.onclick = function () {
-//   modal.style.display = "block";
-// };
-
-// // When the user clicks on close button, close the modal
-// closeButton.onclick = function () {
-//   modal.style.display = "none";
-// };
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// };
 
 // Get the register form element
 var registerForm = document.getElementById("register-form");
