@@ -830,14 +830,22 @@ footer {
 }
 
 /* Modal Content/Box */
+.modal-content1 {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  width: 200%;
+}
 .modal-content {
   background-color: #fefefe;
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
   border-radius: 8px;
+  width: 100%;
 }
-
 /* Close Button */
 .close {
   color: #aaa;
@@ -912,7 +920,7 @@ footer {
   font-weight: bold;
   margin-top: 10px;
 }
-/* .open{
+.open{
   display: block;
   margin: 0;
   padding: 10px 20px;
@@ -922,7 +930,7 @@ footer {
   border-radius: 5px;
   font-size: 16px;
   margin-top: 10px;
-} */
+}
 
 
 .close {
@@ -975,7 +983,7 @@ button[type="submit"] {
   color: red;
 }
 .dangky span{
-  margin-left: 300px;
+  margin-left: 160px;
   font-size: 16px;
 }
 .dangky a{
@@ -984,6 +992,9 @@ button[type="submit"] {
 }
 span.quenmk{
   text-align: center;
-  margin-left: 390px;
+  margin-left: 230px;
   font-size: 16px;
+}
+.buttonregister{
+  align-items: center;
 }
