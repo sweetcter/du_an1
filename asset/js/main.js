@@ -21,9 +21,9 @@ function productFilter() {
             Math.ceil(filterListHeight / 2) + paddingB + listPadding + "px";
           filterList[i].style.maxHeight = filterListHeight + listPadding + "px";
           filterList[i].style.overflowY = `auto`;
-        }else {
-          filterList[i].style.height = filterListHeight + listPadding + 'px';
-          filterList[i].style.maxHeight = filterListHeight + listPadding + 'px';
+        } else {
+          filterList[i].style.height = filterListHeight + listPadding + "px";
+          filterList[i].style.maxHeight = filterListHeight + listPadding + "px";
         }
       } else {
         filterCategory[i].classList.remove("active");
@@ -31,7 +31,7 @@ function productFilter() {
       }
     };
   }
-  }
+}
 productFilter();
 
 // open the menu sidebar
@@ -111,6 +111,8 @@ closeBtn.addEventListener("click", () => {
 
 let openRegister = document.getElementById("register-button");
 let signUp = document.getElementById("register-modal");
+let closeButton = document.getElementById("close-button");
+
 console.log(openRegister);
 openRegister.onclick = function () {
   let menuSidebar = document.querySelector(".header-menu-sidebar");
@@ -118,6 +120,21 @@ openRegister.onclick = function () {
   signUp.style.opacity = "1";
   menuSidebar.style.transform = `translateX(-100%)`;
   menuSidebar.style.opacity = `1`;
+  openRegister.onclick = function () {
+    signUp.style.display = "block";
+  };
+  
+  // When the user clicks on close button, close the modal
+  closeButton.onclick = function () {
+    signUp.style.display = "none";
+  };
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == signUp) {
+      signUp.style.display = "none";
+    }
+  };
 };
 
 
