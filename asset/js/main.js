@@ -59,10 +59,10 @@ function closeMenuSidebar(className) {
     menuSidebar.style.transform = `translateX(-100%)`;
     menuSidebar.style.opacity = `0`;
     overlay.style.display = `none`;
-    if (modal1.style.display == "block") {
+    if (modal1.style.display === "block") {
       modal1.style.display = "none";
     }
-    if (signUp.style.display == "block") {
+    if (signUp.style.display === "block") {
       signUp.style.display = "none";
     }
     hiddenBodyScollbar.style.overflowY = `auto`;
@@ -84,6 +84,10 @@ function hiddenMenubar() {
   };
 }
 hiddenMenubar();
+function hiddenOverlay(){
+  let overlay = document.querySelector(".overlay");
+  overlay.style.display = `none`;
+}
 const openModalBtn = document.getElementById("open-modal-btn");
 const modal1 = document.getElementById("my-modal");
 const closeBtn = document.querySelector(".sign-in-close");
@@ -110,49 +114,33 @@ let signUp = document.getElementById("register-modal");
 console.log(openRegister);
 openRegister.onclick = function () {
   let menuSidebar = document.querySelector(".header-menu-sidebar");
-  console.log("hehe");
   signUp.style.top = "0";
   signUp.style.opacity = "1";
   menuSidebar.style.transform = `translateX(-100%)`;
   menuSidebar.style.opacity = `1`;
 };
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const username = e.target.username.value;
-  const password = e.target.password.value;
 
-  // ở đây bạn có thể thay đổi username và password để kiểm tra
-  if (username === "admin" && password === "123456") {
-    message.textContent = "Đăng nhập thành công!";
-  } else {
-    message.textContent = "Sai tài khoản hoặc mật khẩu!";
+
+// click overlay 
+let overlay = document.querySelector(".overlay");
+overlay.onclick = function () {
+  if(signUp.style.top === '0px'){
+    signUp.style.top = '-150%';
+    signUp.style.opacity = '0';
+    hiddenOverlay();
   }
-});
-// var modal = document.getElementById("register-modal");
+}
+// close register 
+let closeRegister = document.querySelector('#close-button');
+console.log(closeRegister);
 
-// // Get the button that opens the modal
-// var registerButton = document.getElementById("register-button");
-
-// // Get the close button element
-// var closeButton = document.getElementById("close-button");
-
-// // When the user clicks the register button, open the modal
-// registerButton.onclick = function () {
-//   modal.style.display = "block";
-// };
-
-// // When the user clicks on close button, close the modal
-// closeButton.onclick = function () {
-//   modal.style.display = "none";
-// };
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// };
+closeRegister.onclick = function(){
+  hiddenOverlay();
+  signUp.style.top = "-150%";
+  signUp.style.opacity = "0";
+}
+// end close register
 
 // Get the register form element
 var registerForm = document.getElementById("register-form");

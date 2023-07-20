@@ -109,10 +109,13 @@ header{
 }
 .search{
     /* width: 100%; */
-    border-radius: 8px;
+    /* border-radius: 8px; */
     align-items: center;
     /* flex: 1 1 0%; */
     border-bottom: 1px solid rgb(84, 84, 88);
+}
+.search input {
+    font-size: 1.4rem;
 }
 .search_icon{
     /* margin-left: 18px; */
