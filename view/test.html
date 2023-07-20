@@ -4,38 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
-  <style>
-    #multi-range-slider {
-      width: 300px;
-      margin-bottom: 20px;
-    }
-  </style>
+   
   </head>
   <body>
-    <div id="multi-range-slider">
-      
-    </div>
-    <p>Start Value: <span id="start-value">25</span></p>
-    <p>End Value: <span id="end-value">75</span></p>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-    <script>
-      $(function () {
-        $("#multi-range-slider").slider({
-          range: true,
-          min: 0,
-          max: 100,
-          values: [25, 75],
-          slide: function (event, ui) {
-            var startValue = ui.values[0];
-            var endValue = ui.values[1];
-            $("#start-value").text(startValue);
-            $("#end-value").text(endValue);
-          },
-        });
-      });
-    </script>
+    <div id="multi-range-slider"></div>
+    <p>Start Value: <span id="start-value">95000</span></p>
+    <p>End Value: <span id="end-value">130000</span></p>
+   
   </body>
 </html>
-

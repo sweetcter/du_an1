@@ -20,10 +20,15 @@
     />
     <link
       rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="../asset/css/jqueryUI.css" />
+    <link
+      rel="stylesheet"
       type="text/css"
       href="../asset/slick-master/slick/slick.css"
     />
-    <link rel="stylesheet" href="../asset//css/slick.css" />
+    <link rel="stylesheet" href="../asset/css/slick.css" />
     <link rel="stylesheet" href="../asset/css/base.css" />
     <link rel="stylesheet" href="../asset/css/grid.css" />
     <link rel="stylesheet" href="../asset/css/style.css" />
@@ -47,12 +52,7 @@
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              required
-            />
+            <input type="password" id="password" name="password" required />
           </div>
           <div class="form-group">
             <label for="confirm-password">Confirm Password:</label>
@@ -66,7 +66,7 @@
           <button type="submit" class="buttonregister">Register</button>
         </form>
       </div>
-    </div>  
+    </div>
     <!-- end sign-up -->
     <!-- sign in -->
     <div id="my-modal" class="modal1">
@@ -78,7 +78,7 @@
             <label for="username">Tài khoản:</label>
             <input type="text" id="username" name="username" required />
           </div>
-          
+
           <label for="password">Mật khẩu:</label>
           <input type="password" id="password3" name="password" required />
           <a href=""><span class="quenmk">Quên mật khẩu?</span></a>
@@ -92,7 +92,7 @@
         </form>
         <p id="message"></p>
       </div>
-    </div>  
+    </div>
     <!-- Nav -->
     <!-- end sign in -->
 
@@ -134,8 +134,8 @@
         </ul>
         <ul class="header-menu-bottom">
           <i class="fa-regular fa-user header-menu-icon-user"></i>
-          <li  id="open-modal-btn">ĐĂNG NHẬP</li>
-          <li id="register-button" >ĐĂNG KÝ</li>
+          <li id="open-modal-btn">ĐĂNG NHẬP</li>
+          <li id="register-button">ĐĂNG KÝ</li>
         </ul>
       </div>
       <!-- Hidden when scoll -->
@@ -566,9 +566,10 @@
                   >
                   </label>
                   <a href="#">Đen</a>
-                  <div class="filter-list-color" style="background-image: url('../asset/images/black.png');">
-
-                  </div>
+                  <div
+                    class="filter-list-color"
+                    style="background-image: url('../asset/images/black.png')"
+                  ></div>
                 </li>
                 <li class="filter-category-name">
                   <input
@@ -582,7 +583,10 @@
                     for="filter-checkbox-manPants"
                   ></label>
                   <a href="#">Trắng</a>
-                  <div class="filter-list-color" style="background-image: url('../asset/images/white.png');">
+                  <div
+                    class="filter-list-color"
+                    style="background-image: url('../asset/images/white.png')"
+                  ></div>
                 </li>
                 <li class="filter-category-name">
                   <input
@@ -596,7 +600,10 @@
                     for="filter-checkbox-manPants"
                   ></label>
                   <a href="#">Be</a>
-                  <div class="filter-list-color" style="background-image: url('../asset/images/be.png');">
+                  <div
+                    class="filter-list-color"
+                    style="background-image: url('../asset/images/be.png')"
+                  ></div>
                 </li>
                 <li class="filter-category-name">
                   <input
@@ -610,7 +617,10 @@
                     for="filter-checkbox-manPants"
                   ></label>
                   <a href="#">Xám bạc</a>
-                  <div class="filter-list-color" style="background-image: url('../asset/images/xam_bac.png');">
+                  <div
+                    class="filter-list-color"
+                    style="background-image: url('../asset/images/xam_bac.png')"
+                  ></div>
                 </li>
               </div>
             </div>
@@ -622,9 +632,20 @@
                 <i class="fa-solid fa-chevron-down filter-dropdown"></i>
               </div>
               <div class="filter-list">
-                <div class="filter-price">
-                  <span class="filter-price-min">79 000đ</span>
-                  <span class="filter-price-max">1 375 000đ</span>
+                <div id="multi-range-slider" class="filter-price"></div>
+                <div class="filter-price-control">
+                  <div>
+                    <span>₫</span
+                    ><span id="start-value" class="filter-price-min"
+                      >79000đ</span
+                    >
+                  </div>
+                  <div>
+                    <span>₫</span
+                    ><span id="end-value" class="filter-price-max"
+                      >1375000đ</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -1024,8 +1045,8 @@
             </div>
           </div>
           <!-- end item -->
-          <!-- start item -->
-          <div class="product-item">
+           <!-- start item -->
+           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
@@ -1056,8 +1077,8 @@
             </div>
           </div>
           <!-- end item -->
-          <!-- start item -->
-          <div class="product-item">
+           <!-- start item -->
+           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
@@ -1088,8 +1109,8 @@
             </div>
           </div>
           <!-- end item -->
-          <!-- start item -->
-          <div class="product-item">
+           <!-- start item -->
+           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
@@ -1120,8 +1141,8 @@
             </div>
           </div>
           <!-- end item -->
-          <!-- start item -->
-          <div class="product-item">
+           <!-- start item -->
+           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
@@ -1152,8 +1173,8 @@
             </div>
           </div>
           <!-- end item -->
-          <!-- start item -->
-          <div class="product-item">
+           <!-- start item -->
+           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
@@ -1184,8 +1205,8 @@
             </div>
           </div>
           <!-- end item -->
-          <!-- start item -->
-          <div class="product-item">
+           <!-- start item -->
+           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
@@ -1216,8 +1237,8 @@
             </div>
           </div>
           <!-- end item -->
-          <!-- start item -->
-          <div class="product-item">
+           <!-- start item -->
+           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
@@ -1260,11 +1281,14 @@
       type="text/javascript"
       src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <script
       type="text/javascript"
       src="../asset/slick-master/slick/slick.min.js"
     ></script>
     <script type="text/javascript" src="../asset/js/slick.js"></script>
+    <script src="../asset/js/mutipleRangeJquery.js"></script>
     <script src="../asset/js/main.js"></script>
   </body>
 </html>

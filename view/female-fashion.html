@@ -20,6 +20,11 @@
     />
     <link
       rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="../asset/css/jqueryUI.css" />
+    <link
+      rel="stylesheet"
       type="text/css"
       href="../asset/slick-master/slick/slick.css"
     />
@@ -635,9 +640,20 @@
                 <i class="fa-solid fa-chevron-down filter-dropdown"></i>
               </div>
               <div class="filter-list">
-                <div class="filter-price">
-                  <span class="filter-price-min">79 000đ</span>
-                  <span class="filter-price-max">1 375 000đ</span>
+                <div id="multi-range-slider" class="filter-price"></div>
+                <div class="filter-price-control">
+                  <div>
+                    <span>₫</span
+                    ><span id="start-value" class="filter-price-min"
+                      >79000đ</span
+                    >
+                  </div>
+                  <div>
+                    <span>₫</span
+                    ><span id="end-value" class="filter-price-max"
+                      >1375000đ</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -976,8 +992,8 @@
             </div>
           </div>
           <!-- end item -->
-           <!-- start item -->
-           <div class="product-item">
+          <!-- start item -->
+          <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/product1.jpg"
@@ -1033,8 +1049,8 @@
             </div>
           </div>
           <!-- end item -->
-           <!-- start item -->
-           <div class="product-item">
+          <!-- start item -->
+          <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/product1.jpg"
@@ -1090,8 +1106,8 @@
             </div>
           </div>
           <!-- end item -->
-           <!-- start item -->
-           <div class="product-item">
+          <!-- start item -->
+          <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/product1.jpg"
@@ -1147,8 +1163,8 @@
             </div>
           </div>
           <!-- end item -->
-           <!-- start item -->
-           <div class="product-item">
+          <!-- start item -->
+          <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/product1.jpg"
@@ -1204,8 +1220,8 @@
             </div>
           </div>
           <!-- end item -->
-           <!-- start item -->
-           <div class="product-item">
+          <!-- start item -->
+          <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/product1.jpg"
@@ -1261,8 +1277,8 @@
             </div>
           </div>
           <!-- end item -->
-           <!-- start item -->
-           <div class="product-item">
+          <!-- start item -->
+          <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/product1.jpg"
@@ -1318,8 +1334,8 @@
             </div>
           </div>
           <!-- end item -->
-           <!-- start item -->
-           <div class="product-item">
+          <!-- start item -->
+          <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/product1.jpg"
@@ -1375,8 +1391,8 @@
             </div>
           </div>
           <!-- end item -->
-           <!-- start item -->
-           <div class="product-item">
+          <!-- start item -->
+          <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/product1.jpg"
@@ -1432,8 +1448,8 @@
             </div>
           </div>
           <!-- end item -->
-           <!-- start item -->
-           <div class="product-item">
+          <!-- start item -->
+          <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/product1.jpg"
@@ -1489,8 +1505,8 @@
             </div>
           </div>
           <!-- end item -->
-           <!-- start item -->
-           <div class="product-item">
+          <!-- start item -->
+          <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/product1.jpg"
@@ -1546,8 +1562,8 @@
             </div>
           </div>
           <!-- end item -->
-           <!-- start item -->
-           <div class="product-item">
+          <!-- start item -->
+          <div class="product-item">
             <a href="#" class="product-image-item">
               <img
                 src="../asset/images/product1.jpg"
@@ -1615,10 +1631,13 @@
       type="text/javascript"
       src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <script
       type="text/javascript"
       src="../asset/slick-master/slick/slick.min.js"
     ></script>
+    <script src="../asset/js/mutipleRangeJquery.js"></script>
     <script type="text/javascript" src="../asset/js/slick.js"></script>
     <script src="../asset/js/main.js"></script>
   </body>

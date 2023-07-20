@@ -548,6 +548,12 @@ input[type="range"]:focus::-moz-range-thumb {
   margin-right: 14px;
   cursor: pointer;
 }
+.filter-price-control {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .filter-price {
   display: flex;
   justify-content: space-between;
@@ -790,7 +796,6 @@ input[type="range"]:focus::-moz-range-thumb {
   text-align: center;
   display: block;
 }
-
 /* .home-pagination-icon {
 
 } */
