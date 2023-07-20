@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family:'Roboto Condensed','Arial', sans-serif;
 }
 body{
     position: relative;
@@ -12,8 +13,8 @@ body{
 }
 /* .font_roboto{
     font-family: 'Roboto', sans-serif;
-}
-.font_roboto_base{
+} */
+/* .font_roboto_base{
     font-size: 62.5%;
     line-height: 1.6rem;
     font-family:'Roboto Condensed','Arial', sans-serif;
@@ -28,6 +29,10 @@ body{
     /* justify-self: center; */
     align-items: center;
     
+}
+.flexx a {
+    font-weight: 700;
+    font-size: 1.6rem;
 }
 /* 
 .show_header{
@@ -109,6 +114,9 @@ header{
     /* flex: 1 1 0%; */
     border-bottom: 1px solid rgb(84, 84, 88);
     /* padding: 0 10px 0 10px; */
+}
+.search input {
+    font-size: 1.4rem;
 }
 .search_icon{
     /* margin-left: 18px; */
@@ -237,7 +245,6 @@ header{
 }
 .danhmuc > ul > li > a{
     color: #000;
-    font-weight: 400;
     margin: 0 12px 0 0;
     text-decoration: none;
 

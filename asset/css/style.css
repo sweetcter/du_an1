@@ -253,14 +253,14 @@
 .header-search-content {
   margin-left: 1.6rem;
   width: 300px;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   border: none;
   outline: none;
   display: inline-block;
-  /* color: #a3a3a3; */
-  padding: 6px 0;
-  padding-left: 4px;
+  color: #a3a3a3;
 }
+  
+
 /* .header-search-content:focus {
   
 } */
@@ -299,6 +299,8 @@
 }
 .main-banner-img {
   width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 .category-title {
   font-size: 3.4rem;
@@ -374,6 +376,16 @@
 .filter-category.active + .filter-list.flex-col-4{
   padding-left: 1px;
   padding-bottom: 18px;
+  transition: all linear 0.3s;
+}
+.filter-list-color {
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+  background-position: center center ;
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: 16px;
 }
 /* .filter-list.flex-col-4{
   padding:0;
@@ -408,7 +420,7 @@
 .filter-category-name a {
   margin-left: 1.4rem;
   color: #000;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 400;
   text-decoration: none;
   display: inline-block;
@@ -416,9 +428,12 @@
 .filter-category-name a:hover {
   text-decoration: underline;
 }
+.filter-list.filter-list.row-col-2 .filter-category-name {
+  gap: 6px;
+}
 .filter-category-name {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
 }
 .filter-category-name + .filter-category-name {
@@ -661,10 +676,18 @@ input[type="range"]:focus::-moz-range-thumb {
   color: #fff;
   background-color: var(--discount-color);
   display: inline-block;
-  padding: 0.4rem 0.6rem 0.4rem 0;
+  padding: 0.2rem 0.6rem 0.2rem 0;
   margin-top: 6px;
   margin-bottom: 12px;
   margin-left: 12px;
+}
+.product-price .product-discount::after{
+  left: -0.6rem ;
+  border-width: 10px 6px 10px 0;
+}
+.product-price .product-discount {
+  font-size: 1.2rem;
+  padding: 0.2rem 0.6rem 0.2rem 0.8rem;
 }
 .product-newProduct {
   position: absolute;
@@ -679,8 +702,8 @@ input[type="range"]:focus::-moz-range-thumb {
   content: "";
   position: absolute;
   top: 0;
-  left: -2.4rem;
-  border-width: 12px 12px;
+  left: -2rem;
+  border-width: 10px 10px;
   border-style: solid;
   border-color: transparent var(--discount-color) transparent transparent;
 }
@@ -807,8 +830,9 @@ footer {
   transform: translateX(-50%);
   opacity: 0;
   transition: top linear 0.4s,opacity linear 0.4s;
+  width: 500px;
+  height: auto;
 }
-
 /* Modal Content/Box */
 .modal-content1 {
   background-color: #fefefe;
@@ -816,7 +840,6 @@ footer {
   padding: 20px;
   border: 1px solid #888;
   border-radius: 8px;
-  width: 200%;
 }
 .modal-content {
   background-color: #fefefe;
@@ -876,7 +899,7 @@ footer {
 }
 
 /* Button */
-.button[type="submit"] {
+.button[type="submit"] .buttonregister {
   background-color: black;
   border: none;
   color: white;
