@@ -50,11 +50,12 @@ function menuSidebar(className) {
 }
 menuSidebar("header-menu-sidebar");
 // close the menu sidebar
+let overlay = document.querySelector(".overlay");
+let hiddenBodyScollbar = document.querySelector("body");
+
 function closeMenuSidebar(className) {
   let menuClassName = `.${className}`;
   let menuSidebar = document.querySelector(menuClassName);
-  let overlay = document.querySelector(".overlay");
-  let hiddenBodyScollbar = document.querySelector("body");
   overlay.onclick = function () {
     menuSidebar.style.transform = `translateX(-100%)`;
     menuSidebar.style.opacity = `0`;
@@ -69,6 +70,14 @@ function closeMenuSidebar(className) {
   };
 }
 closeMenuSidebar("header-menu-sidebar");
+// click overlay close register
+overlay.addEventListener("click", function () {
+  if (signUp.style.top === "0px") {
+    signUp.style.top = "-150%";
+    signUp.style.opacity = "0";
+  }
+});
+
 // bắt sự kiện onscoll ở trình duyệt để hiển thị menu
 function hiddenMenubar() {
   document.onscroll = function () {
@@ -84,8 +93,7 @@ function hiddenMenubar() {
   };
 }
 hiddenMenubar();
-function hiddenOverlay(){
-  let overlay = document.querySelector(".overlay");
+function hiddenOverlay() {
   overlay.style.display = `none`;
 }
 const openModalBtn = document.getElementById("open-modal-btn");
@@ -105,7 +113,6 @@ openModalBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
   modal1.style.display = "none";
-  let overlay = document.querySelector(".overlay");
   overlay.style.display = `none`;
 });
 
@@ -113,50 +120,29 @@ let openRegister = document.getElementById("register-button");
 let signUp = document.getElementById("register-modal");
 let closeButton = document.getElementById("close-button");
 
-console.log(openRegister);
 openRegister.onclick = function () {
+  debugger;
   let menuSidebar = document.querySelector(".header-menu-sidebar");
   signUp.style.top = "0";
   signUp.style.opacity = "1";
   menuSidebar.style.transform = `translateX(-100%)`;
   menuSidebar.style.opacity = `1`;
-  openRegister.onclick = function () {
-    signUp.style.display = "block";
-  };
-  
-  // When the user clicks on close button, close the modal
-  closeButton.onclick = function () {
-    signUp.style.display = "none";
-  };
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == signUp) {
-      signUp.style.display = "none";
-    }
-  };
 };
 
+// click overlay
+// overlay.addEventListener = function () {
+//   console.log("ok");
 
-
-// click overlay 
-let overlay = document.querySelector(".overlay");
-overlay.onclick = function () {
-  if(signUp.style.top === '0px'){
-    signUp.style.top = '-150%';
-    signUp.style.opacity = '0';
-    hiddenOverlay();
-  }
-}
-// close register 
-let closeRegister = document.querySelector('#close-button');
+// }
+// close register
+let closeRegister = document.querySelector("#close-button");
 console.log(closeRegister);
 
-closeRegister.onclick = function(){
+closeRegister.onclick = function () {
   hiddenOverlay();
   signUp.style.top = "-150%";
   signUp.style.opacity = "0";
-}
+};
 // end close register
 
 // Get the register form element
