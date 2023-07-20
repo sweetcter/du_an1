@@ -95,7 +95,7 @@ header{
     position: absolute;
 }
 .logo >img{
-    margin-right: 50px;
+    margin-right: 20px;
     /* color: #fff; */
 }
 .logo:hover{
@@ -104,10 +104,11 @@ header{
 }
 .search{
     /* width: 100%; */
-    border-radius: 8px;
+    /* border-radius: 8px; */
     align-items: center;
     /* flex: 1 1 0%; */
     border-bottom: 1px solid rgb(84, 84, 88);
+    /* padding: 0 10px 0 10px; */
 }
 .search_icon{
     /* margin-left: 18px; */
@@ -123,7 +124,7 @@ header{
     height: 20px;
 }
 .search_input{
-    width: 350px;
+    width: 21.875rem;
     height: 44.8px;
     padding: 8px;
     /* border-top: 1px solid rgb(221, 221, 227);
@@ -165,7 +166,7 @@ header{
     /* overflow: hidden; */
 }
 .button1{
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     /* color: rgb(128, 128, 137); */
     color: #000;
 }
@@ -493,3 +494,28 @@ background-color: #fff;
     font-weight: 400;
     line-height: 19px;
 }
+
+
+/* product_discount */
+.product_discount{
+    position: relative;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--discount-color);
+    display: inline-block;
+    padding: 0.2rem 0.6rem 0.2rem 0;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+}
+.product_discount::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -2.4rem;
+    border-width: 12px 12px;
+    border-style: solid;
+    border-color: transparent var(--discount-color) transparent transparent;
+}
+
