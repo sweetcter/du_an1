@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="../src/admin/css/responsive.css">
 </head>
 <body class="sidebar-expand">
-    
     <div class="sidebar">
         <div class="sidebar-logo">
             <a href="">
@@ -97,7 +96,6 @@
             </ul>
         </div>
     </div>
-    
 <div class="main-header">
     <div class="d-flex">
         <div class="mobile-toggle" id="mobile-toggle">
@@ -107,6 +105,7 @@
     </div>
         <div class="dropdown d-inline-block mt-12">
             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                 <img class="rounded-circle header-profile-user"  src="../src/admin/images/avatar/avt-1.png" alt="Header Avatar">
                 <span class="pulse-css"></span>
                 <span class="info d-xl-inline-block  color-span">
@@ -133,62 +132,43 @@
 </div>
 
 
+
+<!--   Phần content -->
+
+<!--   Phần content -->
+<!--   Phần content -->
+
+<!--   Phần content -->
 <div class="main">
     <div class="main-content dashboard">
         <div class="row">
-            <div class="col-12">
-                <div class="box card-box">
-
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-sm-12 mb-0">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="box box-manage">
-                            <div class="box-body d-flex pd-7 pb-0">
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-xl-12 col-md-12 col-sm-12">
-                        <div class="box">
-                            <div class="box-header">
-
-                            </div>
-                            <div class="box-body">
-                                <div id="chartBar2" class="bar-chart "></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-xl-12 col-md-12 col-sm-12">
-                        <div class="box">
-                            <div class="box-body center">
-                                <div class="w-100"><span class="donut-2 w-100" data-peity='{ "fill": ["#9B8DFF", "#E4EAF8"]}'>228,134</span>
-                                </div>
-                                <h5 class="fs-20 mb-0 mt-20 font-w500 color-text mt-28">On Progress<span class="text-primary font-w600 pl-8">50% </span></h5>
-                                <h5 class="fs-22 mt-18 mb-10 font-wb">Workload Dashboard For CMS Website</h5>
-                                <p class="fs-18 mt-18">Praesent eu dolor eu orci vehicula euismod.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="box">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="box">
-                    <div class="box-header">
-
-                    </div>
-
-                </div>
-            </div>
+            <form action="./index.php?act=listsize" method="get">
+                <table class=" table">
+                    <tr class="table-primary">
+                        <th></th>
+                        <th>Mã loại</th>
+                        <th>Tên size</th>
+                        <th></th>
+                    </tr>
+                   
+                            <tr class="table-success">
+                                <td><input type="checkbox"></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href=""><input class="btn btn-success"  type="button" name="sua" value="Sửa"></a>
+                                    <a href=""><input class="btn btn-warning" type="button" name="delete" value="Xóa"></a>
+                                </td>
+                            </tr>
+                          
+                </table>
+                <input type="button" class="btn btn-success" value="Chọn tất cả"></input>
+                    <input type="button" class="btn btn-danger" value="Bỏ chọn tất cả"></input>
+                    <input type="button" class="btn btn-warning" value="Xóa các mục chọn"></input>
+                    <a href=""><input type="button" class="btn btn-info" value="Thêm mới"></input></a>
+            </form>
 
         </div>
-
 
     </div>
 </div>
