@@ -128,7 +128,18 @@ openRegister.onclick = function () {
   menuSidebar.style.transform = `translateX(-100%)`;
   menuSidebar.style.opacity = `1`;
 };
+const openQuen = document.getElementById("openQuen");
+const modalQuen = document.getElementById("quen-modal");
+const closeQuen = document.getElementsByClassName("close-quen");
 
+openQuen.onclick = function () {
+  modalQuen.style.display = "block";
+  let menuSidebar = document.querySelector(".header-menu-sidebar");
+  modalQuen.style.top = "0";
+  modalQuen.style.opacity = "1";
+  menuSidebar.style.transform = `translateX(-100%)`;
+  menuSidebar.style.opacity = `1`;
+};
 // click overlay
 // overlay.addEventListener = function () {
 //   console.log("ok");
