@@ -21,8 +21,14 @@
     
     <div class="sidebar">
         <div class="sidebar-logo">
-            <a href="">
-                <img src="" alt="Protend logo" >
+            <a href="./index.html">
+                <img src="../asset/images/logo.png" alt="Protend logo" width="200px">
+                <style>
+                    .sidebar-logo img{
+                        object-fit: cover;
+                         height: auto;
+                    }
+                </style>
             </a>
             <div class="sidebar-close" id="sidebar-close">
                 <i class='bx bx-left-arrow-alt'></i>
@@ -68,7 +74,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="./list-bill.html">
                         <i class='bx bxs-dashboard'></i>
                         <span>Hóa đơn</span>
                     </a>
@@ -142,12 +148,7 @@
 <div class="main">
     <div class="main-content dashboard">
         <form action="./index.php?act=listsp" method="post">
-            <input type="text" name="kyw">
-            <select name="iddm" id="">
-                <option value="0" selected>Tất cả</option>
-                
-            </select>
-            <input type="submit" name="listok" value="Search">
+            
             <table class=" table">
                 <tr class="table-primary">
                     <th></th>
