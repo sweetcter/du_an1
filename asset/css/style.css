@@ -973,7 +973,7 @@ input[type="password"] {
 }
 
 button[type="submit"] {
-  display: block;
+
   margin: 0 auto;
   padding: 10px 20px;
   background-color: black;
@@ -1000,9 +1000,17 @@ button[type="submit"] {
 }
 span.quenmk{
   text-align: center;
-  margin-left: 230px;
+  /* margin-left: 300px; */
   font-size: 16px;
 }
 .buttonregister{
   align-items: center;
+}
+span.quenmk a{
+  text-decoration: none;
+}
+.form-check-label {
+  padding-left: 10px;
+  margin-bottom: 0;
+  font-size: 15px;
 }
