@@ -136,8 +136,6 @@ openRegister.onclick = function () {
 // }
 // close register
 let closeRegister = document.querySelector("#close-button");
-console.log(closeRegister);
-
 closeRegister.onclick = function () {
   hiddenOverlay();
   signUp.style.top = "-150%";
@@ -145,25 +143,55 @@ closeRegister.onclick = function () {
 };
 // end close register
 
-// Get the register form element
-var registerForm = document.getElementById("register-form");
-
-// When the user submits the register form
-registerForm.onsubmit = function (event) {
-  // Get form values
-  var password = document.getElementById("password").value;
-  var confirmPassword = document.getElementById("confirm-password").value;
-
-  // Check if password and confirm password match
-  if (password !== confirmPassword) {
-    event.preventDefault();
-  } else {
-    // Clear any previous error messages
-    var errorElements = document.getElementsByClassName("error");
-    for (var i = 0; i < errorElements.length; i++) {
-      errorElements[i].innerHTML = "";
+// increase value
+function increaseValue() {
+  let increaseValue = document.querySelector("#favoriteProduct-inc-plus");
+  let favoriteProductQuantity = document.querySelector("#favoriteProduct-inc-quantity");
+  increaseValue.onclick = function () {
+    let newValue = Number(favoriteProductQuantity.value);
+    if (newValue < 1000000) {
+      favoriteProductQuantity.value = (newValue + 1);
     }
-    // Perform additional validation and submit form if everything is valid
-    // ...
-  }
-};
+  };
+}
+increaseValue();
+// end 
+
+// reduce value
+function reduceValue() {
+  let reduceValue = document.querySelector("#favoriteProduct-inc-minus");
+  let favoriteProductQuantity = document.querySelector("#favoriteProduct-inc-quantity");
+  reduceValue.onclick = function () {
+    let newValue = Number(favoriteProductQuantity.value);
+    if (newValue > 0) {
+      favoriteProductQuantity.value = (newValue - 1);
+    }
+  };
+}
+reduceValue();
+// end
+
+// open user favorite product 
+let openFavorite = document.querySelector('#header-content-heart');
+let openFavoriteModal = document.querySelector('#favoriteProduct-modal');
+let openFavoriteInfo = document.querySelector('#favoriteProduct');
+let closeFavoriteInfo = document.querySelector('#favoriteProduct-header-close');
+
+openFavorite.onclick = function(){
+  openFavoriteModal.classList.add('Fopen');
+  openFavoriteInfo.classList.add('Fopen');
+}
+
+function hiddenFavoriteModal(){
+  openFavoriteModal.classList.remove('Fopen');
+  openFavoriteInfo.classList.remove('Fopen');
+}
+// event wheb click hidden favorite modal
+openFavoriteModal.addEventListener('click',hiddenFavoriteModal);
+closeFavoriteInfo.addEventListener('click',hiddenFavoriteModal);
+
+// prevent bubble event
+openFavoriteInfo.onclick = function(e){
+  e.stopPropagation();
+}
+
