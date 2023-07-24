@@ -135,11 +135,18 @@ openRegister.onclick = function () {
   menuSidebar.style.transform = `translateX(-100%)`;
   menuSidebar.style.opacity = `1`;
 };
+<<<<<<< HEAD
 
 // const openQuen = document.getElementById("openQuen");
 // const modalQuen = document.getElementById("quen-modal");
 // const closeQuen = document.getElementsByClassName("close-quen");
 
+=======
+// const openQuen = document.getElementById("openQuen");
+// const modalQuen = document.getElementById("quen-modal");
+// const closeQuen = document.getElementsByClassName("close-quen");
+
+>>>>>>> 692962ea54904b53e499f39d4cc08431ca11e291
 // openQuen.onclick = function () {
 //   modalQuen.style.display = "block";
 //   let menuSidebar = document.querySelector(".header-menu-sidebar");

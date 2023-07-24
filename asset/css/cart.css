@@ -165,6 +165,7 @@ ol {
 	font-weight: 700;
 	color: #1c1c1c;
 	padding-bottom: 20px;
+	padding-top: 100px;
 }
 
 .shoping__cart__table table thead th.shoping__product {
@@ -175,6 +176,7 @@ ol {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	border-bottom: 1px solid #ebebeb;
+	font-size: 20px;
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__item {
