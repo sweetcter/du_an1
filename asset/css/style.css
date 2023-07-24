@@ -204,9 +204,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  display: none;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   animation: fadeIn linear 0.2s;
+  display: none;
 }
 .wrapper {
   width: 100%;
@@ -864,6 +864,7 @@ footer {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .close:hover,
@@ -876,11 +877,12 @@ footer {
 #my-modal {
   position: fixed;
   z-index: 9999;
-  top: 0;
+  top: -124%;
   left: 50%;
   width: 40%;
   transform: translateX(-50%);
-  display: none;
+  opacity: 0;
+  transition: top linear 0.4s, opacity linear 0.4s;
 }
 /* Form Input */
 .form-group {
@@ -894,7 +896,7 @@ footer {
 }
 
 .form-group input {
-  width: 90%;
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -959,15 +961,20 @@ label {
 input[type="text"] .name,
 input[type="password"] {
   display: block;
-  width: 90%;
+  width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 16px;
 }
-
-button[type="submit"] {
+#register-form {
+  padding-left: 24px;
+}
+.modal-content1 h2 {
+  padding-left: 24px;
+}
+.buttonregister {
   display: block;
   margin: 0 auto;
   padding: 10px 20px;
@@ -977,6 +984,7 @@ button[type="submit"] {
   border-radius: 5px;
   font-size: 16px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 #message {
@@ -995,11 +1003,80 @@ button[type="submit"] {
 }
 span.quenmk {
   text-align: center;
-  margin-left: 230px;
   font-size: 16px;
+  display: inline-block;
+  color: var(--primary-color);
+}
+span.quenmk:hover {
+  text-decoration: underline;
 }
 .buttonregister {
   align-items: center;
+}
+.cart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  opacity: 0;
+  transition: all linear 0.4s;
+  visibility:hidden;
+}
+.cart-modal.cart-open {
+  opacity: 1;
+  visibility:visible;
+}
+.cart-modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 37vw;
+  background-color: #fff;
+  padding: 32px 32px;
+  z-index: 3;
+  opacity: 0;
+  transform: translateX(calc(32px + 100%));
+  transition: transform linear 0.4s, opacity linear 0.4s;
+}
+.cart-modal-container.cart-open {
+  transform: translate(0);
+  opacity: 1;
+  transition: transform linear 0.3s, opacity ease 0.3s;
+}
+.cart-header-title {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.cart-header-title i {
+  font-size: 1.8rem;
+  margin-right: 16px;
+}
+.cart-header-title span {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.cart-header-second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.cart-header-second span {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.cart-header-second i {
+  font-size: 2.6rem;
+  opacity: 0.4;
+}
+.cart-header-second i:hover {
+  opacity: 0.3;
+  cursor: pointer;
 }
 
 .favoriteProduct-modal.Fopen {
@@ -1011,7 +1088,7 @@ span.quenmk {
   background: rgba(0, 0, 0, 0.4);
   z-index: 3;
   opacity: 0;
-  transition:opacity linear 1s;
+  transition: opacity linear 1s;
   display: none;
 }
 .favoriteProduct-modal.Fopen {
@@ -1058,8 +1135,9 @@ span.quenmk {
 .favoriteProduct-header-close:hover {
   opacity: 0.6;
 }
-/* .favoriteProduct-containter {
-} */
+.favoriteProduct-containter {
+  overflow-y: auto;
+}
 
 .favoriteProduct-info {
   display: flex;
@@ -1080,7 +1158,7 @@ span.quenmk {
   object-fit: cover;
   border-radius: 8px;
 }
-.favoriteProduct-img:hover  .favoriteProduct-second-img img{
+.favoriteProduct-img:hover .favoriteProduct-second-img img {
   display: block;
 }
 .favoriteProduct-second-img img {
@@ -1094,8 +1172,8 @@ span.quenmk {
   display: none;
 }
 
-.favoriteProduct-details {
-}
+/* .favoriteProduct-details {
+} */
 
 .favoriteProduct-link {
   font-size: 1.4rem;
@@ -1267,7 +1345,7 @@ span.quenmk {
 }
 .favoriteProduct-inc {
   position: relative;
-  border: 1px solid  #bfbfbf;
+  border: 1px solid #bfbfbf;
 }
 .favoriteProduct-price {
   display: block;
@@ -1290,7 +1368,7 @@ span.quenmk {
 }
 
 .favoriteProduct-close {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-left: 32px;
   padding: 2px;
 }

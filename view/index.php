@@ -224,8 +224,8 @@
           <div class="header_row2">
             <div class="danhmuc">
               <ul class="flexx">
-                <li><a href="#">Nam</a></li>
-                <li><a href="#">NỮ</a></li>
+                <li><a href="./male-fashion.php">NAM</a></li>
+                <li><a href="./female-fashion.php">NỮ</a></li>
                 <li><a href="#">NEW</a></li>
                 <li><a href="#">BEST</a></li>
                 <li><a href="#">SALE</a></li>
@@ -632,7 +632,7 @@
         <!-- </div> -->
 
         <div class="title_rowgird font_roboto">
-          <h1>sản phẩm đồng giá</h1>
+          <h1>Sản phẩm đồng giá</h1>
         </div>
 
         <!-- chạy thử -->

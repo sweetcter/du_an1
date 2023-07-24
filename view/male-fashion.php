@@ -67,6 +67,8 @@
         </form>
       </div>
     </div>
+    <!-- end sign-up -->
+    <!--  favoriteProduct-->
     <div id="favoriteProduct-modal" class="favoriteProduct-modal">
       <div id="favoriteProduct" class="favoriteProduct">
         <div class="favoriteProduct-header">
@@ -74,16 +76,19 @@
             <i class="fa-regular fa-heart header-content-heart"></i>
             <span>Sản phẩm yêu thích</span>
           </div>
-          <i id="favoriteProduct-header-close" class="fa-solid fa-xmark favoriteProduct-header-close"></i>
+          <i
+            id="favoriteProduct-header-close"
+            class="fa-solid fa-xmark favoriteProduct-header-close"
+          ></i>
         </div>
         <div class="favoriteProduct-containter">
           <div class="favoriteProduct-info">
             <a href="#" class="favoriteProduct-img">
               <div class="favoriteProduct-img-first">
-                <img src="../asset/images/product1.jpg" alt=""  />
+                <img src="../asset/images/product1.jpg" alt="" />
               </div>
               <div class="favoriteProduct-second-img">
-                <img src="../asset/images/aothuntayngan1.jpg" alt="">
+                <img src="../asset/images/aothuntayngan1.jpg" alt="" />
               </div>
             </a>
             <div class="favoriteProduct-details">
@@ -97,15 +102,18 @@
                     <i class="fa-solid fa-angle-down"></i>
                     <div class="favoriteProduct-choose-color-list">
                       <span>
-                        <img src="../asset/images/aothuntayngan1.jpg" alt="">
+                        <img src="../asset/images/aothuntayngan1.jpg" alt="" />
                         BLACK
                       </span>
                       <span>
-                        <img src="../asset/images/aothuntaynganden.jpg" alt="">
+                        <img
+                          src="../asset/images/aothuntaynganden.jpg"
+                          alt=""
+                        />
                         WHITE
                       </span>
                       <span>
-                        <img src="../asset/images/aothuntaynganbe.jpg" alt="">
+                        <img src="../asset/images/aothuntaynganbe.jpg" alt="" />
                         GRAY
                       </span>
                     </div>
@@ -121,8 +129,16 @@
                   </div>
                 </div>
                 <div class="favoriteProduct-inc">
-                  <i class="fa-solid fa-minus" id="favoriteProduct-inc-minus"></i>
-                  <input type="number" value="1" id="favoriteProduct-inc-quantity" class="favoriteProduct-inc-quantity"></input>
+                  <i
+                    class="fa-solid fa-minus"
+                    id="favoriteProduct-inc-minus"
+                  ></i>
+                  <input
+                    type="number"
+                    value="1"
+                    id="favoriteProduct-inc-quantity"
+                    class="favoriteProduct-inc-quantity"
+                  />
                   <i class="fa-solid fa-plus" id="favoriteProduct-inc-plus"></i>
                 </div>
                 <span class="favoriteProduct-price"> 199.000 ₫</span>
@@ -136,7 +152,90 @@
         </div>
       </div>
     </div>
-    <!-- end sign-up -->
+    <!-- end -->
+    <!-- Start Cart -->
+    <div id="cart-modal" class="cart-modal">
+      <div id="cart-modal-container" class="cart-modal-container">
+        <div class="cart-header-title">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Giỏ hàng</span>
+        </div>
+        <div class="cart-header-second">
+          <span>3 sản phẩm</span>
+          <i
+            id="cart-header-close"
+            class="fa-solid fa-xmark favoriteProduct-header-close"
+          ></i>
+        </div>
+        <div class="favoriteProduct-containter">
+          <div class="favoriteProduct-info">
+            <a href="#" class="favoriteProduct-img">
+              <div class="favoriteProduct-img-first">
+                <img src="../asset/images/product1.jpg" alt="" />
+              </div>
+            </a>
+            <div class="favoriteProduct-details">
+              <a href="" class="favoriteProduct-link"
+                >Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop</a
+              >
+              <div class="favoriteProduct-option">
+                <div class="favoriteProduct-choose">
+                  <div class="favoriteProduct-choose-color">
+                    Màu sắc
+                    <i class="fa-solid fa-angle-down"></i>
+                    <div class="favoriteProduct-choose-color-list">
+                      <span>
+                        <img src="../asset/images/aothuntayngan1.jpg" alt="" />
+                        BLACK
+                      </span>
+                      <span>
+                        <img
+                          src="../asset/images/aothuntaynganden.jpg"
+                          alt=""
+                        />
+                        WHITE
+                      </span>
+                      <span>
+                        <img src="../asset/images/aothuntaynganbe.jpg" alt="" />
+                        GRAY
+                      </span>
+                    </div>
+                  </div>
+                  <div class="favoriteProduct-choose-size">
+                    SIZE
+                    <i class="fa-solid fa-angle-down"></i>
+                    <div class="favoriteProduct-choose-size-list">
+                      <span>M</span>
+                      <span>L</span>
+                      <span>Xl</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="favoriteProduct-inc">
+                  <i
+                    class="fa-solid fa-minus"
+                    id="favoriteProduct-inc-minus"
+                  ></i>
+                  <input
+                    type="number"
+                    value="1"
+                    id="favoriteProduct-inc-quantity"
+                    class="favoriteProduct-inc-quantity"
+                  />
+                  <i class="fa-solid fa-plus" id="favoriteProduct-inc-plus"></i>
+                </div>
+                <span class="favoriteProduct-price"> 199.000 ₫</span>
+                <div class="favoriteProduct-button">Thêm vào giỏ hàng</div>
+              </div>
+            </div>
+            <div class="favoriteProduct-close">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End -->
     <!-- sign in -->
     <div id="my-modal" class="modal1">
       <div class="modal-content">
@@ -152,7 +251,7 @@
           <input type="password" id="password3" name="password" required />
           <a href=""><span class="quenmk">Quên mật khẩu?</span></a>
           <br />
-          <button type="submit" id="submit-btn">Đăng nhập</button>
+          <button type="submit" id="submit-btn" class="buttonregister">Đăng nhập</button>
           <br />
           <div class="dangky">
             <span>Bạn chưa có tài khoản?</span>
@@ -269,7 +368,10 @@
             <i class="fa-regular fa-user header-content-user"></i>
           </div>
           <div>
-            <i id="header-content-heart" class="fa-regular fa-heart header-content-heart"></i>
+            <i
+              id="header-content-heart"
+              class="fa-regular fa-heart header-content-heart"
+            ></i>
           </div>
           <div>
             <i
@@ -277,7 +379,7 @@
               style="display: none"
             ></i>
           </div>
-          <div>
+          <div id="header-content-cart">
             <i class="fa-solid fa-cart-shopping header-content-cart"></i>
           </div>
         </div>
