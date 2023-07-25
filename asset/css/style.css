@@ -1193,8 +1193,8 @@ span.quenmk a{
   text-decoration: underline;
 }
 
-.favoriteProduct-option {
-}
+/* .favoriteProduct-option {
+} */
 
 .favoriteProduct-choose {
   position: relative;
@@ -1371,8 +1371,8 @@ span.quenmk a{
   font-weight: 600;
   text-align: center;
 }
-.favoriteProduct-button:hover {
-}
+/* .favoriteProduct-button:hover {
+} */
 
 .favoriteProduct-close {
   font-size: 2rem;
