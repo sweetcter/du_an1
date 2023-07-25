@@ -3,13 +3,14 @@
 <?php require ".$MODEL_URL/product.php"; ?>
 
 
+
 <?php 
    $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
    switch ($action) {
      case 'index':
       require(".$VIEW_URL/index.php");
-      
+ 
       break;
      case 'add':
        break;
