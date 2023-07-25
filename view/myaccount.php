@@ -222,6 +222,12 @@
                         <div class="thkn">
                             <h3>Thông tin cá nhân</h3>
                             <div class="">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Username <span>*</span></p>
+                                    <input type="text">
+                                </div>
+                               </div>
                               <div class="row-col-2">
                                   <div class="checkout__input">
                                       <p>Họ <span>*</span></p>
@@ -244,6 +250,18 @@
                                       <input type="text" >
                                   </div>
                               </div>
+                              <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Địa chỉ <span>*</span></p>
+                                    <input type="text">
+                                </div>
+                               </div>
+                               <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Password <span>*</span></p>
+                                    <input type="password">
+                                </div>
+                               </div>
                             </div>
                             <style>
                               .thkn a {
