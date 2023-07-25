@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php require "./global.php" ?>
 <?php require ".$MODEL_URL/pdo.php" ?>
 <?php require ".$MODEL_URL/product.php"; ?>
@@ -27,7 +26,6 @@
         break;
    }
 ?>
-=======
 <?php
 require "./global.php";
 require ".$MODEL_URL/pdo.php";
@@ -51,4 +49,3 @@ switch ($action) {
     echo "Không có gì";
     break;
 }
->>>>>>> 0466c06ed7f9b605dc63a8ea4bd9a916975b6ab2
