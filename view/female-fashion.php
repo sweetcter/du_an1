@@ -28,10 +28,10 @@
       type="text/css"
       href="../asset/slick-master/slick/slick.css"
     />
-    <link rel="stylesheet" href="../asset//css/slick.css" />
-    <link rel="stylesheet" href="../asset/css/base.css" />
-    <link rel="stylesheet" href="../asset/css/grid.css" />
-    <link rel="stylesheet" href="../asset/css/style.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/slick.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/base.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/grid.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/style.css" />
   </head>
 
   <body>
@@ -1650,10 +1650,10 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <script
       type="text/javascript"
-      src="../asset/slick-master/slick/slick.min.js"
+      src="../../du_an1/asset/slick-master/slick/slick.min.js"
     ></script>
-    <script src="../asset/js/mutipleRangeJquery.js"></script>
-    <script type="text/javascript" src="../asset/js/slick.js"></script>
-    <script src="../asset/js/main.js"></script>
+    <script src="../../du_an1/asset/js/mutipleRangeJquery.js"></script>
+    <script type="text/javascript" src="../../du_an1/assetjs/slick.js"></script>
+    <script src="../../du_an1/asset/js/main.js"></script>
   </body>
 </html>

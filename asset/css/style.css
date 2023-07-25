@@ -968,7 +968,6 @@ input[type="password"] {
   border: 1px solid #ccc;
   font-size: 16px;
 }
-<<<<<<< HEAD
 #register-form {
   padding-left: 24px;
 }
@@ -977,11 +976,6 @@ input[type="password"] {
 }
 .buttonregister {
   display: block;
-=======
-
-button[type="submit"] {
-
->>>>>>> 692962ea54904b53e499f39d4cc08431ca11e291
   margin: 0 auto;
   padding: 10px 20px;
   background-color: black;
@@ -1009,10 +1003,6 @@ button[type="submit"] {
 }
 span.quenmk {
   text-align: center;
-<<<<<<< HEAD
-=======
-  /* margin-left: 300px; */
->>>>>>> 692962ea54904b53e499f39d4cc08431ca11e291
   font-size: 16px;
   display: inline-block;
   color: var(--primary-color);
@@ -1023,7 +1013,6 @@ span.quenmk:hover {
 .buttonregister {
   align-items: center;
 }
-<<<<<<< HEAD
 .cart-modal {
   position: fixed;
   top: 0;
@@ -1089,8 +1078,6 @@ span.quenmk:hover {
   opacity: 0.3;
   cursor: pointer;
 }
-=======
-<<<<<<< HEAD
 span.quenmk a{
   text-decoration: none;
 }
@@ -1099,9 +1086,6 @@ span.quenmk a{
   margin-bottom: 0;
   font-size: 15px;
 }
-=======
->>>>>>> 692962ea54904b53e499f39d4cc08431ca11e291
-
 .favoriteProduct-modal.Fopen {
   position: fixed;
   top: 0;
@@ -1399,4 +1383,3 @@ span.quenmk a{
   opacity: 0.7;
   cursor: pointer;
 }
->>>>>>> 41be0c018ad64006ba87c6a8afad2f7227b9e1d2

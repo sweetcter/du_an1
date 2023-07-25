@@ -1,7 +1,7 @@
 <?php 
-    $ROOT_URL = "/projecr_1_PRO1014";
+    $ROOT_URL = "/du_an1";
     $ASSET_URL = "/assest";
     $ADMIN_URL = "/admin";
     $VIEW_URL = "/view";
     $MODEL_URL = "/model";
-// hehhe
+    $INCLUDES_URL = "/includes";
