@@ -4,4 +4,3 @@
     $ADMIN_URL = "/admin";
     $VIEW_URL = "/view";
     $MODEL_URL = "/model";
-// hehhe
