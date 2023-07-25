@@ -28,11 +28,18 @@
       type="text/css"
       href="../../du_an1/asset/slick-master/slick/slick.css"
     />
+<<<<<<< HEAD
     <<link rel="stylesheet" href="../../du_an1/asset/css/slick.css">
     <link rel="stylesheet" href="../../du_an1/asset/css/base.css">
     <link rel="stylesheet" href="../../du_an1/asset/css/grid.css">
     <link rel="stylesheet" href="../../du_an1/asset/css/style.css">
 
+=======
+    <link rel="stylesheet" href="../../du_an1/asset/css/slick.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/base.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/grid.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/style.css" />
+>>>>>>> 0466c06ed7f9b605dc63a8ea4bd9a916975b6ab2
   </head>
 
   <body>
@@ -1662,7 +1669,11 @@
       src="../../du_an1/asset/slick-master/slick/slick.min.js"
     ></script>
     <script src="../../du_an1/asset/js/mutipleRangeJquery.js"></script>
+<<<<<<< HEAD
     <script type="text/javascript" src="../../du_an1/asset/js/slick.js"></script>
+=======
+    <script type="text/javascript" src="../../du_an1/assetjs/slick.js"></script>
+>>>>>>> 0466c06ed7f9b605dc63a8ea4bd9a916975b6ab2
     <script src="../../du_an1/asset/js/main.js"></script>
   </body>
   

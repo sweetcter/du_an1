@@ -27,10 +27,3 @@
 .my-slickSilder .slick-prev:hover {
   opacity: 0.5;
 }
-.my-slickSilder  .slick-next.empty{
-  display: none !important;
-}
-.my-slickSilder .slick-prev.empty{
-  display: none !important;
-}
-

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,6 +36,9 @@
   </head>
 
   <body>
+=======
+<?php require "./includes/header.php" ?>
+>>>>>>> 0466c06ed7f9b605dc63a8ea4bd9a916975b6ab2
     <!-- sign up -->
     <div id="register-modal" class="modal">
       <!-- Modal content -->
@@ -336,7 +340,7 @@
           <a class="header-nav-link" href="./male-fashion.html">NAM</a>
         </li>
         <li class="header-nav-item">
-          <a class="header-nav-link" href="./female-fashion.html">NỮ</a>
+          <a class="header-nav-link" href="../../du_an1/index.php?action=female-fashion">NỮ</a>
         </li>
         <li class="header-nav-item">
           <a class="header-nav-link" href="#">NEW</a>
@@ -396,7 +400,7 @@
       <main id="main-content">
         <div class="main-banner">
           <img
-            src="../asset/images/quan-ao-thoi-trang-nam.jpg"
+            src="../../du_an1/asset/images/quan-ao-thoi-trang-nam.jpg"
             alt=""
             class="main-banner-img"
           />
@@ -1442,8 +1446,8 @@
           <!-- end item -->
         </div>
       </div>
-      <footer>Coppy right 2023</footer>
     </div>
+<<<<<<< HEAD
     <script
       type="text/javascript"
       src="//code.jquery.com/jquery-1.11.0.min.js"
@@ -1463,3 +1467,6 @@
     <script src="../../du_an1/asset/js/main.js"></script>
   </body>
 </html>
+=======
+<?php require "./includes/footer.php"; ?>
+>>>>>>> 0466c06ed7f9b605dc63a8ea4bd9a916975b6ab2
