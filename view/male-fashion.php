@@ -1,14 +1,34 @@
-<?php require ".$INCLUDES_URL/header.php" ?>
-<!-- sign up -->
-<div id="register-modal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content1">
-    <span id="close-button" class="close">&times;</span>
-    <h2>Register</h2>
-    <form id="register-form">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name1" name="name" required />
+<?php require "./includes/header.php" ?>
+    <!-- sign up -->
+    <div id="register-modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content1">
+        <span id="close-button" class="close">&times;</span>
+        <h2>Register</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name1" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email1" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              required
+            />
+          </div>
+          <button  type="submit" class="buttonregister">Register</button>
+        </form>
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
@@ -969,4 +989,5 @@
     </div>
   </div>
 </div>
-<?php require ".$INCLUDES_URL/footer.php"; ?>
+
+<?php require "./includes/footer.php"; ?>
