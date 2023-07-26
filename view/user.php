@@ -23,7 +23,7 @@
       href="../asset/slick-master/slick/slick.css"
     />
     
-    <link rel="stylesheet" href="../asset//css/slick.css" />
+    <link rel="stylesheet" href="../asset/css/slick.css" />
     <link rel="stylesheet" href="../asset/css/base.css" />
     <link rel="stylesheet" href="../asset/css/grid.css" />
     <link rel="stylesheet" href="../asset/css/style.css" />

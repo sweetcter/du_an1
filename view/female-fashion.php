@@ -22,11 +22,11 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css"
     />
-    <link rel="stylesheet" href="../asset/css/jqueryUI.css" />
+    <link rel="stylesheet" href="../../du_an1//css/jqueryUI.css" />
     <link
       rel="stylesheet"
       type="text/css"
-      href="../asset/slick-master/slick/slick.css"
+      href="../../du_an1/asset/slick-master/slick/slick.css"
     />
     <link rel="stylesheet" href="../../du_an1/asset/css/slick.css" />
     <link rel="stylesheet" href="../../du_an1/asset/css/base.css" />
@@ -216,7 +216,7 @@
               style="display: none"
             ></i>
           </div>
-          <div>
+          <div id="header-content-cart">
             <i class="fa-solid fa-cart-shopping header-content-cart"></i>
           </div>
         </div>
