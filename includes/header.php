@@ -26,13 +26,12 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="../../du_an1/asset/slick-master/slick/slick.css"
+      href="../..<?= $ROOT_URL . $ASSET_URL ?>/slick-master/slick/slick.css"
     />
-    <link rel="stylesheet" href="../../du_an1/asset/css/slick.css" />
-    <link rel="stylesheet" href="../../du_an1/asset/css/base.css" />
-    <link rel="stylesheet" href="../../du_an1/asset/css/grid.css" />
-    <link rel="stylesheet" href="../../du_an1/asset/css/index.css">
-    <link rel="stylesheet" href="../../du_an1/asset/css/style.css" />
+    <link rel="stylesheet" href="../..<?= $ROOT_URL . $ASSET_URL ?>/css/slick.css" />
+    <link rel="stylesheet" href="../..<?= $ROOT_URL . $ASSET_URL ?>/css/base.css" />
+    <link rel="stylesheet" href="../..<?= $ROOT_URL . $ASSET_URL ?>/css/grid.css" />
+    <link rel="stylesheet" href="../..<?= $ROOT_URL . $ASSET_URL ?>/css/style.css" />
   </head>
 
   <body>

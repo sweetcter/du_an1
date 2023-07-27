@@ -1,13 +1,13 @@
 <?php
-function loadall_slideshow(){
-    $sql = "select * from banner";
+function selectAll_banner(){
+    $sql = "SELECT * FROM banner ORDER BY id_banner ";
     return pdo_query($sql);
 }
-function add_banner($banner_name,$banner_image,$banner_oder,$category_id)
+function add_banner($banner_name,$banner_image)
 {
-    $sql = "INSERT INTO banner(name_banner,image_banner,oder,id_category) 
+    $sql = "INSERT INTO banner(name_banner,image_banner) 
     VALUES(?,?,?,?,?)";
-    pdo_execute($sql,$banner_name,$banner_image,$banner_oder,$category_id);
+    pdo_execute($sql,$banner_name,$banner_image);
 }
 
 function delete_banner($banner_id){

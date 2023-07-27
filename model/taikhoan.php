@@ -5,8 +5,8 @@
         pdo_execute($sql);
     }
     function checkuser($username,$password){
-        $sql = "SELECT *FROM taikhoan where username ='".$username."' AND password ='".$password."'";
-        $sp=pdo_query_one($sql);
+        $sql = "SELECT * FROM taikhoan where username ='".$username."' AND password ='".$password."'";
+        $sp = pdo_query_one($sql);
         return $sp;
     }
     function checkemail($email){
@@ -46,4 +46,3 @@
             pdo_execute($sql);
         }
     }
-?>

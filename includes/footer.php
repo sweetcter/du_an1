@@ -11,10 +11,10 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <script
       type="text/javascript"
-      src="../asset/slick-master/slick/slick.min.js"
+      src="../..<?= $ROOT_URL . $ASSET_URL ?>/slick-master/slick/slick.min.js"
     ></script>
-    <script type="text/javascript" src="../asset/js/slick.js"></script>
-    <script src="../asset/js/mutipleRangeJquery.js"></script>
-    <script src="../../du_an1/asset/js/main.js"></script>
+    <script type="text/javascript" src="../..<?= $ROOT_URL . $ASSET_URL ?>/js/slick.js"></script>
+    <script src="../..<?= $ROOT_URL . $ASSET_URL ?>/js/mutipleRangeJquery.js"></script>
+    <script src="../..<?= $ROOT_URL . $ASSET_URL ?>/js/main.js"></script>
   </body>
 </html>

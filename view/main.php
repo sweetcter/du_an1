@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Routine</title>
-    <link rel="stylesheet" href="../asset/css/index.css" />
+    <link rel="stylesheet" href="../../<?= $ROOT_URL ?>/asset/css/index.css" />
     <script
       src="https://kit.fontawesome.com/5614ac6426.js"
       crossorigin="anonymous"
@@ -44,9 +44,13 @@
       href="../asset/slick-master/slick/slick.css"
     />
     <link rel="stylesheet" href="../asset/css/slick.css" />
-    <link rel="stylesheet" href="../asset/css/base.css" />
+    <link rel="stylesheet" href="../../<?= $ROOT_URL ?>/asset/css/base.css" />
     <link rel="stylesheet" href="../asset/css/grid.css" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="../../du_an1/asset/css/style.css">
+=======
+    <link rel="stylesheet" href="../../<?= $ROOT_URL ?>/asset/css/style.css" />
+>>>>>>> 49283b86a6193ee1a69a557936c49fc39a09a6b8
     <style>
       .mySlides {
         display: none;
@@ -168,8 +172,8 @@
           <div class="header_row2">
             <div class="danhmuc">
               <ul class="flexx">
-                <li><a href="./male-fashion.php?action=male-fashion">NAM</a></li>
-                <li><a href="./male-fashion.html">NỮ</a></li>
+                <li><a href="./index.php?action=male-fashion">NAM</a></li>
+                <li><a href="./index.php?action=female-fashion">NỮ</a></li>
                 <li><a href="#">NEW</a></li>
                 <li><a href="#">BEST</a></li>
                 <li><a href="#">SALE</a></li>
