@@ -22,16 +22,16 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css"
     />
-    <link rel="stylesheet" href="../asset/css/jqueryUI.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/jqueryUI.css" />
     <link
       rel="stylesheet"
       type="text/css"
-      href="../asset/slick-master/slick/slick.css"
+      href="../../du_an1/asset/slick-master/slick/slick.css"
     />
-    <link rel="stylesheet" href="../asset//css/slick.css" />
-    <link rel="stylesheet" href="../asset/css/base.css" />
-    <link rel="stylesheet" href="../asset/css/grid.css" />
-    <link rel="stylesheet" href="../asset/css/style.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/slick.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/base.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/grid.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/style.css" />
   </head>
 
   <body>
@@ -40,29 +40,37 @@
       <div class="modal-content">
         <span id="close-button" class="close">&times;</span>
         <h2>Đăng ký</h2>
-        <form id="register-form">
+        <form action="index.php?act=register" method="POST" id="register-form">
           <div class="form-group">
-            <label for="name">Tên:</label>
-            <input type="text" id="name1" name="name" required />
+          <label for="full_name">Full Name*</label>
+          <input type="text" name="full_name" id="full_name" placeholder="Full name" required>
           </div>
           <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email1" name="email" required />
+          <label for="username">UserName*</label>
+         <input type="text" name="username" id="full_name" placeholder="Username" required>
           </div>
           <div class="form-group">
-            <label for="password">Mật khẩu:</label>
-            <input type="password" id="password" name="password" required />
+          <label for="email">Email *</label>
+           <input type="email" name="email" id="email" placeholder="Your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password *</label>
+           <input type="password" name="password" id="password" placeholder="Enter a password" required>
           </div>
           <div class="form-group">
-            <label for="confirm-password">Nhập lại mật khẩu:</label>
-            <input
-              type="password"
-              id="confirm-password"
-              name="confirm-password"
-              required
-            />
+            <label for="address">Address *</label>
+            <input type="text" name="address" id="address" placeholder="Your address" required>
           </div>
-          <button type="submit" class="button">Đăng ký</button>
+          <div class="form-group">
+             <label for="phone">Phone *</label>
+             <input type="text" name="phone" id="phone" placeholder="Your phone" required>
+          </div>
+                  
+          <button type="submit" class="button" name="register" >Đăng ký</button>
+          <!-- <?php 
+                                    if(isset($thongbao)&&($thongbao)!=""){
+                                        echo $thongbao ; } ?> -->
         </form>
       </div>
     </div>
@@ -1650,10 +1658,15 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <script
       type="text/javascript"
-      src="../asset/slick-master/slick/slick.min.js"
+      src="../../du_an1/asset/slick-master/slick/slick.min.js"
     ></script>
-    <script src="../asset/js/mutipleRangeJquery.js"></script>
-    <script type="text/javascript" src="../asset/js/slick.js"></script>
-    <script src="../asset/js/main.js"></script>
+    <script src="../../du_an1/asset/js/mutipleRangeJquery.js"></script>
+<<<<<<< HEAD
+    <script type="text/javascript" src="../../du_an1/asset/js/slick.js"></script>
+=======
+    <script type="text/javascript" src="../../du_an1/assetjs/slick.js"></script>
+>>>>>>> 0466c06ed7f9b605dc63a8ea4bd9a916975b6ab2
+    <script src="../../du_an1/asset/js/main.js"></script>
   </body>
+  
 </html>

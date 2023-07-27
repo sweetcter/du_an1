@@ -968,9 +968,14 @@ input[type="password"] {
   border: 1px solid #ccc;
   font-size: 16px;
 }
-
-button[type="submit"] {
-
+#register-form {
+  padding-left: 24px;
+}
+.modal-content1 h2 {
+  padding-left: 24px;
+}
+.buttonregister {
+  display: block;
   margin: 0 auto;
   padding: 10px 20px;
   background-color: black;
@@ -998,7 +1003,6 @@ button[type="submit"] {
 }
 span.quenmk {
   text-align: center;
-  /* margin-left: 300px; */
   font-size: 16px;
   display: inline-block;
   color: var(--primary-color);
@@ -1009,7 +1013,6 @@ span.quenmk:hover {
 .buttonregister {
   align-items: center;
 }
-
 .cart-modal {
   position: fixed;
   top: 0;
@@ -1075,8 +1078,14 @@ span.quenmk:hover {
   opacity: 0.3;
   cursor: pointer;
 }
-
-
+span.quenmk a{
+  text-decoration: none;
+}
+.form-check-label {
+  padding-left: 10px;
+  margin-bottom: 0;
+  font-size: 15px;
+}
 .favoriteProduct-modal.Fopen {
   position: fixed;
   top: 0;

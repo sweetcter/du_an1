@@ -154,30 +154,34 @@
 <div class="main">
     <div class="main-content dashboard">
         <div class="row">
-            <form action="./index.php?act=addbanner" method="post" enctype="multipart/form-data">
+            <form action="./index.php?act=banner" method="get">
                 <table class=" table">
-                    <tr class="table-success">
-                        <td><h4>ID banner</h4></td>
-                        <td><input type="text"  placeholder="autonumber" id="number" disabled></td>
+                    <tr class="table-primary">
+                        <th>id_banner</th>
+                        <th>name_banner</th>
+                        <th>image</th>
+                        <th>oder</th>
+                        <th>id_category</th>
+                        <th>Chức năng</th>
                     </tr>
-                    <tr class="table-success">
-                        <td><h4>Name banner</h4></td>
-                        <td><input type="text" name="name_banner"></td>
-                    </tr>
-                    <tr class="table-success">
-                        <td><h4>Ảnh banner</h4><br></td>
-                        <td><input type="file" name="image" id=""></td>
-                    </tr>
-                    <tr class="table-success">
-                        <td><h4>Oder</h4><br></td>
-                        <td><input type="text" name="oder" id=""></td>
-                    </tr>     
-                    
-                    <br>
+                   
+                            <tr class="table-success">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href=""><input class="btn btn-success"  type="button" name="sua" value="Sửa"></a>
+                                    <a href=""><input class="btn btn-warning" type="button" name="delete" value="Xóa"></a>
+                                </td>
+                            </tr>
+                          
                 </table>
-                    <input type="submit" class="btn btn-success" value="Thêm mới"></input>
-                    <input type="reset" class="btn btn-danger" value="Nhập Lại"></input>
-                    <a href="./banner.php"><input type="button" class="btn btn-info" value="Danh sách"></input></a>
+                    <input type="button" class="btn btn-success" value="Chọn tất cả"></input>
+                    <input type="button" class="btn btn-danger" value="Bỏ chọn tất cả"></input>
+                    <input type="button" class="btn btn-warning" value="Xóa các mục chọn"></input>
+                    <a href="./add.php"><input type="button" class="btn btn-info" value="Thêm mới"></input></a>
             </form>
 
         </div>

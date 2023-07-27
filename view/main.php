@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>trang chu</title>
-    <link rel="stylesheet" href="../../du_an1/asset/css/index.css"/>
+    <title>Routine</title>
+    <link rel="stylesheet" href="../asset/css/index.css" />
     <script
       src="https://kit.fontawesome.com/5614ac6426.js"
       crossorigin="anonymous"
@@ -140,7 +140,7 @@
           <div class="mySlides fade">
             <img src="../asset/images/bannertop3.jpg" style="width: 100%" />
           </div>
-
+         
     
           <div style="text-align: center" class="to_dot">
             <span class="dot"></span>
@@ -168,7 +168,7 @@
           <div class="header_row2">
             <div class="danhmuc">
               <ul class="flexx">
-                <li><a href="./male-fashion.html">NAM</a></li>
+                <li><a href="./male-fashion.php?action=male-fashion">NAM</a></li>
                 <li><a href="./male-fashion.html">NỮ</a></li>
                 <li><a href="#">NEW</a></li>
                 <li><a href="#">BEST</a></li>
@@ -211,7 +211,7 @@
             </div>
             <div class="button1 button1__cart">
               <!-- giỏ hàng -->
-              <a href="./view-cart.html"
+              <a href="../view/shoping-cart.html"
                 ><i class="fa-solid fa-cart-shopping"></i
               ></a>
               <!-- <span>Tài khoản</span> -->
@@ -226,8 +226,8 @@
           <div class="header_row2">
             <div class="danhmuc">
               <ul class="flexx">
-                <li><a href="./male-fashion.php">NAM</a></li>
-                <li><a href="./female-fashion.php">NỮ</a></li>
+                <li><a href="#">NAM</a></li>
+                <li><a href="#">NỮ</a></li>
                 <li><a href="#">NEW</a></li>
                 <li><a href="#">BEST</a></li>
                 <li><a href="#">SALE</a></li>
@@ -634,7 +634,7 @@
         <!-- </div> -->
 
         <div class="title_rowgird font_roboto">
-          <h1>Sản phẩm đồng giá</h1>
+          <h1>sản phẩm đồng giá</h1>
         </div>
 
         <!-- chạy thử -->

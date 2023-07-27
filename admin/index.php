@@ -74,6 +74,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="./banner/banner.php">
+                        <i class='bx bxs-dashboard'></i>
+                        <span>Banner</span>
+                    </a>
+                </li>
+                <li>
                     <a href="./list-bill.html">
                         <i class='bx bxs-dashboard'></i>
                         <span>Hóa đơn</span>

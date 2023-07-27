@@ -13,7 +13,6 @@ function productFilter() {
     filterCategory[i].onclick = function (e) {
       let filterListHeight = filterList[i].scrollHeight;
       let paddingB = 18;
-      console.log(e.target);
       if (!e.target.closest(".active")) {
         filterCategory[i].classList.add("active");
         if (filterListHeight >= 300) {
@@ -99,6 +98,7 @@ function hiddenMenubar() {
   };
 }
 hiddenMenubar();
+
 function hiddenOverlay() {
   overlay.style.display = `none`;
 }
@@ -135,31 +135,6 @@ openRegister.onclick = function () {
   menuSidebar.style.transform = `translateX(-100%)`;
   menuSidebar.style.opacity = `1`;
 };
-<<<<<<< HEAD
-
-// const openQuen = document.getElementById("openQuen");
-// const modalQuen = document.getElementById("quen-modal");
-// const closeQuen = document.getElementsByClassName("close-quen");
-
-=======
-// const openQuen = document.getElementById("openQuen");
-// const modalQuen = document.getElementById("quen-modal");
-// const closeQuen = document.getElementsByClassName("close-quen");
-
->>>>>>> 692962ea54904b53e499f39d4cc08431ca11e291
-// openQuen.onclick = function () {
-//   modalQuen.style.display = "block";
-//   let menuSidebar = document.querySelector(".header-menu-sidebar");
-//   modalQuen.style.top = "0";
-//   modalQuen.style.opacity = "1";
-//   menuSidebar.style.transform = `translateX(-100%)`;
-//   menuSidebar.style.opacity = `1`;
-// };
-// click overlay
-// overlay.addEventListener = function () {
-//   console.log("ok");
-
-// }
 // close register
 let closeRegister = document.querySelector("#close-button");
 closeRegister.onclick = function () {
@@ -292,27 +267,3 @@ handleOpensTheSidebar(
   "cart-open",
   true
 );
-
-// // open user favorite product
-// let openFavorite = document.querySelector("#header-content-heart");
-// let openFavoriteModal = document.querySelector("#favoriteProduct-modal");
-// let openFavoriteInfo = document.querySelector("#favoriteProduct");
-// let closeFavoriteInfo = document.querySelector("#favoriteProduct-header-close");
-
-// openFavorite.onclick = function () {
-//   openFavoriteModal.classList.add("Fopen");
-//   openFavoriteInfo.classList.add("Fopen");
-// };
-
-// function hiddenFavoriteModal() {
-//   openFavoriteModal.classList.remove("Fopen");
-//   openFavoriteInfo.classList.remove("Fopen");
-// }
-// // event wheb click hidden favorite modal
-// openFavoriteModal.addEventListener("click", hiddenFavoriteModal);
-// closeFavoriteInfo.addEventListener("click", hiddenFavoriteModal);
-
-// // prevent bubble event
-// openFavoriteInfo.onclick = function (e) {
-//   e.stopPropagation();
-// };
