@@ -46,7 +46,11 @@
     <link rel="stylesheet" href="../asset/css/slick.css" />
     <link rel="stylesheet" href="../../<?= $ROOT_URL ?>/asset/css/base.css" />
     <link rel="stylesheet" href="../asset/css/grid.css" />
+<<<<<<< HEAD
+    <link rel="stylesheet" href="../../du_an1/asset/css/style.css">
+=======
     <link rel="stylesheet" href="../../<?= $ROOT_URL ?>/asset/css/style.css" />
+>>>>>>> 49283b86a6193ee1a69a557936c49fc39a09a6b8
     <style>
       .mySlides {
         display: none;
@@ -129,7 +133,7 @@
     <div class="x font">
       <div class="showimg">
         <div class="slideshow-container">
-          <!-- <div class="mySlides fade">
+          <div class="mySlides fade">
             <img src="../asset/images/bannertop.jpg" style="width: 100%" />
           </div>
 
@@ -139,22 +143,9 @@
 
           <div class="mySlides fade">
             <img src="../asset/images/bannertop3.jpg" style="width: 100%" />
-          </div> -->
-          <?php
-        // Danh sách các ảnh banner
-        $bannerImages = array(
-          'bannertop4.jpg',
-          'bannertop2.jpg',
-          'bannertop3.jpg',
-          // Thêm các ảnh banner khác nếu cần
-         );
-
-        // Duyệt qua danh sách các ảnh và hiển thị chúng
-        foreach ($bannerImages as $img) : ?>
-            <div class="mySlides fade">
-                <img src="../asset/images/<?php echo $img; ?>" style="width: 100%" />
-            </div>
-        <?php endforeach; ?>
+          </div>
+         
+    
           <div style="text-align: center" class="to_dot">
             <span class="dot"></span>
             <span class="dot"></span>

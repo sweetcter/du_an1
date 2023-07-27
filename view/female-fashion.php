@@ -29,13 +29,6 @@
       type="text/css"
       href="../../du_an1/asset/slick-master/slick/slick.css"
     />
-<<<<<<< HEAD
-    <<link rel="stylesheet" href="../../du_an1/asset/css/slick.css">
-    <link rel="stylesheet" href="../../du_an1/asset/css/base.css">
-    <link rel="stylesheet" href="../../du_an1/asset/css/grid.css">
-    <link rel="stylesheet" href="../../du_an1/asset/css/style.css">
-
-=======
     <link rel="stylesheet" href="../../du_an1/asset/css/slick.css" />
     <link rel="stylesheet" href="../../du_an1/asset/css/base.css" />
     <link rel="stylesheet" href="../../du_an1/asset/grid.css" />
