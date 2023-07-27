@@ -138,53 +138,74 @@
 
     <div class="main">
         <div class="main-content dashboard">
-            <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> "><?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?></span>
-            <form action="..<?= $ADMIN_URL . $PRODUCT_URL; ?>/progess_add_product.php" method="post" enctype="multipart/form-data">
-                <div class="form-group mb-3">
-                    <label for="product_name">Tên sản phẩm</label>
-                    <input type="text" class="form-control" name="product_name" id="product_name" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_price">Giá sản phẩm</label>
-                    <input type="number" class="form-control" name="product_price" id="product_price" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_discount">Giảm giá</label>
-                    <input type="number" class="form-control" name="product_discount" id="product_discount" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_quantity">Số lượng</label>
-                    <input type="number" class="form-control" name="product_quantity" id="product_quantity" required>
-                </div>
-                
-                <div class="form-group mb-3">
-                    <label for="product_main_image">Ảnh chính</label>
-                    <input type="file" class="form-control" name="product_main_image" id="product_main_image" multiple>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_hover_main_image">Ảnh phụ</label>
-                    <input type="file" class="form-control" name="product_hover_main_image" id="product_hover_main_image" multiple>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_desc">Mô tả</label>
-                    <textarea type="text" class="form-control" rows="6" name="product_desc" id="product_desc" required></textarea>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="import_date">Số lượng</label>
-                    <input type="date" class="form-control" name="import_date" id="import_date" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_cat_id">Tên sản phẩm</label>
-                    <!-- Select product caregory id -->
-                    <select name="product_cat_id" id="product_cat_id" class="form-control">
-                        <option value="1">Áo nam</option>
-                    </select>
-                </div>
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-success">Thêm</button>
-                    <button type="reset" class="btn btn-warning">Nhập lại</button>
-                </div>
-            </form>
+            <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> ">
+                <?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?>
+            </span>
+            <!-- Select product by id -->
+            <?php
+            if (isset($_GET['product_id'])) {
+                $product_id = $_GET['product_id'];
+                $product_result = select_product_by_id($product_id);
+            ?>
+                <form action="..<?= $ADMIN_URL . $PRODUCT_URL; ?>/progess_update_product.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="product_id" value="<?= $product_id; ?>">
+                    <div class="form-group mb-3">
+                        <label for="product_name">Tên sản phẩm</label>
+                        <input type="text" class="form-control" value="<?= $product_result['product_name']; ?>" name="product_name" id="product_name" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_price">Giá sản phẩm</label>
+                        <input type="number" class="form-control" value="<?= $product_result['product_price']; ?>" name="product_price" id="product_price" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_quantity">Số lượng</label>
+                        <input type="number" class="form-control" name="product_quantity" id="product_quantity" value="<?= $product_result['quantity'] ?>" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_discount">Giảm giá</label>
+                        <input type="number" class="form-control" value="<?= $product_result['discount']; ?>" name="product_discount" id="product_discount" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>
+                            Ảnh cũ
+                        </label>
+                        <div class="mb-3">
+                            <img src="../..<?= $ROOT_URL ?><?= $product_result['main_image_url'] ?>" width="100px" alt="">
+                        </div>
+                        <label for="product_main_image">Ảnh chính</label>
+                        <input type="file" class="form-control" name="product_main_image" id="product_main_image" multiple>
+                        <input type="hidden" name="old_main_image" value="<?= $product_result['main_image_url'] ?>">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>
+                            Ảnh cũ
+                        </label>
+                        <div class="mb-3">
+                            <img src="../..<?= $ROOT_URL ?><?= $product_result['hover_main_image_url'] ?>" width="100px" alt="">
+                        </div>
+                        <label for="product_hover_main_image">Ảnh phụ</label>
+                        <input type="file" class="form-control" name="product_hover_main_image" id="product_hover_main_image" multiple>
+                        <input type="hidden" name="old_second_image" value="<?= $product_result['hover_main_image_url'] ?>">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_desc">Mô tả</label>
+                        <textarea type="text" class="form-control" rows="6" name="product_desc" id="product_desc" required><?= $product_result['product_desc']; ?></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_cat_id">Tên sản phẩm</label>
+                        <!-- Select product caregory id -->
+                        <select name="product_cat_id" id="product_cat_id" class="form-control">
+                            <option value="1">Áo nam</option>
+                        </select>
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-success">Sửa</button>
+                        <button type="reset" class="btn btn-warning">Nhập lại</button>
+                    </div>
+                </form>
+            <?php } else { ?>
+                <?= "Không có id" ?>
+            <?php } ?>
         </div>
     </div>
 
