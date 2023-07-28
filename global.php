@@ -1,5 +1,6 @@
 <?php 
     $ROOT_URL = "/du_an1";
+    $ROOTt_URL = "/du_an1";
     $ASSET_URL = "/asset";
     $ADMIN_URL = "/admin";
     $VIEW_URL = "/view";

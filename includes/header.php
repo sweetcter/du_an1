@@ -26,12 +26,12 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="../..<?= $ROOT_URL . $ASSET_URL ?>/slick-master/slick/slick.css"
+      href="../<?= $ROOTt_URL?>/asset/slick-master/slick/slick.css"
     />
-    <link rel="stylesheet" href="../..<?= $ROOT_URL . $ASSET_URL ?>/css/slick.css" />
-    <link rel="stylesheet" href="../..<?= $ROOT_URL . $ASSET_URL ?>/css/base.css" />
-    <link rel="stylesheet" href="../..<?= $ROOT_URL . $ASSET_URL ?>/css/grid.css" />
-    <link rel="stylesheet" href="../..<?= $ROOT_URL . $ASSET_URL ?>/css/style.css" />
+    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/slick.css" />
+    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/base.css" />
+    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/grid.css" />
+    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/style.css" />
   </head>
 
   <body>

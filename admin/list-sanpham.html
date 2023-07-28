@@ -144,41 +144,56 @@
 <!--   Phần content -->
 
 <!--   Phần content -->
+<!--   Phần content -->
 <div class="main">
     <div class="main-content dashboard">
-        <div class="row">
-            <form action="./index.php?act=listdm" method="get">
-                <table class=" table">
-                    <tr class="table-primary">
-                        <th></th>
-                        <th>Mã loại</th>
-                        <th>Tên loại</th>
-                        <th></th>
+        <form action="./index.php?act=listsp" method="post">
+            
+            <table class=" table">
+                <tr class="table-primary">
+                    <th></th>
+                    <th>Mã loại</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Ảnh</th>
+                    <th>Giảm giá</th>
+                    <th>Giá</th>
+                    <th>Mô tả ngắn</th>
+                    <th>Mô tả dài</th>
+                    <th>Ngày nhập hàng</th>
+                    <th>Số lượt xem</th>
+                    <th>Size</th>
+                    <th>Color</th>
+                    <th></th>
+                </tr>
+                
+                    <tr class="table-success">
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href=""><input class="btn btn-success" type="button" name="sua" value="Sửa"></a>
+                            <a onclick="return confirm(' Bạn có chắc chắn muốn xóa sản phẩm này')" href=""><input class="btn btn-warning" type="button" name="delete" value="Xóa"></a>
+                        </td>
                     </tr>
                 
-                            <tr class="table-success">
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <a href=""><input class="btn btn-success"  type="button" name="sua" value="Sửa"></a>
-                                    <a href=""><input class="btn btn-warning" type="button" name="delete" value="Xóa"></a>
-                                </td>
-                            </tr>
-                          
-                    
-                </table>
-                <input type="button" class="btn btn-success" value="Chọn tất cả"></input>
-                    <input type="button" class="btn btn-danger" value="Bỏ chọn tất cả"></input>
-                    <input type="button" class="btn btn-warning" value="Xóa các mục chọn"></input>
-                    <a href="./index.php?act=adddm"><input type="button" class="btn btn-info" value="Nhập lại"></input></a>
-            </form>
 
-        </div>
-
+            </table>
+            <input type="submit" class="btn btn-success" value="Chọn tất cả"></input>
+            <input type="submit" class="btn btn-danger" value="Bỏ chọn tất cả"></input>
+            <input type="submit" class="btn btn-warning" value="Xóa các mục chọn"></input>
+            <a href="./index.php?act=addsp"><input type="button" class="btn btn-info" value="Nhập lại"></input></a>
+        </form>
     </div>
 </div>
-
 
 <div class="overlay"></div>
 
