@@ -139,7 +139,7 @@
         <div class="main-content dashboard">
             <div><?= $notification = isset($notification) ? $notification : ""; ?></div>
             
-            <form action="..<?= $ADMIN_URL . $PRODUCT_URL; ?>/progess_add_product.php" method="post">
+            <form action="" method="post">
                 <div class="form-group mb-3">
                     <label for="product_name">Tên sản phẩm</label>
                     <input type="text" class="form-control" name="product_name" id="product_name" required>
@@ -164,7 +164,7 @@
                     </select>
                 </div>
                 <div class="mt-3">
-                    <button type="submit" class="btn btn-success">Thêm</button>
+                    <button type="submit" name='addProduct'  class="btn btn-success">Thêm</button>
                     <button type="reset" class="btn btn-warning">Nhập lại</button>
                 </div>
             </form>

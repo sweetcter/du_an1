@@ -6,6 +6,7 @@ require ".$MODEL_URL/product.php";
 require ".$MODEL_URL/taikhoan.php";
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
+// echo $action;
 switch ($action) {
   case 'index';
     require ".$VIEW_URL/main.php";
@@ -17,7 +18,10 @@ switch ($action) {
     require ".$VIEW_URL/female-fashion.php";
     break;
   case 'admin':
-    // require ".$ADMIN_URL/index.php";
+    require "../<?= $ROOTt_URL?>/admin/index.php";
+    break;
+  case "admin/female-fashion";
+    require ".$VIEW_URL/female-fashion.php";
     break;
   case 'dangky':
     if (isset($_POST['register'])) {
