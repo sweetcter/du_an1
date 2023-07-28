@@ -7,9 +7,16 @@ require ".$MODEL_URL/product.php";
 require ".$MODEL_URL/taikhoan.php";
 require ".$MODEL_URL/category.php";
 $listCategory=listCategory();
+function dd($data) {
+  echo '<pre>';
+  print_r($data);
+  echo '</pre>';
+  die;
+}
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
-// echo $action;
+echo $action;
+// die;
 switch ($action) {
   case 'index';
     require ".$VIEW_URL/main.php";
@@ -126,7 +133,23 @@ switch ($action) {
       break;
   
     
-    
+    case 'cart_shop' :
+      if (isset($_POST['cart_add'])) {
+        $product_name = $_POST['product_name'];
+        $size = $_POST['size'];
+        $quantity = $_POST['quantity'];
+      
+        $cart_item = [
+          'product_name' => $product_name,
+          'size' => $size,
+          'quantity' => $quantity
+        ];
+      
+        $_SESSION['cart'][] = $cart_item;
+        dd($_SESSION['cart']);
+      }
+      require ".$VIEW_URL/oder.php";
+      break;
   case 'thoat':
     session_unset();
     header('Location: index.php');
