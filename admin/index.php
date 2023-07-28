@@ -3,10 +3,10 @@ require "../global.php";
 require "..$MODEL_URL/pdo.php";
 require "..$MODEL_URL/product.php";
 
-$action = isset($_GET['action']) ? $_GET['action'] : 'view_product';
+$action = isset($_GET['act']) ? $_GET['act'] : 'index';
 switch ($action) {
     case 'index':
-        echo "hello";
+       require ".$VIEW_URL/main.php";
         break;
     case 'add_product':
         require ".$PRODUCT_URL/add_product.php";

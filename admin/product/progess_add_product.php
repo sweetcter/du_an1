@@ -26,7 +26,7 @@ if (in_array($file_info['extension'], $checkTail)) {
         $save_main_img = $folder_name . $file_name;
     };
 } else {
-    header("location: ../index.php?action=add_product");
+    header("location: ../index.php?act=add_product");
     setcookie('notification', "Không đúng định dạng ảnh", time() + 1, "/");
 }
 
@@ -38,9 +38,9 @@ if (in_array($file_second_info['extension'], $checkTail)) {
         $save_second_img = $folder_name . $file_name;
     };
 } else {
-    header("location: ../index.php?action=add_product");
+    header("location: ../index.php?act=add_product");
     setcookie('notification', "Không đúng định dạng ảnh", time() + 1, "/");
 }
 add_product($product_name, $product_price, $save_main_img, $save_second_img,$product_quantity ,$product_import_date,$product_discount, $product_desc, $product_cat_id);
-header("location: ../index.php?action=add_product");
+header("location: ../index.php?act=add_product");
 setcookie('notification', "Thêm thành công", time() + 1, "/");
