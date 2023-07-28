@@ -38,7 +38,12 @@ input{
     width: 100%;
     margin-right: 10px;
 }
-
+input#updatetk{
+  background-color: #000;
+}
+.submit input{
+  background-color: #000;
+}
 .thkn{
     
     flex-basis: 48%;

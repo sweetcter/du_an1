@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,15 +20,15 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="../asset/slick-master/slick/slick.css"
+      href="../../du_an1/asset/slick-master/slick/slick.css"
     />
     
-    <link rel="stylesheet" href="../asset//css/slick.css" />
-    <link rel="stylesheet" href="../asset/css/base.css" />
-    <link rel="stylesheet" href="../asset/css/grid.css" />
-    <link rel="stylesheet" href="../asset/css/style.css" />
-    <link rel="stylesheet" href="../asset/css/spct.css" />
-    <link rel="stylesheet" href="../asset/css/user.css" />
+    <link rel="stylesheet" href="../../du_an1/asset//css/slick.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/base.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/grid.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/style.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/spct.css" />
+    <link rel="stylesheet" href="../../du_an1/asset/css/user.css" />
     
     
     
@@ -78,7 +78,7 @@
         </div>
         <!-- Hidden when scoll -->
         <div class="header-bar">
-          <img src="../asset/images/menu.png" alt="" class="header-menu-bar" />
+          <img src="../../du_an1/asset/images/menu.png" alt="" class="header-menu-bar" />
         </div>
         <div class="overlay"></div>
         <div class="header-logo">
@@ -183,8 +183,10 @@
                     <span>Tài khoản của bạn</span>
                 </div>
                 <div class="nav_items">
+               
+           
                   <div class="nav_title">
-                    <strong>cuong nguyen</strong>
+                    <strong><?php if(isset($_SESSION['username'])) echo $_SESSION['username']['full_name'] ?></strong>
                     <span>NEW</span>
                   </div>
                   <hr>
@@ -196,9 +198,12 @@
                         <br>    
                         <hr>
                         <br>
-                        <li class="nav_item"><a href="">Đăng xuất</a></li>
+                        <li class="nav_item"><a href="index.php?action=thoat">Đăng xuất</a></li>
+                        
                     </ul>
-                </div>   
+                    
+                </div>  
+                 
             </div>
     
             <div class="colums_main">
@@ -207,59 +212,70 @@
                     <span>Bạn có thể cập nhật thông tin của mình ở trang này</span>
                   </div>
                   <hr>
-                  <div class="account-information row-col-2">
+                 <div class="account-information row-col-2">
+                 <?php
+                        if(isset($_SESSION['username'])&&(is_array($_SESSION['username']))){
+                            extract($_SESSION['username']);
+                        }
+                    ?>
                         <div class="info">
                             <h3>Thông tin đăng nhập</h3>
                             <p>
                                 <span>Email:</span>
-                                <strong>cuongb4102003@gmail.com</strong>
+                                <strong><?php if(isset($_SESSION['username'])) echo $_SESSION['username']['email'] ?></strong>
                             </p>
                             <p>
-                                <span>Số điện thoại:</span>
-                                <strong>0966 981 411</strong>
+                                <span>Phone:</span>
+                                <strong><?php if(isset($_SESSION['username'])) echo $_SESSION['username']['phone'] ?></strong>
                             </p>
+                            
                         </div>
+                        <form action="index.php?act=updatetk" method="POST" id="profile-form">
                         <div class="thkn">
                             <h3>Thông tin cá nhân</h3>
                             <div class="">
                             <div class="col-lg-6">
+                            <input type="hidden" name="image_user" value="<?= $image_user ?>">
+                            <p>Avatar <span>*</span></p>
+                                    <input type="file" id="Avata" name="image_user" required>
+                                    
+                               </div>
+                            
+                            <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Username <span>*</span></p>
-                                    <input type="text">
+                                    <input type="text" id="username"value="<?= $username ?>" disabled placeholder="username" required >
                                 </div>
                                </div>
-                              <div class="row-col-2">
+                              <div class="row-col-6">
+                                  
                                   <div class="checkout__input">
-                                      <p>Họ <span>*</span></p>
-                                      <input type="text" >
-                                  </div>
-                                  <div class="checkout__input">
-                                      <p>Tên <span>*</span></p>
-                                      <input type="text" class="input_w">
+                                      <p>Họ và tên <span>*</span></p>
+                                      <input type="text" id="fullname" value="<?= $full_name ?>" placeholder="Họ và tên" required>
                                   </div>
                               </div>
                               <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Email <span>*</span></p>
-                                    <input type="text">
+                                    <input type="email" id="email" value="<?= $email ?>" placeholder="Your email" required>
                                 </div>
                                </div>
                               <div class="col-lg-6">
                                   <div class="checkout__input">
                                       <p>Số điện thoại <span>*</span></p>
-                                      <input type="text" >
+                                      <input type="tel" value="<?= $phone ?>" id="Number" required>
                                   </div>
                               </div>
                               <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Địa chỉ <span>*</span></p>
-                                    <input type="text">
+                                    <input type="text" value="<?= $address ?>" id="address" required>
                                 </div>
                                </div>
                                <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Password <span>*</span></p>
-                                    <input type="password">
+                                    <input type="password" id="password" value="<?= $password ?>" placeholder="Enter a password" required>
                                 </div>
                                </div>
                             </div>
@@ -270,9 +286,22 @@
  
                               }
                             </style>
-                            <button><a href="">CẬP NHẬP THÔNG TIN </a></button>
+                            <div class="submit">
+                              <input type="hidden" name="id" value="<?$id?>">
+                            <input type="submit" name="thaydoi" id="updatetk" value="Lưu thay đổi" style="color: white;"  >
+                            </div>
+                             
+                            <?php
+                            if (isset($thongbao) && ($thongbao) != "") {
+                                echo $thongbao;
+                            }
+                            ?>
                         </div>
+                        
+                        </form>
                   </div>
+                
+                  
             </div>
           
         </div>
@@ -345,7 +374,7 @@ src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
 ></script>
 <script
 type="text/javascript"
-src="../asset/slick-master/slick/slick.min.js"
+src="../../du_an1/asset/slick-master/slick/slick.min.js"
 ></script>
 <script type="text/javascript" src="../asset/js/slick.js"></script>
-<script src="../asset/js/main.js"></script>
+<script src="../../du_an1/asset/js/main.js"></script>
