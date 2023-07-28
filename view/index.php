@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Routine</title>
+    <title>trang chu</title>
     <link rel="stylesheet" href="../asset/css/index.css" />
     <script
       src="https://kit.fontawesome.com/5614ac6426.js"
@@ -41,13 +41,12 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="../../<?= $ROOTt_URL?>/asset/slick-master/slick/slick.css"
+      href="../asset/slick-master/slick/slick.css"
     />
-    <link rel="stylesheet" href="../../<?= $ROOTt_URL?>/asset/css/slick.css" />
-    <link rel="stylesheet" href="../../<?= $ROOTt_URL?>/asset/css/index.css" />
-    <link rel="stylesheet" href="../../<?= $ROOTt_URL?>/asset/css/base.css" />
-    <link rel="stylesheet" href="../../<?= $ROOTt_URL?>/asset/css/grid.css" />
-    <link rel="stylesheet" href="../../<?= $ROOTt_URL?>/asset/css/style.css" />
+    <link rel="stylesheet" href="../asset/css/slick.css" />
+    <link rel="stylesheet" href="../asset/css/base.css" />
+    <link rel="stylesheet" href="../asset/css/grid.css" />
+    <link rel="stylesheet" href="../asset/css/style.css" />
     <style>
       .mySlides {
         display: none;
@@ -140,22 +139,7 @@
 
           <div class="mySlides fade">
             <img src="../asset/images/bannertop3.jpg" style="width: 100%" />
-          </div> -->
-          <?php
-        // Danh sách các ảnh banner
-        $bannerImages = array(
-          'bannertop4.jpg',
-          'bannertop2.jpg',
-          'bannertop3.jpg',
-          // Thêm các ảnh banner khác nếu cần
-         );
-
-        // Duyệt qua danh sách các ảnh và hiển thị chúng
-        foreach ($bannerImages as $img) : ?>
-            <div class="mySlides fade">
-                <img src="../asset/images/<?php echo $img; ?>" style="width: 100%" />
-            </div>
-        <?php endforeach; ?>
+          </div>
           <div style="text-align: center" class="to_dot">
             <span class="dot"></span>
             <span class="dot"></span>
@@ -171,7 +155,7 @@
             <div class="row1_left flexx">
               <div class="logo">
                 <img
-                  src="../<?= $ROOTt_URL?>/asset/images/logo.png"
+                  src="../asset/images/logo.png"
                   style="width: 118px; height: 33px"
                   alt="logo tiki"
                 />
@@ -182,8 +166,8 @@
           <div class="header_row2">
             <div class="danhmuc">
               <ul class="flexx">
-                <li><a href="<?= $ROOTt_URL?>/male-fashion">NAM</a></li>
-                <li><a href="<?= $ROOTt_URL?>/female-fashion">NỮ</a></li>
+                <li><a href="./male-fashion.html">NAM</a></li>
+                <li><a href="./male-fashion.html">NỮ</a></li>
                 <li><a href="#">NEW</a></li>
                 <li><a href="#">BEST</a></li>
                 <li><a href="#">SALE</a></li>
@@ -225,7 +209,7 @@
             </div>
             <div class="button1 button1__cart">
               <!-- giỏ hàng -->
-              <a href="../view/shoping-cart.html"
+              <a href="./view-cart.html"
                 ><i class="fa-solid fa-cart-shopping"></i
               ></a>
               <!-- <span>Tài khoản</span> -->
@@ -240,8 +224,8 @@
           <div class="header_row2">
             <div class="danhmuc">
               <ul class="flexx">
-                <li><a href="<?= $ROOTt_URL?>/male-fashion">NAM</a></li>
-                <li><a href="<?= $ROOTt_URL?>/female-fashion">NỮ</a></li>
+                <li><a href="./male-fashion.php">NAM</a></li>
+                <li><a href="./female-fashion.php">NỮ</a></li>
                 <li><a href="#">NEW</a></li>
                 <li><a href="#">BEST</a></li>
                 <li><a href="#">SALE</a></li>
@@ -256,7 +240,7 @@
                 style="transform: translate(-50%, 0); left: 50%"
               >
                 <img
-                  src="../<?= $ROOTt_URL?>/asset/images/logo.png"
+                  src="../asset/images/logo.png"
                   style="width: 118px; height: 33px"
                   alt="logo tiki"
                 />
@@ -312,21 +296,21 @@
       <nav>
         <div class="div1">
           <div class="div1_1 div1_1_cart">
-            <img src="../<?= $ROOTt_URL?>/asset/images/bannerroww1.png" alt="" />
+            <img src="../asset/images/bannerroww1.png" alt="" />
             <div class="xemngay">
               <button><a href="#">xem ngay</a></button>
             </div>
           </div>
 
           <div class="div1_1 div1_1_cart">
-            <img src="../<?= $ROOTt_URL?>/asset/images/bannerrow2.jpg" alt="" />
+            <img src="../asset/images/bannerrow2.jpg" alt="" />
             <div class="xemngay">
               <button><a href="#">xem ngay</a></button>
             </div>
           </div>
 
           <div class="div1_1 div1_1_cart">
-            <img src="../<?= $ROOTt_URL?>/asset/images/bannerroww2.webp" alt="" />
+            <img src="../asset/images/bannerroww2.webp" alt="" />
             <div class="xemngay">
               <button><a href="#">xem ngay</a></button>
             </div>
@@ -334,7 +318,7 @@
         </div>
 
         <div class="div1_2 div1_2_cart">
-          <img src="../<?= $ROOTt_URL?>/asset/images/banneryoutube.jpg" alt="" />
+          <img src="../asset/images/banneryoutube.jpg" alt="" />
           <div class="div_youtube">
             <!-- <video controls autoplay src="https://youtu.be/L7qbjrmQ728" width="520px" height="293px"></video> -->
             <iframe
@@ -364,12 +348,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -390,14 +374,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -408,14 +392,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/product1_con1.jpg"
+                        src="../asset/images/product1_con1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/product1_con1.jpg"
+                        src="../asset/images/product1_con1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -426,14 +410,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/product1_con.jpg"
+                        src="../asset/images/product1_con.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/product1_con.jpg"
+                        src="../asset/images/product1_con.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -444,14 +428,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -467,12 +451,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -492,14 +476,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -514,12 +498,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -539,14 +523,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -561,12 +545,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -586,14 +570,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -648,7 +632,7 @@
         <!-- </div> -->
 
         <div class="title_rowgird font_roboto">
-          <h1>sản phẩm đồng giá</h1>
+          <h1>Sản phẩm đồng giá</h1>
         </div>
 
         <!-- chạy thử -->
@@ -664,12 +648,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -690,14 +674,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -708,14 +692,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/product1_con1.jpg"
+                        src="../asset/images/product1_con1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/product1_con1.jpg"
+                        src="../asset/images/product1_con1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -726,14 +710,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/product1_con.jpg"
+                        src="../asset/images/product1_con.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/product1_con.jpg"
+                        src="../asset/images/product1_con.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -744,14 +728,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -766,12 +750,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -791,14 +775,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -813,12 +797,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -838,14 +822,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -860,12 +844,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
+                    src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -885,14 +869,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
+                        src="../asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -946,14 +930,14 @@
 
         <div class="div_bottomrowgird">
           <div class="div1_1 div1_1_cart">
-            <img src="../<?= $ROOTt_URL?>/asset/images/banner_dm.png" alt="" />
+            <img src="../asset/images/banner_dm.png" alt="" />
             <div class="xemngay">
               <button><a href="#">xem ngay</a></button>
             </div>
           </div>
 
           <div class="div1_1 div1_1_cart">
-            <img src="../<?= $ROOTt_URL?>/asset/images/banner_dm2.png" alt="" />
+            <img src="../asset/images/banner_dm2.png" alt="" />
             <div class="xemngay">
               <button><a href="#">xem ngay</a></button>
             </div>
@@ -968,7 +952,7 @@
           <div class="col column font_roboto">
             <div class="column_img">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/tintuc1.jpg"
+                src="../asset/images/tintuc1.jpg"
                 style="width: 100%; height: 100%"
                 alt=""
               />
@@ -1006,7 +990,7 @@
           <div class="col column font_roboto">
             <div class="column_img">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/tintuc2.jpg"
+                src="../asset/images/tintuc2.jpg"
                 style="width: 100%; height: 100%"
                 alt=""
               />
@@ -1044,7 +1028,7 @@
           <div class="col column font_roboto">
             <div class="column_img">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/tintuc3.jpg"
+                src="../asset/images/tintuc3.jpg"
                 style="width: 100%; height: 100%"
                 alt=""
               />

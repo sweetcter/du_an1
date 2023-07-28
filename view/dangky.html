@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+</head>
+<style>
+    /* The Modal (background) */
+
+</style>
+<body>
+    <!-- Button trigger modal -->
+
+</body>
+<script>
+    // Get the modal element
+var modal = document.getElementById("register-modal");
+
+// Get the button that opens the modal
+var registerButton = document.getElementById("register-button");
+
+// Get the close button element
+var closeButton = document.getElementById("close-button");
+
+// When the user clicks the register button, open the modal
+registerButton.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on close button, close the modal
+closeButton.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the register form element
+var registerForm = document.getElementById("register-form");
+
+// When the user submits the register form
+registerForm.onsubmit = function(event) {
+  // Get form values
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirm-password").value;
+
+  // Check if password and confirm password match
+  if (password !== confirmPassword) {
+    var errorElement = document.getElementById("// Show error message for password mismatchconfirm-password-error").
+    errorElement.innerHTML = "Passwords do not match";
+    event.preventDefault();
+  } else {
+    // Clear any previous error messages
+    var errorElements = document.getElementsByClassName("error");
+    for (var i = 0; i < errorElements.length; i++) {
+      errorElements[i].innerHTML = "";
+    }
+    // Perform additional validation and submit form if everything is valid
+    // ...
+  }
+}
+</script>
+</html>

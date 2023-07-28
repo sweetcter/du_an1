@@ -157,7 +157,7 @@ function increaseValue() {
     }
   };
 }
-increaseValue();
+// increaseValue();
 // end
 
 // reduce value
@@ -173,7 +173,7 @@ function reduceValue() {
     }
   };
 }
-reduceValue();
+// reduceValue();
 // end
 
 // handle open sidebar
@@ -192,8 +192,9 @@ function handleOpensTheSidebar(
   let closeSibar = document.querySelector(`#${closeButton}`);
   let hiddenBodyScollbar = document.querySelector("body");
   let isHandleHidenBodyScollbar = false;
+  console.log(openBtn);
 
-  openBtn.onclick = function () {
+  openBtn.addEventListener("click", function () {
     openModal.classList.add(`${modalClass}`);
     sidebarName.classList.add(`${sidebarClass}`);
 
@@ -201,7 +202,8 @@ function handleOpensTheSidebar(
       hiddenBodyScollbar.style.overflowY = "hidden";
       isHandleHidenBodyScollbar = true;
     }
-  };
+  });
+
   // event wheb click hidden  modal
   openModal.addEventListener("click", function () {
     handleCLoseTheSidebar(
