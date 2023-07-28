@@ -10,6 +10,12 @@ switch ($act) {
     case 'index':
         require "./home.php";
         break;
+    case 'add_product':
+        require ".$PRODUCT_URL/add_product.php";
+        break;
+    case 'add_product':
+        require ".$PRODUCT_URL/add_product.php";
+        break;
     case 'view_product':
         require ".$PRODUCT_URL/productList.php";
         break;
@@ -21,6 +27,11 @@ switch ($act) {
             $thongbao="add thanh cong";
         }
         include "./categories/add-danhmuc.php";
+    case 'update_product':
+        require ".$PRODUCT_URL/update_product.php";
+        break;
+    case 'delete_product':
+        require ".$PRODUCT_URL/delete_product.php";
         break;
     case "listCategory":
         $list=listCategory();

@@ -29,13 +29,7 @@
       type="text/css"
       href="../<?= $ROOTt_URL?>/asset/slick-master/slick/slick.css"
     />
-<<<<<<< HEAD
-    <<link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/slick.css">
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/base.css">
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/grid.css">
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/style.css">
 
-=======
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/slick.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/base.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/grid.css" />

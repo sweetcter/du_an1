@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/grid.css" />
     <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/style1.css" />
     <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/responsive.css" />
-    <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/style.css" />
 </head>
 
 <body class="sidebar-expand">
@@ -138,50 +137,20 @@
 
     <div class="main">
         <div class="main-content dashboard">
-            <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> "><?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?></span>
-            <form action="..<?= $ADMIN_URL . $PRODUCT_URL; ?>/progess_add_product.php" method="post" enctype="multipart/form-data">
+            <div><?= $notification = isset($notification) ? $notification : ""; ?></div>
+            
+            <form action="..<?= $ADMIN_URL . $PRODUCT_URL; ?>/progess_banner_product.php" method="post">
                 <div class="form-group mb-3">
-                    <label for="product_name">Tên sản phẩm</label>
-                    <input type="text" class="form-control" name="product_name" id="product_name" required>
+                    <label for="product_name">Tên Banner</label>
+                    <input type="text" class="form-control" name="banner_name" id="banner_name" required>
                 </div>
                 <div class="form-group mb-3">
-                    <label for="product_price">Giá sản phẩm</label>
-                    <input type="number" class="form-control" name="product_price" id="product_price" required>
+                    <label for="product_name">Ảnh Banner</label>
+                    <input type="file" class="form-control" name="image_name" id="image_name" required>
                 </div>
-                <div class="form-group mb-3">
-                    <label for="product_discount">Giảm giá</label>
-                    <input type="number" class="form-control" name="product_discount" id="product_discount" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_quantity">Số lượng</label>
-                    <input type="number" class="form-control" name="product_quantity" id="product_quantity" required>
-                </div>
-                
-                <div class="form-group mb-3">
-                    <label for="product_main_image">Ảnh chính</label>
-                    <input type="file" class="form-control" name="product_main_image" id="product_main_image" multiple>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_hover_main_image">Ảnh phụ</label>
-                    <input type="file" class="form-control" name="product_hover_main_image" id="product_hover_main_image" multiple>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_desc">Mô tả</label>
-                    <textarea type="text" class="form-control" rows="6" name="product_desc" id="product_desc" required></textarea>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="import_date">Số lượng</label>
-                    <input type="date" class="form-control" name="import_date" id="import_date" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_cat_id">Tên sản phẩm</label>
-                    <!-- Select product caregory id -->
-                    <select name="product_cat_id" id="product_cat_id" class="form-control">
-                        <option value="1">Áo nam</option>
-                    </select>
-                </div>
+              
                 <div class="mt-3">
-                    <button type="submit" name='addProduct'  class="btn btn-success">Thêm</button>
+                    <button type="submit" class="btn btn-success">Thêm</button>
                     <button type="reset" class="btn btn-warning">Nhập lại</button>
                 </div>
             </form>

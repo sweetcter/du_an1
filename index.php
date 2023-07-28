@@ -1,4 +1,3 @@
-
 <?php
 require "./global.php";
 require ".$MODEL_URL/pdo.php";
