@@ -131,31 +131,18 @@
       <div class="showimg">
         <div class="slideshow-container">
           <div class="mySlides fade">
-            <img src="../asset/images/bannertop.jpg" style="width: 100%" />
+            <img src="../du_an1/asset/images/bannertop.jpg" style="width: 100%" />
           </div>
 
           <div class="mySlides fade">
-            <img src="../asset/images/bannertop2.jpg" style="width: 100%" />
+            <img src="../du_an1/asset/images/bannertop2.jpg" style="width: 100%" />
           </div>
 
           <div class="mySlides fade">
-            <img src="../asset/images/bannertop3.jpg" style="width: 100%" />
-          </div> -->
-          <?php
-        // Danh sách các ảnh banner
-        $bannerImages = array(
-          'bannertop4.jpg',
-          'bannertop2.jpg',
-          'bannertop3.jpg',
-          // Thêm các ảnh banner khác nếu cần
-         );
+            <img src="../du_an1/asset/images/bannertop3.jpg" style="width: 100%" />
+          </div>
 
-        // Duyệt qua danh sách các ảnh và hiển thị chúng
-        foreach ($bannerImages as $img) : ?>
-            <div class="mySlides fade">
-                <img src="../asset/images/<?php echo $img; ?>" style="width: 100%" />
-            </div>
-        <?php endforeach; ?>
+
           <div style="text-align: center" class="to_dot">
             <span class="dot"></span>
             <span class="dot"></span>

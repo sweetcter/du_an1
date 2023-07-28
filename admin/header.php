@@ -86,7 +86,7 @@
             </a>
           </li>
           <li>
-            <a href="./list-taikhoan.html">
+            <a href="index.php?act=user">
               <i class="bx bxs-dashboard"></i>
               <span>Tài khoản</span>
             </a>

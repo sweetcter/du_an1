@@ -230,7 +230,7 @@
                             </p>
                             
                         </div>
-                        <form action="index.php?act=updatetk" method="POST" id="profile-form">
+                        <form action="index.php?action=updatetk" method="POST" id="profile-form">
                         <div class="thkn">
                             <h3>Thông tin cá nhân</h3>
                             <div class="">

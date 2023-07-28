@@ -182,10 +182,10 @@
               <td>3</td>
               <td><?= $value['category_id']; ?></td>
               <td>
-                <a href="./index.php?action=update_product&product_id=<?= $value['product_id']; ?>"><input class="btn btn-success" type="button" name="sua" value="Sửa" /></a>
+                <a href="./index.php?act=update_product&product_id=<?= $value['product_id']; ?>"><input class="btn btn-success" type="button" name="sua" value="Sửa" /></a>
               </td>
               <td>
-                <a onclick="return confirm(' Bạn có chắc chắn muốn xóa sản phẩm này')" href="./index.php?action=delete_product&product_id=<?= $value['product_id']; ?>"><input class="btn btn-danger" type="button" name="delete" value="Xóa" /></a>
+                <a onclick="return confirm(' Bạn có chắc chắn muốn xóa sản phẩm này')" href="./index.php?act=delete_product&product_id=<?= $value['product_id']; ?>"><input class="btn btn-danger" type="button" name="delete" value="Xóa" /></a>
               </td>
             </tr>
           <?php endforeach ?>

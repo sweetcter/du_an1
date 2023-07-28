@@ -4,13 +4,9 @@ ob_start();
 require "./global.php";
 require ".$MODEL_URL/pdo.php";
 require ".$MODEL_URL/product.php";
-<<<<<<< HEAD
-include "./model/taikhoan.php";
-
-
-=======
 require ".$MODEL_URL/taikhoan.php";
->>>>>>> 79f750cb2ba403d5731973de1cac1a0e463b4d11
+require ".$MODEL_URL/category.php";
+$listCategory=listCategory();
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 // echo $action;
@@ -24,17 +20,6 @@ switch ($action) {
   case 'female-fashion':
     require ".$VIEW_URL/female-fashion.php";
     break;
-<<<<<<< HEAD
-  case 'index':
-    header("location: .$VIEW_URL/index.php");
-    break;
-  case 'add':
-    break;
-
-  case 'dangky':
-
-    if (isset($_POST['dangky'])) {
-=======
   case 'admin':
     require "../<?= $ROOTt_URL?>/admin/index.php";
     break;
@@ -42,8 +27,7 @@ switch ($action) {
     require ".$VIEW_URL/female-fashion.php";
     break;
   case 'dangky':
-    if (isset($_POST['register'])) {
->>>>>>> 79f750cb2ba403d5731973de1cac1a0e463b4d11
+    if (isset($_POST['dangky'])) {
       $full_name = $_POST['full_name'];
       $username = $_POST['username'];
       $password = $_POST['password'];
@@ -51,7 +35,6 @@ switch ($action) {
       insert_taikhoan($full_name, $username, $password, $email);
       echo '<script>alert("Bạn đã đăng ký thành công")</script>';
     }
-<<<<<<< HEAD
     require ".$VIEW_URL/female-fashion.php";
     break;
     
@@ -112,14 +95,8 @@ switch ($action) {
     require ".$VIEW_URL/myaccount.php";
     break;
 
-=======
-    include "./view/index.php";
-    break;
->>>>>>> 79f750cb2ba403d5731973de1cac1a0e463b4d11
-  default:
-    echo "Không có gì";
-    break;
-    case 'updatetk':
+
+  case 'updatetk':
       if (isset($_POST['thaydoi']) && ($_POST['thaydoi'])) {
         $id = $_POST['id'];
         $full_name = $_POST['full_name'];
@@ -150,8 +127,11 @@ switch ($action) {
   
     
     
-case 'thoat':
-  session_unset();
-  header('Location: index.php');
-  break;
+  case 'thoat':
+    session_unset();
+    header('Location: index.php');
+    break;
+  default:
+    echo "Không có gì";
+    break;
 }
