@@ -138,21 +138,40 @@
 
     <div class="main">
         <div class="main-content dashboard">
-            <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> "><?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?></span>
-            <form action="..<?= $ADMIN_URL . $BANNER_URL; ?>/progess_add_banner.php" method="post" enctype="multipart/form-data">
-                <div class="form-group mb-3">
-                    <label for="banner_name">Tên sản phẩm</label>
-                    <input type="text" class="form-control" name="banner_name" id="banner_name" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="banner_image">Ảnh chính</label>
-                    <input type="file" class="form-control" name="banner_image" id="banner_image" multiple>
-                </div>
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-success">Thêm</button>
-                    <button type="reset" class="btn btn-warning">Nhập lại</button>
-                </div>
-            </form>
+            <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> ">
+                <?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?>
+            </span>
+            <!-- Select product by id -->
+            <?php
+            if (isset($_GET['banner_id'])) {
+                $banner_id = $_GET['banner_id'];
+                $banner_result = select_banner_by_id($banner_id);
+            ?>
+                <form action="..<?= $ADMIN_URL . $BANNER_URL; ?>/progess_update_banner.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="banner_id" value="<?= $banner_id; ?>">
+                    <div class="form-group mb-3">
+                        <label for="banner_name">Tên sản phẩm</label>
+                        <input type="text" class="form-control" value="<?= $banner_result['banner_name']; ?>" name="banner_name" id="banner_name" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>
+                            Ảnh cũ
+                        </label>
+                        <div class="mb-3">
+                            <img src="../..<?= $ROOT_URL ?><?= $banner_result['banner_image'] ?>" width="100px" alt="">
+                        </div>
+                        <label for="banner_main_image">Ảnh chính</label>
+                        <input type="file" class="form-control" name="banner_main_image" id="banner_main_image" multiple>
+                        <input type="hidden" name="old_main_image" value="<?= $banner_result['banner_image'] ?>">
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-success">Sửa</button>
+                        <button type="reset" class="btn btn-warning">Nhập lại</button>
+                    </div>
+                </form>
+            <?php } else { ?>
+                <?= "Không có id" ?>
+            <?php } ?>
         </div>
     </div>
 

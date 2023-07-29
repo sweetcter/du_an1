@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Protend - Project Management Admin Dashboard HTML Template</title>
-  <link rel="shortcut icon" href="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/images/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/images/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.gstatic.com/" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet" />
   <link href="../../../unpkg.com/boxicons%402.0.7/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/libs/owl.carousel/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/css/grid.css" />
-  <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/css/style1.css" />
-  <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/css/responsive.css" />
+  <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/owl.carousel/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/grid.css" />
+  <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/style1.css" />
+  <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/responsive.css" />
+  <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/style.css" />
 </head>
 
 <body class="sidebar-expand">
@@ -26,7 +28,7 @@
             object-fit: cover;
             height: auto;
           }
-          </style>
+        </style>
       </a>
       <div class="sidebar-close" id="sidebar-close">
         <i class="bx bx-left-arrow-alt"></i>
@@ -110,7 +112,7 @@
     </div>
     <div class="dropdown d-inline-block mt-12">
       <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img class="rounded-circle header-profile-user" src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/images/avatar/avt-1.png" alt="Header Avatar" />
+        <img class="rounded-circle header-profile-user" src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/images/avatar/avt-1.png" alt="Header Avatar" />
         <span class="pulse-css"></span>
         <span class="info d-xl-inline-block color-span">
           <span class="d-block fs-20 font-w600"></span>
@@ -140,34 +142,37 @@
   <!--   Phần content -->
   <div class="main">
     <div class="main-content dashboard">
-      <a href="./index.php?action=add_banner" class="mb-4">
+      <a href="./index.php?act=add_banner" class="mb-4">
         <button class="btn btn-primary">Thêm</button>
       </a>
+      <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> ">
+        <?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?>
+      </span>
       <form action="./index.php" method="post">
         <table class="table">
           <tr class="table-primary">
-            <th></th>
             <th>Mã loại</th>
-            <th>Tên Banner</th>
-            <th>Ảnh</th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>Tên banner</th>
+            <th>Ảnh banner</th>
+         
+            <th>Sửa</th>
+            <th>Xóa</th>
+            <th>Thêm</th>
+          
           </tr>
-         <?php $banner_result = selectAll_banner();?>
-         <?php foreach($banner_result as $value): ?>
-          <tr class="table-success">
-            <td><input type="checkbox" /></td>
-            <td><?= $value['id_banner']; ?></td>
-            <td><?= $value['banner_name']; ?></td>
-            <td><?= $value['banner_image']; ?></td>
-            <td>
-              <a href=""><input class="btn btn-success" type="button" name="sua" value="Sửa" /></a>
-            </td>
-            <td>
-              <a onclick="return confirm(' Bạn có chắc chắn muốn xóa sản phẩm này')" href=""><input class="btn btn-danger" type="button" name="delete" value="Xóa" /></a>
-            </td>
-          </tr>
+          <?php $banner_result = selectAll_banner(false); ?>
+          <?php foreach ($banner_result as $value) : ?>
+            <tr class="table-success">
+              <td><?= $value['banner_id']; ?></td>
+              <td><?= $value['banner_name']; ?></td>
+              <td><img src="../..<?= $ROOT_URL ?><?= $value['banner_image'] ?>" width="100px" alt=""></td>
+              <td>
+              <a href="./index.php?act=update_banner&banner_id=<?= $value['banner_id']; ?>"><input class="btn btn-success" type="button" name="sua" value="Sửa" /></a>
+              </td>
+              <td>
+                <a onclick="return confirm(' Bạn có chắc chắn muốn xóa sản phẩm này')" href="./index.php?act=delete_banner&banner_id=<?= $value['banner_id']; ?>"><input class="btn btn-danger" type="button" name="delete" value="Xóa" /></a>
+              </td>
+            </tr>
           <?php endforeach ?>
         </table>
         <input type="button" class="btn btn-success" value="Chọn tất cả" />
@@ -181,20 +186,20 @@
   <div class="overlay"></div>
 
   <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/libs/jquery/jquery.min.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/libs/moment/min/moment.min.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/libs/peity/jquery.peity.min.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/libs/chart.js/Chart.bundle.min.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/libs/owl.carousel/owl.carousel.min.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/libs/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/libs/apexcharts/apexcharts.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/libs/simplebar/simplebar.min.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/jquery/jquery.min.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/moment/min/moment.min.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/peity/jquery.peity.min.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/chart.js/Chart.bundle.min.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/owl.carousel/owl.carousel.min.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/apexcharts/apexcharts.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/simplebar/simplebar.min.js"></script>
 
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/js/main.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/js/dashboard.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/js/shortcode.js"></script>
-  <script src="../..<?= $ROOT_URL . $SRC_URL .$ADMIN_URL ?>/js/pages/dashboard.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/js/main.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/js/dashboard.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/js/shortcode.js"></script>
+  <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/js/pages/dashboard.js"></script>
 </body>
 
 <!-- Mirrored from themesflat.com/html/protend/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Nov 2022 08:41:46 GMT -->

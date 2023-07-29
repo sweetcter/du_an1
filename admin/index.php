@@ -3,6 +3,7 @@ require "./header.php";
 require "../global.php";
 require "..$MODEL_URL/pdo.php";
 require "..$MODEL_URL/product.php";
+require "..$MODEL_URL/banner.php";
 require "../model/category.php";
 require "../model/taikhoan.php";
 
@@ -11,6 +12,21 @@ switch ($act) {
     case 'index':
         require "./home.php";
         break;
+
+     // ---------------Xử lí Banner-------------------    
+     case 'add_banner':
+        require ".$BANNER_URL/add_banner.php";
+        break;
+    case 'view_banner':
+        require ".$BANNER_URL/bannerList.php";
+        break;
+    case 'update_banner':
+        require ".$BANNER_URL/update_banner.php";
+        break;
+     case 'delete_banner':
+        require ".$BANNER_URL/delete_banner.php";
+        break;
+    // ---------------Xử lí Sản Phẩm-------------------    
     case 'add_product':
         require ".$PRODUCT_URL/add_product.php";
         break;
@@ -31,6 +47,7 @@ switch ($act) {
     case 'delete_product':
         require ".$PRODUCT_URL/delete_product.php";
         break;
+    // ---------------Xử lí Danh Muc-------------------        
     case "listCategory":
         $list = listCategory();
         include "./categories/list-danhmuc.php";
