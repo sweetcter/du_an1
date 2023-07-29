@@ -130,7 +130,7 @@
     <div class="x font">
       <div class="showimg">
         <div class="slideshow-container">
-          <div class="mySlides fade">
+          <!-- <div class="mySlides fade">
             <img src="../du_an1/asset/images/bannertop.jpg" style="width: 100%" />
           </div>
 
@@ -140,7 +140,17 @@
 
           <div class="mySlides fade">
             <img src="../du_an1/asset/images/bannertop3.jpg" style="width: 100%" />
-          </div>
+          </div> -->
+          
+          <?php
+                  $dsBanner = selectAll_banner();
+                  foreach ($dsBanner as $bn) {
+                    extract($bn);
+                    echo '<div class="mySlides fade">
+                        <img  src=".'.$banner_image.'" alt="" style="width: 100%">
+                        </div>';
+                }
+          ?>
 
 
           <div style="text-align: center" class="to_dot">
@@ -169,8 +179,13 @@
           <div class="header_row2">
             <div class="danhmuc">
               <ul class="flexx">
+<<<<<<< HEAD
                 <li><a href="./index.php?action=male-fashion">NAM</a></li>
                 <li><a href="./index.php?action=female-fashion">NỮ</a></li>
+=======
+                <li><a href="./male-fashion.php">NAM</a></li>
+                <li><a href="./female-fashion.php">NỮ</a></li>
+>>>>>>> 25dad7c73bf339ce4504fe39616a5a5efd9f6909
                 <li><a href="#">NEW</a></li>
                 <li><a href="#">BEST</a></li>
                 <li><a href="#">SALE</a></li>

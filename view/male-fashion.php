@@ -104,8 +104,10 @@
               <input type="number" value="1" id="favoriteProduct-inc-quantity" class="favoriteProduct-inc-quantity" />
               <i class="fa-solid fa-plus" id="favoriteProduct-inc-plus"></i>
             </div>
-            <span class="favoriteProduct-price"> 199.000 ₫</span>
-            <div class="favoriteProduct-button">Thêm vào giỏ hàng</div>
+            <span class="favoriteProduct-price">199.000 ₫</span>
+            <form action="index.php?url=cart_shop" method="post">
+              <div class="favoriteProduct-button">Thêm vào giỏ hàng</div>
+            </form>
           </div>
         </div>
         <div class="favoriteProduct-close">
@@ -135,44 +137,48 @@
           </div>
         </a>
         <div class="favoriteProduct-details">
-          <a href="" class="favoriteProduct-link">Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop</a>
-          <div class="favoriteProduct-option">
-            <div class="favoriteProduct-choose">
-              <div class="favoriteProduct-choose-color">
-                Màu sắc
-                <i class="fa-solid fa-angle-down"></i>
-                <div class="favoriteProduct-choose-color-list">
-                  <span>
-                    <img src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg" alt="" />
-                    BLACK
-                  </span>
-                  <span>
-                    <img src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg" alt="" />
-                    WHITE
-                  </span>
-                  <span>
-                    <img src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg" alt="" />
-                    GRAY
-                  </span>
-                </div>
-              </div>
-              <div class="favoriteProduct-choose-size">
-                SIZE
-                <i class="fa-solid fa-angle-down"></i>
-                <div class="favoriteProduct-choose-size-list">
-                  <span>M</span>
-                  <span>L</span>
-                  <span>Xl</span>
-                </div>
-              </div>
-            </div>
-            <div class="favoriteProduct-inc">
-              <i class="fa-solid fa-minus" id="favoriteProduct-inc-minus"></i>
-              <input type="number" value="1" id="favoriteProduct-inc-quantity" class="favoriteProduct-inc-quantity" />
-              <i class="fa-solid fa-plus" id="favoriteProduct-inc-plus"></i>
-            </div>
-            <span class="favoriteProduct-price"> 199.000 ₫</span>
-            <div class="favoriteProduct-button">Thêm vào giỏ hàng</div>
+        <form action="cart_shop" method="post">
+  <a href="" class="favoriteProduct-link">Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop</a>
+  <div class="favoriteProduct-option">
+    <div class="favoriteProduct-choose">
+      <div class="favoriteProduct-choose-color">
+        Màu sắc
+        <i class="fa-solid fa-angle-down"></i>
+        <div class="favoriteProduct-choose-color-list">
+          <span>
+            <img src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg" alt="" />
+            BLACK
+          </span>
+          <span>
+            <img src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg" alt="" />
+            WHITE
+          </span>
+          <span>
+            <img src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg" alt="" />
+            GRAY
+          </span>
+        </div>
+      </div>
+      <div class="favoriteProduct-choose-size">
+        SIZE
+        <i class="fa-solid fa-angle-down"></i>
+        <div class="favoriteProduct-choose-size-list">
+          <span><input type="radio" name="size" value="M"> M</span>
+          <span><input type="radio" name="size" value="L"> L</span>
+          <span><input type="radio" name="size" value="XL"> XL</span>
+        </div>
+      </div>
+    </div>
+    <div class="favoriteProduct-inc">
+      <i class="fa-solid fa-minus" id="favoriteProduct-inc-minus"></i>
+      <input  name="quantity" type="number" value="1" id="favoriteProduct-inc-quantity" class="favoriteProduct-inc-quantity" />
+      <i class="fa-solid fa-plus" id="favoriteProduct-inc-plus"></i>
+    </div>
+    <span class="favoriteProduct-price"> 199.000 ₫</span>
+    <input name="cart_add" type="submit" value="Thêm vào giỏ hàng" class="favoriteProduct-button">
+    <input type="hidden" name="product_name" value="Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop">
+  </div>
+</form>
           </div>
         </div>
         <div class="favoriteProduct-close">

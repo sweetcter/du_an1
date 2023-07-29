@@ -1,7 +1,7 @@
 <?php
-    function insert_taikhoan($full_name,$username,$password,$email,$address,$phone,$role,$image_user){
-        $sql = "INSERT INTO user (full_name,username,password,email,) 
-        values('$full_name','$username','$password','$email')";
+    function insert_taikhoan($full_name,$username,$password,$email,$address,$phone){
+        $sql = "INSERT INTO user (full_name,username,password,email,address,phone) 
+        values('$full_name','$username','$password','$email','$address','$phone')";
         pdo_execute($sql);
     }
     function checkuser($username,$password){
@@ -28,21 +28,26 @@
         $tk=pdo_query_one($sql);
         return $tk;
     }
-    function update_taikhoan_home($id, $full_name, $username, $password, $email,$address, $phone, $image_user){
-        if($image_user >0){
-            $sql = "UPDATE user SET full_name= '" . $full_name . "' ,  username= '" . $username . "' , password='" . $password . "',address='" . $address . "',email='" . $email . "', phone= '" . $phone . "',image_user = '" . $image_user . "' where id=" . $id;
+    function update_taikhoan_home($full_name, $username, $password, $email,$address, $phone, $image_user, $id){
+        $sql = "UPDATE `user` SET `full_name` = '$full_name ', `username` = '$username', `password` = '$password', `email` = '$email', `address` = '$address', `phone` = '$phone', `image_user` = '$image_user' WHERE `id` = $id";
+           
             pdo_execute($sql);
-        } else{
-            $sql = "UPDATE user SET full_name= '" . $full_name . "' ,  username= '" . $username . "' ,password='" . $password . "',address='" . $address . "', email= '" . $email . "' , phone= '" . $phone . "'  where id=" . $id;
-            pdo_execute($sql);
-        }
+        
     }
     function update_taikhoan($id, $full_name, $username, $password, $email,$address, $phone, $role, $image_user){
         if($image_user >0){
-            $sql = "UPDATE user SET full_name= '" . $full_name . "' ,  username= '" . $username . "' , password='" . $password . "',address='" . $address . "',email='" . $email . "', phone= '" . $phone . "' , role= '" . $role . "',image_user = '" . $image_user . "' where id=" . $id;
+            $sql = "UPDATE user SET full_name= '" . $full_name . "' ,  username= '" . $username . "' , password='" . $password . "',address='" . $address . "',email='" . $email . "', phone= '" . $phone . "',image_user = '" . $image_user . "' where id=" . $id;
             pdo_execute($sql);
         } else{
             $sql = "UPDATE user SET full_name= '" . $full_name . "' ,  username= '" . $username . "' ,password='" . $password . "',address='" . $address . "', email= '" . $email . "' , phone= '" . $phone . "',role = '" . $role . "'  where id=" . $id;
             pdo_execute($sql);
         }
+    
+    }
+    function select_user_by_id(){
+        $sql = "select * from user where id = 1 ";
+        
+         return  pdo_query_one($sql);
+        
+        
     }

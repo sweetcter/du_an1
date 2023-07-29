@@ -126,9 +126,167 @@
       </div>
     </header>
     <div class="wrapper">
+<<<<<<< HEAD
       <main id="main-content">
         <div class="main-colums">
           <!-- block filter -->
+=======
+        <main id="main-content">
+          <div class="main-colums">
+            <!-- block filter -->
+  
+            <div class="filter-sidebar">
+              <div class="filter-block">
+                <div class="filter-category active">
+                  <ul>
+                    DANH MỤC
+                  </ul>
+                  <i class="fa-solid fa-chevron-down filter-dropdown"></i>
+                </div>
+                <div class="filter-list">
+            
+                </div>
+              </div>
+  
+            
+        </div>
+    </div>
+    <div class="container">
+      
+        <div class="colums row-col-2">
+        <?php if (isset($_SESSION['username']))
+                extract($_SESSION['username']);
+              
+            ?>
+            <div class="sidebar-main">
+                <div class="title_taikhoan">
+                    <i class="fa-regular fa-user header-content-user"></i>
+                    <span>Tài khoản của bạn</span>
+                </div>
+                <div class="nav_items">
+               
+           
+                  <div class="nav_title">
+                    <strong><?php if(isset($_SESSION['username'])) echo $_SESSION['username']['full_name'] ?></strong>
+                    <span>NEW</span>
+                  </div>
+                  <hr>
+                    <ul><br>
+                        <li class="nav_item"><a href="">Thông tin tài khoản</a></li><br>
+                        <li class="nav_item"><a href="">Địa chỉ giao hàng</a></li><br>
+                        <li class="nav_item"><a href="">Lịch sử mua hàng</a></li><br>
+                        <li class="nav_item"><a href="">Sản phẩm yêu thích</a></li><br>
+                        <br>    
+                        <hr>
+                        <br>
+                        <li class="nav_item"><a href="index.php?action=thoat">Đăng xuất</a></li>
+                        
+                    </ul>
+                    
+                </div>  
+                 
+            </div>
+    
+            <div class="colums_main">
+                  <div class="page-title">
+                    <h2>Thông tin tài khoản</h2>
+                    <span>Bạn có thể cập nhật thông tin của mình ở trang này</span>
+                  </div>
+                  <hr>
+                 <div class="account-information row-col-2">
+                    
+                        <div class="info">
+                            <h3>Thông tin đăng nhập</h3>
+                            <p>
+                                <span>Email:</span>
+                                <strong><?php if(isset($_SESSION['username'])) echo $_SESSION['username']['email'] ?></strong>
+                            </p>
+                            <p>
+                                <span>Phone:</span>
+                                <strong><?php if(isset($_SESSION['username'])) echo $_SESSION['username']['phone'] ?></strong>
+                            </p>
+                            
+                        </div>
+                        <form action="index.php?action=myaccount" method="POST" id="profile-form" enctype="multipart/form-data" >
+                        <div class="thkn">
+                            <h3>Thông tin cá nhân</h3>
+                            <div class="">
+                              <input type="hidden" name="id" value="<?= $id ?>">
+                            <div class="col-lg-6">
+                            <input type="hidden" name="image_user" value="<?= $image_user ?>">
+                            <p>Avatar <span>*</span></p>
+                                    <input type="file" id="Avata"  name="image_user" required>
+                                    
+                               </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Username <span>*</span></p>
+                                    <input type="text"  name="username" id="username" value="<?= $username ?> " placeholder="username" required >
+                                </div>
+                               </div>
+                              <div class="row-col-6">
+                                  
+                                  <div class="checkout__input"> 
+                                      <p>Họ và tên <span>*</span></p>
+                                      <input type="text" name="full_name" id="fullname" value="<?= $full_name ?>" placeholder="Họ và tên" required>
+                                  </div>
+                              </div>
+                              <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Email <span>*</span></p>
+                                    <input type="email" name="email" id="email" value="<?= $email ?>" placeholder="Your email" required>
+                                </div>
+                               </div>
+                              <div class="col-lg-6">
+                                  <div class="checkout__input">
+                                      <p>Số điện thoại <span>*</span></p>
+                                      <input type="tel" name="phone" value="<?= $phone ?>" id="Number" required>
+                                  </div>
+                              </div>
+                              <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Địa chỉ <span>*</span></p>
+                                    <input type="text" name="address" value="<?= $address ?>" id="address" required>
+                                </div>
+                               </div>
+                               <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Password <span>*</span></p>
+                                    <input type="password" name="password" id="password" value="<?= $password ?>" placeholder="Enter a password" required>
+                                </div>
+                               </div>
+                            </div>
+                            <style>
+                              .thkn a {
+                                text-decoration: none;
+                                color: white;
+ 
+                              }
+                            </style>
+                            <div class="submit">
+                              <!-- <input type="hidden" name="id" value=""> -->
+                            <input type="submit" name="thaydoi" id="updatetk" value="Lưu thay đổi" style="color: white;"  >
+                            </div>
+                             
+                            
+                            <!-- // if (isset($thongbao) && ($thongbao) != "") {
+                            //     echo $thongbao;
+                            // } -->
+                            
+                        </div>
+                        
+                        </form>
+                  </div>
+                
+                  
+            </div>
+          
+        </div>
+    </div>
+</body>
+</html>
+>>>>>>> 25dad7c73bf339ce4504fe39616a5a5efd9f6909
 
           <div class="filter-sidebar">
             <div class="filter-block">

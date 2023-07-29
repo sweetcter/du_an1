@@ -7,9 +7,16 @@ require ".$MODEL_URL/product.php";
 require ".$MODEL_URL/taikhoan.php";
 require ".$MODEL_URL/category.php";
 $listCategory=listCategory();
+function dd($data) {
+  echo '<pre>';
+  print_r($data);
+  echo '</pre>';
+  die;
+}
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
-// echo $action;
+echo $action;
+// die;
 switch ($action) {
   case 'index';
     require ".$VIEW_URL/main.php";
@@ -17,11 +24,11 @@ switch ($action) {
   case 'male-fashion':
     require ".$VIEW_URL/male-fashion.php";
     break;
-  case 'female-fashion':
+  case 'female-fashion':  
     require ".$VIEW_URL/female-fashion.php";
     break;
   case 'admin':
-    require "../<?= $ROOTt_URL?>/admin/index.php";
+    header('admin/index.php');
     break;
   case "admin/female-fashion";
     require ".$VIEW_URL/female-fashion.php";
@@ -74,9 +81,9 @@ switch ($action) {
       $password = $_POST['password'];
       $email = $_POST['email'];
       $phone = $_POST['phone'];
-      $full_name = $_POST['full_name'];
+      $address = $_POST['address'];
       $image_user = $_FILES['image_user']['name'];
-      $target_dir = "../uploads/";
+      $target_dir = ".$ASSET_URL";
       $target_file = $target_dir . basename($_FILES["image_user"]["name"]);
 
       if (move_uploaded_file($_FILES["image_user"]["tmp_name"], $target_file)) {
@@ -85,11 +92,12 @@ switch ($action) {
         // echo "Sorry, there was an error uploading your file.";
       }
 
-      update_taikhoan_home($id, $full_name, $username, $password, $email, $address, $phone, $image_user);
+      update_taikhoan_home($full_name, $username, $password, $email, $address, $phone, $image_user, $id);
       $_SESSION['username'] = checkuser($username, $password);
       echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';
-      header('location: index.php?act=myaccount');
-      $thongbao = "Bạn đã cập nhật thông tin thành công";
+      // header('location: index.php?act=myaccount');
+      // include "./view/myaccount.php";
+      // $thongbao = "Bạn đã cập nhật thông tin thành công";
     }
     $listtaikhoan = loadall_taikhoan();
     require ".$VIEW_URL/myaccount.php";
@@ -121,12 +129,8 @@ switch ($action) {
         header('location: index.php?act=myaccount');
         $thongbao = "Bạn đã cập nhật thông tin thành công";
       }
-      $listtaikhoan = loadall_taikhoan();
-      require ".$VIEW_URL/myaccount.php";
+      require ".$VIEW_URL/oder.php";
       break;
-  
-    
-    
   case 'thoat':
     session_unset();
     header('Location: index.php');
