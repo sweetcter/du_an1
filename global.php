@@ -8,4 +8,5 @@
     $SRC_URL = "/src";
     $INCLUDES_URL = "/includes";
     $PRODUCT_URL = '/product';
+    $BANNER_URL = '/banner';
 

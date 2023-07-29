@@ -138,6 +138,9 @@
 
     <div class="main">
         <div class="main-content dashboard">
+            <a href="./index.php?act=view_banner" class="mb-4">
+                 <button class="btn btn-primary">Dach sach</button>
+            </a>
             <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> "><?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?></span>
             <form action="..<?= $ADMIN_URL . $BANNER_URL; ?>/progess_add_banner.php" method="post" enctype="multipart/form-data">
                 <div class="form-group mb-3">

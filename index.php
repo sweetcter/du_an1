@@ -7,17 +7,15 @@ require ".$MODEL_URL/product.php";
 require ".$MODEL_URL/banner.php";
 require ".$MODEL_URL/taikhoan.php";
 require ".$MODEL_URL/category.php";
-$listCategory=listCategory();
-function dd($data) {
-  echo '<pre>';
-  print_r($data);
-  echo '</pre>';
-  die;
-}
+// $listCategory=listCategory();
+// function dd($data) {
+//   echo '<pre>';
+//   print_r($data);
+//   echo '</pre>';
+//   die;
+// }
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
-echo $action;
-// die;
 switch ($action) {
   case 'index';
     require ".$VIEW_URL/main.php";

@@ -157,7 +157,6 @@
          
             <th>Sửa</th>
             <th>Xóa</th>
-            <th>Thêm</th>
           
           </tr>
           <?php $banner_result = selectAll_banner(false); ?>
