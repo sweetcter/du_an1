@@ -4,6 +4,7 @@ ob_start();
 require "./global.php";
 require ".$MODEL_URL/pdo.php";
 require ".$MODEL_URL/product.php";
+require ".$MODEL_URL/banner.php";
 require ".$MODEL_URL/taikhoan.php";
 require ".$MODEL_URL/category.php";
 $listCategory=listCategory();
