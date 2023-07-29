@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protend - Project Management Admin Dashboard HTML Template</title>
-    <link rel="shortcut icon" href="../src/admin/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="../../du_an1/../du_an1/src/admin/images/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
         rel="stylesheet">
     <link href='../../../unpkg.com/boxicons%402.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../src/admin/libs/owl.carousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="../src/admin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../src/admin/css/grid.css">
-    <link rel="stylesheet" href="../src/admin/css/style1.css">
-    <link rel="stylesheet" href="../src/admin/css/responsive.css">
+    <link rel="stylesheet" href="../../du_an1/../du_an1/src/admin/libs/owl.carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../du_an1/../du_an1/src/admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../du_an1/../du_an1/src/admin/css/grid.css">
+    <link rel="stylesheet" href="../../du_an1/../du_an1/src/admin/css/style1.css">
+    <link rel="stylesheet" href="../../du_an1/../du_an1/src/admin/css/responsive.css">
 </head>
 <body class="sidebar-expand">
     
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./list-sanpham.html">
+                    <a href="./index.php?action=view_product">
                         <i class='bx bxs-user'></i>
                         <span>Sản phẩm</span>
                     </a>
@@ -119,7 +119,7 @@
     </div>
         <div class="dropdown d-inline-block mt-12">
             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-circle header-profile-user"  src="../src/admin/images/avatar/avt-1.png" alt="Header Avatar">
+                <img class="rounded-circle header-profile-user"  src="../../du_an1/src/admin/images/avatar/avt-1.png" alt="Header Avatar">
                 <span class="pulse-css"></span>
                 <span class="info d-xl-inline-block  color-span">
                     
@@ -209,20 +209,20 @@
 
 
 <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="../src/admin/libs/jquery/jquery.min.js"></script>
-<script src="../src/admin/libs/moment/min/moment.min.js"></script>
-<script src="../src/admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../src/admin/libs/peity/jquery.peity.min.js"></script>
-<script src="../src/admin/libs/chart.js/Chart.bundle.min.js"></script>
-<script src="../src/admin/libs/owl.carousel/owl.carousel.min.js"></script>
-<script src="../src/admin/libs/bootstrap/js/bootstrap.min.js"></script>
-<script src="../src/admin/libs/apexcharts/apexcharts.js"></script>
-<script src="../src/admin/libs/simplebar/simplebar.min.js"></script>
+<script src="../../du_an1/src/admin/libs/jquery/jquery.min.js"></script>
+<script src="../../du_an1/src/admin/libs/moment/min/moment.min.js"></script>
+<script src="../../du_an1/src/admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../du_an1/src/admin/libs/peity/jquery.peity.min.js"></script>
+<script src="../../du_an1/src/admin/libs/chart.js/Chart.bundle.min.js"></script>
+<script src="../../du_an1/src/admin/libs/owl.carousel/owl.carousel.min.js"></script>
+<script src="../../du_an1/src/admin/libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../du_an1/src/admin/libs/apexcharts/apexcharts.js"></script>
+<script src="../../du_an1/src/admin/libs/simplebar/simplebar.min.js"></script>
 
-<script src="../src/admin/js/main.js"></script>
-<script src="../src/admin/js/dashboard.js"></script>
-<script src="../src/admin/js/shortcode.js"></script>
-<script src="../src/admin/js/pages/dashboard.js"></script>
+<script src="../../du_an1/src/admin/js/main.js"></script>
+<script src="../../du_an1/src/admin/js/dashboard.js"></script>
+<script src="../../du_an1/src/admin/js/shortcode.js"></script>
+<script src="../../du_an1/src/admin/js/pages/dashboard.js"></script>
 </body>
 
 <!-- Mirrored from themesflat.com/html/protend/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Nov 2022 08:41:46 GMT -->

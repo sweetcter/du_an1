@@ -22,7 +22,7 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css"
     />
-    <link rel="stylesheet" href="../asset/css/jqueryUI.css" />
+    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/sset/css/jqueryUI.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/base.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/grid.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/style.css" />
+    
   </head>
 
   <body>

@@ -142,7 +142,7 @@
   <!--   Phần content -->
   <div class="main">
     <div class="main-content dashboard">
-      <a href="./index.php?action=add_product" class="mb-4">
+      <a href="./index.php?act=add_product" class="mb-4">
         <button class="btn btn-primary">Thêm</button>
       </a>
       <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> ">
