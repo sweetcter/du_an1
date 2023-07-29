@@ -103,7 +103,9 @@
             <a href=""><span class="quenmk" id="openQuen">Quên mật khẩu?</span></a>
           </div>
           <br />
-          <button type="submit" name="login" id="submit-btn">Đăng nhập</button>
+          <button type="submit" name="login" id="submit-btn">Đăng nhập <style>
+            
+          </style></button>
           <br />
           <div class="dangky">
             <span>Bạn chưa có tài khoản?</span>
@@ -152,9 +154,17 @@
           <li><a href="#">TIN THỜI TRANG</a></li>
         </ul>
         <ul class="header-menu-bottom">
+      
           <i class="fa-regular fa-user header-menu-icon-user"></i>
+          
           <li id="open-modal-btn">ĐĂNG NHẬP</li>
           <li id="register-button">ĐĂNG KÝ</li>
+          <?php if (isset($_SESSION['username']) && $_SESSION['username']['role'] == 1) : ?>
+           
+                    
+                    <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;"  href="../../du_an1/admin/index.php">ADMIN</a> </li>
+                   
+                <?php endif ?>
         </ul>
       </div>
       <!-- Hidden when scoll -->
@@ -1669,3 +1679,4 @@
   </body>
   
 </html>
+                          
