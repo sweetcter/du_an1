@@ -158,7 +158,7 @@
             <div class="row1_left flexx">
               <div class="logo">
                 <img
-                  src="../<?= $ROOTt_URL?>/asset/images/logo.png"
+                  src="../<?= $ROOT_URL?>/asset/images/logo.png"
                   style="width: 118px; height: 33px"
                   alt="logo tiki"
                 />
@@ -169,8 +169,8 @@
           <div class="header_row2">
             <div class="danhmuc">
               <ul class="flexx">
-                <li><a href="<?= $ROOTt_URL?>/male-fashion">NAM</a></li>
-                <li><a href="<?= $ROOTt_URL?>/female-fashion">NỮ</a></li>
+                <li><a href="./index.php?action=male-fashion">NAM</a></li>
+                <li><a href="./index.php?action=female-fashion">NỮ</a></li>
                 <li><a href="#">NEW</a></li>
                 <li><a href="#">BEST</a></li>
                 <li><a href="#">SALE</a></li>

@@ -17,6 +17,9 @@ switch ($act) {
     case 'view_product':
         require ".$PRODUCT_URL/productList.php";
         break;
+    case 'update_product':
+        require ".$PRODUCT_URL/update_product.php";
+        break;
     case 'add-Category':
 
         if ((isset($_POST['addCategory'])) && ($_POST['addCategory'])) {
@@ -25,12 +28,6 @@ switch ($act) {
             $thongbao = "add thanh cong";
         }
         include "./categories/add-danhmuc.php";
-    case 'update_product':
-        require ".$PRODUCT_URL/update_product.php";
-        break;
-    case 'delete_product':
-        require ".$PRODUCT_URL/delete_product.php";
-        break;
     case "listCategory":
         $list = listCategory();
         include "./categories/list-danhmuc.php";

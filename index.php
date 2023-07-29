@@ -32,7 +32,7 @@ switch ($action) {
       $username = $_POST['username'];
       $password = $_POST['password'];
       $email = $_POST['email'];
-      insert_taikhoan($full_name, $username, $password, $email);
+      // insert_taikhoan($full_name, $username, $password, $email);
       echo '<script>alert("Bạn đã đăng ký thành công")</script>';
     }
     require ".$VIEW_URL/female-fashion.php";
@@ -114,7 +114,7 @@ switch ($action) {
         } else {
           // echo "Sorry, there was an error uploading your file.";
         }
-  
+        
         update_taikhoan_home($id, $full_name, $username, $password, $email, $address, $phone, $image_user);
         $_SESSION['username'] = checkuser($username, $password);
         echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Protend - Project Management Admin Dashboard HTML Template</title>
+    <title>Routine</title>
     <link rel="shortcut icon" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/images/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet" />
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./list-sanpham.html">
+                    <a href="./index.php?act=view_product">
                         <i class="bx bxs-user"></i>
                         <span>Sản phẩm</span>
                     </a>
@@ -153,35 +153,60 @@
                     <input type="number" class="form-control" name="product_discount" id="product_discount" required>
                 </div>
                 <div class="form-group mb-3">
+                    <label for="product_size">Kích cỡ</label>
+                    <select name="product_size" id="product_size" class="form-control">
+                        <option value="1">M</option>
+                    </select>
+                </div>
+                <div class="form-group mb-3">
                     <label for="product_quantity">Số lượng</label>
                     <input type="number" class="form-control" name="product_quantity" id="product_quantity" required>
                 </div>
-                
+                <div class="form-group mb-3">
+                    <label for="product_code">Mã sản phẩm</label>
+                    <input type="text" class="form-control" name="product_code" id="product_code" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="product_color_name">Tên màu</label>
+                    <input type="text" class="form-control" name="product_color_name" id="product_color_name" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="product_color">Màu sắc</label>
+                    <input type="text" name="product_color" id="product_color" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="product_color_image">Ảnh Màu</label>
+                    <input type="file" class="form-control" name="product_color_image" id="product_color_image" required>
+                </div>
                 <div class="form-group mb-3">
                     <label for="product_main_image">Ảnh chính</label>
-                    <input type="file" class="form-control" name="product_main_image" id="product_main_image" multiple>
+                    <input type="file" class="form-control" name="product_main_image" id="product_main_image" >
                 </div>
                 <div class="form-group mb-3">
                     <label for="product_hover_main_image">Ảnh phụ</label>
-                    <input type="file" class="form-control" name="product_hover_main_image" id="product_hover_main_image" multiple>
+                    <input type="file" class="form-control" name="product_hover_main_image" id="product_hover_main_image">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="product_main_image">Chi tiết ảnh sản phẩm</label>
+                    <input type="file" class="form-control" name="product_detail_image[]" id="product_detail_image" multiple>
                 </div>
                 <div class="form-group mb-3">
                     <label for="product_desc">Mô tả</label>
                     <textarea type="text" class="form-control" rows="6" name="product_desc" id="product_desc" required></textarea>
                 </div>
                 <div class="form-group mb-3">
-                    <label for="import_date">Số lượng</label>
+                    <label for="import_date">Ngày nhập</label>
                     <input type="date" class="form-control" name="import_date" id="import_date" required>
                 </div>
                 <div class="form-group mb-3">
-                    <label for="product_cat_id">Tên sản phẩm</label>
+                    <label for="product_cat_id">Loại sản phẩm</label>
                     <!-- Select product caregory id -->
                     <select name="product_cat_id" id="product_cat_id" class="form-control">
                         <option value="1">Áo nam</option>
                     </select>
                 </div>
                 <div class="mt-3">
-                    <button type="submit" name='addProduct'  class="btn btn-success">Thêm</button>
+                    <button type="submit" name='addProduct' class="btn btn-success">Thêm</button>
                     <button type="reset" class="btn btn-warning">Nhập lại</button>
                 </div>
             </form>
