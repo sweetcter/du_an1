@@ -16,10 +16,11 @@ function dd($data) {
 }
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
-echo $action;
+// echo $action;
 // die;
 switch ($action) {
   case 'index';
+    $dsBanner = selectAll_banner();
     require ".$VIEW_URL/main.php";
     break;
   case 'male-fashion':
@@ -29,7 +30,8 @@ switch ($action) {
     require ".$VIEW_URL/female-fashion.php";
     break;
   case 'admin':
-    header('admin/index.php');
+    // header('admin/index.php');
+    require "../<?= $ROOTt_URL?>/admin/index.php";
     break;
   case "admin/female-fashion";
     require ".$VIEW_URL/female-fashion.php";
@@ -40,7 +42,9 @@ switch ($action) {
       $username = $_POST['username'];
       $password = $_POST['password'];
       $email = $_POST['email'];
-      // insert_taikhoan($full_name, $username, $password, $email);
+      $phone = $_POST['phone'];
+      $address = $_POST['address'];
+      insert_taikhoan($full_name, $username, $password, $email,$address,$phone);
       echo '<script>alert("Bạn đã đăng ký thành công")</script>';
     }
     require ".$VIEW_URL/female-fashion.php";
@@ -63,15 +67,21 @@ switch ($action) {
     require ".$VIEW_URL/female-fashion.php";
     break;
   case 'quenmk':
-    if (isset($_POST['btnsubmit']) && ($_POST['btnsubmit'] > 0)) {
+    if (isset($_POST['btnsubmit'])) {
       $email  = $_POST['email'];
       $checkemail = checkemail($email);
       if (is_array($checkemail)) {
-        $thongbao = "Mật khẩu của bạn là:" . $checkemail['password'];
-      } else {
+        echo "<script>
+        alert('Mật khẩu của bạn là:"
+        .$checkemail['password'].
+        "');
+        </script>";
+
+      }else{
         echo '<script>alert("Email không khớp với email đã đăng ký!")</script>';
       }
     }
+  
     include "./view/female-fashion.php";
     break;
   case 'myaccount':

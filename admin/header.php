@@ -63,6 +63,12 @@
             </a>
           </li>
           <li>
+            <a href="<?= $ROOT_URL?>/admin/add_banner">
+              <i class="bx bxs-bolt"></i>
+              <span>banner</span>
+            </a>
+          </li>
+          <li>
             <a href="index.php?act=view_product">
               <i class="bx bxs-user"></i>
               <span>Sản phẩm</span>

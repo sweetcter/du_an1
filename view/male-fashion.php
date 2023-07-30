@@ -30,21 +30,7 @@
           <button  type="submit" class="buttonregister">Register</button>
         </form>
       </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email1" name="email" required />
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-      </div>
-      <div class="form-group">
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required />
-      </div>
-      <button type="submit" class="buttonregister">Register</button>
-    </form>
-  </div>
+      
 </div>
 <!-- end sign-up -->
 <!--  favoriteProduct-->

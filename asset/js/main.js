@@ -124,9 +124,18 @@ closeBtn.addEventListener("click", () => {
   overlay.style.display = `none`;
 });
 
+
+
+
 let openRegister = document.getElementById("register-button");
+
+let open_icon_re = document.getElementById("icon_re")
+
+let quenpass = document.getElementById("quenpass");
 let signUp = document.getElementById("register-modal");
+let quen = document.getElementById("quen-modal");
 let closeButton = document.getElementById("close-button");
+let close_quen = document.getElementById("close_quen");
 
 openRegister.onclick = function () {
   let menuSidebar = document.querySelector(".header-menu-sidebar");
@@ -135,12 +144,38 @@ openRegister.onclick = function () {
   menuSidebar.style.transform = `translateX(-100%)`;
   menuSidebar.style.opacity = `1`;
 };
+
+open_icon_re.onclick = function () {
+  let menuSidebar = document.querySelector(".header-menu-sidebar");
+  signUp.style.top = "0";
+  signUp.style.opacity = "1";
+  menuSidebar.style.transform = `translateX(-100%)`;
+  menuSidebar.style.opacity = `1`;
+};
+
+quenpass.onclick = function () {
+  let menuSidebar = document.querySelector(".header-menu-sidebar");
+  quen.style.top = "0";
+  quen.style.opacity = "1";
+  menuSidebar.style.transform = `translateX(-100%)`;
+  menuSidebar.style.opacity = `1`;
+};
+
+
 // close register
 let closeRegister = document.querySelector("#close-button");
 closeRegister.onclick = function () {
   hiddenOverlay();
   signUp.style.top = "-150%";
   signUp.style.opacity = "0";
+};
+// end close register
+// close register
+// let closequen = document.querySelector("#close-quen");
+close_quen.onclick = function () {
+  hiddenOverlay();
+  quen.style.top = "-150%";
+  quen.style.opacity = 0;
 };
 // end close register
 

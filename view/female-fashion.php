@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,19 +23,17 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css"
     />
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>//css/jqueryUI.css" />
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/jqueryUI.css" />
+    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/sset/css/jqueryUI.css" />
     <link
       rel="stylesheet"
       type="text/css"
       href="../<?= $ROOTt_URL?>/asset/slick-master/slick/slick.css"
     />
-  
-
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/slick.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/base.css" />
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/grid.css" />
+    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/grid.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/style.css" />
+    
   </head>
 
   <body>
@@ -71,20 +70,21 @@
           </div>
                   
           <button type="submit" class="button" name="dangky" >Đăng ký</button>
-           <?php 
-                                    if(isset($thongbao)&&($thongbao)!=""){
-                                        echo $thongbao ; } ?> 
+ 
         </form>
       </div>
     </div>
     <div id="quen-modal" class="modal">
+
       <div class="modal-content">
-        <span class="close-quen">&times;</span>
+        <span class='close'  id='close_quen'>&times;</span>
         <h2>Quên mật khẩu</h2>
-        <form id="forgotPasswordForm">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          <button type="submit">Gửi</button>
+        <form id="forgotPasswordForm" method='post' action='index.php?action=quenmk'>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" name="email" id="email" placeholder="Your email" required>
+            </div>
+          <button type="submit" name='btnsubmit'>Gửi</button>
         </form>
       </div>
     </div>
@@ -100,7 +100,7 @@
           <div class="form-group">
             <label for="password">Mật khẩu:</label>
             <input type="password" id="password3" name="password" required />
-            <a href=""><span class="quenmk" id="openQuen">Quên mật khẩu?</span></a>
+            <a href=""><span class="quenmk" >Quên mật khẩu?</span></a>
           </div>
           <br />
           <button type="submit" name="login" id="submit-btn">Đăng nhập <style>
@@ -108,8 +108,8 @@
           </style></button>
           <br />
           <div class="dangky">
-            <span>Bạn chưa có tài khoản?</span>
-            <a href="/register.html">Đăng ký thành viên</a>
+            <span >Bạn chưa có tài khoản?</span>
+            <a  href="">Đăng ký thành viên</a>
           </div>
         </form>
         <p id="message"></p>
@@ -159,6 +159,7 @@
           
           <li id="open-modal-btn">ĐĂNG NHẬP</li>
           <li id="register-button">ĐĂNG KÝ</li>
+          <li id="quenpass">QUEN MK</li>
           <?php if (isset($_SESSION['username']) && $_SESSION['username']['role'] == 1) : ?>
            
                     
@@ -226,7 +227,7 @@
         </div>
         <div class="header-content-tool">
           <div>
-            <i class="fa-regular fa-user header-content-user"></i>
+            <i id='icon_re' class="fa-regular fa-user header-content-user"></i>
           </div>
           <div>
             <i class="fa-regular fa-heart header-content-heart"></i>
@@ -927,7 +928,7 @@
               <!-- end item -->
             </div>
 
-            <ul class="home-pagination">
+            <!-- <ul class="home-pagination">
               <li class="home-pagination-item home-pagination-disable">
                 <a href="#" class="home-pagination-link">
                   <i class="fa-solid fa-angle-left home-pagination-icon"></i>
@@ -961,7 +962,7 @@
                   <i class="fa-solid fa-angles-right home-pagination-icon"></i>
                 </a>
               </li>
-            </ul>
+            </ul> -->
           </div>
         </div>
       </main>
