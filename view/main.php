@@ -130,6 +130,8 @@
     <div class="x font">
       <div class="showimg">
         <div class="slideshow-container">
+
+        <!-- --------- Xử Li Banner--------- -->
           <?php
                   $dsBanner = selectAll_banner();
                   foreach ($dsBanner as $bn) {

@@ -14,7 +14,7 @@ switch ($act) {
         break;
 
      // ---------------Xử lí Banner-------------------    
-     case 'add_banner':
+    case 'add_banner':
         require ".$BANNER_URL/add_banner.php";
         break;
     case 'view_banner':
