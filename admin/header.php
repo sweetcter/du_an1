@@ -99,6 +99,12 @@
             </a>
           </li>
           <li>
+            <a href="index.php?act=view_banner">
+              <i class="bx bxs-user"></i>
+              <span>Banner</span>
+            </a>
+          </li>
+          <li>
             <a href="./list-thongke.html">
               <i class="bx bxs-component"></i>
               <span>Thống kê</span>

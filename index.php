@@ -4,8 +4,9 @@ ob_start();
 require "./global.php";
 require ".$MODEL_URL/pdo.php";
 require ".$MODEL_URL/product.php";
+require ".$MODEL_URL/banner.php";
 require ".$MODEL_URL/taikhoan.php";
-// require ".$MODEL_URL/category.php";
+require ".$MODEL_URL/category.php";
 // $listCategory=listCategory();
 // function dd($data) {
 //   echo '<pre>';
@@ -15,8 +16,6 @@ require ".$MODEL_URL/taikhoan.php";
 // }
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
-echo $action;
-// die;
 switch ($action) {
   case 'index';
     require ".$VIEW_URL/main.php";

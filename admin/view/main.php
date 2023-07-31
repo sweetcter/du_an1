@@ -44,13 +44,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./list-danhmuc.html">
-                        <i class='bx bxs-bolt'></i>
-                        <span>Danh mục</span>
+                    <a href="<?= $ROOT_URL?>/admin/add-Category">
+                    <i class="bx bxs-bolt"></i>
+                    <span>Danh mục</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./index.php?action=view_product">
+                    <a href="./index.php?act=view_product">
                         <i class='bx bxs-user'></i>
                         <span>Sản phẩm</span>
                     </a>
@@ -74,8 +74,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./banner/banner.php">
-                        <i class='bx bxs-dashboard'></i>
+                    <a href="./index.php?act=view_banner">
+                        <i class='bx bxs-user'></i>
                         <span>Banner</span>
                     </a>
                 </li>
