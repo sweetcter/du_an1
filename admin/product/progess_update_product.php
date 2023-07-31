@@ -43,6 +43,7 @@ if ($product_second_image['size'] > 0) {
 } else {
     $save_second_img = $product_old_second_image;
 }
+
 product_update($product_name, $product_price, $save_main_img, $save_second_img, $product_quantity, $product_discount, $product_desc, $product_cat_id, $product_id);
 header("location: ../index.php?act=update_product&product_id=" . $product_id);
 setcookie('notification', "Cập nhật thành công", time() + 1, "/");

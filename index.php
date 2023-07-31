@@ -5,14 +5,14 @@ require "./global.php";
 require ".$MODEL_URL/pdo.php";
 require ".$MODEL_URL/product.php";
 require ".$MODEL_URL/taikhoan.php";
-require ".$MODEL_URL/category.php";
-$listCategory=listCategory();
-function dd($data) {
-  echo '<pre>';
-  print_r($data);
-  echo '</pre>';
-  die;
-}
+// require ".$MODEL_URL/category.php";
+// $listCategory=listCategory();
+// function dd($data) {
+//   echo '<pre>';
+//   print_r($data);
+//   echo '</pre>';
+//   die;
+// }
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 echo $action;

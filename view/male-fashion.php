@@ -1,34 +1,14 @@
 <?php require "./includes/header.php" ?>
-    <!-- sign up -->
-    <div id="register-modal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content1">
-        <span id="close-button" class="close">&times;</span>
-        <h2>Register</h2>
-        <form id="register-form">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name1" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email1" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-          <div class="form-group">
-            <label for="confirm-password">Confirm Password:</label>
-            <input
-              type="password"
-              id="confirm-password"
-              name="confirm-password"
-              required
-            />
-          </div>
-          <button  type="submit" class="buttonregister">Register</button>
-        </form>
+<!-- sign up -->
+<div id="register-modal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content1">
+    <span id="close-button" class="close">&times;</span>
+    <h2>Register</h2>
+    <form id="register-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name1" name="name" required />
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
@@ -45,6 +25,21 @@
       <button type="submit" class="buttonregister">Register</button>
     </form>
   </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email1" name="email" required />
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+  </div>
+  <div class="form-group">
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" id="confirm-password" name="confirm-password" required />
+  </div>
+  <button type="submit" class="buttonregister">Register</button>
+  </form>
+</div>
 </div>
 <!-- end sign-up -->
 <!--  favoriteProduct-->
@@ -61,10 +56,10 @@
       <div class="favoriteProduct-info">
         <a href="#" class="favoriteProduct-img">
           <div class="favoriteProduct-img-first">
-            <img src="../<?= $ROOTt_URL?>/asset/images/product1.jpg" alt="" />
+            <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" />
           </div>
           <div class="favoriteProduct-second-img">
-            <img src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg" alt="" />
+            <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
           </div>
         </a>
         <div class="favoriteProduct-details">
@@ -76,15 +71,15 @@
                 <i class="fa-solid fa-angle-down"></i>
                 <div class="favoriteProduct-choose-color-list">
                   <span>
-                    <img src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg" alt="" />
+                    <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
                     BLACK
                   </span>
                   <span>
-                    <img src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg" alt="" />
+                    <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" />
                     WHITE
                   </span>
                   <span>
-                    <img src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg" alt="" />
+                    <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" />
                     GRAY
                   </span>
                 </div>
@@ -133,60 +128,60 @@
       <div class="favoriteProduct-info">
         <a href="#" class="favoriteProduct-img">
           <div class="favoriteProduct-img-first">
-            <img src="../<?= $ROOTt_URL?>/asset/images/product1.jpg" alt="" />
+            <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" />
           </div>
         </a>
         <div class="favoriteProduct-details">
-        <form action="cart_shop" method="post">
-  <a href="" class="favoriteProduct-link">Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop</a>
-  <div class="favoriteProduct-option">
-    <div class="favoriteProduct-choose">
-      <div class="favoriteProduct-choose-color">
-        Màu sắc
-        <i class="fa-solid fa-angle-down"></i>
-        <div class="favoriteProduct-choose-color-list">
-          <span>
-            <img src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg" alt="" />
-            BLACK
-          </span>
-          <span>
-            <img src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg" alt="" />
-            WHITE
-          </span>
-          <span>
-            <img src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg" alt="" />
-            GRAY
-          </span>
+          <form action="cart_shop" method="post">
+            <a href="" class="favoriteProduct-link">Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop</a>
+            <div class="favoriteProduct-option">
+              <div class="favoriteProduct-choose">
+                <div class="favoriteProduct-choose-color">
+                  Màu sắc
+                  <i class="fa-solid fa-angle-down"></i>
+                  <div class="favoriteProduct-choose-color-list">
+                    <span>
+                      <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
+                      BLACK
+                    </span>
+                    <span>
+                      <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" />
+                      WHITE
+                    </span>
+                    <span>
+                      <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" />
+                      GRAY
+                    </span>
+                  </div>
+                </div>
+                <div class="favoriteProduct-choose-size">
+                  SIZE
+                  <i class="fa-solid fa-angle-down"></i>
+                  <div class="favoriteProduct-choose-size-list">
+                    <span><input type="radio" name="size" value="M"> M</span>
+                    <span><input type="radio" name="size" value="L"> L</span>
+                    <span><input type="radio" name="size" value="XL"> XL</span>
+                  </div>
+                </div>
+              </div>
+              <div class="favoriteProduct-inc">
+                <i class="fa-solid fa-minus" id="favoriteProduct-inc-minus"></i>
+                <input name="quantity" type="number" value="1" id="favoriteProduct-inc-quantity" class="favoriteProduct-inc-quantity" />
+                <i class="fa-solid fa-plus" id="favoriteProduct-inc-plus"></i>
+              </div>
+              <span class="favoriteProduct-price"> 199.000 ₫</span>
+              <input name="cart_add" type="submit" value="Thêm vào giỏ hàng" class="favoriteProduct-button">
+              <input type="hidden" name="product_name" value="Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop">
+            </div>
+          </form>
         </div>
       </div>
-      <div class="favoriteProduct-choose-size">
-        SIZE
-        <i class="fa-solid fa-angle-down"></i>
-        <div class="favoriteProduct-choose-size-list">
-          <span><input type="radio" name="size" value="M"> M</span>
-          <span><input type="radio" name="size" value="L"> L</span>
-          <span><input type="radio" name="size" value="XL"> XL</span>
-        </div>
+      <div class="favoriteProduct-close">
+        <i class="fa-solid fa-xmark"></i>
       </div>
     </div>
-    <div class="favoriteProduct-inc">
-      <i class="fa-solid fa-minus" id="favoriteProduct-inc-minus"></i>
-      <input  name="quantity" type="number" value="1" id="favoriteProduct-inc-quantity" class="favoriteProduct-inc-quantity" />
-      <i class="fa-solid fa-plus" id="favoriteProduct-inc-plus"></i>
-    </div>
-    <span class="favoriteProduct-price"> 199.000 ₫</span>
-    <input name="cart_add" type="submit" value="Thêm vào giỏ hàng" class="favoriteProduct-button">
-    <input type="hidden" name="product_name" value="Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop">
   </div>
-</form>
-          </div>
-        </div>
-        <div class="favoriteProduct-close">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
 </div>
 <!-- End -->
 <!-- sign in -->
@@ -261,12 +256,12 @@
   </div>
   <!-- Hidden when scoll -->
   <div class="header-bar">
-    <img src="../<?= $ROOTt_URL?>/asset/images/menu.png" alt="" class="header-menu-bar" />
+    <img src="../<?= $ROOT_URL ?>/asset/images/menu.png" alt="" class="header-menu-bar" />
   </div>
   <div class="overlay"></div>
   <div class="header-logo">
     <a href="./index.html">
-      <img src="../<?= $ROOTt_URL?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
+      <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
     </a>
   </div>
   <!-- end -->
@@ -274,7 +269,7 @@
   <ul class="header-nav">
     <div class="header-second-logo">
       <a href="./index.html">
-        <img src="../<?= $ROOTt_URL?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
+        <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
       </a>
     </div>
     <li class="header-nav-item">
@@ -515,25 +510,25 @@
               <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
               </label>
               <a href="#">Đen</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOTt_URL?>/asset/images/black.png')"></div>
+              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/black.png')"></div>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
               <a href="#">Trắng</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOTt_URL?>/asset/images/white.png')"></div>
+              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/white.png')"></div>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
               <a href="#">Be</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOTt_URL?>/asset/images/be.png')"></div>
+              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/be.png')"></div>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
               <a href="#">Xám bạc</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOTt_URL?>/asset/images/xam_bac.png')"></div>
+              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/xam_bac.png')"></div>
             </li>
           </div>
         </div>
@@ -560,200 +555,53 @@
 
       <div class="product-colum">
         <div class="product-row row-col-4">
+          <?php $product_result = select_home_product(true); ?>
+          <?php foreach($product_result as $value): ?>
           <!-- start item -->
-
           <div class="product-item">
             <a href="#" class="product-image-item">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
+              <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
+              <img src="../<?= $ROOT_URL ?><?= $value['hover_main_image_url'] ?>" alt="" class="product-image-second" />
             </a>
             <div class="product-title">
               <a href="#" class="product-name">
-                Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
+              <?= $value['product_name'] ?>
               </a>
               <i class="fa-regular fa-heart product-icon"></i>
             </div>
             <div class="product-price">
-              <span class="product-newPrice">441.000₫</span>
+              <!-- format tiền tệ việt nam -->
+              <?php 
+              $locale = 'vi_VN';
+              $currency = $value['product_price'];
+              $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY); 
+              $product_vn_price = $formatter->format($currency);
+              ?>
+              <span class="product-newPrice"><?= $product_vn_price ?></span>
               <span class="product-oldPrice">499.000₫</span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
             </span>
             <span class="product-discount"> -2% </span>
-
+            <!-- Select color by product -->
+            <?php $product_color_result = select_product_color($value['product_code']); ?>
             <div class="product-color-list">
+              <?php foreach($product_color_result as $value): ?>
               <div class="product-color">
                 <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+                  <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img"  />
                 </div>
                 <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
+                  <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img-hover" />
+                  <span class="product-color-name"> <?= $value['color_name'] ?> </span>
                 </div>
               </div>
-
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/product1_con1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/product1_con1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/product1_con.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/product1_con.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
+              <?php endforeach ?>
             </div>
           </div>
           <!-- end item -->
-          <!-- start item -->
-
-          <div class="product-item">
-            <a href="#" class="product-image-item">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-            </a>
-            <div class="product-title">
-              <a href="#" class="product-name">
-                Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-              </a>
-              <i class="fa-regular fa-heart product-icon"></i>
-            </div>
-            <div class="product-price">
-              <span class="product-newPrice">441.000₫</span>
-              <span class="product-oldPrice">499.000₫</span>
-            </div>
-            <span class="product-discount"> -2% </span>
-            <div class="product-color-list">
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end item -->
-          <!-- start item -->
-
-          <div class="product-item">
-            <a href="#" class="product-image-item">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-            </a>
-            <div class="product-title">
-              <a href="#" class="product-name">
-                Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-              </a>
-              <i class="fa-regular fa-heart product-icon"></i>
-            </div>
-            <div class="product-price">
-              <span class="product-newPrice">441.000₫</span>
-              <span class="product-oldPrice">499.000₫</span>
-            </div>
-            <span class="product-discount"> -2% </span>
-            <div class="product-color-list">
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end item -->
-          <!-- start item -->
-
-          <div class="product-item">
-            <a href="#" class="product-image-item">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-            </a>
-            <div class="product-title">
-              <a href="#" class="product-name">
-                Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-              </a>
-              <i class="fa-regular fa-heart product-icon"></i>
-            </div>
-            <div class="product-price">
-              <span class="product-newPrice">441.000₫</span>
-              <span class="product-oldPrice">499.000₫</span>
-            </div>
-            <span class="product-discount"> -2% </span>
-            <div class="product-color-list">
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end item -->
+          <?php endforeach ?>
         </div>
 
         <ul class="home-pagination">
@@ -803,7 +651,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -818,7 +666,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -827,7 +675,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -842,7 +690,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -851,7 +699,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -866,7 +714,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -875,7 +723,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -890,7 +738,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -899,7 +747,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -914,7 +762,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -923,7 +771,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -938,7 +786,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -947,7 +795,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -962,7 +810,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -971,7 +819,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -986,7 +834,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>

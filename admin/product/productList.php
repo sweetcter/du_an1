@@ -176,7 +176,7 @@
               <td><?= $value['product_price']; ?></td>
               <td><?= $value['discount']; ?></td>
               <td><?= $value['product_desc']; ?></td>
-              <td>Tháng 2</td>
+              <td><?= $value['product_import_date']?></td>
               <td>1 lượt</td>
               <td>2</td>
               <td>3</td>

@@ -154,9 +154,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="product_size">Kích cỡ</label>
-                    <select name="product_size" id="product_size" class="form-control">
-                        <option value="1">M</option>
-                    </select>
+                    <input type="text" name="product_size" id="product_size" class="form-control">
                 </div>
                 <div class="form-group mb-3">
                     <label for="product_quantity">Số lượng</label>
@@ -171,7 +169,7 @@
                     <input type="text" class="form-control" name="product_color_name" id="product_color_name" required>
                 </div>
                 <div class="form-group mb-3">
-                    <label for="product_color">Màu sắc</label>
+                    <label for="product_color">Loại màu</label>
                     <input type="text" name="product_color" id="product_color" class="form-control" required>
                 </div>
                 <div class="form-group mb-3">
@@ -180,7 +178,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="product_main_image">Ảnh chính</label>
-                    <input type="file" class="form-control" name="product_main_image" id="product_main_image" >
+                    <input type="file" class="form-control" name="product_main_image" id="product_main_image">
                 </div>
                 <div class="form-group mb-3">
                     <label for="product_hover_main_image">Ảnh phụ</label>

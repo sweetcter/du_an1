@@ -617,7 +617,6 @@ input[type="range"]:focus::-moz-range-thumb {
   bottom: 0;
   border-radius: 0.8rem;
   width: 100%;
-  height: 100%;
   object-fit: cover;
   display: none;
 }
@@ -625,7 +624,6 @@ input[type="range"]:focus::-moz-range-thumb {
   display: block;
   border-radius: 0.8rem;
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
@@ -699,7 +697,7 @@ input[type="range"]:focus::-moz-range-thumb {
   right: 4px;
 }
 .product-newProduct img {
-  width: 38px;
+  width: 50px;
   height: auto;
 }
 .product-discount::after {
@@ -712,14 +710,16 @@ input[type="range"]:focus::-moz-range-thumb {
   border-color: transparent var(--discount-color) transparent transparent;
 }
 .product-color-child {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 2px;
 }
 .product-color-img {
   width: 100%;
   height: 100%;
+  filter: blur(0.2px);
   transform: scale(2);
   object-fit: cover;
 }
