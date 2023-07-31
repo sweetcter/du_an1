@@ -1,6 +1,4 @@
-<?php  
- require "../$ROOT_URL/global.php";
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

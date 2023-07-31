@@ -337,7 +337,7 @@
       <div class="view-function">
         <strong>363</strong>
         Sản phẩm
-      </div>
+      </div>php
       <div class="sort-function">
         Sắp xếp
         <form action="">
@@ -564,7 +564,7 @@
               <img src="../<?= $ROOT_URL ?><?= $value['hover_main_image_url'] ?>" alt="" class="product-image-second" />
             </a>
             <div class="product-title">
-              <a href="#" class="product-name">
+              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id']?>" class="product-name">
               <?= $value['product_name'] ?>
               </a>
               <i class="fa-regular fa-heart product-icon"></i>

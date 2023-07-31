@@ -23,6 +23,9 @@ switch ($action) {
   case 'male-fashion':
     require ".$VIEW_URL/male-fashion.php";
     break;
+  case 'product_detail':
+    require ".$VIEW_URL/product_detail.php";
+    break;
   case 'female-fashion':  
     require ".$VIEW_URL/female-fashion.php";
     break;

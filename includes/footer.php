@@ -16,5 +16,6 @@
     <script type="text/javascript" src="../<?= $ROOTt_URL?>/asset/js/slick.js"></script>
     <script src="../<?= $ROOTt_URL?>/asset/js/mutipleRangeJquery.js"></script>
     <script src="../<?= $ROOTt_URL?>/asset/js/main.js"></script>
+    
   </body>
 </html>
