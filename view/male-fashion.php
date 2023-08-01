@@ -1,46 +1,83 @@
 <?php require "./includes/header.php" ?>
 <!-- sign up -->
 <div id="register-modal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content1">
-    <span id="close-button" class="close">&times;</span>
-    <h2>Register</h2>
-    <form id="register-form">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name1" name="name" required />
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span id="close-button" class="close">&times;</span>
+        <h2>Đăng ký</h2>
+        <form action="index.php?action=dangky" method="POST" id="register-form">
+          <div class="form-group">
+          <label for="full_name">Full Name*</label>
+          <input type="text" name="full_name" id="full_name" placeholder="Full name" required>
+          </div>
+          <div class="form-group">
+          <label for="username">UserName*</label>
+         <input type="text" name="username" id="full_name" placeholder="Username" required>
+          </div>
+          <div class="form-group">
+          <label for="email">Email *</label>
+           <input type="email" name="email" id="email" placeholder="Your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password *</label>
+           <input type="password" name="password" id="password" placeholder="Enter a password" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Address *</label>
+            <input type="text" name="address" id="address" placeholder="Your address" required>
+          </div>
+          <div class="form-group">
+             <label for="phone">Phone *</label>
+             <input type="text" name="phone" id="phone" placeholder="Your phone" required>
+          </div>
+                  
+          <button type="submit" class="buttonregister" name="dangky" >Đăng ký</button>
+           <?php 
+                                    if(isset($thongbao)&&($thongbao)!=""){
+                                        echo $thongbao ; } ?> 
+        </form>
       </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email1" name="email" required />
+    </div>
+    <div id="quen-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-quen">&times;</span>
+        <h2>Quên mật khẩu</h2>
+        <form id="forgotPasswordForm">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <button type="submit" >Gửi</button>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+    </div>
+    <div id="my-modal" class="modal1">
+      <div class="modal-content">
+        <span class="sign-in-close">&times;</span>
+        <h2 style="text-align: center">Đăng nhập</h2>
+        <form action="index.php?action=login" method="POST"  >
+          <div class="form-group">
+            <label for="username">Tài khoản:</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password3" name="password" required />
+            <a href=""><span class="quenmk" id="openQuen">Quên mật khẩu?</span></a>
+          </div>
+          <br />
+          <button type="submit" name="login" id="submit-btn" class="buttonregister"  >Đăng nhập <style>
+            
+          </style></button>
+          <br />
+          <div class="dangky">
+            <span>Bạn chưa có tài khoản?</span>
+            <a href="/register.html">Đăng ký thành viên</a>
+          </div>
+        </form>
+        <p id="message"></p>
       </div>
-      <div class="form-group">
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required />
-      </div>
-      <button type="submit" class="buttonregister">Register</button>
-    </form>
-  </div>
-  <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" id="email1" name="email" required />
-  </div>
-  <div class="form-group">
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required />
-  </div>
-  <div class="form-group">
-    <label for="confirm-password">Confirm Password:</label>
-    <input type="password" id="confirm-password" name="confirm-password" required />
-  </div>
-  <button type="submit" class="buttonregister">Register</button>
-  </form>
-</div>
-</div>
+    </div>
+    <!-- Nav -->
 <!-- end sign-up -->
 <!--  favoriteProduct-->
 <div id="favoriteProduct-modal" class="favoriteProduct-modal">
@@ -337,7 +374,7 @@
       <div class="view-function">
         <strong>363</strong>
         Sản phẩm
-      </div>
+      </div>php
       <div class="sort-function">
         Sắp xếp
         <form action="">
@@ -564,7 +601,7 @@
               <img src="../<?= $ROOT_URL ?><?= $value['hover_main_image_url'] ?>" alt="" class="product-image-second" />
             </a>
             <div class="product-title">
-              <a href="#" class="product-name">
+              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id']?>" class="product-name">
               <?= $value['product_name'] ?>
               </a>
               <i class="fa-regular fa-heart product-icon"></i>

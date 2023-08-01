@@ -32,11 +32,7 @@
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="text" name="password" class="form-control" value="<?= $password ?>" id="exampleInputPassword1">
             </div>
-            <!-- Hình ảnh -->
-            <div class="mb-3 ">
-                <label for="exampleInputPassword1" class="form-label">Hình ảnh</label>
-                <input type="file" name="image_user" class="form-control" value="<?= $image_user ?>" id="inputGroupFile02">
-            </div>
+            
             <!-- Email -->
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Email</label>

@@ -70,7 +70,7 @@
              <input type="text" name="phone" id="phone" placeholder="Your phone" required>
           </div>
                   
-          <button type="submit" class="button" name="dangky" >Đăng ký</button>
+          <button type="submit" class="buttonregister" name="dangky" >Đăng ký</button>
            <?php 
                                     if(isset($thongbao)&&($thongbao)!=""){
                                         echo $thongbao ; } ?> 
@@ -84,7 +84,7 @@
         <form id="forgotPasswordForm">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
-          <button type="submit">Gửi</button>
+          <button type="submit" >Gửi</button>
         </form>
       </div>
     </div>
@@ -103,7 +103,7 @@
             <a href=""><span class="quenmk" id="openQuen">Quên mật khẩu?</span></a>
           </div>
           <br />
-          <button type="submit" name="login" id="submit-btn">Đăng nhập <style>
+          <button type="submit" name="login" id="submit-btn" class="buttonregister"  >Đăng nhập <style>
             
           </style></button>
           <br />
@@ -154,11 +154,12 @@
           <li><a href="#">TIN THỜI TRANG</a></li>
         </ul>
         <ul class="header-menu-bottom">
-      
+                        
           <i class="fa-regular fa-user header-menu-icon-user"></i>
-          
+          <?php if (!isset($_SESSION['username'])) { ?>
           <li id="open-modal-btn">ĐĂNG NHẬP</li>
           <li id="register-button">ĐĂNG KÝ</li>
+          <?php } else if (isset($_SESSION['username']))  ?>
           <?php if (isset($_SESSION['username']) && $_SESSION['username']['role'] == 1) : ?>
            
                     
@@ -167,6 +168,7 @@
                 <?php endif ?>
         </ul>
       </div>
+    
       <!-- Hidden when scoll -->
       <div class="header-bar">
         <img src="../<?= $ROOT_URL?>/asset/images/menu.png" alt="" class="header-menu-bar" />

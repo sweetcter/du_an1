@@ -1,5 +1,6 @@
 <?php
 require "../global.php";
+require "./header.php";
 require "..$MODEL_URL/pdo.php";
 require "..$MODEL_URL/product.php";
 require "..$MODEL_URL/banner.php";
