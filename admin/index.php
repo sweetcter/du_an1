@@ -1,19 +1,18 @@
 <?php
-require "./header.php";
 require "../global.php";
 require "..$MODEL_URL/pdo.php";
 require "..$MODEL_URL/product.php";
 require "..$MODEL_URL/banner.php";
-require "../model/category.php";
-require "../model/taikhoan.php";
+require "../$MODEL_URL/category.php";
+require "../$MODEL_URL/taikhoan.php";
 
 $act = isset($_GET['act']) ? $_GET['act'] : 'index';
 switch ($act) {
     case 'index':
-        require "./home.php";
+        require "./view/main.php";
         break;
 
-     // ---------------Xử lí Banner-------------------    
+        // ---------------Xử lí Banner-------------------    
     case 'add_banner':
         require ".$BANNER_URL/add_banner.php";
         break;
@@ -23,10 +22,10 @@ switch ($act) {
     case 'update_banner':
         require ".$BANNER_URL/update_banner.php";
         break;
-     case 'delete_banner':
+    case 'delete_banner':
         require ".$BANNER_URL/delete_banner.php";
         break;
-    // ---------------Xử lí Sản Phẩm-------------------    
+        // ---------------Xử lí Sản Phẩm-------------------    
     case 'add_product':
         require ".$PRODUCT_URL/add_product.php";
         break;
@@ -130,4 +129,3 @@ switch ($act) {
         echo "admin";
         break;
 }
-require "./footer.php";

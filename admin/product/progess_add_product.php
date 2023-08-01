@@ -40,6 +40,7 @@ $color_id_result = add_color($product_color_type, $product_color_name, $color_im
 $size_id_result = add_size($product_size);
 $detail_image = restructureFilesArray($product_detail_image);
 $detail_image_length = count($detail_image);
+
 for ($i = 0; $i < $detail_image_length; $i++) {
     $save_detail_img = add_image($detail_image[$i], $detail_image[$i]['tmp_name'], $ASSET_URL);
     $detal_image_id = add_detail_image($save_detail_img);

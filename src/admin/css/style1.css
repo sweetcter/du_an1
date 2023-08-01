@@ -40,7 +40,7 @@
     --border-color: #e9e9e9;
     --menu-item-active-bg: rgba(60, 33, 247, 0.15);
     --box-border-radius: 30px;
-    --sidebar-size: 400px;
+    --sidebar-size: 300px;
     --sidebar-logo-img-size: 150px;
     --sidebar-logo-size: 60px;
     --profile-image-size: 45px;
@@ -1391,6 +1391,17 @@ ul {
     box-shadow: var(--shadow);
     border-radius: 30px;
 }
+div.sidebar{
+    background-color: var(--box-bg);
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: 300px;
+    height: 100vh;
+    box-shadow: var(--shadow);
+    border-radius: 30px;
+}
+
 
 .dark .sidebar {
     border-right: 2px solid var(--border-color);
@@ -5162,5 +5173,3 @@ body.dark .notification-list .list .no-seen {
 .custom-scroll {
     height: 100%
 }
-
-.

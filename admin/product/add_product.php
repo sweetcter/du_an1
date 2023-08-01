@@ -154,7 +154,21 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="product_size">Kích cỡ</label>
-                    <input type="text" name="product_size" id="product_size" class="form-control">
+                    <select class="form-control" name="product_size" id="product_size">
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="34">34</option>
+                        <option value="36">36</option>
+                        <option value="36">XS</option>
+                        <option value="36">S</option>
+                        <option value="36">M</option>
+                        <option value="36">L</option>
+                        <option value="36">XL</option>
+                        <option value="36">XXL</option>
+                    </select>
                 </div>
                 <div class="form-group mb-3">
                     <label for="product_quantity">Số lượng</label>
@@ -170,7 +184,23 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="product_color">Loại màu</label>
-                    <input type="text" name="product_color" id="product_color" class="form-control" required>
+                    <select class="form-control" name="product_color" id="product_color">
+                        <option value="1">Black</option>
+                        <option value="1">White</option>
+                        <option value="1">Be</option>
+                        <option value="1">Xám/Bạc</option>
+                        <option value="1">Xanh Da Trời</option>
+                        <option value="1">Xanh Navy</option>
+                        <option value="1">Xanh lá</option>
+                        <option value="1">Xanh Olive</option>
+                        <option value="1">Nâu</option>
+                        <option value="1">Đỏ</option>
+                        <option value="1">Hồng</option>
+                        <option value="1">Cam</option>
+                        <option value="1">Vàng</option>
+                        <option value="1">Tím</option>
+                        <option value="1">Phối màu</option>
+                    </select>
                 </div>
                 <div class="form-group mb-3">
                     <label for="product_color_image">Ảnh Màu</label>
@@ -200,7 +230,10 @@
                     <label for="product_cat_id">Loại sản phẩm</label>
                     <!-- Select product caregory id -->
                     <select name="product_cat_id" id="product_cat_id" class="form-control">
-                        <option value="1">Áo nam</option>
+                        <?php $category_result =  listCategory(); ?>
+                        <?php foreach ($category_result as $value) : ?>
+                            <option value="<?= $value['id_category'] ?>"><?= $value['name_category'] ?></option>
+                        <?php endforeach ?>
                     </select>
                 </div>
                 <div class="mt-3">

@@ -146,6 +146,9 @@
             if (isset($_GET['product_id'])) {
                 $product_id = $_GET['product_id'];
                 $product_result = select_product_by_id($product_id);
+                $color_result = select_color_by_id($product_id);
+                $image_result = select_images_by_id($product_id);
+                $size_result = select_size_by_id($product_id);
             ?>
                 <form action="..<?= $ADMIN_URL . $PRODUCT_URL; ?>/progess_update_product.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="product_id" value="<?= $product_id; ?>">
@@ -166,8 +169,67 @@
                         <input type="number" class="form-control" value="<?= $product_result['discount']; ?>" name="product_discount" id="product_discount" required>
                     </div>
                     <div class="form-group mb-3">
+                        <label for="product_size">Kích cỡ</label>
+                        <select class="form-control" name="product_size" id="product_size">
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="34">34</option>
+                            <option value="36">36</option>
+                            <option value="36">XS</option>
+                            <option value="36">S</option>
+                            <option value="36">M</option>
+                            <option value="36">L</option>
+                            <option value="36">XL</option>
+                            <option value="36">XXL</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="size_id" value="<?= $size_result['size_id'] ?>">
+                    <div class="form-group mb-3">
+                        <label for="product_code">Mã sản phẩm</label>
+                        <input type="text" class="form-control" value="<?= $product_result['product_code']; ?>" name="product_code" id="product_code" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_color_name">Tên màu</label>
+                        <input type="text" class="form-control" value="<?= $color_result['color_name'] ?>" name="product_color_name" id="product_color_name" required>
+                    </div>
+                    <input type="hidden" name="color_id" value="<?= $color_result['color_id'] ?>">
+                    <div class="form-group mb-3">
+                        <label for="product_color">Loại màu</label>
+                        <select class="form-control" name="product_color" id="product_color">
+                            <option value="">Black</option>
+                            <option value="1">White</option>
+                            <option value="1">Be</option>
+                            <option value="1">Xám/Bạc</option>
+                            <option value="1">Xanh Da Trời</option>
+                            <option value="1">Xanh Navy</option>
+                            <option value="1">Xanh lá</option>
+                            <option value="1">Xanh Olive</option>
+                            <option value="1">Nâu</option>
+                            <option value="1">Đỏ</option>
+                            <option value="1">Hồng</option>
+                            <option value="1">Cam</option>
+                            <option value="1">Vàng</option>
+                            <option value="1">Tím</option>
+                            <option value="1">Phối màu</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
                         <label>
-                            Ảnh cũ
+                            Ảnh màu cũ
+                        </label>
+                        <div class="mb-3">
+                            <img src="../..<?= $ROOT_URL ?><?= $color_result['color_image'] ?>" width="100px" alt="">
+                        </div>
+                        <label for="product_color_image">Ảnh màu</label>
+                        <input type="file" class="form-control" name="product_color_image" id="product_color_image">
+                        <input type="hidden" name="old_color_image" value="<?= $color_result['color_image'] ?>">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>
+                            Ảnh chính cũ
                         </label>
                         <div class="mb-3">
                             <img src="../..<?= $ROOT_URL ?><?= $product_result['main_image_url'] ?>" width="100px" alt="">
@@ -178,7 +240,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label>
-                            Ảnh cũ
+                            Ảnh phụ cũ
                         </label>
                         <div class="mb-3">
                             <img src="../..<?= $ROOT_URL ?><?= $product_result['hover_main_image_url'] ?>" width="100px" alt="">
@@ -188,11 +250,31 @@
                         <input type="hidden" name="old_second_image" value="<?= $product_result['hover_main_image_url'] ?>">
                     </div>
                     <div class="form-group mb-3">
+                        <label style="display: block;">
+                            Ảnh chi tiết sản phẩm cũ
+                        </label>
+                        <?php foreach ($image_result as $key => $value) : ?>
+                            <div class="mb-3" style="display:inline-block;">
+                                <img src="../..<?= $ROOT_URL ?><?= $value['image_url'] ?>" width="100px" alt="">
+                            </div>
+                        <?php endforeach ?>
+                        <br>
+                        <label for="product_detail_image">Ảnh chi tiết sản phẩm mới</label>
+                        <input type="file" class="form-control" name="product_detail_image[]" id="product_detail_image" multiple>
+                        <?php foreach ($image_result as $key => $value) : ?>
+                            <input type="hidden" name="old_detail_image[]" value="<?= $value['image_url'] ?>">
+                        <?php endforeach ?>
+                    </div>
+                    <div class="form-group mb-3">
                         <label for="product_desc">Mô tả</label>
                         <textarea type="text" class="form-control" rows="6" name="product_desc" id="product_desc" required><?= $product_result['product_desc']; ?></textarea>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="product_cat_id">Tên sản phẩm</label>
+                        <label for="import_date">Ngày nhập</label>
+                        <input type="date" class="form-control" value="<?= $product_result['product_import_date'] ?>" name="import_date" id="import_date" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_cat_id">Loại sản phẩm</label>
                         <!-- Select product caregory id -->
                         <select name="product_cat_id" id="product_cat_id" class="form-control">
                             <option value="1">Áo nam</option>
