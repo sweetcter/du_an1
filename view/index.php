@@ -261,7 +261,7 @@
               </div>
             </div>
             <div class="button1 button_home">
-              <a href="../view/index.html"
+              <a href="./index.php"
                 ><i class="fa-solid fa-house"></i>
               </a>
               <!-- trang chủ -->

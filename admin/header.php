@@ -29,7 +29,7 @@
     />
     <link rel="stylesheet" href="../src/admin/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../src/admin/css/grid.css" />
-    <link rel="stylesheet" href="../src/admin/css/style1.css" />
+    <link rel="stylesheet" href="../src/admin/css/style1.css">
     <link rel="stylesheet" href="../src/admin/css/responsive.css" />
   </head>
   <body class="sidebar-expand">

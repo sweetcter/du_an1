@@ -235,12 +235,7 @@
                             <h3>Thông tin cá nhân</h3>
                             <div class="">
                               <input type="hidden" name="id" value="<?= $id ?>">
-                            <div class="col-lg-6">
-                            <input type="hidden" name="image_user" value="<?= $image_user ?>">
-                            <p>Avatar <span>*</span></p>
-                                    <input type="file" id="Avata"  name="image_user" required>
-                                    
-                               </div>
+                            
                             
                             <div class="col-lg-6">
                                 <div class="checkout__input">
