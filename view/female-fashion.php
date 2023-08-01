@@ -22,19 +22,19 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css"
     />
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>//css/jqueryUI.css" />
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/jqueryUI.css" />
+    <link rel="stylesheet" href="../<?= $ROOT_URL?>//css/jqueryUI.css" />
+    <link rel="stylesheet" href="../<?= $ROOT_URL?>/asset/css/jqueryUI.css" />
     <link
       rel="stylesheet"
       type="text/css"
-      href="../<?= $ROOTt_URL?>/asset/slick-master/slick/slick.css"
+      href="../<?= $ROOT_URL?>/asset/slick-master/slick/slick.css"
     />
   
 
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/slick.css" />
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/base.css" />
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/grid.css" />
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/style.css" />
+    <link rel="stylesheet" href="../<?= $ROOT_URL?>/asset/css/slick.css" />
+    <link rel="stylesheet" href="../<?= $ROOT_URL?>/asset/css/base.css" />
+    <link rel="stylesheet" href="../<?= $ROOT_URL?>/asset/grid.css" />
+    <link rel="stylesheet" href="../<?= $ROOT_URL?>/asset/css/style.css" />
   </head>
 
   <body>
@@ -171,13 +171,13 @@
     
       <!-- Hidden when scoll -->
       <div class="header-bar">
-        <img src="../<?= $ROOTt_URL?>/asset/images/menu.png" alt="" class="header-menu-bar" />
+        <img src="../<?= $ROOT_URL?>/asset/images/menu.png" alt="" class="header-menu-bar" />
       </div>
       <div class="overlay"></div>
       <div class="header-logo">
         <a href="#">
           <img
-            src="../<?= $ROOTt_URL?>/asset/images/routine_log.png"
+            src="../<?= $ROOT_URL?>/asset/images/routine_log.png"
             alt=""
             class="header-logo-img"
           />
@@ -189,7 +189,7 @@
         <div class="header-second-logo">
           <a href="#">
             <img
-              src="../<?= $ROOTt_URL?>/asset/images/routine_log.png"
+              src="../<?= $ROOT_URL?>/asset/images/routine_log.png"
               alt=""
               class="header-logo-img"
             />
@@ -256,7 +256,7 @@
       <main id="main-content">
         <div class="main-banner">
           <img
-            src="../<?= $ROOTt_URL?>/asset/images/rainFashion.jpg"
+            src="../<?= $ROOT_URL?>/asset/images/rainFashion.jpg"
             alt=""
             class="main-banner-img"
           />
@@ -612,7 +612,7 @@
                   <a href="#">Đen</a>
                   <div
                     class="filter-list-color"
-                    style="background-image: url('../<?= $ROOTt_URL?>/asset/images/black.png')"
+                    style="background-image: url('../<?= $ROOT_URL?>/asset/images/black.png')"
                   ></div>
                 </li>
 
@@ -630,7 +630,7 @@
                   <a href="#">Trắng</a>
                   <div
                     class="filter-list-color"
-                    style="background-image: url('../<?= $ROOTt_URL?>/asset/images/white.png')"
+                    style="background-image: url('../<?= $ROOT_URL?>/asset/images/white.png')"
                   ></div>
                 </li>
 
@@ -648,7 +648,7 @@
                   <a href="#">Be</a>
                   <div
                     class="filter-list-color"
-                    style="background-image: url('../<?= $ROOTt_URL?>/asset/images/be.png')"
+                    style="background-image: url('../<?= $ROOT_URL?>/asset/images/be.png')"
                   ></div>
                 </li>
                 <li class="filter-category-name">
@@ -665,7 +665,7 @@
                   <a href="#">Xám bạc</a>
                   <div
                     class="filter-list-color"
-                    style="background-image: url('../<?= $ROOTt_URL?>/asset/images/xam_bac.png')"
+                    style="background-image: url('../<?= $ROOT_URL?>/asset/images/xam_bac.png')"
                   ></div>
                 </li>
               </div>
@@ -704,12 +704,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -725,7 +725,7 @@
                   <span class="product-oldPrice">329.000₫</span>
                 </div>
                 <span class="product-newProduct">
-                  <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+                  <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
                 </span>
                 <span class="product-discount"> -2% </span>
 
@@ -733,14 +733,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -751,14 +751,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -769,14 +769,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -791,12 +791,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -816,14 +816,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -838,12 +838,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -863,14 +863,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -885,12 +885,12 @@
               <div class="product-item">
                 <a href="#" class="product-image-item">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                     alt=""
                     class="product-image"
                   />
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-image-second"
                   />
@@ -910,14 +910,14 @@
                   <div class="product-color">
                     <div class="product-color-child">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                         alt=""
                         class="product-color-img"
                       />
                     </div>
                     <div class="product-color-hover">
                       <img
-                        src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                        src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                         alt=""
                         class="product-color-img-hover"
                       />
@@ -977,7 +977,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -994,14 +994,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1011,7 +1011,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1021,7 +1021,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1034,7 +1034,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -1051,14 +1051,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1068,7 +1068,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1078,7 +1078,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1091,7 +1091,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -1108,14 +1108,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1125,7 +1125,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1135,7 +1135,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1148,7 +1148,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -1165,14 +1165,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1182,7 +1182,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1192,7 +1192,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1205,7 +1205,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -1222,14 +1222,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1239,7 +1239,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1249,7 +1249,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1262,7 +1262,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -1279,14 +1279,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1296,7 +1296,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1306,7 +1306,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1319,7 +1319,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -1336,14 +1336,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1353,7 +1353,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1363,7 +1363,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1376,7 +1376,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -1393,14 +1393,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1410,7 +1410,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1420,7 +1420,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1433,7 +1433,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -1450,14 +1450,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1467,7 +1467,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1477,7 +1477,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1490,7 +1490,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -1507,14 +1507,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1524,7 +1524,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1534,7 +1534,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1547,7 +1547,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -1564,14 +1564,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1581,7 +1581,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1591,7 +1591,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1604,7 +1604,7 @@
           <div class="product-item">
             <a href="#" class="product-image-item">
               <img
-                src="../<?= $ROOTt_URL?>/asset/images/product1.jpg"
+                src="../<?= $ROOT_URL?>/asset/images/product1.jpg"
                 alt=""
                 class="product-image"
               />
@@ -1621,14 +1621,14 @@
               <span class="product-discount"> -2% </span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
             </span>
 
             <div class="product-color-list">
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntayngan1.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntayngan1.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1638,7 +1638,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganden.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganden.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1648,7 +1648,7 @@
               <div class="product-color">
                 <div class="product-color-child">
                   <img
-                    src="../<?= $ROOTt_URL?>/asset/images/aothuntaynganbe.jpg"
+                    src="../<?= $ROOT_URL?>/asset/images/aothuntaynganbe.jpg"
                     alt=""
                     class="product-color-img"
                   />
@@ -1673,11 +1673,11 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <script
       type="text/javascript"
-      src="../<?= $ROOTt_URL?>/asset/slick-master/slick/slick.min.js"
+      src="../<?= $ROOT_URL?>/asset/slick-master/slick/slick.min.js"
     ></script>
-    <script src="../<?= $ROOTt_URL?>/asset/js/mutipleRangeJquery.js"></script>
-    <script type="text/javascript" src="../<?= $ROOTt_URL?>/asset/js/slick.js"></script>
-    <script src="../<?= $ROOTt_URL?>/asset/js/main.js"></script>
+    <script src="../<?= $ROOT_URL?>/asset/js/mutipleRangeJquery.js"></script>
+    <script type="text/javascript" src="../<?= $ROOT_URL?>/asset/js/slick.js"></script>
+    <script src="../<?= $ROOT_URL?>/asset/js/main.js"></script>
   </body>
   
 </html>

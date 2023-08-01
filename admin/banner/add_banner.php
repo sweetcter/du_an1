@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/grid.css" />
     <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/style1.css" />
     <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/responsive.css" />
+    <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/style.css" />
 </head>
 
 <body class="sidebar-expand">
@@ -137,18 +138,19 @@
 
     <div class="main">
         <div class="main-content dashboard">
-            <div><?= $notification = isset($notification) ? $notification : ""; ?></div>
-            
-            <form action="..<?= $ADMIN_URL . $PRODUCT_URL; ?>/progess_banner_product.php" method="post">
+            <a href="./index.php?act=view_banner" class="mb-4">
+                 <button class="btn btn-primary">Dach sach</button>
+            </a>
+            <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> "><?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?></span>
+            <form action="..<?= $ADMIN_URL . $BANNER_URL; ?>/progess_add_banner.php" method="post" enctype="multipart/form-data">
                 <div class="form-group mb-3">
-                    <label for="product_name">Tên Banner</label>
+                    <label for="banner_name">Tên sản phẩm</label>
                     <input type="text" class="form-control" name="banner_name" id="banner_name" required>
                 </div>
                 <div class="form-group mb-3">
-                    <label for="product_name">Ảnh Banner</label>
-                    <input type="file" class="form-control" name="image_name" id="image_name" required>
+                    <label for="banner_image">Ảnh chính</label>
+                    <input type="file" class="form-control" name="banner_image" id="banner_image" multiple>
                 </div>
-              
                 <div class="mt-3">
                     <button type="submit" class="btn btn-success">Thêm</button>
                     <button type="reset" class="btn btn-warning">Nhập lại</button>

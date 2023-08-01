@@ -93,10 +93,10 @@
       <div class="favoriteProduct-info">
         <a href="#" class="favoriteProduct-img">
           <div class="favoriteProduct-img-first">
-            <img src="../<?= $ROOTt_URL ?>/asset/images/product1.jpg" alt="" />
+            <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" />
           </div>
           <div class="favoriteProduct-second-img">
-            <img src="../<?= $ROOTt_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
+            <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
           </div>
         </a>
         <div class="favoriteProduct-details">
@@ -108,15 +108,15 @@
                 <i class="fa-solid fa-angle-down"></i>
                 <div class="favoriteProduct-choose-color-list">
                   <span>
-                    <img src="../<?= $ROOTt_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
+                    <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
                     BLACK
                   </span>
                   <span>
-                    <img src="../<?= $ROOTt_URL ?>/asset/images/aothuntaynganden.jpg" alt="" />
+                    <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" />
                     WHITE
                   </span>
                   <span>
-                    <img src="../<?= $ROOTt_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" />
+                    <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" />
                     GRAY
                   </span>
                 </div>
@@ -165,7 +165,7 @@
       <div class="favoriteProduct-info">
         <a href="#" class="favoriteProduct-img">
           <div class="favoriteProduct-img-first">
-            <img src="../<?= $ROOTt_URL ?>/asset/images/product1.jpg" alt="" />
+            <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" />
           </div>
         </a>
         <div class="favoriteProduct-details">
@@ -178,15 +178,15 @@
                   <i class="fa-solid fa-angle-down"></i>
                   <div class="favoriteProduct-choose-color-list">
                     <span>
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
+                      <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
                       BLACK
                     </span>
                     <span>
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/aothuntaynganden.jpg" alt="" />
+                      <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" />
                       WHITE
                     </span>
                     <span>
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" />
+                      <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" />
                       GRAY
                     </span>
                   </div>
@@ -293,12 +293,12 @@
   </div>
   <!-- Hidden when scoll -->
   <div class="header-bar">
-    <img src="../<?= $ROOTt_URL ?>/asset/images/menu.png" alt="" class="header-menu-bar" />
+    <img src="../<?= $ROOT_URL ?>/asset/images/menu.png" alt="" class="header-menu-bar" />
   </div>
   <div class="overlay"></div>
   <div class="header-logo">
     <a href="./index.html">
-      <img src="../<?= $ROOTt_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
+      <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
     </a>
   </div>
   <!-- end -->
@@ -306,7 +306,7 @@
   <ul class="header-nav">
     <div class="header-second-logo">
       <a href="./index.html">
-        <img src="../<?= $ROOTt_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
+        <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
       </a>
     </div>
     <li class="header-nav-item">
@@ -374,7 +374,7 @@
       <div class="view-function">
         <strong>363</strong>
         Sản phẩm
-      </div>
+      </div>php
       <div class="sort-function">
         Sắp xếp
         <form action="">
@@ -547,25 +547,25 @@
               <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
               </label>
               <a href="#">Đen</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOTt_URL ?>/asset/images/black.png')"></div>
+              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/black.png')"></div>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
               <a href="#">Trắng</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOTt_URL ?>/asset/images/white.png')"></div>
+              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/white.png')"></div>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
               <a href="#">Be</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOTt_URL ?>/asset/images/be.png')"></div>
+              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/be.png')"></div>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
               <a href="#">Xám bạc</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOTt_URL ?>/asset/images/xam_bac.png')"></div>
+              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/xam_bac.png')"></div>
             </li>
           </div>
         </div>
@@ -592,200 +592,53 @@
 
       <div class="product-colum">
         <div class="product-row row-col-4">
+          <?php $product_result = select_home_product(true); ?>
+          <?php foreach($product_result as $value): ?>
           <!-- start item -->
-
           <div class="product-item">
             <a href="#" class="product-image-item">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
+              <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
+              <img src="../<?= $ROOT_URL ?><?= $value['hover_main_image_url'] ?>" alt="" class="product-image-second" />
             </a>
             <div class="product-title">
-              <a href="#" class="product-name">
-                Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
+              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id']?>" class="product-name">
+              <?= $value['product_name'] ?>
               </a>
               <i class="fa-regular fa-heart product-icon"></i>
             </div>
             <div class="product-price">
-              <span class="product-newPrice">441.000₫</span>
+              <!-- format tiền tệ việt nam -->
+              <?php 
+              $locale = 'vi_VN';
+              $currency = $value['product_price'];
+              $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY); 
+              $product_vn_price = $formatter->format($currency);
+              ?>
+              <span class="product-newPrice"><?= $product_vn_price ?></span>
               <span class="product-oldPrice">499.000₫</span>
             </div>
             <span class="product-newProduct">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/newProduct.png" alt="" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
             </span>
             <span class="product-discount"> -2% </span>
-
+            <!-- Select color by product -->
+            <?php $product_color_result = select_product_color($value['product_code']); ?>
             <div class="product-color-list">
+              <?php foreach($product_color_result as $value): ?>
               <div class="product-color">
                 <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+                  <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img"  />
                 </div>
                 <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
+                  <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img-hover" />
+                  <span class="product-color-name"> <?= $value['color_name'] ?> </span>
                 </div>
               </div>
-
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
+              <?php endforeach ?>
             </div>
           </div>
           <!-- end item -->
-          <!-- start item -->
-
-          <div class="product-item">
-            <a href="#" class="product-image-item">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-            </a>
-            <div class="product-title">
-              <a href="#" class="product-name">
-                Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-              </a>
-              <i class="fa-regular fa-heart product-icon"></i>
-            </div>
-            <div class="product-price">
-              <span class="product-newPrice">441.000₫</span>
-              <span class="product-oldPrice">499.000₫</span>
-            </div>
-            <span class="product-discount"> -2% </span>
-            <div class="product-color-list">
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end item -->
-          <!-- start item -->
-
-          <div class="product-item">
-            <a href="#" class="product-image-item">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-            </a>
-            <div class="product-title">
-              <a href="#" class="product-name">
-                Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-              </a>
-              <i class="fa-regular fa-heart product-icon"></i>
-            </div>
-            <div class="product-price">
-              <span class="product-newPrice">441.000₫</span>
-              <span class="product-oldPrice">499.000₫</span>
-            </div>
-            <span class="product-discount"> -2% </span>
-            <div class="product-color-list">
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end item -->
-          <!-- start item -->
-
-          <div class="product-item">
-            <a href="#" class="product-image-item">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-            </a>
-            <div class="product-title">
-              <a href="#" class="product-name">
-                Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-              </a>
-              <i class="fa-regular fa-heart product-icon"></i>
-            </div>
-            <div class="product-price">
-              <span class="product-newPrice">441.000₫</span>
-              <span class="product-oldPrice">499.000₫</span>
-            </div>
-            <span class="product-discount"> -2% </span>
-            <div class="product-color-list">
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                </div>
-                <div class="product-color-hover">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                  <span class="product-color-name"> BALAD BLUE </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end item -->
+          <?php endforeach ?>
         </div>
 
         <ul class="home-pagination">
@@ -835,7 +688,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -850,7 +703,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -859,7 +712,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -874,7 +727,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -883,7 +736,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -898,7 +751,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -907,7 +760,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -922,7 +775,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -931,7 +784,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -946,7 +799,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -955,7 +808,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -970,7 +823,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -979,7 +832,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -994,7 +847,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -1003,7 +856,7 @@
       <!-- start item -->
       <div class="product-item">
         <a href="#" class="product-image-item">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
         </a>
         <div class="product-title">
           <a href="#" class="product-name">
@@ -1018,7 +871,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>

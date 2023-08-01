@@ -1,7 +1,4 @@
-<?php  
- require "../$ROOTt_URL/global.php";
 
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,16 +34,12 @@
       <div class="sidebar-logo">
         <a href="./index.php">
           <img
-            src="../../../<?= $ROOTt_URL?>/asset/images/logo.png"
+            src="../../<?= $ROOT_URL?>/asset/images/logo.png"
             alt="Protend logo"
             width="200px"
+            style="object-fit: cover;
+              height: auto;"
           />
-          <style>
-            .sidebar-logo img {
-              object-fit: cover;
-              height: auto;
-            }
-          </style>
         </a>
         <div class="sidebar-close" id="sidebar-close">
           <i class="bx bx-left-arrow-alt"></i>
@@ -62,13 +55,13 @@
             </a>
           </li>
           <li>
-            <a href="<?= $ROOTt_URL?>/admin/add-Category">
+            <a href="<?= $ROOT_URL?>/admin/add-Category">
               <i class="bx bxs-bolt"></i>
               <span>Danh mục</span>
             </a>
           </li>
           <li>
-            <a href="index.php?act=add_product">
+            <a href="index.php?act=view_product">
               <i class="bx bxs-user"></i>
               <span>Sản phẩm</span>
             </a>
@@ -101,6 +94,12 @@
             <a href="./list-cmt.html">
               <i class="bx bx-calendar"></i>
               <span>Bình luận</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.php?act=view_banner">
+              <i class="bx bxs-user"></i>
+              <span>Banner</span>
             </a>
           </li>
           <li>
