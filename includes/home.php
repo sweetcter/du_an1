@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/base.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/grid.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/style.css" />
+    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/index.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/spct.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/user.css" />
   </head>

@@ -1,5 +1,16 @@
     
-        
+        <div class="wrapper">
+      <!-- <ul class="breadcrumbs">
+        <li>Trang chủ /</li>
+        <li>Thời trang nữ</li>
+      </ul> -->
+
+      <main id="main-content">
+
+          <div class="filter-block">
+              <div class="filter-list">
+              </div>
+          </div>   
       </main>
     </div>
 <footer>Coppy right 2023</footer>

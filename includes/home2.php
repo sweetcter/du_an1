@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/base.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/grid.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/style.css" />
+    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/index.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/spct.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/user.css" />
 
@@ -305,17 +306,6 @@
     </header>
 
     <!-- End nav -->
-    <div class="wrapper">
-      <!-- <ul class="breadcrumbs">
-        <li>Trang chủ /</li>
-        <li>Thời trang nữ</li>
-      </ul> -->
-
-      <main id="main-content">
-
-          <div class="filter-block">
-              <div class="filter-list">
-              </div>
-          </div>
+ 
         
     

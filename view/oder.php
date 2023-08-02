@@ -1,4 +1,4 @@
-<?php require "./includes/header.php" ?>
+
   <body>
     <!-- sign up -->
     <!-- <div id="register-modal" class="modal">
@@ -178,7 +178,7 @@
           </div>
         </div>
       </div>
-    </header> --> -->
+    </header> --> 
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -228,4 +228,4 @@
         </div>
       </div>
     </div>
-    <?php require "./includes/footer.php"; ?>
+   

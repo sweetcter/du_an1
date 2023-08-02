@@ -1,6 +1,4 @@
-<?php 
-  include "./includes/home2.php";
-?>
+
     <div class="wrapper">
       <main id="main-content">
         <div class="main-colums">
@@ -200,6 +198,3 @@
       ProductImg.src = SmallImg[3].src;
     }
   </script>
-<?php 
-  include "./includes/footer2.php";
-?>

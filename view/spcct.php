@@ -1,6 +1,3 @@
-<?php 
-  require "../includes/home.php";
-?>
 
 
 
@@ -370,6 +367,3 @@
     }
 
 </script>
-<?php 
-  require "../includes/footer.php";
-?>

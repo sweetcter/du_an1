@@ -11,10 +11,10 @@
 .row-col-2 {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 1.6rem;
+    gap: 2rem;
 }
 .flex-col-4{
     display: flex;
     flex-wrap: wrap;
-    gap: 1.6rem;
+    gap: 2rem;
 }

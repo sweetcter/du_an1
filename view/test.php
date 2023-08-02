@@ -1,4 +1,4 @@
-<?php require "./includes/header.php" ?>
+
 <!-- sign up -->
 <div id="register-modal" class="modal">
   <!-- Modal content -->
@@ -843,4 +843,3 @@ $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
   </div>
 </div>
 
-<?php require "./includes/footer.php"; ?>

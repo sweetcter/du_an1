@@ -1,4 +1,4 @@
-<?php require "./includes/home.php" ?>
+
 
 <!--  favoriteProduct-->
 <div id="favoriteProduct-modal" class="favoriteProduct-modal">
@@ -164,7 +164,7 @@
       <div class="view-function">
         <strong>363</strong>
         Sản phẩm
-      </div>
+      </div>php
       <div class="sort-function">
         Sắp xếp
         <form action="">
@@ -671,4 +671,4 @@
   </div>
 </div>
 
-<?php require "./includes/foter.php"; ?>
+

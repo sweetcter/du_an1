@@ -1,108 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Protend - Project Management Admin Dashboard HTML Template</title>
-    <link rel="shortcut icon" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/images/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet" />
-    <link href="../../../unpkg.com/boxicons%402.0.7/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/owl.carousel/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/grid.css" />
-    <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/style1.css" />
-    <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/responsive.css" />
-    <link rel="stylesheet" href="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/css/style.css" />
-</head>
-
-<body class="sidebar-expand">
-    <div class="sidebar">
-        <div class="sidebar-logo">
-            <a href="../view/index.html">
-                <img src="../..<?= $ROOT_URL . $ASSET_URL; ?>/images/logo.png" alt="Protend logo" width="200px" />
-                <style>
-                    .sidebar-logo img {
-                        object-fit: cover;
-                        height: auto;
-                    }
-                </style>
-            </a>
-            <div class="sidebar-close" id="sidebar-close">
-                <i class="bx bx-left-arrow-alt"></i>
-            </div>
-        </div>
-
-        <div class="simlebar-sc" data-simplebar>
-            <ul class="sidebar-menu tf">
-                <li>
-                    <a href="./index.html">
-                        <i class="bx bxs-home"></i>
-                        <span>Trang chủ</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./list-danhmuc.html">
-                        <i class="bx bxs-bolt"></i>
-                        <span>Danh mục</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./list-sanpham.html">
-                        <i class="bx bxs-user"></i>
-                        <span>Sản phẩm</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./list-size.html">
-                        <i class="bx bxs-user"></i>
-                        <span>Size</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./list-color.html">
-                        <i class="bx bxs-user"></i>
-                        <span>Color</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./list-taikhoan.html">
-                        <i class="bx bxs-dashboard"></i>
-                        <span>Tài khoản</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./list-bill.html">
-                        <i class="bx bxs-dashboard"></i>
-                        <span>Hóa đơn</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./list-cmt.html">
-                        <i class="bx bx-calendar"></i>
-                        <span>Bình luận</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./list-thongke.html">
-                        <i class="bx bxs-component"></i>
-                        <span>Thống kê</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
-                        <div>
-                            <i class="bx bx-cog mr-10"></i>
-                            <span>darkmode</span>
-                        </div>
-                        <span class="darkmode-switch"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
     <div class="main-header">
         <div class="d-flex">
@@ -146,6 +41,9 @@
             if (isset($_GET['product_id'])) {
                 $product_id = $_GET['product_id'];
                 $product_result = select_product_by_id($product_id);
+                $color_result = select_color_by_id($product_id);
+                $image_result = select_images_by_id($product_id);
+                $size_result = select_size_by_id($product_id);
             ?>
                 <form action="..<?= $ADMIN_URL . $PRODUCT_URL; ?>/progess_update_product.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="product_id" value="<?= $product_id; ?>">
@@ -166,8 +64,67 @@
                         <input type="number" class="form-control" value="<?= $product_result['discount']; ?>" name="product_discount" id="product_discount" required>
                     </div>
                     <div class="form-group mb-3">
+                        <label for="product_size">Kích cỡ</label>
+                        <select class="form-control" name="product_size" id="product_size">
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="34">34</option>
+                            <option value="36">36</option>
+                            <option value="36">XS</option>
+                            <option value="36">S</option>
+                            <option value="36">M</option>
+                            <option value="36">L</option>
+                            <option value="36">XL</option>
+                            <option value="36">XXL</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="size_id" value="<?= $size_result['size_id'] ?>">
+                    <div class="form-group mb-3">
+                        <label for="product_code">Mã sản phẩm</label>
+                        <input type="text" class="form-control" value="<?= $product_result['product_code']; ?>" name="product_code" id="product_code" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_color_name">Tên màu</label>
+                        <input type="text" class="form-control" value="<?= $color_result['color_name'] ?>" name="product_color_name" id="product_color_name" required>
+                    </div>
+                    <input type="hidden" name="color_id" value="<?= $color_result['color_id'] ?>">
+                    <div class="form-group mb-3">
+                        <label for="product_color">Loại màu</label>
+                        <select class="form-control" name="product_color" id="product_color">
+                            <option value="">Black</option>
+                            <option value="1">White</option>
+                            <option value="1">Be</option>
+                            <option value="1">Xám/Bạc</option>
+                            <option value="1">Xanh Da Trời</option>
+                            <option value="1">Xanh Navy</option>
+                            <option value="1">Xanh lá</option>
+                            <option value="1">Xanh Olive</option>
+                            <option value="1">Nâu</option>
+                            <option value="1">Đỏ</option>
+                            <option value="1">Hồng</option>
+                            <option value="1">Cam</option>
+                            <option value="1">Vàng</option>
+                            <option value="1">Tím</option>
+                            <option value="1">Phối màu</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
                         <label>
-                            Ảnh cũ
+                            Ảnh màu cũ
+                        </label>
+                        <div class="mb-3">
+                            <img src="../..<?= $ROOT_URL ?><?= $color_result['color_image'] ?>" width="100px" alt="">
+                        </div>
+                        <label for="product_color_image">Ảnh màu</label>
+                        <input type="file" class="form-control" name="product_color_image" id="product_color_image">
+                        <input type="hidden" name="old_color_image" value="<?= $color_result['color_image'] ?>">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>
+                            Ảnh chính cũ
                         </label>
                         <div class="mb-3">
                             <img src="../..<?= $ROOT_URL ?><?= $product_result['main_image_url'] ?>" width="100px" alt="">
@@ -178,7 +135,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label>
-                            Ảnh cũ
+                            Ảnh phụ cũ
                         </label>
                         <div class="mb-3">
                             <img src="../..<?= $ROOT_URL ?><?= $product_result['hover_main_image_url'] ?>" width="100px" alt="">
@@ -188,11 +145,31 @@
                         <input type="hidden" name="old_second_image" value="<?= $product_result['hover_main_image_url'] ?>">
                     </div>
                     <div class="form-group mb-3">
+                        <label style="display: block;">
+                            Ảnh chi tiết sản phẩm cũ
+                        </label>
+                        <?php foreach ($image_result as $key => $value) : ?>
+                            <div class="mb-3" style="display:inline-block;">
+                                <img src="../..<?= $ROOT_URL ?><?= $value['image_url'] ?>" width="100px" alt="">
+                            </div>
+                        <?php endforeach ?>
+                        <br>
+                        <label for="product_detail_image">Ảnh chi tiết sản phẩm mới</label>
+                        <input type="file" class="form-control" name="product_detail_image[]" id="product_detail_image" multiple>
+                        <?php foreach ($image_result as $key => $value) : ?>
+                            <input type="hidden" name="old_detail_image[]" value="<?= $value['image_url'] ?>">
+                        <?php endforeach ?>
+                    </div>
+                    <div class="form-group mb-3">
                         <label for="product_desc">Mô tả</label>
                         <textarea type="text" class="form-control" rows="6" name="product_desc" id="product_desc" required><?= $product_result['product_desc']; ?></textarea>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="product_cat_id">Tên sản phẩm</label>
+                        <label for="import_date">Ngày nhập</label>
+                        <input type="date" class="form-control" value="<?= $product_result['product_import_date'] ?>" name="import_date" id="import_date" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_cat_id">Loại sản phẩm</label>
                         <!-- Select product caregory id -->
                         <select name="product_cat_id" id="product_cat_id" class="form-control">
                             <option value="1">Áo nam</option>
@@ -211,23 +188,4 @@
 
     <div class="overlay"></div>
 
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/jquery/jquery.min.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/moment/min/moment.min.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/peity/jquery.peity.min.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/chart.js/Chart.bundle.min.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/owl.carousel/owl.carousel.min.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/apexcharts/apexcharts.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/libs/simplebar/simplebar.min.js"></script>
-
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/js/main.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/js/dashboard.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/js/shortcode.js"></script>
-    <script src="../..<?= $ROOT_URL . $SRC_URL . $ADMIN_URL ?>/js/pages/dashboard.js"></script>
-</body>
-
-<!-- Mirrored from themesflat.com/html/protend/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Nov 2022 08:41:46 GMT -->
-
-</html>
+   
