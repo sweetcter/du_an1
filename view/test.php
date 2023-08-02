@@ -1,5 +1,47 @@
-<?php require "./includes/home.php" ?>
-
+<?php require "./includes/header.php" ?>
+<!-- sign up -->
+<div id="register-modal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content1">
+    <span id="close-button" class="close">&times;</span>
+    <h2>Register</h2>
+    <form id="register-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name1" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email1" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required />
+      </div>
+      <button type="submit" class="buttonregister">Register</button>
+    </form>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email1" name="email" required />
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+  </div>
+  <div class="form-group">
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" id="confirm-password" name="confirm-password" required />
+  </div>
+  <button type="submit" class="buttonregister">Register</button>
+  </form>
+</div>
+</div>
+<!-- end sign-up -->
 <!--  favoriteProduct-->
 <div id="favoriteProduct-modal" class="favoriteProduct-modal">
   <div id="favoriteProduct" class="favoriteProduct">
@@ -29,7 +71,7 @@
                 <i class="fa-solid fa-angle-down"></i>
                 <div class="favoriteProduct-choose-color-list">
                   <span>
-                    <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
+<img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
                     BLACK
                   </span>
                   <span>
@@ -99,7 +141,7 @@
                   <i class="fa-solid fa-angle-down"></i>
                   <div class="favoriteProduct-choose-color-list">
                     <span>
-                      <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
+<img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
                       BLACK
                     </span>
                     <span>
@@ -142,7 +184,138 @@
 </div>
 </div>
 <!-- End -->
+<!-- sign in -->
+<div id="my-modal" class="modal1">
+  <div class="modal-content">
+    <span class="sign-in-close">&times;</span>
+    <h2 style="text-align: center">Đăng nhập</h2>
+    <form>
+      <div class="form-group">
+        <label for="username">Tài khoản:</label>
+        <input type="text" id="username" name="username" required />
+      </div>
 
+      <label for="password">Mật khẩu:</label>
+      <input type="password" id="password3" name="password" required />
+      <a href=""><span class="quenmk">Quên mật khẩu?</span></a>
+      <br />
+      <button type="submit" id="submit-btn" class="buttonregister">Đăng nhập</button>
+      <br />
+      <div class="dangky">
+        <span>Bạn chưa có tài khoản?</span>
+        <a href="/register.html">Đăng ký thành viên</a>
+      </div>
+    </form>
+    <p id="message"></p>
+  </div>
+</div>
+<!-- Nav -->
+<!-- end sign in -->
+
+<header class="header">
+  <div class="header-menu-sidebar">
+    <ul class="header-menu-top-title">
+      <li><a href="#" class="menu-sidebar-active">NAM</a></li>
+<li><a href="#">NỮ</a></li>
+      <li><a href="#">BỘ SƯU TẬP</a></li>
+    </ul>
+
+    <ul class="header-menu-middle">
+      <li><a href="#">XEM TẤT CẢ</a></li>
+      <li><a href="#">NEW ARRIVALS</a></li>
+      <li><a href="#">BEST SELLERS</a></li>
+      <li>
+        <a href="#">ÁO NAM </a>
+        <i class="fa-solid fa-plus header-menu-middle-plus"></i>
+        <i class="fa-solid fa-minus header-menu-middle-minus"></i>
+      </li>
+      <li>
+        <a href="#">QUẦN NAM</a>
+        <i class="fa-solid fa-plus header-menu-middle-plus"></i>
+        <i class="fa-solid fa-minus header-menu-middle-minus"></i>
+      </li>
+      <li><a href="#">ĐỒ BƠI - ĐỒ ĐI BIỂN</a></li>
+      <li>
+        <a href="#">PHỤ KIỆN </a>
+        <i class="fa-solid fa-plus header-menu-middle-plus"></i>
+        <i class="fa-solid fa-minus header-menu-middle-minus"></i>
+      </li>
+      <li>
+        <a href="#">ƯU ĐÃI </a>
+        <span class="sale">Sale</span>
+        <i class="fa-solid fa-plus header-menu-middle-plus"></i>
+        <i class="fa-solid fa-minus header-menu-middle-minus"></i>
+      </li>
+      <li><a href="#">TIN THỜI TRANG</a></li>
+    </ul>
+    <ul class="header-menu-bottom">
+      <i class="fa-regular fa-user header-menu-icon-user"></i>
+      <li id="open-modal-btn">ĐĂNG NHẬP</li>
+      <li id="register-button">ĐĂNG KÝ</li>
+    </ul>
+  </div>
+  <!-- Hidden when scoll -->
+  <div class="header-bar">
+    <img src="../<?= $ROOT_URL ?>/asset/images/menu.png" alt="" class="header-menu-bar" />
+  </div>
+  <div class="overlay"></div>
+  <div class="header-logo">
+    <a href="./index.html">
+      <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
+    </a>
+  </div>
+  <!-- end -->
+  <!-- second header -->
+  <ul class="header-nav">
+    <div class="header-second-logo">
+      <a href="./index.html">
+        <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
+      </a>
+    </div>
+    <li class="header-nav-item">
+      <a class="header-nav-link" href="./male-fashion.html">NAM</a>
+    </li>
+    <li class="header-nav-item">
+      <a class="header-nav-link" href="../../du_an1/index.php?action=female-fashion">NỮ</a>
+    </li>
+    <li class="header-nav-item">
+      <a class="header-nav-link" href="#">NEW</a>
+    </li>
+    <li class="header-nav-item">
+      <a class="header-nav-link" href="#">BEST</a>
+    </li>
+    <li class="header-nav-item">
+      <a class="header-nav-link" href="#">SALE</a>
+    </li>
+  </ul>
+
+  <div class="header-content-right">
+    <div class="header-search-bar">
+      <div>
+        <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
+      </div>
+      <form action="">
+        <input type="text" name="" placeholder="Tìm kiếm" class="header-search-content" />
+      </form>
+    </div>
+    <div class="header-content-tool">
+      <div>
+        <i class="fa-regular fa-user header-content-user"></i>
+      </div>
+      <div>
+<i id="header-content-heart" class="fa-regular fa-heart header-content-heart"></i>
+      </div>
+      <div>
+        <i class="fa-solid fa-heart header-content-heart" style="display: none"></i>
+      </div>
+      <div id="header-content-cart">
+        <i class="fa-solid fa-cart-shopping header-content-cart"></i>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- End nav -->
 <div class="wrapper">
   <ul class="breadcrumbs">
     <li>Trang chủ /</li>
@@ -218,7 +391,7 @@
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
+<a href="#">Quần Nam</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
@@ -272,7 +445,7 @@
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
+<label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
               <a href="#">Quần Nam</a>
             </li>
             <li class="filter-category-name">
@@ -340,7 +513,7 @@
               <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/black.png')"></div>
             </li>
             <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
+<input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
               <a href="#">Trắng</a>
               <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/white.png')"></div>
@@ -391,7 +564,7 @@
               <img src="../<?= $ROOT_URL ?><?= $value['hover_main_image_url'] ?>" alt="" class="product-image-second" />
             </a>
             <div class="product-title">
-              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id']?>" class="product-name">
+              <a href="#" class="product-name">
               <?= $value['product_name'] ?>
               </a>
               <i class="fa-regular fa-heart product-icon"></i>
@@ -401,7 +574,7 @@
               <?php 
               $locale = 'vi_VN';
               $currency = $value['product_price'];
-              $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY); 
+$formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY); 
               $product_vn_price = $formatter->format($currency);
               ?>
               <span class="product-newPrice"><?= $product_vn_price ?></span>
@@ -469,8 +642,7 @@
       </div>
     </div>
   </main>
-
-  <div class="product-suggest">
+<div class="product-suggest">
     <h3 class="product-suggest-title">
       GỢI Ý CHO BẠN: CÁC SẢN PHẨM ĐƯỢC QUAN TÂM NHẤT
     </h3>
@@ -541,7 +713,7 @@
         <div class="product-color-list">
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+<img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
@@ -612,7 +784,7 @@
         </div>
         <div class="product-color-list">
           <a href="#" class="product-color">
-            <div class="product-color-child">
+<div class="product-color-child">
               <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
             </div>
           </a>
@@ -671,4 +843,4 @@
   </div>
 </div>
 
-<?php require "./includes/foter.php"; ?>
+<?php require "./includes/footer.php"; ?>

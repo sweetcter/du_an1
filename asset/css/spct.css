@@ -172,7 +172,7 @@ input{
     height: 40px;
     padding-left: 10px;
     font-size: 20px;
-    margin: 0px 40px;
+    /* margin: 0px 40px; */
    
 }
 .small-img:hover{

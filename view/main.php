@@ -123,42 +123,27 @@
         .text {
           font-size: 11px;
         }
-      }
+      } 
     </style>
   </head>
   <body>
     <div class="x font">
       <div class="showimg">
         <div class="slideshow-container">
-          <!-- <div class="mySlides fade">
-            <img src="../du_an1/asset/images/bannertop.jpg" style="width: 100%" />
-          </div>
 
-          <div class="mySlides fade">
-            <img src="../du_an1/asset/images/bannertop2.jpg" style="width: 100%" />
-          </div>
-
-          <div class="mySlides fade">
-            <img src="../du_an1/asset/images/bannertop3.jpg" style="width: 100%" />
-          </div> -->
-          
-          <?php
-                  
+        <!-- --------- Xử Li Banner--------- -->
+          <?php   
                   foreach ($dsBanner as $bn) {
                     extract($bn);
-                    // echo '<div class="mySlides fade">
-                    //     <img  src=".'.$banner_image.'" alt="" style="width: 100%">
-                    //     </div>';
-                
-          ?>
+                ?>
 
           <div class="mySlides fade">
-            <img src="../du_an1/asset/images/<?=$banner_image?>" style="width: 100%" />
+            <img src=".<?php echo $banner_image?>" style="width: 100%" />
           </div> 
 
 
 <?php
-                  }
+}
 ?>
 
 

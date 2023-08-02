@@ -34,17 +34,17 @@
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/style.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/spct.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/user.css" />
+
   </head>
 
   <body>
     <style>
         .form-group input{
             margin:0;
-        }  
-              .thkn p{
+        }
+        .thkn p{
           margin-left:0;
         }
-      
     </style>
     <div id="register-modal" class="modal">
       <!-- Modal content -->
@@ -284,7 +284,9 @@
         </div>
         <div class="header-content-tool">
           <div>
+            <a href="/du_an1/myaccount">
             <i id="icon_re" class="fa-regular fa-user header-content-user"></i>
+            </a>
           </div>
           <div>
             <i class="fa-regular fa-heart header-content-heart"></i>
@@ -303,5 +305,17 @@
     </header>
 
     <!-- End nav -->
+    <div class="wrapper">
+      <!-- <ul class="breadcrumbs">
+        <li>Trang chủ /</li>
+        <li>Thời trang nữ</li>
+      </ul> -->
 
+      <main id="main-content">
 
+          <div class="filter-block">
+              <div class="filter-list">
+              </div>
+          </div>
+        
+    

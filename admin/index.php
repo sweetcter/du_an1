@@ -1,6 +1,6 @@
 <?php
-require "./header.php";
 require "../global.php";
+require "./header.php";
 require "..$MODEL_URL/pdo.php";
 require "..$MODEL_URL/product.php";
 require "..$MODEL_URL/banner.php";
@@ -14,7 +14,7 @@ switch ($act) {
         break;
 
      // ---------------Xử lí Banner-------------------    
-     case 'add_banner':
+    case 'add_banner':
         require ".$BANNER_URL/add_banner.php";
         break;
     case 'view_banner':

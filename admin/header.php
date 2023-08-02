@@ -1,6 +1,4 @@
-<?php  
- require "../$ROOT_URL/global.php";
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -102,6 +100,12 @@
             <a href="./list-cmt.html">
               <i class="bx bx-calendar"></i>
               <span>Bình luận</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.php?act=view_banner">
+              <i class="bx bxs-user"></i>
+              <span>Banner</span>
             </a>
           </li>
           <li>
