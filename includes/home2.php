@@ -78,10 +78,12 @@
           <label for="email">Email *</label>
           <input type="email" name="email" id="email" placeholder="Your email" required />
         </div>
-        <button type="submit" name="btnsubmit">Gửi</button>
+        <button type="submit" class="buttonregister" name="btnsubmit">Gửi</button>
       </form>
     </div>
   </div>
+  <!-- ĐĂNG NHẬP -->
+
   <div id="my-modal" class="modal1">
     <div class="modal-content">
       <span class="sign-in-close">&times;</span>
@@ -100,11 +102,9 @@
         <button type="submit" class="buttonregister" name="login" id="submit-btn">
           Đăng nhập <style></style>
         </button>
+        
         <br />
-        <div class="dangky">
-          <span>Bạn chưa có tài khoản?</span>
-          <a href="">Đăng ký thành viên</a>
-        </div>
+       
       </form>
       <p id="message"></p>
     </div>
@@ -152,6 +152,7 @@
         <?php if (!isset($_SESSION['username'])) : ?>
           <li id="open-modal-btn">ĐĂNG NHẬP</li>
           <li id="register-button">ĐĂNG KÝ</li>
+          <li id="quenpass">QUÊN MẬT KHẨU</li>
         <?php else : ?>
           <?php if (isset($_SESSION['username']) && $_SESSION['username']['role'] == 1) : ?>
             <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/admin/index.php">ADMIN</a> </li>

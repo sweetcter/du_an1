@@ -72,7 +72,8 @@
                 <form action="index.php?action=updatetk" method="POST" id="profile-form" enctype="multipart/form-data">
                   <div class="thkn">
                     <h3>Thông tin cá nhân</h3>
-                    <div class="">
+                    <div class="" style="font-size: 20px; " >
+                      
                       
 
                       <div class="col-lg-6">

@@ -10,13 +10,13 @@ require ".$MODEL_URL/taikhoan.php";
 require ".$MODEL_URL/category.php";
 require ".$MODEL_URL/comment.php";
 
-// $listCategory=listCategory();
-// function dd($data) {
-//   echo '<pre>';
-//   print_r($data);
-//   echo '</pre>';
-//   die;
-// }
+$listCategory=listCategory();
+function dd($data) {
+  echo '<pre>';
+  print_r($data);
+  echo '</pre>';
+  die;
+}
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 // echo $action;
@@ -55,22 +55,23 @@ switch ($action) {
     require ".$VIEW_URL/main.php";
     break;
 
-  case 'login':
-    if (isset($_POST['login'])) {
-      $username = $_POST['username'];
-      $password = $_POST['password'];
+  // case 'login':
+  //   if (isset($_POST['login'])) {
+  //     $username = $_POST['username'];
+  //     $password = $_POST['password'];
 
-      $checkuser = checkuser($username, $password);
-      if (is_array($checkuser)) {
-        $_SESSION['username'] = $checkuser;
+  //     $checkuser = checkuser($username, $password);
+  //     if (is_array($checkuser)) {
+  //       $_SESSION['username'] = $checkuser;
 
-        echo '<script>alert("Đăng nhập thành công")</script>';
-      } else {
-        echo '<script>alert("Tài khoản hoặc mật khẩu không tồn tại")</script>';
-      }
-    }
-    require ".$VIEW_URL/main.php";
-    break;
+  //       echo '<script>alert("Đăng nhập thành công")</script>';
+  //     } else {
+  //       echo '<script>alert("Tài khoản hoặc mật khẩu không tồn tại")</script>';
+  //     }
+  //   }
+    
+  //   require ".$VIEW_URL/main.php";
+  //   break;
   case 'quenmk':
     if (isset($_POST['btnsubmit'])) {
       $email  = $_POST['email'];
@@ -98,22 +99,10 @@ switch ($action) {
       $email = $_POST['email'];
       $phone = $_POST['phone'];
       $address = $_POST['address'];
-      // $image_user = $_FILES['image_user']['name'];
-      // $target_dir = ".$ASSET_URL/images/";
-      // $target_file = $target_dir . basename($_FILES["image_user"]["name"]);
-
-      // if (move_uploaded_file($_FILES["image_user"]["tmp_name"], $target_file)) {
-      //   // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-      // } else {
-      //   // echo "Sorry, there was an error uploading your file.";
-      // }
-
       update_taikhoan_home($full_name, $username, $password, $email,$address, $phone, $id);
       $_SESSION['username'] = checkuser($username, $password);
       echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';
-      // header('location: index.php?act=myaccount');
-      // include "./view/myaccount.php";
-      // $thongbao = "Bạn đã cập nhật thông tin thành công";
+
     }
     $listtaikhoan = loadall_taikhoan();
     require ".$VIEW_URL/myaccount.php";
@@ -130,7 +119,7 @@ switch ($action) {
         $phone = $_POST['phone'];
         $address = $_POST['address'];
         $full_name = $_POST['full_name'];    
-        update_taikhoan_home($full_name, $username, $password, $email, $address, $phone, $image_user, $id);
+        update_taikhoan($id, $full_name, $username, $password, $email,$address, $phone, $role);
         $_SESSION['username'] = checkuser($username, $password);
         echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';
         // header('location: index.php?act=myaccount');
