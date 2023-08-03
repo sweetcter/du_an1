@@ -4,11 +4,12 @@ function productFilter() {
   let filterList = document.querySelectorAll(".filter-list");
   let listPadding = 18;
   // fist element always open
-  filterList[0].style.height = filterList[0].scrollHeight + listPadding + "px";
-  filterList[0].style.maxHeight =
-    filterList[0].scrollHeight + listPadding + "px";
-
-  //
+  if (filterList.length !== 0) {
+    filterList[0].style.height =
+      filterList[0].scrollHeight + listPadding + "px";
+    filterList[0].style.maxHeight =
+      filterList[0].scrollHeight + listPadding + "px";
+  }
   for (let i = 0; i < filterCategory.length; i++) {
     filterCategory[i].onclick = function (e) {
       let filterListHeight = filterList[i].scrollHeight;
@@ -108,72 +109,75 @@ const closeBtn = document.querySelector(".sign-in-close");
 const form = document.querySelector("form");
 const message = document.getElementById("message");
 
-openModalBtn.addEventListener("click", () => {
-  let menuSidebar = document.querySelector(".header-menu-sidebar");
-  let hiddenBodyScollbar = document.querySelector("body");
-  modal1.style.top = "0";
-  modal1.style.opacity = "1";
-  menuSidebar.style.transform = `translateX(-100%)`;
-  // menuSidebar.style.opacity = `1`;
-  hiddenBodyScollbar.style.overflowY = `auto`;
-});
+if (openModalBtn) {
+  openModalBtn.addEventListener("click", () => {
+    let menuSidebar = document.querySelector(".header-menu-sidebar");
+    let hiddenBodyScollbar = document.querySelector("body");
+    modal1.style.top = "0";
+    modal1.style.opacity = "1";
+    menuSidebar.style.transform = `translateX(-100%)`;
+    // menuSidebar.style.opacity = `1`;
+    hiddenBodyScollbar.style.overflowY = `auto`;
+  });
+}
 
-closeBtn.addEventListener("click", () => {
-  modal1.style.top = "-124%";
-  modal1.style.opacity = "0";
-  overlay.style.display = `none`;
-});
+if (closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    modal1.style.top = "-124%";
+    modal1.style.opacity = "0";
+    overlay.style.display = `none`;
+  });
+}
 
 let openRegister = document.getElementById("register-button");
 let signUp = document.getElementById("register-modal");
 let closeButton = document.getElementById("close-button");
 
-openRegister.onclick = function () {
-  let menuSidebar = document.querySelector(".header-menu-sidebar");
-  signUp.style.top = "0";
-  signUp.style.opacity = "1";
-  menuSidebar.style.transform = `translateX(-100%)`;
-  menuSidebar.style.opacity = `1`;
-};
+if (openRegister) {
+  openRegister.onclick = function () {
+    let menuSidebar = document.querySelector(".header-menu-sidebar");
+    signUp.style.top = "0";
+    signUp.style.opacity = "1";
+    menuSidebar.style.transform = `translateX(-100%)`;
+    menuSidebar.style.opacity = `1`;
+  };
+}
 // close register
 let closeRegister = document.querySelector("#close-button");
-closeRegister.onclick = function () {
-  hiddenOverlay();
-  signUp.style.top = "-150%";
-  signUp.style.opacity = "0";
-};
-// end close register
+if (closeRegister) {
+  closeRegister.onclick = function () {
+    hiddenOverlay();
+    signUp.style.top = "-150%";
+    signUp.style.opacity = "0";
+  };
+  // end close register
+}
 
 // increase value
-function increaseValue() {
-  let increaseValue = document.querySelector("#favoriteProduct-inc-plus");
-  let favoriteProductQuantity = document.querySelector(
-    "#favoriteProduct-inc-quantity"
-  );
+function increaseValue(incValue, inputName) {
+  let increaseValue = document.querySelector(`${incValue}`);
+  let incNumber = document.querySelector(`${inputName}`);
   increaseValue.onclick = function () {
-    let newValue = Number(favoriteProductQuantity.value);
+    let newValue = Number(incNumber.value);
     if (newValue < 1000000) {
-      favoriteProductQuantity.value = newValue + 1;
+      incNumber.value = newValue + 1;
     }
   };
 }
-// increaseValue();
+increaseValue("#favoriteProduct-inc-plus", "#favoriteProduct-inc-quantity");
 // end
-
 // reduce value
-function reduceValue() {
-  let reduceValue = document.querySelector("#favoriteProduct-inc-minus");
-  let favoriteProductQuantity = document.querySelector(
-    "#favoriteProduct-inc-quantity"
-  );
+function reduceValue(incValue, inputName) {
+  let reduceValue = document.querySelector(`${incValue}`);
+  let reduceNumber = document.querySelector(`${inputName}`);
   reduceValue.onclick = function () {
-    let newValue = Number(favoriteProductQuantity.value);
+    let newValue = Number(reduceNumber.value);
     if (newValue > 0) {
-      favoriteProductQuantity.value = newValue - 1;
+      reduceNumber.value = newValue - 1;
     }
   };
 }
-// reduceValue();
+reduceValue("#favoriteProduct-inc-minus", "#favoriteProduct-inc-quantity");
 // end
 
 // handle open sidebar
@@ -192,8 +196,6 @@ function handleOpensTheSidebar(
   let closeSibar = document.querySelector(`#${closeButton}`);
   let hiddenBodyScollbar = document.querySelector("body");
   let isHandleHidenBodyScollbar = false;
-  console.log(openBtn);
-
   openBtn.addEventListener("click", function () {
     openModal.classList.add(`${modalClass}`);
     sidebarName.classList.add(`${sidebarClass}`);
@@ -203,7 +205,6 @@ function handleOpensTheSidebar(
       isHandleHidenBodyScollbar = true;
     }
   });
-
   // event wheb click hidden  modal
   openModal.addEventListener("click", function () {
     handleCLoseTheSidebar(
@@ -246,9 +247,10 @@ function handleCLoseTheSidebar(
   sidebarName.classList.remove(`${sidebarClass}`);
 }
 // Open cart
-let openCart = document.querySelector("#header-content-cart");
+// let openCart = document.querySelector("#header-content-cart");
 
 // open favorite sidebar
+
 handleOpensTheSidebar(
   "header-content-heart",
   "favoriteProduct-modal",
@@ -258,7 +260,6 @@ handleOpensTheSidebar(
   "Fopen",
   true
 );
-
 // open cart sidebar
 handleOpensTheSidebar(
   "header-content-cart",

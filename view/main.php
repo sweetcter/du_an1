@@ -216,8 +216,8 @@
           <div class="header_row2">
             <div class="danhmuc">
               <ul class="flexx">
-                <li><a href="<?= $ROOTt_URL ?>/male-fashion">NAM</a></li>
-                <li><a href="<?= $ROOTt_URL ?>/female-fashion">NỮ</a></li>
+                <li><a href=".<?= $ROOT_URL ?>/male-fashion">NAM</a></li>
+                <li><a href=".<?= $ROOT_URL ?>/female-fashion">NỮ</a>ccc</li>
                 <li><a href="#">NEW</a></li>
                 <li><a href="#">BEST</a></li>
                 <li><a href="#">SALE</a></li>

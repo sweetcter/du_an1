@@ -7,7 +7,6 @@ require ".$MODEL_URL/product.php";
 require ".$MODEL_URL/banner.php";
 require ".$MODEL_URL/taikhoan.php";
 require ".$MODEL_URL/category.php";
-$listCategory=listCategory();
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 // echo $action;
@@ -21,7 +20,7 @@ switch ($action) {
   case 'product_detail':
     require ".$VIEW_URL/product_detail.php";
     break;
-  case 'female-fashion':  
+  case 'female-fashion':
     require ".$VIEW_URL/female-fashion.php";
     break;
   case 'admin':
@@ -41,7 +40,7 @@ switch ($action) {
     }
     require ".$VIEW_URL/female-fashion.php";
     break;
-    
+
   case 'login':
     if (isset($_POST['login'])) {
       $username = $_POST['username'];
@@ -89,78 +88,75 @@ switch ($action) {
     $listtaikhoan = loadall_taikhoan();
     require ".$VIEW_URL/myaccount.php";
     break;
-
-
   case 'updatetk':
-      if (isset($_POST['thaydoi']) && ($_POST['thaydoi'])) {
-        $id = $_POST['id'];
-        $full_name = $_POST['full_name'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $full_name = $_POST['full_name'];
-        $image_user = $_FILES['image_user']['name'];
-        $target_dir = "../uploads/";
-        $target_file = $target_dir . basename($_FILES["image_user"]["name"]);
-  
-        if (move_uploaded_file($_FILES["image_user"]["tmp_name"], $target_file)) {
-          // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-        } else {
-          // echo "Sorry, there was an error uploading your file.";
-        }
-        
-        update_taikhoan_home($id, $full_name, $username, $password, $email, $address, $phone, $image_user);
-        $_SESSION['username'] = checkuser($username, $password);
-        echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';
-        header('location: index.php?act=myaccount');
-        $thongbao = "Bạn đã cập nhật thông tin thành công";
+    if (isset($_POST['thaydoi']) && ($_POST['thaydoi'])) {
+      $id = $_POST['id'];
+      $full_name = $_POST['full_name'];
+      $username = $_POST['username'];
+      $password = $_POST['password'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
+      $full_name = $_POST['full_name'];
+      $image_user = $_FILES['image_user']['name'];
+      $target_dir = "../uploads/";
+      $target_file = $target_dir . basename($_FILES["image_user"]["name"]);
+
+      if (move_uploaded_file($_FILES["image_user"]["tmp_name"], $target_file)) {
+        // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+      } else {
+        // echo "Sorry, there was an error uploading your file.";
       }
-      require ".$VIEW_URL/oder.php";
-      break;
+
+      update_taikhoan_home($id, $full_name, $username, $password, $email, $address, $phone, $image_user);
+      $_SESSION['username'] = checkuser($username, $password);
+      echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';
+      header('location: index.php?act=myaccount');
+      $thongbao = "Bạn đã cập nhật thông tin thành công";
+    }
+    require ".$VIEW_URL/oder.php";
+    break;
   case 'thoat':
     session_unset();
     header('Location: index.php');
     break;
-  
-    case 'diachi':
-      if (isset($_POST['thaydoi']) && ($_POST['thaydoi'])) {
-        $id = $_POST['id'];
-        $full_name = $_POST['full_name'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $address = $_POST['address'];
-        $image_user = $_FILES['image_user']['name'];
-        $target_dir = ".$ASSET_URL";
-        $target_file = $target_dir . basename($_FILES["image_user"]["name"]);
-  
-        if (move_uploaded_file($_FILES["image_user"]["tmp_name"], $target_file)) {
-          // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-        } else {
-          // echo "Sorry, there was an error uploading your file.";
-        }
-  
-        update_taikhoan_home($full_name, $username, $password, $email, $address, $phone, $image_user, $id);
-        $_SESSION['username'] = checkuser($username, $password);
-        echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';
-        // header('location: index.php?act=myaccount');
-        // include "./view/myaccount.php";
-        // $thongbao = "Bạn đã cập nhật thông tin thành công";
+
+  case 'diachi':
+    if (isset($_POST['thaydoi']) && ($_POST['thaydoi'])) {
+      $id = $_POST['id'];
+      $full_name = $_POST['full_name'];
+      $username = $_POST['username'];
+      $password = $_POST['password'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
+      $address = $_POST['address'];
+      $image_user = $_FILES['image_user']['name'];
+      $target_dir = ".$ASSET_URL";
+      $target_file = $target_dir . basename($_FILES["image_user"]["name"]);
+
+      if (move_uploaded_file($_FILES["image_user"]["tmp_name"], $target_file)) {
+        // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+      } else {
+        // echo "Sorry, there was an error uploading your file.";
       }
-      $listtaikhoan = loadall_taikhoan();
-      require ".$VIEW_URL/myaccount.php";
-      break;
-  
-      
-      
-    case 'thoat':
-      session_unset();
-      header('Location: index.php');
-      break;
-    
-    default:
-      echo "Không có gì";
-      break;
+
+      update_taikhoan_home($full_name, $username, $password, $email, $address, $phone, $image_user, $id);
+      $_SESSION['username'] = checkuser($username, $password);
+      echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';
+      // header('location: index.php?act=myaccount');
+      // include "./view/myaccount.php";
+      // $thongbao = "Bạn đã cập nhật thông tin thành công";
+    }
+    $listtaikhoan = loadall_taikhoan();
+    require ".$VIEW_URL/myaccount.php";
+    break;
+  case 'thoat':
+    session_unset();
+    header('Location: index.php');
+    break;
+  case 'product_detail':
+    require ".$VIEW_URL/product_detail.php";
+    break;
+  default:
+    echo "Không có gì";
+    break;
 }

@@ -27,3 +27,29 @@
 .my-slickSilder .slick-prev:hover {
   opacity: 0.5;
 }
+.slick-next-list{
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  font-size: 2.8rem;
+  cursor: pointer;
+  z-index: 2;
+  padding: 6px 12px;
+  background: rgba(0,0,0,0.1);
+}
+.slick-prev-list{
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  font-size: 2.8rem;
+  z-index: 2;
+  cursor: pointer;
+  padding: 6px 12px;
+  background: rgba(0,0,0,0.1);
+}
+.slick-next-list:hover {
+  opacity: 0.5;
+}
+.slick-prev-list:hover {
+  opacity: 0.5;
+}
