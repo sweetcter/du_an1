@@ -80,21 +80,21 @@
                 <div class="form-group mb-3">
                     <label for="product_color">Loại màu</label>
                     <select class="form-control" name="product_color" id="product_color">
-                        <option value="1">Black</option>
-                        <option value="1">White</option>
-                        <option value="1">Be</option>
-                        <option value="1">Xám/Bạc</option>
-                        <option value="1">Xanh Da Trời</option>
-                        <option value="1">Xanh Navy</option>
-                        <option value="1">Xanh lá</option>
-                        <option value="1">Xanh Olive</option>
-                        <option value="1">Nâu</option>
-                        <option value="1">Đỏ</option>
-                        <option value="1">Hồng</option>
-                        <option value="1">Cam</option>
-                        <option value="1">Vàng</option>
-                        <option value="1">Tím</option>
-                        <option value="1">Phối màu</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Be">Be</option>
+                        <option value="Xám/Bạc">Xám/Bạc</option>
+                        <option value="Xanh Da Trời">Xanh Da Trời</option>
+                        <option value="Xanh Navy">Xanh Navy</option>
+                        <option value="Xanh lá">Xanh lá</option>
+                        <option value="Xanh Olive">Xanh Olive</option>
+                        <option value="Nâu">Nâu</option>
+                        <option value="Đỏ">Đỏ</option>
+                        <option value="Hồng">Hồng</option>
+                        <option value="Cam">Cam</option>
+                        <option value="Vàng">Vàng</option>
+                        <option value="Tím">Tím</option>
+                        <option value="Phối màu">Phối màu</option>
                     </select>
                 </div>
                 <div class="form-group mb-3">

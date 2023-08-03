@@ -122,6 +122,113 @@
       </div>
 
 
+<<<<<<< HEAD
+          <div class="header_row2">
+            <div class="danhmuc">
+              <ul class="flexx">
+                <li><a href="./index.php?action=male-fashion">NAM</a></li>
+                <li><a href="./index.php?action=female-fashion">NỮ</a></li>
+                <li><a href="#">NEW</a></li>
+                <li><a href="#">BEST</a></li>
+                <li><a href="#">SALE</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nav">
+            <div class="search flexx">
+              <div class="search_icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div class="search_input">
+                <input class="search_input_nav" type="text" placeholder="Bạn tìm gì hôm nay" />
+              </div>
+            </div>
+            <div class="button1 button_home">
+              <a href="../view/index.html"><i class="fa-solid fa-house"></i>
+              </a>
+              <!-- trang chủ -->
+            </div>
+            <div class="button1">
+              <a href="../view/dangnhap.html"><i class="fa-solid fa-face-smile"></i></a>
+              <!-- tài khoản -->
+            </div>
+            <div class="button1 button1__cart">
+              <!-- trái tim -->
+              <i class="fa-regular fa-heart right"></i>
+              <div class="so">
+                <span>0</span>
+              </div>
+            </div>
+            <div class="button1 button1__cart">
+              <!-- giỏ hàng -->
+              <a href="../view/shoping-cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+              <!-- <span>Tài khoản</span> -->
+              <div class="so">
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="header_row1 flexx">
+          <div class="header_row2">
+            <div class="danhmuc">
+              <ul class="flexx">
+                <li><a href=".<?= $ROOT_URL ?>/male-fashion">NAM</a></li>
+                <li><a href=".<?= $ROOT_URL ?>/female-fashion">NỮ</a>ccc</li>
+                <li><a href="#">NEW</a></li>
+                <li><a href="#">BEST</a></li>
+                <li><a href="#">SALE</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row1 flexx">
+            <div class="row1_left flexx">
+              <div class="logo" style="transform: translate(-50%, 0); left: 50%">
+                <img src="../<?= $ROOTt_URL ?>/asset/images/logo.png" style="width: 118px; height: 33px" alt="logo tiki" />
+              </div>
+            </div>
+          </div>
+          <div class="nav">
+            <div class="search flexx">
+              <div class="search_icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div class="search_input">
+                <input class="search_input_nav" type="text" placeholder="Bạn tìm gì hôm nay" />
+              </div>
+            </div>
+            <div class="button1 button_home">
+              <a href="../view/index.html"><i class="fa-solid fa-house"></i>
+              </a>
+              <!-- trang chủ -->
+            </div>
+            <div class="button1">
+              <a href="../view/dangnhap.html"><i class="fa-solid fa-face-smile"></i></a>
+              <!-- tài khoản -->
+            </div>
+            <div class="button1 button1__cart">
+              <!-- trái tim -->
+              <i class="fa-regular fa-heart"></i>
+              <div class="so">
+                <span>0</span>
+              </div>
+            </div>
+            <div class="button1 button1__cart">
+              <!-- giỏ hàng -->
+              <a href="../view/shoping-cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+              <!-- <span>Tài khoản</span> -->
+              <div class="so">
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+=======
+>>>>>>> dc656a23b9181536a7246f0e8bf92a1db63b18af
 
       <nav>
         <div class="div1">
