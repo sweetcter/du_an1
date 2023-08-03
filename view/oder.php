@@ -1,4 +1,4 @@
-<?php require "./includes/header.php" ?>
+
   <body>
     <!-- sign up -->
     <!-- <div id="register-modal" class="modal">
@@ -228,4 +228,4 @@
         </div>
       </div>
     </div>
-    <?php require "./includes/footer.php"; ?>
+   

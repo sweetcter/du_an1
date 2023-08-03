@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php require "../admin/header.php" ?>    
+=======
+
+>>>>>>> dc656a23b9181536a7246f0e8bf92a1db63b18af
   <div class="main-header">
     <div class="d-flex">
       <div class="mobile-toggle" id="mobile-toggle">
@@ -78,5 +82,8 @@
   </div>
 
   <div class="overlay"></div>
+<<<<<<< HEAD
 
   <?php require_once "../admin/footer.php" ?> 
+=======
+>>>>>>> dc656a23b9181536a7246f0e8bf92a1db63b18af

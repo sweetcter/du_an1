@@ -166,6 +166,64 @@
               <i class="fa-regular fa-heart product-detail-favorite"></i>
             </div>
           </div>
+
+          <!-- ---------------------- -->
+          <div class="product-content" style="width: 100%; height: 320px;">
+            <h2>Bình Luận</h2>
+            <div class="box-content2  binhluan">
+              <table>
+
+                <?php
+                $product_id = $_REQUEST['product_id'];
+                $dsbl = loadall_comment($product_id);
+                foreach ($dsbl as $bl) {
+                  extract($bl);
+                  echo '<tr><td>' . $content . '</td>';
+                  echo '<td>' . $user_id . '</td>';
+                  echo '<td>' . $comment_time . '</td></tr>';
+                }
+                ?>
+
+                <br> <br>
+              </table>
+            </div>
+            <div class="btn_comment" style="background-color: lightgray; padding: 10px;">
+              <?php if (isset($_SESSION['taikhoan'])) {
+              ?>
+                <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+                  <input type="hidden" name="product_id" value="<?= $product_id ?>">
+
+                  <input type="text" name="noidung" placeholder="Bình luận tại đây...">
+                  <input type="submit" name="guibinhluan" value="Gửi bình luận" style="width: 100px;">
+
+                </form>
+              <?php
+              } else { ?>
+                <strong>
+                  <p class="thongbao" style="display: flex; justify-content: center; font-size: 16px;">
+                    Vui lòng đăng nhập để bình luận</p>
+                </strong>
+              <?php }
+              ?>
+            </div>
+
+            <?php
+            // add binh luan
+            if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
+              $content = $_POST['content'];
+              $user_id = $_SESSION['taikhoan']['id'];
+              $comment_time = date('Y-m-d');
+              insert_comment($content, $user_id, $product_id, $comment_time);
+              // header("location: ".$_SERVER['HTTP_REFERER']); // HTTP_REFERER : trở về trang hiện tại
+            }
+            ?>
+          </div>
+          <!-- <p>
+              <?php
+              //  $product_result['quantity']
+              ?>
+            </p>
+          </div> -->
         </div>
 
         <div class="product-suggest">

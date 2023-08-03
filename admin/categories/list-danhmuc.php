@@ -1,4 +1,4 @@
-<?php require "../admin/header.php" ?>    
+   
 <div class="main">
     <div class="main-content dashboard">
         <div class="row">
@@ -47,6 +47,4 @@
 
 <div class="overlay"></div>
 
-
-<?php require_once "../admin/footer.php" ?> 
 

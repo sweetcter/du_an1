@@ -890,7 +890,7 @@
               <!-- end item -->
             </div>
 
-            <ul class="home-pagination">
+            <!-- <ul class="home-pagination">
               <li class="home-pagination-item home-pagination-disable">
                 <a href="#" class="home-pagination-link">
                   <i class="fa-solid fa-angle-left home-pagination-icon"></i>
@@ -924,7 +924,7 @@
                   <i class="fa-solid fa-angles-right home-pagination-icon"></i>
                 </a>
               </li>
-            </ul>
+            </ul> -->
           </div>
         </div>
       </main>
@@ -1620,6 +1620,11 @@
           <!-- end item -->
         </div>
       </div>
+<<<<<<< HEAD
 <?php require "./includes/footer.php"; ?>
  
                           
+=======
+    
+
+>>>>>>> dc656a23b9181536a7246f0e8bf92a1db63b18af

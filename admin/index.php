@@ -44,7 +44,7 @@ switch ($act) {
             $thongbao = "add thanh cong";
         }
         include "./categories/add-danhmuc.php";
-    case "listCategory":
+    case 'listCategory':
         $list = listCategory();
         include "./categories/list-danhmuc.php";
         break;
@@ -130,3 +130,4 @@ switch ($act) {
         echo "admin";
         break;
 }
+require "./footer.php";

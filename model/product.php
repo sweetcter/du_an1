@@ -33,12 +33,6 @@ function select_images_by_id($product_id)
     JOIN images ON product_images.image_id = images.image_id WHERE products.product_id = ?";
     return pdo_query($sql, $product_id);
 }
-function select_one_images_by_id($product_id)
-{
-    $sql = "SELECT images.* FROM products JOIN product_images ON products.product_id = product_images.product_id 
-    JOIN images ON product_images.image_id = images.image_id WHERE products.product_id = ?";
-    return pdo_query($sql, $product_id);
-}
 function select_product_size_by_id($product_id)
 {
     $sql = "SELECT product_size.* FROM products JOIN product_size ON products.product_id = product_size.product_id 
@@ -126,7 +120,6 @@ function handle_delete_size($product_id_param)
 function handle_delete_images($product_id_param)
 {
     $result = select_product_images_by_id($product_id_param);
-
     $images_id = [];
     foreach ($result as $key => $value) {
         $images_id[$key] = $result[$key]['image_id'];
