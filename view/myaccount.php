@@ -13,6 +13,7 @@
         <div class="container">
 
           <div class="colums row-col-2">
+          
             <div class="sidebar-main">
               <div class="title_taikhoan">
                 <i class="fa-regular fa-user header-content-user"></i>
@@ -72,12 +73,7 @@
                   <div class="thkn">
                     <h3>Thông tin cá nhân</h3>
                     <div class="">
-                      <div class="col-lg-6">
-                        <!-- <input type="hidden" name="image_user" > -->
-                        <p>Avatar <span>*</span></p>
-                        <input type="file" id="Avata" name="image_user" required>
-
-                      </div>
+                      
 
                       <div class="col-lg-6">
                         <div class="checkout__input">
