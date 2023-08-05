@@ -109,16 +109,8 @@ switch ($act) {
             $address = $_POST['address'];
             $phone = $_POST['phone'];
             $role = $_POST['role'];
-            $image_user = $_FILES['image_user']['name'];
-            $target_dir = "../uploads/";
-            $target_file = $target_dir . basename($_FILES["image_user"]["name"]);
-
-            if (move_uploaded_file($_FILES["image_user"]["tmp_name"], $target_file)) {
-                // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-            } else {
-                // echo "Sorry, there was an error uploading your file.";
-            }
-            $listsanpham = update_taikhoan($id, $full_name, $username, $password, $email, $address, $phone, $role, $image_user);
+          
+            $listsanpham = update_taikhoan($id, $full_name, $username, $password, $email, $address, $phone, $role,);
             $thongbao = "Cập nhật thành công";
         }
         $listtaikhoan = loadall_taikhoan();

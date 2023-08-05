@@ -891,6 +891,7 @@ footer {
 }
 
 .form-group label {
+  font-size: 16px;
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
@@ -969,9 +970,7 @@ input[type="password"] {
   border: 1px solid #ccc;
   font-size: 16px;
 }
-#register-form {
-  padding-left: 24px;
-}
+
 .modal-content1 h2 {
   padding-left: 24px;
 }
@@ -1003,6 +1002,7 @@ input[type="password"] {
   font-size: 16px;
 }
 span.quenmk {
+  padding-top: 20px;
   text-align: center;
   font-size: 16px;
   display: inline-block;
