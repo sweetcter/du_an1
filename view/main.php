@@ -1,773 +1,332 @@
+<style>
+  .mySlides {
+    display: none;
+  }
 
-  <style>
-    .mySlides {
-      display: none;
-    }
-
-    /* img {
+  /* img {
       vertical-align: middle;
     } */
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+  }
 
-    /* Slideshow container */
-    .slideshow-container {
-      max-width: 100%;
-      position: relative;
-      margin: auto;
+  .to_dot {
+    position: absolute;
+    bottom: 5%;
+    text-align: center;
+    right: 48%;
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.8;
     }
 
-    .to_dot {
-      position: absolute;
-      bottom: 5%;
-      text-align: center;
-      right: 48%;
+    to {
+      opacity: 1;
     }
+  }
 
-    /* Caption text */
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
     .text {
-      color: #f2f2f2;
-      font-size: 15px;
-      padding: 8px 12px;
-      position: absolute;
-      bottom: 8px;
-      width: 100%;
-      text-align: center;
+      font-size: 11px;
     }
+  }
+</style>
 
-    /* Number text (1/3 etc) */
-    .numbertext {
-      color: #f2f2f2;
-      font-size: 12px;
-      padding: 8px 12px;
-      position: absolute;
-      top: 0;
-    }
+<div class="x font">
+  <div class="showimg">
+    <div class="slideshow-container">
 
-    /* The dots/bullets/indicators */
-    .dot {
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-
-    .active {
-      background-color: #717171;
-    }
-
-    /* Fading animation */
-    .fade {
-      animation-name: fade;
-      animation-duration: 3s;
-    }
-
-    @keyframes fade {
-      from {
-        opacity: 0.8;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* On smaller screens, decrease text size */
-    @media only screen and (max-width: 300px) {
-      .text {
-        font-size: 11px;
-      }
-    }
-  </style>
-
-  <div class="x font">
-    <div class="showimg">
-      <div class="slideshow-container">
-
-        <!-- --------- Xử Li Banner--------- -->
-        <?php
-        $dsBanner = selectAll_banner();
-        foreach ($dsBanner as $bn) {
-          // extract($bn);
-          echo '<div class="mySlides fade">
+      <!-- --------- Xử Li Banner--------- -->
+      <?php
+      $dsBanner = selectAll_banner();
+      foreach ($dsBanner as $bn) {
+        extract($bn);
+        echo '<div class="mySlides fade">
                         <img  src=".' . $bn['banner_image'] . '" alt="" style="width: 100%">
-                </div>';
-        }
-        ?>
+        </div>';
+      }
+      ?>
+      <div style="text-align: center" class="to_dot">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
 
 
-        <div style="text-align: center" class="to_dot">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+
+    <nav>
+      <div class="div1">
+        <div class="div1_1 div1_1_cart">
+          <img src="../<?= $ROOTt_URL ?>/asset/images/bannerroww1.png" alt="" />
+          <div class="xemngay">
+            <button><a href="#">xem ngay</a></button>
+          </div>
         </div>
 
-        <?php
-        //   $dsBanner = selectAll_banner();
-        //   foreach ($dsBanner as $banner) {
-        //     // extract($bn);
-        //     echo '<div class="mySlides fade">
-        //         <img  src=".'.$banner.'" alt="" style="width: 100%">
-        //         </div>';
-        // }
-        ?>
+        <div class="div1_1 div1_1_cart">
+          <img src="../<?= $ROOTt_URL ?>/asset/images/bannerrow2.jpg" alt="" />
+          <div class="xemngay">
+            <button><a href="#">xem ngay</a></button>
+          </div>
+        </div>
 
+        <div class="div1_1 div1_1_cart">
+          <img src="../<?= $ROOTt_URL ?>/asset/images/bannerroww2.webp" alt="" />
+          <div class="xemngay">
+            <button><a href="#">xem ngay</a></button>
+          </div>
+        </div>
+      </div>
 
-        <div style="text-align: center" class="to_dot">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+      <div class="div1_2 div1_2_cart">
+        <img src="../<?= $ROOTt_URL ?>/asset/images/banneryoutube.jpg" alt="" />
+        <div class="div_youtube">
+          <!-- <video controls autoplay src="https://youtu.be/L7qbjrmQ728" width="520px" height="293px"></video> -->
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/L7qbjrmQ728" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
 
 
-
-      <nav>
-        <div class="div1">
-          <div class="div1_1 div1_1_cart">
-            <img src="../<?= $ROOTt_URL ?>/asset/images/bannerroww1.png" alt="" />
-            <div class="xemngay">
-              <button><a href="#">xem ngay</a></button>
-            </div>
+        <div class="div1_1 div1_1_cart">
+          <img src="../<?= $ROOTt_URL ?>/asset/images/banner_dm2.png" alt="" />
+          <div class="xemngay">
+            <button><a href="#">xem ngay</a></button>
           </div>
+        </div>
+      </div>
 
-          <div class="div1_1 div1_1_cart">
-            <img src="../<?= $ROOTt_URL ?>/asset/images/bannerrow2.jpg" alt="" />
-            <div class="xemngay">
-              <button><a href="#">xem ngay</a></button>
-            </div>
+      <div class="title_rowgird font_roboto">
+        <h1>thời trang</h1>
+      </div>
+
+      <div class="row_girdx">
+        <div class="col column font_roboto">
+          <div class="column_img">
+            <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc1.jpg" style="width: 100%; height: 100%" alt="" />
           </div>
+          <div class="column_info">
+            <div class="column_button flexx font_roboto">
+              <div class="button__1">
+                <button>thành tựu</button>
+              </div>
+              <div class="button__1">
+                <button>sự nghiệp</button>
+              </div>
+            </div>
 
-          <div class="div1_1 div1_1_cart">
-            <img src="../<?= $ROOTt_URL ?>/asset/images/bannerroww2.webp" alt="" />
-            <div class="xemngay">
-              <button><a href="#">xem ngay</a></button>
+            <div class="title_name">
+              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+                miếng</span>
+            </div>
+
+            <div class="column_time">
+              <span>May 4,2028</span>
+            </div>
+
+            <div class="name font">
+              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+                miếng</span>
             </div>
           </div>
         </div>
 
-        <div class="div1_2 div1_2_cart">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/banneryoutube.jpg" alt="" />
-          <div class="div_youtube">
-            <!-- <video controls autoplay src="https://youtu.be/L7qbjrmQ728" width="520px" height="293px"></video> -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/L7qbjrmQ728" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="col column font_roboto">
+          <div class="column_img">
+            <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc2.jpg" style="width: 100%; height: 100%" alt="" />
           </div>
-        </div>
-
-        <!-- chạy thử -->
-
-        <div class="main-colums font_roboto_base" style="display: block !important; padding: 0 5%">
-          <!-- block filter -->
-
-          <div class="product-colum">
-            <div class="product-row row-col-4">
-              <!-- start item -->
-
-              <div class="product-item">
-                <a href="#" class="product-image-item">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-                </a>
-                <div class="product-title">
-                  <a href="#" class="product-name">
-                    Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                  </a>
-                  <i class="fa-regular fa-heart product-icon"></i>
-                </div>
-                <div class="product-price">
-                  <span class="product-newPrice">441.000₫</span>
-                  <span class="product-oldPrice">499.000₫</span>
-                </div>
-                <span class="product_discount"> -2% </span>
-
-                <div class="product-color-list">
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-                </div>
+          <div class="column_info">
+            <div class="column_button flexx font_roboto">
+              <div class="button__1">
+                <button>thành tựu</button>
               </div>
-              <!-- end item -->
-
-              <!-- start item -->
-
-              <div class="product-item">
-                <a href="#" class="product-image-item">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-                </a>
-                <div class="product-title">
-                  <a href="#" class="product-name">
-                    Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                  </a>
-                  <i class="fa-regular fa-heart product-icon"></i>
-                </div>
-                <div class="product-price">
-                  <span class="product-newPrice">441.000₫</span>
-                  <span class="product-oldPrice">499.000₫</span>
-                </div>
-                <span class="product_discount"> -2% </span>
-                <div class="product-color-list">
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-                </div>
+              <div class="button__1">
+                <button>sự nghiệp</button>
               </div>
-              <!-- end item -->
-              <!-- start item -->
-
-              <div class="product-item">
-                <a href="#" class="product-image-item">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-                </a>
-                <div class="product-title">
-                  <a href="#" class="product-name">
-                    Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                  </a>
-                  <i class="fa-regular fa-heart product-icon"></i>
-                </div>
-                <div class="product-price">
-                  <span class="product-newPrice">441.000₫</span>
-                  <span class="product-oldPrice">499.000₫</span>
-                </div>
-                <span class="product_discount"> -2% </span>
-                <div class="product-color-list">
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end item -->
-              <!-- start item -->
-
-              <div class="product-item">
-                <a href="#" class="product-image-item">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-                </a>
-                <div class="product-title">
-                  <a href="#" class="product-name">
-                    Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                  </a>
-                  <i class="fa-regular fa-heart product-icon"></i>
-                </div>
-                <div class="product-price">
-                  <span class="product-newPrice">441.000₫</span>
-                  <span class="product-oldPrice">499.000₫</span>
-                </div>
-                <span class="product_discount"> -2% </span>
-                <div class="product-color-list">
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end item -->
             </div>
 
-            <ul class="home-pagination">
-              <li class="home-pagination-item home-pagination-disable">
-                <a href="#" class="home-pagination-link">
-                  <i class="fa-solid fa-angle-left home-pagination-icon"></i>
-                </a>
-              </li>
-              <li class="home-pagination-item home-pagination-disable">
-                <a href="#" class="home-pagination-link">
-                  <i class="fa-solid fa-angles-left home-pagination-icon"></i>
-                </a>
-              </li>
-              <li class="home-pagination-item home-pagination-active">
-                <a class="home-pagination-link" href="#">1</a>
-              </li>
-              <li class="home-pagination-item">
-                <a class="home-pagination-link" href="#">2</a>
-              </li>
-              <li class="home-pagination-item">...</li>
-              <li class="home-pagination-item">
-                <a class="home-pagination-link" href="#">15</a>
-              </li>
-              <li class="home-pagination-item">
-                <a class="home-pagination-link" href="#">16</a>
-              </li>
-              <li class="home-pagination-item">
-                <a href="#" class="home-pagination-link">
-                  <i class="fa-solid fa-angle-right home-pagination-icon"></i>
-                </a>
-              </li>
-              <li class="home-pagination-item">
-                <a href="#" class="home-pagination-link">
-                  <i class="fa-solid fa-angles-right home-pagination-icon"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- end -->
-
-        <!-- </div> -->
-
-        <div class="title_rowgird font_roboto">
-          <h1>sản phẩm đồng giá</h1>
-        </div>
-
-        <!-- chạy thử -->
-
-        <div class="main-colums font_roboto_base" style="display: block !important; padding: 0 5%">
-          <div class="product-colum">
-            <div class="product-row row-col-4">
-              <!-- start item -->
-
-              <div class="product-item">
-                <a href="#" class="product-image-item">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-                </a>
-                <div class="product-title">
-                  <a href="#" class="product-name">
-                    Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                  </a>
-                  <i class="fa-regular fa-heart product-icon"></i>
-                </div>
-                <div class="product-price">
-                  <span class="product-newPrice">441.000₫</span>
-                  <span class="product-oldPrice">499.000₫</span>
-                </div>
-                <span class="product_discount"> -2% </span>
-
-                <div class="product-color-list">
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/product1_con.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end item -->
-              <!-- start item -->
-
-              <div class="product-item">
-                <a href="#" class="product-image-item">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-                </a>
-                <div class="product-title">
-                  <a href="#" class="product-name">
-                    Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                  </a>
-                  <i class="fa-regular fa-heart product-icon"></i>
-                </div>
-                <div class="product-price">
-                  <span class="product-newPrice">441.000₫</span>
-                  <span class="product-oldPrice">499.000₫</span>
-                </div>
-                <span class="product_discount"> -2% </span>
-                <div class="product-color-list">
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end item -->
-              <!-- start item -->
-
-              <div class="product-item">
-                <a href="#" class="product-image-item">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-                </a>
-                <div class="product-title">
-                  <a href="#" class="product-name">
-                    Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                  </a>
-                  <i class="fa-regular fa-heart product-icon"></i>
-                </div>
-                <div class="product-price">
-                  <span class="product-newPrice">441.000₫</span>
-                  <span class="product-oldPrice">499.000₫</span>
-                </div>
-                <span class="product_discount"> -2% </span>
-                <div class="product-color-list">
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end item -->
-              <!-- start item -->
-
-              <div class="product-item">
-                <a href="#" class="product-image-item">
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-                  <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_4__1.jpg" alt="" class="product-image-second" />
-                </a>
-                <div class="product-title">
-                  <a href="#" class="product-name">
-                    Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                  </a>
-                  <i class="fa-regular fa-heart product-icon"></i>
-                </div>
-                <div class="product-price">
-                  <span class="product-newPrice">441.000₫</span>
-                  <span class="product-oldPrice">499.000₫</span>
-                </div>
-                <span class="product_discount"> -2% </span>
-                <div class="product-color-list">
-                  <div class="product-color">
-                    <div class="product-color-child">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                    </div>
-                    <div class="product-color-hover">
-                      <img src="../<?= $ROOTt_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img-hover" />
-                      <span class="product-color-name"> BALAD BLUE </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end item -->
+            <div class="title_name">
+              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+                miếng</span>
             </div>
 
-            <ul class="home-pagination">
-              <li class="home-pagination-item home-pagination-disable">
-                <a href="#" class="home-pagination-link">
-                  <i class="fa-solid fa-angle-left home-pagination-icon"></i>
-                </a>
-              </li>
-              <li class="home-pagination-item home-pagination-disable">
-                <a href="#" class="home-pagination-link">
-                  <i class="fa-solid fa-angles-left home-pagination-icon"></i>
-                </a>
-              </li>
-              <li class="home-pagination-item home-pagination-active">
-                <a class="home-pagination-link" href="#">1</a>
-              </li>
-              <li class="home-pagination-item">
-                <a class="home-pagination-link" href="#">2</a>
-              </li>
-              <li class="home-pagination-item">...</li>
-              <li class="home-pagination-item">
-                <a class="home-pagination-link" href="#">15</a>
-              </li>
-              <li class="home-pagination-item">
-                <a class="home-pagination-link" href="#">16</a>
-              </li>
-              <li class="home-pagination-item">
-                <a href="#" class="home-pagination-link">
-                  <i class="fa-solid fa-angle-right home-pagination-icon"></i>
-                </a>
-              </li>
-              <li class="home-pagination-item">
-                <a href="#" class="home-pagination-link">
-                  <i class="fa-solid fa-angles-right home-pagination-icon"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- end -->
-
-        <div class="div_bottomrowgird">
-          <div class="div1_1 div1_1_cart">
-            <img src="../<?= $ROOTt_URL ?>/asset/images/banner_dm.png" alt="" />
-            <div class="xemngay">
-              <button><a href="#">xem ngay</a></button>
+            <div class="column_time">
+              <span>May 4,2028</span>
             </div>
-          </div>
 
-          <div class="div1_1 div1_1_cart">
-            <img src="../<?= $ROOTt_URL ?>/asset/images/banner_dm2.png" alt="" />
-            <div class="xemngay">
-              <button><a href="#">xem ngay</a></button>
+            <div class="name font">
+              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+                miếng</span>
             </div>
           </div>
         </div>
 
-        <div class="title_rowgird font_roboto">
-          <h1>thời trang</h1>
-        </div>
-
-        <div class="row_girdx">
-          <div class="col column font_roboto">
-            <div class="column_img">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc1.jpg" style="width: 100%; height: 100%" alt="" />
-            </div>
-            <div class="column_info">
-              <div class="column_button flexx font_roboto">
-                <div class="button__1">
-                  <button>thành tựu</button>
-                </div>
-                <div class="button__1">
-                  <button>sự nghiệp</button>
-                </div>
-              </div>
-
-              <div class="title_name">
-                <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                  miếng</span>
-              </div>
-
-              <div class="column_time">
-                <span>May 4,2028</span>
-              </div>
-
-              <div class="name font">
-                <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                  miếng</span>
-              </div>
-            </div>
+        <div class="col column font_roboto">
+          <div class="column_img">
+            <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc3.jpg" style="width: 100%; height: 100%" alt="" />
           </div>
-
-          <div class="col column font_roboto">
-            <div class="column_img">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc2.jpg" style="width: 100%; height: 100%" alt="" />
-            </div>
-            <div class="column_info">
-              <div class="column_button flexx font_roboto">
-                <div class="button__1">
-                  <button>thành tựu</button>
-                </div>
-                <div class="button__1">
-                  <button>sự nghiệp</button>
-                </div>
+          <div class="column_info">
+            <div class="column_button flexx font_roboto">
+              <div class="button__1">
+                <button>thành tựu</button>
               </div>
-
-              <div class="title_name">
-                <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                  miếng</span>
-              </div>
-
-              <div class="column_time">
-                <span>May 4,2028</span>
-              </div>
-
-              <div class="name font">
-                <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                  miếng</span>
+              <div class="button__1">
+                <button>sự nghiệp</button>
               </div>
             </div>
-          </div>
 
-          <div class="col column font_roboto">
-            <div class="column_img">
-              <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc3.jpg" style="width: 100%; height: 100%" alt="" />
+            <div class="title_name">
+              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+                miếng</span>
             </div>
-            <div class="column_info">
-              <div class="column_button flexx font_roboto">
-                <div class="button__1">
-                  <button>thành tựu</button>
-                </div>
-                <div class="button__1">
-                  <button>sự nghiệp</button>
-                </div>
-              </div>
 
-              <div class="title_name">
-                <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                  miếng</span>
-              </div>
+            <div class="column_time">
+              <span>May 4,2028</span>
+            </div>
 
-              <div class="column_time">
-                <span>May 4,2028</span>
-              </div>
-
-              <div class="name font">
-                <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                  miếng</span>
-              </div>
+            <div class="name font">
+              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+                miếng</span>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
 
 
 
-  <script>
-    // phần showw ảnh phẩn sản phẩm
-    // var dip= document.getElementsByClassName('dip');
-    // console.log(dip);
+    <script>
+      // phần showw ảnh phẩn sản phẩm
+      // var dip= document.getElementsByClassName('dip');
+      // console.log(dip);
 
-    // const x=document.getElementsByClassName('dip');
-    // const y=document.getElementById('dip_show');
-    // console.log(x[0].src);
-    // const z =y.src;
+      // const x=document.getElementsByClassName('dip');
+      // const y=document.getElementById('dip_show');
+      // console.log(x[0].src);
+      // const z =y.src;
 
-    //     x[0].onmouseover=function () {
-    //         y.src=this.src;
-    // }
-    // x[0].onmouseout=function () {
-    //     y.src=z;
-    // }
-    // function myd(e) {
-    //     let v = e.getElementsByClassName('dip')[0];
-    //     y.src=v.src;
-    // }
-    // let imgsrc ='';
+      //     x[0].onmouseover=function () {
+      //         y.src=this.src;
+      // }
+      // x[0].onmouseout=function () {
+      //     y.src=z;
+      // }
+      // function myd(e) {
+      //     let v = e.getElementsByClassName('dip')[0];
+      //     y.src=v.src;
+      // }
+      // let imgsrc ='';
 
-    // function get(e){
-    //     let img = e.querySelector('img');
-    //     imgsrc = img.getAttribute('src');
-    // console.log(imgsrc);
-    // return imgsrc;
-    // y.src = imgsrc;
-    // }
-    // var x = get(e);
-    // console.log(imgsrc);
+      // function get(e){
+      //     let img = e.querySelector('img');
+      //     imgsrc = img.getAttribute('src');
+      // console.log(imgsrc);
+      // return imgsrc;
+      // y.src = imgsrc;
+      // }
+      // var x = get(e);
+      // console.log(imgsrc);
 
-    // let defaultImageSrc = z;
+      // let defaultImageSrc = z;
 
-    // function updateImageSrc(element) {
-    //   let imgElement = element.querySelector('img');
-    //   let imgSrc = imgElement.getAttribute('src');
-    //   let dipShowImg = document.getElementById('dip_show');
-    //   dipShowImg.src = imgSrc;
-    // }
+      // function updateImageSrc(element) {
+      //   let imgElement = element.querySelector('img');
+      //   let imgSrc = imgElement.getAttribute('src');
+      //   let dipShowImg = document.getElementById('dip_show');
+      //   dipShowImg.src = imgSrc;
+      // }
 
-    // function resetImageSrc() {
-    //   let dipShowImg = document.getElementById('dip_show');
-    //   dipShowImg.src = defaultImageSrc;
-    // }
+      // function resetImageSrc() {
+      //   let dipShowImg = document.getElementById('dip_show');
+      //   dipShowImg.src = defaultImageSrc;
+      // }
 
-    // phần slide show
-    let slideIndex = 0;
-    showSlides();
+      // phần slide show
+      let slideIndex = 0;
+      showSlides();
 
-    function showSlides() {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-
-    function showMenubar() {
-      document.onscroll = function() {
-        const scollTop = window.scrollY || document.documentElement.scrollTop;
-        const header = document.getElementsByClassName("header_row1");
-        const header1 = document.getElementsByClassName("header1");
-        // console.log(header);
-        header[0].style.display = "";
-        if (scollTop >= 300) {
-          header[1].style.display = "none";
-          header1[0].style.background = "#fff";
-        } else {
-          header[0].style.display = "none";
-          header[1].style.display = "";
-          header1[0].style.background = "";
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
         }
-      };
-    }
-    showMenubar();
-  </script>
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+
+      function showMenubar() {
+        document.onscroll = function() {
+          const scollTop = window.scrollY || document.documentElement.scrollTop;
+          const header = document.getElementsByClassName("header_row1");
+          const header1 = document.getElementsByClassName("header1");
+          // console.log(header);
+          header[0].style.display = "";
+          if (scollTop >= 300) {
+            header[1].style.display = "none";
+            header1[0].style.background = "#fff";
+          } else {
+            header[0].style.display = "none";
+            header[1].style.display = "";
+            header1[0].style.background = "";
+          }
+        };
+      }
+      showMenubar();
+    </script>
