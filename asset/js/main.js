@@ -129,12 +129,9 @@ if (closeBtn) {
   });
 }
 
-
-
-
 let openRegister = document.getElementById("register-button");
 
-let open_icon_re = document.getElementById("icon_re")
+let open_icon_re = document.getElementById("icon_re");
 
 let quenpass = document.getElementById("quenpass");
 let signUp = document.getElementById("register-modal");
@@ -150,21 +147,21 @@ openRegister.onclick = function () {
   menuSidebar.style.opacity = `1`;
 };
 
-open_icon_re.onclick = function () {
-  let menuSidebar = document.querySelector(".header-menu-sidebar");
-  signUp.style.top = "0";
-  signUp.style.opacity = "1";
-  menuSidebar.style.transform = `translateX(-100%)`;
-  menuSidebar.style.opacity = `1`;
-};
+// open_icon_re.onclick = function () {
+//   let menuSidebar = document.querySelector(".header-menu-sidebar");
+//   signUp.style.top = "0";
+//   signUp.style.opacity = "1";
+//   menuSidebar.style.transform = `translateX(-100%)`;
+//   menuSidebar.style.opacity = `1`;
+// };
 
-quenpass.onclick = function () {
-  let menuSidebar = document.querySelector(".header-menu-sidebar");
-  quen.style.top = "0";
-  quen.style.opacity = "1";
-  menuSidebar.style.transform = `translateX(-100%)`;
-  menuSidebar.style.opacity = `1`;
-};
+// quenpass.onclick = function () {
+//   let menuSidebar = document.querySelector(".header-menu-sidebar");
+//   quen.style.top = "0";
+//   quen.style.opacity = "1";
+//   menuSidebar.style.transform = `translateX(-100%)`;
+//   menuSidebar.style.opacity = `1`;
+// };
 
 
 // close register
@@ -177,11 +174,11 @@ closeRegister.onclick = function () {
 // end close register
 // close register
 // let closequen = document.querySelector("#close-quen");
-close_quen.onclick = function () {
-  hiddenOverlay();
-  quen.style.top = "-150%";
-  quen.style.opacity = 0;
-};
+// close_quen.onclick = function () {
+//   hiddenOverlay();
+//   quen.style.top = "-150%";
+//   quen.style.opacity = 0;
+// };
 // end close register
 
 // increase value

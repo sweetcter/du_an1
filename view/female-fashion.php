@@ -146,6 +146,8 @@
       </div>
       <!-- end -->
       <!-- second header -->
+      <?php require "./includes/cart_modal.php" ?>
+      <?php require "./includes/favorite_product.php" ?>
       <ul class="header-nav">
         <div class="header-second-logo">
           <a href="#">
@@ -189,7 +191,7 @@
         </div>
         <div class="header-content-tool">
           <div>
-            <i class="fa-regular fa-user header-content-user"></i>
+            <i id="icon_re" class="fa-regular fa-user header-content-user"></i>
           </div>
           <div>
             <i class="fa-regular fa-heart header-content-heart"></i>
@@ -1620,11 +1622,6 @@
           <!-- end item -->
         </div>
       </div>
-<<<<<<< HEAD
 <?php require "./includes/footer.php"; ?>
  
                           
-=======
-    
-
->>>>>>> dc656a23b9181536a7246f0e8bf92a1db63b18af

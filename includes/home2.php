@@ -31,8 +31,8 @@
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/slick.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/base.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/grid.css" />
-    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/style.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/index.css" />
+    <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/style.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/spct.css" />
     <link rel="stylesheet" href="../<?= $ROOTt_URL?>/asset/css/user.css" />
 
@@ -209,10 +209,9 @@
         </ul>
         <ul class="header-menu-bottom">
           <i class="fa-regular fa-user header-menu-icon-user"></i>
-
           <li id="open-modal-btn">ĐĂNG NHẬP</li>
           <li id="register-button">ĐĂNG KÝ</li>
-          <li id="quenpass">QUEN MK</li>
+          <li id="quenpass">QUÊN MẬT KHẨU</li>
           <?php if (isset($_SESSION['username']) && $_SESSION['username']['role'] == 1) : ?>
 
           <li id="open-modal-btn">

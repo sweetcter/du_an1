@@ -1414,7 +1414,6 @@ div.sidebar{
 .sidebar-logo {
     height: var(--sidebar-logo-size);
     position: relative;
-    padding: 74px 0;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -62,18 +62,6 @@
           </a>
         </li>
         <li>
-          <a href=".../..<?= $ROOT_URL ?>/admin/index.php?act=view_product">
-            <i class="bx bxs-user"></i>
-            <span>Size</span>
-          </a>
-        </li>
-        <li>
-          <a href="../..<?= $ROOT_URL ?>/admin/index.php?act=view_product">
-            <i class="bx bxs-user"></i>
-            <span>Color</span>
-          </a>
-        </li>
-        <li>
           <a href="../..<?= $ROOT_URL ?>/admin/index.php?act=user">
             <i class="bx bxs-dashboard"></i>
             <span>Tài khoản</span>

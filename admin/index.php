@@ -1,6 +1,6 @@
 <?php
 require "../global.php";
-require "./header.php";
+// require "./header.php";
 require "..$MODEL_URL/pdo.php";
 require "..$MODEL_URL/product.php";
 require "..$MODEL_URL/banner.php";
@@ -12,7 +12,6 @@ switch ($act) {
     case 'index':
         require "./view/main.php";
         break;
-
         // ---------------Xử lí Banner-------------------    
     case 'add_banner':
         require ".$BANNER_URL/add_banner.php";
@@ -125,9 +124,12 @@ switch ($act) {
         $listtaikhoan = loadall_taikhoan();
         include "./user/list.php";
         break;
+    case 'add_color':
+        require "./product/add_color.php";
+        break;
     default:
         echo "Không có gì";
         echo "admin";
         break;
 }
-require "./footer.php";
+// require "./footer.php";

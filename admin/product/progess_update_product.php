@@ -17,7 +17,7 @@ $product_image = $_FILES['product_main_image'];
 $product_second_image = $_FILES['product_hover_main_image'];
 $product_code = $_POST['product_code'];
 $product_size = $_POST['product_size'];
-$product_color_type = $_POST['product_color'];
+$product_color_type = $_POST['color_type'];
 $product_color_name = $_POST['product_color_name'];
 $product_color_image = $_FILES['product_color_image'];
 $product_color_tmp_name = $product_color_image['tmp_name'];
@@ -63,7 +63,8 @@ if ($product_color_image['size'] > 0) {
 } else {
     $save_color_img = $old_color_image;
 }
-update_color($product_color_type, $product_color_name, $save_color_img, $product_id);
+update_color_name($product_color_name, $save_color_img, $product_id);
+
 
 if ($product_detail_image['size'][$firtsRecord] > 0) {
     $detail_image = restructureFilesArray($product_detail_image);

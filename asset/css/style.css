@@ -279,6 +279,7 @@
 .breadcrumbs {
   list-style: none;
   display: flex;
+  margin-bottom: 12px;
   align-items: center;
   justify-content: center;
 }
@@ -828,7 +829,7 @@ footer {
 .modal {
   position: fixed;
   z-index: 9999;
-  top: -180%;
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -877,7 +878,7 @@ footer {
 #my-modal {
   position: fixed;
   z-index: 9999;
-  top: -124%;
+  bottom: 100%;
   left: 50%;
   width: 40%;
   transform: translateX(-50%);
