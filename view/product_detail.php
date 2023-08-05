@@ -171,33 +171,38 @@
         <h2>Bình Luận</h2>
         <div class="product-content col-2" style="width: 100%; height: 320px; overflow-y: auto;">
             <div class="box-content2  binhluan" style="width: 50%; font-size: 16px;">
-              <div style="overflow-y: auto; height: 250px; display: flex; justify-content: center;">
-              <table>
-                  <th>Nội dung</th>
-                  <th>Tên</th>
-                  <th>Thời Gian comment</th>
-                  <th>Xóa</th>
+              <?php
+                $product_id = $_REQUEST['product_id'];
+                $dsbl = loadall_comment($product_id);
+                foreach ($dsbl as $bl) {
+                  extract($bl);
+                  $username_comment_result = getUserName($id); 
+                  extract($username_comment_result);
+                ?>
+                    <div class="main_noidung_binhluan">
+                      <div class="anh_user" style="width: 120px; height: 200px;">
+                        <img src="../../du_an1/asset/images/banner_dm.png" alt="" width="100%">
+                      </div>
+                      <div class="noidung">
+                        <div class="noidung_name">
+                          <h4><?php echo $username; ?></h4>
+                          <h4><?php echo $content; ?></h4>
+                          <h4><?php echo $comment_time; ?></h4>
+                        </div>
+                          <a href="">Update</a>
+                          <a href="../../du_an1/view/binhluan/delete_bl.php">Delete</a>
+                        </div>
+                    </div>
                   <?php
-                  $product_id = $_REQUEST['product_id'];
-                  $dsbl = loadall_comment($product_id);
-                  foreach ($dsbl as $bl) {
-                    extract($bl);
-                    $ten_user = loadone_taikhoan($user_id);
-                    echo '<tr><td>' . $content . '</td>';
-                    echo '<td>' . $ten_user['username'] . '</td>';
-                    echo '<td>' . $comment_time . '</td></tr>';
-                  }
-                  ?>
-                  <br> <br>
-                </table>
-              </div>
+                }
+                ?>
             </div>
             <div class="btn_comment"  style="width: 50%; margin-left: 20px;">
               <?php if (isset($_SESSION['username'])) {
               ?>
                 <div class="wrapper">
                   <h2>ĐÁNH GIÁ SẢN PHẨM</h2>
-                  <form action="" method="post">
+                  <form action="../../du_an1/view/binhluan/add_bl.php" method="post">
                     <input type="hidden" name="product_id" value="<?= $product_id ?>">
                     <textarea name="content" cols="30" rows="5" placeholder="Viết đánh giá..."></textarea>
                     <div class="btn-group">
@@ -215,16 +220,6 @@
               <?php }
               ?>
             </div>
-            <?php
-            if (isset($_POST['guibinhluan'])) {
-              $content = $_POST['content'];
-              $user_id = $_SESSION['username']['id'];
-              $ten_user = loadone_taikhoan($user_id);
-              $comment_time = date('Y-m-d');
-              insert_comment($content, $user_id, $product_id, $comment_time);
-            }
-            ?>   
-       
           </div>
 
         <div class="product-suggest">

@@ -385,7 +385,28 @@ select:focus {
 
 
 /* -------------------binh luan=------------------ */
-
+.product-content .main_noidung_binhluan{
+  height: 120px; display: flex;
+  width: 100%;
+}
+.main_noidung_binhluan .noidung{
+  padding: 0px 20px;
+}
+.noidung .noidung_name{
+  width: 200px;
+  display: flex;
+  justify-items: center;
+  gap: 20;
+}
+.noidung .noidung_name span{
+width: 500px;
+  
+}
+.main_noidung_binhluan .noidung a{
+  padding-right: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 :root {
 	--yellow: #FFBD13;

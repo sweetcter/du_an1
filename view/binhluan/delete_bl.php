@@ -1,0 +1,11 @@
+<?php
+    include "../../model/pdo.php";
+    include "../../model/product.php";
+    include "../../model/comment.php";
+    include "../../model/taikhoan.php";
+    session_start();
+    $product_id = $_GET['product_id'];
+    $comment_id = $_GET['comment_id'];
+    delete_comment($comment_id);
+    header("location: ../../index.php?action=product_detail&product_id=$product_id");
+?>

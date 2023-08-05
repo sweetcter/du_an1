@@ -6,6 +6,7 @@ require "..$MODEL_URL/product.php";
 require "..$MODEL_URL/banner.php";
 require "../$MODEL_URL/category.php";
 require "../$MODEL_URL/taikhoan.php";
+require "../$MODEL_URL/comment.php";
 
 $act = isset($_GET['act']) ? $_GET['act'] : 'index';
 switch ($act) {
@@ -36,8 +37,14 @@ switch ($act) {
     case 'update_product':
         require ".$PRODUCT_URL/update_product.php";
         break;
+     // ---------------Xử lí Comment-------------------
+     case 'view_comment':
+        require ".$COMMENT_URL/commentList.php";
+        break;
+    case 'delete_comment':
+        require ".$COMMENT_URL/delete_comment.php";
+        break;
     case 'add-Category':
-
         if ((isset($_POST['addCategory'])) && ($_POST['addCategory'])) {
             $name_category = $_POST['name_category'];
             insertCategory($name_category);

@@ -86,7 +86,7 @@
           </a>
         </li>
         <li>
-          <a href="../..<?= $ROOT_URL ?>/admin/index.php?act=view_product">
+          <a href="../..<?= $ROOT_URL ?>/admin/index.php?act=view_comment">
             <i class="bx bx-calendar"></i>
             <span>Bình luận</span>
           </a>
