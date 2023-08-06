@@ -99,7 +99,7 @@
         <input type="text" name="" placeholder="Tìm kiếm" class="header-search-content" />
       </form>
     </div>
-    <div class="header-content-tool">~
+    <div class="header-content-tool">
       <div>
         <a href="index.php?action=myaccount"> <i class="fa-regular fa-user header-content-user"></i></a>
        
