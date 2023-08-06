@@ -28,6 +28,9 @@ switch ($action) {
   case 'male-fashion':
     require ".$VIEW_URL/male-fashion.php";
     break;
+    case 'view-cart':
+      require ".$VIEW_URL/view-cart.php";
+    break;
   case 'product_detail':
     require ".$VIEW_URL/product_detail.php";
     break;
@@ -49,6 +52,7 @@ switch ($action) {
       $email = $_POST['email'];
       $phone = $_POST['phone'];
       $address = $_POST['address'];
+      
       insert_taikhoan($full_name, $username, $password, $email,$address,$phone);
       echo '<script>alert("Bạn đã đăng ký thành công")</script>';
     }
@@ -128,36 +132,6 @@ switch ($action) {
       require ".$VIEW_URL/myaccount.php";
       break;
   
-  case 'diachi':
-      if (isset($_POST['thaydoi']) && ($_POST['thaydoi'])) {
-        $id = $_POST['id'];
-        $full_name = $_POST['full_name'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $address = $_POST['address'];
-        $image_user = $_FILES['image_user']['name'];
-        $target_dir = ".$ASSET_URL";
-        $target_file = $target_dir . basename($_FILES["image_user"]["name"]);
-  
-        if (move_uploaded_file($_FILES["image_user"]["tmp_name"], $target_file)) {
-          // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-        } else {
-          // echo "Sorry, there was an error uploading your file.";
-        }
-  
-        update_taikhoan_home($full_name, $username, $password, $email, $address, $phone, $image_user, $id);
-        $_SESSION['username'] = checkuser($username, $password);
-        echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';
-        // header('location: index.php?act=myaccount');
-        // include "./view/myaccount.php";
-        // $thongbao = "Bạn đã cập nhật thông tin thành công";
-      }
-      $listtaikhoan = loadall_taikhoan();
-      require ".$VIEW_URL/myaccount.php";
-      break;
-
   case 'thoat':
     session_unset();
     header('Location: index.php');
@@ -167,6 +141,9 @@ switch ($action) {
   default:
       echo "Không có gì";
       break;
+
+      
 }
+
 require "./includes/footer2.php";
 

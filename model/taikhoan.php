@@ -14,6 +14,11 @@
         $sp=pdo_query_one($sql);
         return $sp;
     }
+    function checktrung($username){
+        $sql = "SELECT *FROM user where username ='".$username."'";
+        $sp=pdo_query_one($sql);
+        return $sp;
+    }
     function loadall_taikhoan(){
         $sql = "SELECT * FROM user order by id desc";
         $listtaikhoan = pdo_query($sql);
@@ -44,3 +49,4 @@
         
         
     // }
+ 

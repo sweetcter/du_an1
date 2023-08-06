@@ -1,4 +1,5 @@
 
+
     <div class="wrapper">
       <main id="main-content">
         <div class="main-colums">
@@ -29,7 +30,7 @@
                 <hr>
                 <ul><br>
                   <li class="nav_item"><a href="">Thông tin tài khoản</a></li><br>
-                  <li class="nav_item"><a href="">Địa chỉ giao hàng</a></li><br>
+                  <li class="nav_item"><a href="../../du_an1/view/diachi.php">Địa chỉ giao hàng</a></li><br>
                   <li class="nav_item"><a href="">Lịch sử mua hàng</a></li><br>
                   <li class="nav_item"><a href="">Sản phẩm yêu thích</a></li><br>
                   <br>

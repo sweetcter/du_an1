@@ -162,7 +162,7 @@
                 <input type="number" value="1" id="product-detail-inc-quantity" class="product-detail-inc-quantity" />
                 <i class="fa-solid fa-plus" id="product-detail-inc-plus"></i>
               </div>
-              <button type="button" class="product-detail-toCart">Mua Ngay</button>
+              <button type="button" class="product-detail-toCart" name="mua"  >Mua Ngay</button>
               <i class="fa-regular fa-heart product-detail-favorite"></i>
             </div>
           </div>
@@ -170,15 +170,19 @@
           <!-- ---------------------- -->
           <div class="product-content" style="width: 100%; height: 320px;">
             <h2>Bình Luận</h2>
-            <div class="box-content2  binhluan">
+            <div class="box-content2  binhluan" style=" ">
               <table>
-
+                <th><strong>Nội dung</strong></th>
+                <th><strong>Nội dung</strong></th>
+                <th><strong>Nội dung</strong></th>
                 <?php
                 $product_id = $_REQUEST['product_id'];
                 $dsbl = loadall_comment($product_id);
                 foreach ($dsbl as $bl) {
-                  extract($bl);
+                  extract($bl); 
+                 
                   echo '<tr><td>' . $content . '</td>';
+                  
                   echo '<td>' . $user_id . '</td>';
                   echo '<td>' . $comment_time . '</td></tr>';
                 }
