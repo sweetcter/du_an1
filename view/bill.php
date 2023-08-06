@@ -1,4 +1,6 @@
 <?php require "./includes/header-cart.php" ?>
+
+
 <div id="register-modal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
@@ -23,6 +25,7 @@
           <input type="email" name="email" id="email" placeholder="Your email" required />
         </div>
 
+<?php require "./includes/favorite_product.php" ?>
         <div class="form-group">
           <label for="password">Password *</label>
           <input type="password" name="password" id="password" placeholder="Enter a password" required />
@@ -36,6 +39,7 @@
           <input type="text" name="phone" id="phone" placeholder="Your phone" required />
         </div>
 
+<?php require "./includes/cart_modal.php" ?>
         <button type="submit" class="buttonregister" name="dangky">Đăng ký</button>
       </form>
     </div>
@@ -55,6 +59,7 @@
   </div>
   <!-- ĐĂNG NHẬP -->
 
+<?php require "./includes/login_modal.php" ?>
   <div id="my-modal" class="modal1">
     <div class="modal-content">
       <span class="sign-in-close">&times;</span>
@@ -73,9 +78,9 @@
         <button type="submit" class="buttonregister" name="login" id="submit-btn">
           Đăng nhập <style></style>
         </button>
-        
+
         <br />
-       
+
       </form>
       <p id="message"></p>
     </div>
@@ -90,7 +95,7 @@
       <!-- Start Cart -->
       <?php require "./includes/cart_modal.php" ?>
       <!-- sign in -->
-      
+
       <!-- Nav -->
       <!-- end sign in -->
 
