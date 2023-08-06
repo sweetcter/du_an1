@@ -12,17 +12,12 @@
   </div>
 </div>
 <?php require "./includes/register_modal.php" ?>
-<!-- Nav -->
-<!-- end sign-up -->
-<!--  favoriteProduct-->
+
 <?php require "./includes/favorite_product.php" ?>
-<!-- end -->
-<!-- Start Cart -->
+
 <?php require "./includes/cart_modal.php" ?>
-<!-- sign in -->
+
 <?php require "./includes/login_modal.php" ?>
-<!-- Nav -->
-<!-- end sign in -->
 
 <?php require "./includes/header_nav.php" ?>
 
@@ -99,7 +94,7 @@
               </span>
               <span class="product-discount"> -<?= $value['discount']; ?>% </span>
               <!-- Select color by product -->
-              <?php $product_color_result = select_product_color($value['product_code']);?>
+              <?php $product_color_result = select_product_color($value['product_code']); ?>
               <div class="product-color-list">
                 <?php foreach ($product_color_result as $value) : ?>
                   <div class="product-color">

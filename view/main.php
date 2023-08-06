@@ -1,3 +1,4 @@
+<?php require "./includes/header.php" ?>
 <style>
   .mySlides {
     display: none;
@@ -126,6 +127,21 @@
         </div>
       </div>
 
+      <?php require "./includes/register_modal.php" ?>
+      <!-- Nav -->
+      <!-- end sign-up -->
+      <!--  favoriteProduct-->
+      <?php require "./includes/favorite_product.php" ?>
+      <!-- end -->
+      <!-- Start Cart -->
+      <?php require "./includes/cart_modal.php" ?>
+      <!-- sign in -->
+      <?php require "./includes/login_modal.php" ?>
+      <!-- Nav -->
+      <!-- end sign in -->
+
+      <?php require "./includes/header_nav.php" ?>
+
       <div class="div1_2 div1_2_cart">
         <img src="../<?= $ROOTt_URL ?>/asset/images/banneryoutube.jpg" alt="" />
         <div class="div_youtube">
@@ -134,199 +150,208 @@
         </div>
       </div>
 
+      <div class="div_bottomrowgird">
+        <div class="div1_1 div1_1_cart">
+          <img src="../<?= $ROOTt_URL ?>/asset/images/banner_dm.png" alt="" />
+          <div class="xemngay">
+            <button><a href="#">Xem ngay</a></button>
+          </div>
+        </div>
 
         <div class="div1_1 div1_1_cart">
           <img src="../<?= $ROOTt_URL ?>/asset/images/banner_dm2.png" alt="" />
           <div class="xemngay">
-            <button><a href="#">xem ngay</a></button>
+            <button><a href="#">Xem ngay</a></button>
           </div>
         </div>
       </div>
+  </div>
 
-      <div class="title_rowgird font_roboto">
-        <h1>thời trang</h1>
+  <div class="title_rowgird font_roboto">
+    <h1>Thời trang</h1>
+  </div>
+
+  <div class="row_girdx">
+    <div class="col column font_roboto">
+      <div class="column_img">
+        <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc1.jpg" style="width: 100%; height: 100%" alt="" />
       </div>
-
-      <div class="row_girdx">
-        <div class="col column font_roboto">
-          <div class="column_img">
-            <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc1.jpg" style="width: 100%; height: 100%" alt="" />
+      <div class="column_info">
+        <div class="column_button flexx font_roboto">
+          <div class="button__1">
+            <button>thành tựu</button>
           </div>
-          <div class="column_info">
-            <div class="column_button flexx font_roboto">
-              <div class="button__1">
-                <button>thành tựu</button>
-              </div>
-              <div class="button__1">
-                <button>sự nghiệp</button>
-              </div>
-            </div>
-
-            <div class="title_name">
-              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                miếng</span>
-            </div>
-
-            <div class="column_time">
-              <span>May 4,2028</span>
-            </div>
-
-            <div class="name font">
-              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                miếng</span>
-            </div>
+          <div class="button__1">
+            <button>sự nghiệp</button>
           </div>
         </div>
 
-        <div class="col column font_roboto">
-          <div class="column_img">
-            <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc2.jpg" style="width: 100%; height: 100%" alt="" />
-          </div>
-          <div class="column_info">
-            <div class="column_button flexx font_roboto">
-              <div class="button__1">
-                <button>thành tựu</button>
-              </div>
-              <div class="button__1">
-                <button>sự nghiệp</button>
-              </div>
-            </div>
-
-            <div class="title_name">
-              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                miếng</span>
-            </div>
-
-            <div class="column_time">
-              <span>May 4,2028</span>
-            </div>
-
-            <div class="name font">
-              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                miếng</span>
-            </div>
-          </div>
+        <div class="title_name">
+          <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+            miếng</span>
         </div>
 
-        <div class="col column font_roboto">
-          <div class="column_img">
-            <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc3.jpg" style="width: 100%; height: 100%" alt="" />
-          </div>
-          <div class="column_info">
-            <div class="column_button flexx font_roboto">
-              <div class="button__1">
-                <button>thành tựu</button>
-              </div>
-              <div class="button__1">
-                <button>sự nghiệp</button>
-              </div>
-            </div>
+        <div class="column_time">
+          <span>May 4,2028</span>
+        </div>
 
-            <div class="title_name">
-              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                miếng</span>
-            </div>
-
-            <div class="column_time">
-              <span>May 4,2028</span>
-            </div>
-
-            <div class="name font">
-              <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
-                miếng</span>
-            </div>
-          </div>
+        <div class="name font">
+          <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+            miếng</span>
         </div>
       </div>
-    </nav>
+    </div>
+
+    <div class="col column font_roboto">
+      <div class="column_img">
+        <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc2.jpg" style="width: 100%; height: 100%" alt="" />
+      </div>
+      <div class="column_info">
+        <div class="column_button flexx font_roboto">
+          <div class="button__1">
+            <button>thành tựu</button>
+          </div>
+          <div class="button__1">
+            <button>sự nghiệp</button>
+          </div>
+        </div>
+
+        <div class="title_name">
+          <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+            miếng</span>
+        </div>
+
+        <div class="column_time">
+          <span>May 4,2028</span>
+        </div>
+
+        <div class="name font">
+          <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+            miếng</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col column font_roboto">
+      <div class="column_img">
+        <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc3.jpg" style="width: 100%; height: 100%" alt="" />
+      </div>
+      <div class="column_info">
+        <div class="column_button flexx font_roboto">
+          <div class="button__1">
+            <button>thành tựu</button>
+          </div>
+          <div class="button__1">
+            <button>sự nghiệp</button>
+          </div>
+        </div>
+
+        <div class="title_name">
+          <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+            miếng</span>
+        </div>
+
+        <div class="column_time">
+          <span>May 4,2028</span>
+        </div>
+
+        <div class="name font">
+          <span>Tã/bỉm quần HUGGIES SKINCARE MEGA JUMBO size L 96+8
+            miếng</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </nav>
 
 
 
-    <script>
-      // phần showw ảnh phẩn sản phẩm
-      // var dip= document.getElementsByClassName('dip');
-      // console.log(dip);
+  <script>
+    // phần showw ảnh phẩn sản phẩm
+    // var dip= document.getElementsByClassName('dip');
+    // console.log(dip);
 
-      // const x=document.getElementsByClassName('dip');
-      // const y=document.getElementById('dip_show');
-      // console.log(x[0].src);
-      // const z =y.src;
+    // const x=document.getElementsByClassName('dip');
+    // const y=document.getElementById('dip_show');
+    // console.log(x[0].src);
+    // const z =y.src;
 
-      //     x[0].onmouseover=function () {
-      //         y.src=this.src;
-      // }
-      // x[0].onmouseout=function () {
-      //     y.src=z;
-      // }
-      // function myd(e) {
-      //     let v = e.getElementsByClassName('dip')[0];
-      //     y.src=v.src;
-      // }
-      // let imgsrc ='';
+    //     x[0].onmouseover=function () {
+    //         y.src=this.src;
+    // }
+    // x[0].onmouseout=function () {
+    //     y.src=z;
+    // }
+    // function myd(e) {
+    //     let v = e.getElementsByClassName('dip')[0];
+    //     y.src=v.src;
+    // }
+    // let imgsrc ='';
 
-      // function get(e){
-      //     let img = e.querySelector('img');
-      //     imgsrc = img.getAttribute('src');
-      // console.log(imgsrc);
-      // return imgsrc;
-      // y.src = imgsrc;
-      // }
-      // var x = get(e);
-      // console.log(imgsrc);
+    // function get(e){
+    //     let img = e.querySelector('img');
+    //     imgsrc = img.getAttribute('src');
+    // console.log(imgsrc);
+    // return imgsrc;
+    // y.src = imgsrc;
+    // }
+    // var x = get(e);
+    // console.log(imgsrc);
 
-      // let defaultImageSrc = z;
+    // let defaultImageSrc = z;
 
-      // function updateImageSrc(element) {
-      //   let imgElement = element.querySelector('img');
-      //   let imgSrc = imgElement.getAttribute('src');
-      //   let dipShowImg = document.getElementById('dip_show');
-      //   dipShowImg.src = imgSrc;
-      // }
+    // function updateImageSrc(element) {
+    //   let imgElement = element.querySelector('img');
+    //   let imgSrc = imgElement.getAttribute('src');
+    //   let dipShowImg = document.getElementById('dip_show');
+    //   dipShowImg.src = imgSrc;
+    // }
 
-      // function resetImageSrc() {
-      //   let dipShowImg = document.getElementById('dip_show');
-      //   dipShowImg.src = defaultImageSrc;
-      // }
+    // function resetImageSrc() {
+    //   let dipShowImg = document.getElementById('dip_show');
+    //   dipShowImg.src = defaultImageSrc;
+    // }
 
-      // phần slide show
-      let slideIndex = 0;
-      showSlides();
+    // phần slide show
+    let slideIndex = 0;
+    showSlides();
 
-      function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
       }
-
-      function showMenubar() {
-        document.onscroll = function() {
-          const scollTop = window.scrollY || document.documentElement.scrollTop;
-          const header = document.getElementsByClassName("header_row1");
-          const header1 = document.getElementsByClassName("header1");
-          // console.log(header);
-          header[0].style.display = "";
-          if (scollTop >= 300) {
-            header[1].style.display = "none";
-            header1[0].style.background = "#fff";
-          } else {
-            header[0].style.display = "none";
-            header[1].style.display = "";
-            header1[0].style.background = "";
-          }
-        };
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
       }
-      showMenubar();
-    </script>
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+    function showMenubar() {
+      document.onscroll = function() {
+        const scollTop = window.scrollY || document.documentElement.scrollTop;
+        const header = document.getElementsByClassName("header_row1");
+        const header1 = document.getElementsByClassName("header1");
+        // console.log(header);
+        header[0].style.display = "";
+        if (scollTop >= 300) {
+          header[1].style.display = "none";
+          header1[0].style.background = "#fff";
+        } else {
+          header[0].style.display = "none";
+          header[1].style.display = "";
+          header1[0].style.background = "";
+        }
+      };
+    }
+    showMenubar();
+  </script>
+  <?php require "./includes/footer.php" ?>

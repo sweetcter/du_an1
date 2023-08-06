@@ -188,8 +188,6 @@ switch ($action) {
     require ".$VIEW_URL/myaccount.php";
     break;
 
-
-
   case 'thoat':
     session_unset();
     header('Location: index.php');

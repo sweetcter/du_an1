@@ -170,57 +170,57 @@
         </div>
         <h2>Bình Luận</h2>
         <div class="product-content col-2" style="width: 100%; height: 320px; overflow-y: auto;">
-            <div class="box-content2  binhluan" style="width: 50%; font-size: 16px;">
-              <?php
-                $product_id = $_REQUEST['product_id'];
-                $dsbl = loadall_comment($product_id);
-                foreach ($dsbl as $bl) {
-                  extract($bl);
-                  $username_comment_result = getUserName($id); 
-                  extract($username_comment_result);
-                ?>
-                    <div class="main_noidung_binhluan">
-                      <div class="anh_user" style="width: 120px; height: 200px;">
-                        <img src="../../du_an1/asset/images/banner_dm.png" alt="" width="100%">
-                      </div>
-                      <div class="noidung">
-                        <div class="noidung_name">
-                          <h4><?php echo $username; ?></h4>
-                          <h4><?php echo $content; ?></h4>
-                          <h4><?php echo $comment_time; ?></h4>
-                        </div>
-                          <a href="">Update</a>
-                          <a href="../../du_an1/view/binhluan/delete_bl.php">Delete</a>
-                        </div>
-                    </div>
-                  <?php
-                }
-                ?>
-            </div>
-            <div class="btn_comment"  style="width: 50%; margin-left: 20px;">
-              <?php if (isset($_SESSION['username'])) {
-              ?>
-                <div class="wrapper">
-                  <h2>ĐÁNH GIÁ SẢN PHẨM</h2>
-                  <form action="../../du_an1/view/binhluan/add_bl.php" method="post">
-                    <input type="hidden" name="product_id" value="<?= $product_id ?>">
-                    <textarea name="content" cols="30" rows="5" placeholder="Viết đánh giá..."></textarea>
-                    <div class="btn-group">
-                      <button type="submit" class="btn submit" name="guibinhluan">Submit</button>
-                      <button class="btn cancel">Cancel</button>
-                    </div>
-                  </form>
-	              </div>
-              <?php
-              } else { ?>
-                <strong >
-                  <p class="thongbao" style="display: flex; justify-content: center; font-size: 16px; background-color: #e3b386; padding: 10px; color: white; width: 300px;">
-                    Vui lòng đăng nhập để bình luận</p>
-                </strong>
-              <?php }
-              ?>
-            </div>
+          <div class="box-content2  binhluan" style="width: 50%; font-size: 16px;">
+            <?php
+            $product_id = $_REQUEST['product_id'];
+            $dsbl = loadall_comment($product_id);
+            foreach ($dsbl as $bl) {
+              extract($bl);
+              $username_comment_result = getUserName($id);
+              extract($username_comment_result);
+            ?>
+              <div class="main_noidung_binhluan">
+                <div class="anh_user" style="width: 120px; height: 200px;">
+                  <img src="../../du_an1/asset/images/banner_dm.png" alt="" width="100%">
+                </div>
+                <div class="noidung">
+                  <div class="noidung_name">
+                    <h4><?php echo $username; ?></h4>
+                    <h4><?php echo $content; ?></h4>
+                    <h4><?php echo $comment_time; ?></h4>
+                  </div>
+                  <a href="">Update</a>
+                  <a href="../../du_an1/view/binhluan/delete_bl.php">Delete</a>
+                </div>
+              </div>
+            <?php
+            }
+            ?>
           </div>
+          <div class="btn_comment" style="width: 50%; margin-left: 20px;">
+            <?php if (isset($_SESSION['username'])) {
+            ?>
+              <div class="wrapper">
+                <h2>ĐÁNH GIÁ SẢN PHẨM</h2>
+                <form action="../../du_an1/view/binhluan/add_bl.php" method="post">
+                  <input type="hidden" name="product_id" value="<?= $product_id ?>">
+                  <textarea name="content" cols="30" rows="5" placeholder="Viết đánh giá..."></textarea>
+                  <div class="btn-group">
+                    <button type="submit" class="btn submit" name="guibinhluan">Submit</button>
+                    <button class="btn cancel">Cancel</button>
+                  </div>
+                </form>
+              </div>
+            <?php
+            } else { ?>
+              <strong>
+                <p class="thongbao" style="display: flex; justify-content: center; font-size: 16px; background-color: #e3b386; padding: 10px; color: white; width: 300px;">
+                  Vui lòng đăng nhập để bình luận</p>
+              </strong>
+            <?php }
+            ?>
+          </div>
+        </div>
 
         <div class="product-suggest">
           <h3 class="product-suggest-title" style="color: red;">
@@ -420,3 +420,4 @@
             </div>
 
           </div>
+<?php require "./includes/footer.php" ?>

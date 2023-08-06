@@ -59,7 +59,7 @@
       </a>
     </div>
     <li class="header-nav-item">
-      <a class="header-nav-link" href="./male-fashion.html">NAM</a>
+      <a class="header-nav-link" href="/du_an1/male-fashion">NAM</a>
     </li>
     <li class="header-nav-item">
       <a class="header-nav-link" href="../../du_an1/index.php?action=female-fashion">NỮ</a>
