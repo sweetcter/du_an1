@@ -37,6 +37,12 @@ switch ($action) {
   case 'female-fashion':
     require ".$VIEW_URL/female-fashion.php";
     break;
+  case 'bill':
+    require ".$VIEW_URL/bill.php";
+    break;
+  case 'view-cart':
+    require ".$VIEW_URL/view-cart.php";
+    break;
   case 'admin':
     // header('admin/index.php');
     require "../<?= $ROOTt_URL?>/admin/index.php";

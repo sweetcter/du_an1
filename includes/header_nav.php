@@ -61,7 +61,7 @@
   </div>
   <div class="overlay"></div>
   <div class="header-logo">
-    <a href="./index.html">
+    <a href="./index.php">
       <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
     </a>
   </div>
@@ -69,7 +69,7 @@
   <!-- second header -->
   <ul class="header-nav">
     <div class="header-second-logo">
-      <a href="./index.html">
+      <a href="./index.php">
         <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
       </a>
     </div>

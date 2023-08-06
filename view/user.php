@@ -1,3 +1,13 @@
+<?php require "./includes/header-cart.php" ?>
+<?php require "./includes/header_nav.php" ?>
+
+<?php require "./includes/register_modal.php" ?>
+
+<?php require "./includes/favorite_product.php" ?>
+
+<?php require "./includes/cart_modal.php" ?>
+
+<?php require "./includes/login_modal.php" ?>
 
     <div class="wrapper">
         <main id="main-content">

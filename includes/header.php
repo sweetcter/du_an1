@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/index.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/spct.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/comment.css" />
+  
 
 </head>
 
