@@ -20,7 +20,6 @@
 
 <?php require "./includes/login_modal.php" ?>
 
-<?php require "./includes/header_nav.php" ?>
 
 <!-- End nav -->
 <div class="wrapper">

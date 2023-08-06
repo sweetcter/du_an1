@@ -1,109 +1,14 @@
 <?php require "./includes/header.php" ?>
+<?php require "./includes/header_nav.php" ?>
 
-<header class="header">
-  <div class="header-menu-sidebar">
-    <ul class="header-menu-top-title">
-      <li><a href="#" class="menu-sidebar-active">NAM</a></li>
-      <li><a href="#">NỮ</a></li>
-      <li><a href="#">BỘ SƯU TẬP</a></li>
-    </ul>
 
-    <ul class="header-menu-middle">
-      <li><a href="#">XEM TẤT CẢ</a></li>
-      <li><a href="#">NEW ARRIVALS</a></li>
-      <li><a href="#">BEST SELLERS</a></li>
-      <li>
-        <a href="#">ÁO NAM </a>
-        <i class="fa-solid fa-plus header-menu-middle-plus"></i>
-        <i class="fa-solid fa-minus header-menu-middle-minus"></i>
-      </li>
-      <li>
-        <a href="#">QUẦN NAM</a>
-        <i class="fa-solid fa-plus header-menu-middle-plus"></i>
-        <i class="fa-solid fa-minus header-menu-middle-minus"></i>
-      </li>
-      <li><a href="#">ĐỒ BƠI - ĐỒ ĐI BIỂN</a></li>
-      <li>
-        <a href="#">PHỤ KIỆN </a>
-        <i class="fa-solid fa-plus header-menu-middle-plus"></i>
-        <i class="fa-solid fa-minus header-menu-middle-minus"></i>
-      </li>
-      <li>
-        <a href="#">ƯU ĐÃI </a>
-        <span class="sale">Sale</span>
-        <i class="fa-solid fa-plus header-menu-middle-plus"></i>
-        <i class="fa-solid fa-minus header-menu-middle-minus"></i>
-      </li>
-      <li><a href="#">TIN THỜI TRANG</a></li>
-    </ul>
-    <ul class="header-menu-bottom">
-      <i class="fa-regular fa-user header-menu-icon-user"></i>
-      <li>ĐĂNG NHẬP</li>
-      <li>ĐĂNG KÝ</li>
-    </ul>
-  </div>
-  <!-- Hidden when scoll -->
-  <div class="header-bar">
-    <img src="../<?= $ROOT_URL ?>/asset/images/menu.png" alt="" class="header-menu-bar" />
-  </div>
-  <div class="overlay"></div>
-  <div class="header-logo">
-    <a href="#">
-      <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
-    </a>
-  </div>
-  <!-- end -->
-  <!-- second header -->
-  <ul class="header-nav">
-    <div class="header-second-logo">
-      <a href="#">
-        <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
-      </a>
-    </div>
-    <li class="header-nav-item">
-      <a class="header-nav-link" href="#">NAM</a>
-    </li>
-    <li class="header-nav-item">
-      <a class="header-nav-link" href="#">NỮ</a>
-    </li>
-    <li class="header-nav-item">
-      <a class="header-nav-link" href="#">NEW</a>
-    </li>
-    <li class="header-nav-item">
-      <a class="header-nav-link" href="#">BEST</a>
-    </li>
-    <li class="header-nav-item">
-      <a class="header-nav-link" href="#">SALE</a>
-    </li>
-  </ul>
+<?php require "./includes/register_modal.php" ?>
 
-  <div class="header-content-right">
-    <div class="header-search-bar">
-      <div>
-        <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
-      </div>
-      <form action="">
-        <input type="text" name="" id="" placeholder="Tìm kiếm" class="header-search-content" />
-      </form>
-    </div>
-    <div class="header-content-tool">
-      <div>
-        <i class="fa-regular fa-user header-content-user"></i>
-      </div>
-      <div id="header-content-heart">
-        <i class="fa-regular fa-heart header-content-heart"></i>
-      </div>
-      <div>
-        <i class="fa-solid fa-heart header-content-heart" style="display: none"></i>
-      </div>
-      <div id="header-content-cart">
-        <i class="fa-solid fa-cart-shopping header-content-cart"></i>
-      </div>
-    </div>
-  </div>
-</header>
 <?php require "./includes/favorite_product.php" ?>
+
 <?php require "./includes/cart_modal.php" ?>
+
+<?php require "./includes/login_modal.php" ?>
 <div class="wrapper">
   <main id="main-content">
     <div class="main-colums">
@@ -186,11 +91,13 @@
                 <div class="noidung">
                   <div class="noidung_name">
                     <h4><?php echo $username; ?></h4>
-                    <h4><?php echo $content; ?></h4>
+                    <h4 style="padding: 0px 50px;"><?php echo $content; ?></h4>
                     <h4><?php echo $comment_time; ?></h4>
                   </div>
+                  <?php if (isset($_SESSION['username'])) {?>
                   <a href="">Update</a>
                   <a href="../../du_an1/view/binhluan/delete_bl.php">Delete</a>
+                  <?php } ?>
                 </div>
               </div>
             <?php
