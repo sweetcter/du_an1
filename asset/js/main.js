@@ -157,13 +157,13 @@ if(openRegister){
 //   menuSidebar.style.opacity = `1`;
 // };
 
-// quenpass.onclick = function () {
-//   let menuSidebar = document.querySelector(".header-menu-sidebar");
-//   quen.style.top = "0";
-//   quen.style.opacity = "1";
-//   menuSidebar.style.transform = `translateX(-100%)`;
-//   menuSidebar.style.opacity = `1`;
-// };
+quenpass.onclick = function () {
+  let menuSidebar = document.querySelector(".header-menu-sidebar");
+  quen.style.top = "0";
+  quen.style.opacity = "1";
+  menuSidebar.style.transform = `translateX(-100%)`;
+  menuSidebar.style.opacity = `1`;
+};
 
 
 // close register
@@ -175,12 +175,12 @@ closeRegister.onclick = function () {
 };
 // end close register
 // close register
-// let closequen = document.querySelector("#close-quen");
-// close_quen.onclick = function () {
-//   hiddenOverlay();
-//   quen.style.top = "-150%";
-//   quen.style.opacity = 0;
-// };
+let closequen = document.querySelector("#close-quen");
+close_quen.onclick = function () {
+  hiddenOverlay();
+  quen.style.top = "-150%";
+  quen.style.opacity = 0;
+};
 // end close register
 
 // increase value

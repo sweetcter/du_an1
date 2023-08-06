@@ -76,7 +76,7 @@
   </div>
   <div id="quen-modal" class="modal">
     <div class="modal-content">
-      <span class="close" id="close_quen">&times;</span>
+      <span class="close" id="quenpass">&times;</span>
       <h2>Quên mật khẩu</h2>
       <form id="forgotPasswordForm" method="post" action="index.php?action=quenmk">
         <div class="form-group">
