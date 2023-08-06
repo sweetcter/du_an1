@@ -39,16 +39,26 @@ function select_product_size_by_id($product_id)
     WHERE products.product_id = ?";
     return pdo_query($sql, $product_id);
 }
+function select_all_size()
+{
+    $sql = "SELECT * FROM size ORDER BY size_id ";
+    return pdo_query($sql);
+}
+function select_all_color()
+{
+    $sql = "SELECT * FROM color_type ORDER BY color_type_id ";
+    return pdo_query($sql);
+}
 function select_product_color($product_code)
 {
-    $sql = "SELECT color.* FROM products JOIN product_color ON products.product_id = product_color.product_id 
-        JOIN color ON product_color.color_id = color.color_id WHERE products.product_code = ?";
+    $sql = "SELECT color_name.* FROM products JOIN product_color ON products.product_id = product_color.product_id 
+        JOIN color_name ON product_color.color_name_id = color_name.color_name_id WHERE products.product_code = ?";
     return pdo_query($sql, $product_code);
 }
 function select_color_by_id($product_id)
 {
-    $sql = "SELECT color.* FROM products JOIN product_color ON products.product_id = product_color.product_id 
-     JOIN color ON product_color.color_id = color.color_id WHERE products.product_id = ?";
+    $sql = "SELECT color_type.* FROM products JOIN product_color ON products.product_id = product_color.product_id 
+     JOIN color_type ON product_color.color_type_id = color_type.color_type_id WHERE products.product_id = ?";
     return pdo_query_one($sql, $product_id);
 }
 function select_size_by_id($product_id)
@@ -57,6 +67,12 @@ function select_size_by_id($product_id)
     JOIN size ON product_size.size_id = size.size_id WHERE products.product_id = ?";
     return pdo_query_one($sql, $product_id);
 }
+// function select_color_name_by_id($product_id)
+// {
+//     $sql = "SELECT color_name.* FROM products JOIN product_color ON products.product_id = product_color.product_id 
+//     JOIN color_name ON product_color.color_name_id = color_name.color_name_id WHERE products.product_id = ?";
+//     return pdo_query_one($sql, $product_id);
+// }
 
 function select_home_product($sortDescending)
 {
@@ -168,19 +184,30 @@ function select_all_image($product_id)
         JOIN images ON product_images.image_id = images.image_id WHERE products.product_id = ?";
     return pdo_query($sql, $product_id);
 }
-function add_color($color_type, $color_name, $color_image)
+function add_color_name($color_name, $color_image)
 {
-    $sql = "INSERT INTO color(color_type,color_name,color_image) VALUES(?,?,?)";
-    return pdo_execute_return_lastInsertId($sql, $color_type, $color_name, $color_image);
+    $sql = "INSERT INTO color_name(color_name,color_image) VALUES(?,?)";
+    return pdo_execute_return_lastInsertId($sql, $color_name, $color_image);
 }
-function update_color($color_type, $color_name, $color_image, $color_id)
+function update_color_name( $color_name, $color_image, $color_id)
 {
-    $sql = "UPDATE color SET color_type = ?,color_name = ?,color_image = ? WHERE color_id = ?";
-    pdo_execute($sql, $color_type, $color_name, $color_image, $color_id);
+    $sql = "UPDATE color_name SET color_name = ?,color_image = ? WHERE color_name_id = ?";
+    pdo_execute($sql,$color_name, $color_image, $color_id);
+}
+function select_color_name_by_id($product_color_id)
+{
+    $sql = "SELECT * FROM color_name WHERE color_name_id = ?";
+    return pdo_query_one($sql, $product_color_id);
+}
+function select_color_name_by_product_id($product_id)
+{
+    $sql = "SELECT color_name.* FROM products JOIN product_color ON products.product_id = product_color.product_id 
+    JOIN color_name ON product_color.color_name_id = color_name.color_name_id  WHERE products.product_id = ?";
+    return pdo_query_one($sql, $product_id);
 }
 function delete_color($color_id)
 {
-    $sql = "DELETE FROM color WHERE color_id = ?";
+    $sql = "DELETE FROM color_name WHERE color_name_id = ?";
     pdo_execute($sql, $color_id);
 }
 function delete_product_color($product_id)
@@ -203,15 +230,15 @@ function delete_product_images($product_id)
     $sql = "DELETE FROM product_images WHERE product_id = ?";
     pdo_execute($sql, $product_id);
 }
-function add_size($size_name)
+function add_product_size($product_id, $size_id)
 {
-    $sql = "INSERT INTO size(size_name) VALUES(?)";
-    return pdo_execute_return_lastInsertId($sql, $size_name);
+    $sql = "INSERT INTO product_size(product_id,size_id) VALUES(?,?)";
+    return pdo_execute_return_lastInsertId($sql, $product_id, $size_id);
 }
-function update_size($size_name, $size_id)
+function update_size($size_id,$product_id)
 {
-    $sql = "UPDATE size SET size_name = ? WHERE size_id = ?";
-    pdo_execute($sql, $size_name, $size_id);
+    $sql = "UPDATE product_size SET size_id= ? WHERE product_id = ?";
+    pdo_execute($sql,$size_id,$product_id);
 }
 function delete_product_size($product_id)
 {
@@ -223,21 +250,21 @@ function delete_size($size_id)
     $sql = "DELETE FROM size WHERE size_id = ?";
     pdo_execute($sql, $size_id);
 }
-function select_all_size($product_id)
+// function select_all_size_by_id($product_id)
+// {
+//     $sql = "SELECT size.* FROM products JOIN product_size ON products.product_id = product_size.product_id 
+//         JOIN size ON product_size.size_id = size.size_id WHERE products.product_id = ?";
+//     return pdo_query($sql, $product_id);
+// }
+function getProductColors($product_id, $color_type_id, $color_name_id)
 {
-    $sql = "SELECT size.* FROM products JOIN product_size ON products.product_id = product_size.product_id 
-        JOIN size ON product_size.size_id = size.size_id WHERE products.product_id = ?";
-    return pdo_query($sql, $product_id);
+    $sql = "INSERT INTO product_color(product_id,color_type_id,color_name_id) VALUES(?,?,?)";
+    pdo_execute($sql, $product_id, $color_type_id, $color_name_id);
 }
-function getProductColors($product_id, $color_id)
+function getProductImages($product_id, $image_id, $color_type_id)
 {
-    $sql = "INSERT INTO product_color(product_id,color_id) VALUES(?,?)";
-    pdo_execute($sql, $product_id, $color_id);
-}
-function getProductImages($product_id, $image_id, $color_id)
-{
-    $sql = "INSERT INTO product_images(product_id,image_id,color_id) VALUES(?,?,?)";
-    pdo_execute($sql, $product_id, $image_id, $color_id);
+    $sql = "INSERT INTO product_images(product_id,image_id,color_type_id) VALUES(?,?,?)";
+    pdo_execute($sql, $product_id, $image_id, $color_type_id);
 }
 function getProductSizes($product_id, $color_id)
 {
@@ -246,11 +273,11 @@ function getProductSizes($product_id, $color_id)
 }
 function select_all_product_admin()
 {
-    $sql = "SELECT products.*,color.*,size.* FROM products 
+    $sql = "SELECT products.*,color_type.*,size.* FROM products 
     JOIN product_size ON products.product_id = product_size.product_id 
     JOIN size ON product_size.size_id = size.size_id 
     JOIN product_color ON products.product_id = product_color.product_id 
-    JOIN color ON product_color.color_id = color.color_id ";
+    JOIN color_type ON product_color.color_type_id = color_type.color_type_id ";
     return pdo_query($sql);
 }
 function restructureFilesArray($files)

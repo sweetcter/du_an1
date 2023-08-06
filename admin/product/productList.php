@@ -1,5 +1,5 @@
-  
-  <div class="main-header">
+<?php require "./header.php" ?>
+<div class="main-header">
     <div class="d-flex">
       <div class="mobile-toggle" id="mobile-toggle">
         <i class="bx bx-menu"></i>
@@ -70,8 +70,12 @@
               <td><?= $value['discount']; ?></td>
               <td><?= $value['product_desc']; ?></td>
               <td><?= $value['size_name']; ?></td>
-              <td><?= $value['color_name']; ?></td>
-              <td><?= $value['color_type']; ?></td>
+              <td><?php
+                  $color_name_result = select_color_name_by_id($value['color_type_id']);
+                  ?>
+                <?= $color_name_result['color_name'] ?>
+              </td>
+              <td><?= $value['color_type_name']; ?></td>
               <td><?= $value['product_import_date'] ?></td>
               <td>
                 <?php $category_result = select_one_category($value['category_id']) ?>
@@ -95,4 +99,4 @@
   </div>
 
   <div class="overlay"></div>
-
+<?php require "./footer.php" ?>

@@ -1,27 +1,41 @@
-<div id="my-modal" class="modal1">
+<!-- sign up -->
+<div id="register-modal" class="modal">
+  <!-- Modal content -->
   <div class="modal-content">
-    <span class="sign-in-close">&times;</span>
-    <h2 style="text-align: center">Đăng nhập</h2>
-    <form action="index.php?action=login" method="POST">
+    <span id="close-button" class="close">&times;</span>
+    <h2>Đăng ký</h2>
+    <form action="../../du_an1/view/progess-signup.php" method="POST" id="register-form">
       <div class="form-group">
-        <label for="username">Tài khoản:</label>
-        <input type="text" id="username" name="username" required />
+        <label for="full_name">Full Name*</label>
+        <input type="text" name="full_name" id="full_name" placeholder="Full name" required>
       </div>
       <div class="form-group">
-        <label for="password">Mật khẩu:</label>
-        <input type="password" id="password3" name="password" required />
-        <a href=""><span class="quenmk" id="openQuen">Quên mật khẩu?</span></a>
+        <label for="username">UserName*</label>
+        <input type="text" name="username" id="full_name" placeholder="Username" required>
       </div>
-      <br />
-      <button type="submit" name="login" id="submit-btn" class="buttonregister">Đăng nhập <style>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" name="email" id="email" placeholder="Your email" required>
+      </div>
 
-        </style></button>
-      <br />
-      <div class="dangky">
-        <span>Bạn chưa có tài khoản?</span>
-        <a href="/register.html">Đăng ký thành viên</a>
+      <div class="form-group">
+        <label for="password">Password *</label>
+        <input type="password" name="password" id="password" placeholder="Enter a password" required>
       </div>
+      <div class="form-group">
+        <label for="address">Address *</label>
+        <input type="text" name="address" id="address" placeholder="Your address" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone *</label>
+        <input type="text" name="phone" id="phone" placeholder="Your phone" required>
+      </div>
+
+      <button type="submit" class="buttonregister" name="dangky">Đăng ký</button>
+      <?php
+      if (isset($thongbao) && ($thongbao) != "") {
+        echo $thongbao;
+      } ?>
     </form>
-    <p id="message"></p>
   </div>
 </div>

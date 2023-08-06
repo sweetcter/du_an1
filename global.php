@@ -9,4 +9,5 @@
     $INCLUDES_URL = "/includes";
     $PRODUCT_URL = '/product';
     $BANNER_URL = '/banner';
+    $COMMENT_URL = '/comment';
 

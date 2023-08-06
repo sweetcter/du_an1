@@ -1,9 +1,8 @@
 <?php
 function selectAll_banner()
 {
-    $sql = "SELECT * FROM `banner` ORDER BY banner_id DESC";
-    $x =pdo_query($sql);
-    return $x;
+    $sql = "SELECT * FROM banner ORDER BY banner_id";   
+    return pdo_query($sql);
 }
 function add_banner($banner_name,$banner_image)
 {

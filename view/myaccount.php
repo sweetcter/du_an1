@@ -1,4 +1,5 @@
-
+<?php require "./includes/header.php" ?>
+<?php require "./includes/header_nav.php" ?>
 
     <div class="wrapper">
       <main id="main-content">
@@ -142,6 +143,7 @@
 
           </div>
         </div>
+        <?php require "./includes/footer.php" ?>
   </body>
 
   </html>

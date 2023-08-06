@@ -2,7 +2,7 @@
   <div class="modal-content">
     <span class="sign-in-close">&times;</span>
     <h2 style="text-align: center">Đăng nhập</h2>
-    <form>
+    <form form action="../../du_an1/view/progess-login.php" method="POST" id="register-form" >
       <div class="form-group">
         <label for="username">Tài khoản:</label>
         <input type="text" id="username" name="username" required />

@@ -1,18 +1,18 @@
 <?php
 require "../global.php";
-require "./header.php";
+// require "./header.php";
 require "..$MODEL_URL/pdo.php";
 require "..$MODEL_URL/product.php";
 require "..$MODEL_URL/banner.php";
 require "../$MODEL_URL/category.php";
 require "../$MODEL_URL/taikhoan.php";
+require "../$MODEL_URL/comment.php";
 
 $act = isset($_GET['act']) ? $_GET['act'] : 'index';
 switch ($act) {
     case 'index':
         require "./view/main.php";
         break;
-
         // ---------------Xử lí Banner-------------------    
     case 'add_banner':
         require ".$BANNER_URL/add_banner.php";
@@ -36,8 +36,14 @@ switch ($act) {
     case 'update_product':
         require ".$PRODUCT_URL/update_product.php";
         break;
+     // ---------------Xử lí Comment-------------------
+     case 'view_comment':
+        require ".$COMMENT_URL/commentList.php";
+        break;
+    case 'delete_comment':
+        require ".$COMMENT_URL/delete_comment.php";
+        break;
     case 'add-Category':
-
         if ((isset($_POST['addCategory'])) && ($_POST['addCategory'])) {
             $name_category = $_POST['name_category'];
             insertCategory($name_category);
@@ -117,9 +123,12 @@ switch ($act) {
         $listtaikhoan = loadall_taikhoan();
         include "./user/list.php";
         break;
+    case 'add_color':
+        require "./product/add_color.php";
+        break;
     default:
         echo "Không có gì";
         echo "admin";
         break;
 }
-require "./footer.php";
+// require "./footer.php";
