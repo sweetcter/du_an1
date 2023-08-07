@@ -171,7 +171,7 @@
                     </select>
                 </div>
                 <div class="mt-3">
-                    <button type="submit" name='addProduct' class="btn btn-success">Thêm</button>
+                    <button type="submit" name='addProduct' class="btn btn-success">Sửa</button>
                     <button type="reset" class="btn btn-warning">Nhập lại</button>
                 </div>
             </form>

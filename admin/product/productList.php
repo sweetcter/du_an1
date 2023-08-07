@@ -71,7 +71,7 @@
               <td><?= $value['product_desc']; ?></td>
               <td><?= $value['size_name']; ?></td>
               <td><?php
-                  $color_name_result = select_color_name_by_id($value['color_type_id']);
+                  $color_name_result = select_color_name_by_id($value['color_name_id']);
                   ?>
                 <?= $color_name_result['color_name'] ?>
               </td>

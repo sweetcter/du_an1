@@ -69,7 +69,7 @@ update_color_name($product_color_name, $save_color_img, $product_id);
 if ($product_detail_image['size'][$firtsRecord] > 0) {
     $detail_image = restructureFilesArray($product_detail_image);
     $image_result = select_images_by_id($product_id);
-    $detail_image_length = count($image_result);
+    $detail_image_length = count($detail_image);
     // die();
     foreach ($image_result as $key => $value) {
         echo $value['image_url'] . "<br>";

@@ -273,7 +273,7 @@ function getProductSizes($product_id, $color_id)
 }
 function select_all_product_admin()
 {
-    $sql = "SELECT products.*,color_type.*,size.* FROM products 
+    $sql = "SELECT products.*,product_color.*,color_type.*,size.* FROM products 
     JOIN product_size ON products.product_id = product_size.product_id 
     JOIN size ON product_size.size_id = size.size_id 
     JOIN product_color ON products.product_id = product_color.product_id 

@@ -1809,7 +1809,7 @@ button#page-header-user-dropdown {
 }
 
 .sidebar-expand .main {
-    padding-left: 430px;
+    padding-left: auto;
     transition: 0.3s ease-in-out;
 }
 
