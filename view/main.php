@@ -314,7 +314,6 @@
 
     // phần slide show
     let slideIndex = 0;
-    showSlides();
 
     function showSlides() {
       let i;
@@ -334,24 +333,25 @@
       dots[slideIndex - 1].className += " active";
       setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
+    showSlides();
 
-    function showMenubar() {
-      document.onscroll = function() {
-        const scollTop = window.scrollY || document.documentElement.scrollTop;
-        const header = document.getElementsByClassName("header_row1");
-        const header1 = document.getElementsByClassName("header1");
-        // console.log(header);
-        header[0].style.display = "";
-        if (scollTop >= 300) {
-          header[1].style.display = "none";
-          header1[0].style.background = "#fff";
-        } else {
-          header[0].style.display = "none";
-          header[1].style.display = "";
-          header1[0].style.background = "";
-        }
-      };
-    }
-    showMenubar();
+    // function showMenubar() {
+    //   document.onscroll = function() {
+    //     const scollTop = window.scrollY || document.documentElement.scrollTop;
+    //     const header = document.getElementsByClassName("header_row1");
+    //     const header1 = document.getElementsByClassName("header1");
+    //     // console.log(header);
+    //     header[0].style.display = "";
+    //     if (scollTop >= 300) {
+    //       header[1].style.display = "none";
+    //       header1[0].style.background = "#fff";
+    //     } else {
+    //       header[0].style.display = "none";
+    //       header[1].style.display = "";
+    //       header1[0].style.background = "";
+    //     }
+    //   };
+    // }
+    // showMenubar();
   </script>
   <?php require "./includes/footer.php" ?>

@@ -41,7 +41,7 @@
         <i class="fa-solid fa-filter"></i>
       </div>
       <div class="view-function">
-        <?php $count_product = count_home_product(); ?>
+        <?php $count_product = count_home_product(1); ?>
         <strong><?= $count_product ?></strong>
         Sản phẩm
       </div>
@@ -62,7 +62,7 @@
 
       <div class="product-colum">
         <div class="product-row row-col-4">
-          <?php $product_result = select_home_product(true); ?>
+          <?php $product_result = select_home_product(true,1); ?>
           <?php foreach ($product_result as $key => $value) : ?>
             <!-- start item -->
             <div class="product-item">

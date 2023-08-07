@@ -14,7 +14,7 @@
       src="..<?= $ROOT_URL?>/asset/slick-master/slick/slick.min.js"
     ></script>
     <script type="text/javascript" src="..<?= $ROOT_URL?>/asset/js/slick.js"></script>
-    <script src="..<?= $ROOT_URL?>/asset/js/mutipleRangeJquery.js"></script>
-    <script src="..<?= $ROOT_URL?>/asset/js/main.js"></script>
+    <script type="text/javascript" src="..<?= $ROOT_URL?>/asset/js/mutipleRangeJquery.js"></script>
+    <script type="text/javascript" src="..<?= $ROOT_URL?>/asset/js/main.js"></script>
   </body>
 </html>

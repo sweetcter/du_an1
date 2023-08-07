@@ -1,4 +1,5 @@
 <?php require "./includes/header.php" ?>
+
     <div id="register-modal" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
@@ -194,7 +195,7 @@
             <i id="icon_re" class="fa-regular fa-user header-content-user"></i>
           </div>
           <div>
-            <i class="fa-regular fa-heart header-content-heart"></i>
+            <i id="header-content-heart" class="fa-regular fa-heart header-content-heart"></i>
           </div>
           <div>
             <i

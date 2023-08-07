@@ -74,15 +74,15 @@ function select_size_by_id($product_id)
 //     return pdo_query_one($sql, $product_id);
 // }
 
-function select_home_product($sortDescending)
+function select_home_product($sortDescending,$category_id)
 {
-    $sql = "SELECT * FROM products GROUP BY product_code ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC");
-    return pdo_query($sql);
+    $sql = "SELECT * FROM products WHERE category_id = ? GROUP BY product_code ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC");
+    return pdo_query($sql,$category_id);
 }
-function count_home_product()
+function count_home_product($category_id)
 {
-    $sql = "SELECT SUM(quantity) FROM products";
-    return pdo_query_value($sql);
+    $sql = "SELECT SUM(quantity) FROM products WHERE category_id = ?";
+    return pdo_query_value($sql,$category_id);
 }
 function select_product_by_id($product_id)
 {
