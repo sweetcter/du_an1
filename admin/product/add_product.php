@@ -33,6 +33,9 @@
 
 <div class="main">
     <div class="main-content dashboard">
+            <a href="./index.php?act=view_product" class="mb-4">
+                 <button class="btn btn-primary">Dach sach</button>
+            </a>
         <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> "><?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?></span>
         <form action="..<?= $ADMIN_URL . $PRODUCT_URL; ?>/progess_add_product.php" method="post" enctype="multipart/form-data">
             <div class="form-group mb-3">
@@ -96,10 +99,6 @@
             <div class="form-group mb-3">
                 <label for="product_desc">Mô tả</label>
                 <textarea type="text" class="form-control" rows="6" name="product_desc" id="product_desc" required></textarea>
-            </div>
-            <div class="form-group mb-3">
-                <label for="import_date">Ngày nhập</label>
-                <input type="date" class="form-control" name="import_date" id="import_date" required>
             </div>
             <div class="form-group mb-3">
                 <label for="product_cat_id">Loại sản phẩm</label>

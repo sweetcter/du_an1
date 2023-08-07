@@ -26,7 +26,7 @@
                     $suatk = "index.php?act=suatk&id=".$id;
                 ?>
                 <tr class="table-success">
-                    <td><input type="checkbox"></td>
+                    <td></td>
                     <td><?= $id ?></td>
                     <td><?= $full_name ?></td>
                     <td><?= $username ?></td>
@@ -42,9 +42,6 @@
                 </tr>
                 <?php }?>
             </table>
-            <input type="submit" class="btn btn-success" value="Chọn tất cả"></input>
-            <input type="submit" class="btn btn-danger" value="Bỏ chọn tất cả"></input>
-            <input type="submit" class="btn btn-warning" value="Xóa các mục chọn"></input>
         </form>
     </div>
 </div>
