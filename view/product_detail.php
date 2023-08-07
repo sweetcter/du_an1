@@ -143,6 +143,7 @@
             <?php endforeach ?>
             <span class="product_detail_choose_size">Chọn size: <strong></strong></span>
             <div class="product-detail-list-size">
+              
               <span class="product-detail-size size-empty">m</span>
               <span class="product-detail-size">L</span>
               <span class="product-detail-size">XL</span>
@@ -220,197 +221,43 @@
             SẢN PHẨM ROUTINE GỢI Ý RIÊNG CHO BẠN
           </h3>
           <div class="my-slickSilder">
+          <?php $product_result = select_home_product(true,1); ?>
+          <?php foreach ($product_result as $key => $value) : ?>
             <!-- start item -->
             <div class="product-item">
-              <a href="#" class="product-image-item">
-                <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
+                <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
               </a>
               <div class="product-title">
-                <a href="#" class="product-name">
-                  Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
+                <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
+                <?= $value['product_name'] ?>
                 </a>
               </div>
               <div class="product-price">
-                <span class="product-newPrice">441.000₫</span>
-                <span class="product-oldPrice">499.000₫</span>
-                <span class="product-discount"> -2% </span>
+              <?php
+                $locale = 'vi_VN';
+                $currency = $value['product_price'];
+                $discount = $currency - ($currency * $value['discount'] / 100);
+                $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
+                $product_vn_price = $formatter->format($currency);
+                $discount_price = $formatter->format($discount);
+                ?>
+                <span class="product-newPrice"><?= $discount_price ?></span>
+                <span class="product-oldPrice"><?= $product_vn_price ?></span>
+                <span class="product-discount"> -<?= $value['discount']; ?>% </span>
               </div>
+              <?php $product_color_result = select_product_color($value['product_code']); ?>
               <div class="product-color-list">
+              <?php foreach ($product_color_result as $value) : ?>
                 <a href="#" class="product-color">
                   <div class="product-color-child">
-                    <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+                    <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img" />
                   </div>
                 </a>
+                <?php endforeach ?>
               </div>
             </div>
             <!-- end item -->
-            <!-- start item -->
-            <div class="product-item">
-              <a href="#" class="product-image-item">
-                <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              </a>
-              <div class="product-title">
-                <a href="#" class="product-name">
-                  Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                </a>
-              </div>
-              <div class="product-price">
-                <span class="product-newPrice">441.000₫</span>
-                <span class="product-oldPrice">499.000₫</span>
-                <span class="product-discount"> -2% </span>
-              </div>
-              <div class="product-color-list">
-                <a href="#" class="product-color">
-                  <div class="product-color-child">
-                    <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- end item -->
-            <!-- start item -->
-            <div class="product-item">
-              <a href="#" class="product-image-item">
-                <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              </a>
-              <div class="product-title">
-                <a href="#" class="product-name">
-                  Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                </a>
-              </div>
-              <div class="product-price">
-                <span class="product-newPrice">441.000₫</span>
-                <span class="product-oldPrice">499.000₫</span>
-                <span class="product-discount"> -2% </span>
-              </div>
-              <div class="product-color-list">
-                <a href="#" class="product-color">
-                  <div class="product-color-child">
-                    <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- end item -->
-            <!-- start item -->
-            <div class="product-item">
-              <a href="#" class="product-image-item">
-                <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              </a>
-              <div class="product-title">
-                <a href="#" class="product-name">
-                  Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                </a>
-              </div>
-              <div class="product-price">
-                <span class="product-newPrice">441.000₫</span>
-                <span class="product-oldPrice">499.000₫</span>
-                <span class="product-discount"> -2% </span>
-              </div>
-              <div class="product-color-list">
-                <a href="#" class="product-color">
-                  <div class="product-color-child">
-                    <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- end item -->
-            <!-- start item -->
-            <div class="product-item">
-              <a href="#" class="product-image-item">
-                <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              </a>
-              <div class="product-title">
-                <a href="#" class="product-name">
-                  Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                </a>
-              </div>
-              <div class="product-price">
-                <span class="product-newPrice">441.000₫</span>
-                <span class="product-oldPrice">499.000₫</span>
-                <span class="product-discount"> -2% </span>
-              </div>
-              <div class="product-color-list">
-                <a href="#" class="product-color">
-                  <div class="product-color-child">
-                    <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- end item -->
-            <!-- start item -->
-            <div class="product-item">
-              <a href="#" class="product-image-item">
-                <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              </a>
-              <div class="product-title">
-                <a href="#" class="product-name">
-                  Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                </a>
-              </div>
-              <div class="product-price">
-                <span class="product-newPrice">441.000₫</span>
-                <span class="product-oldPrice">499.000₫</span>
-                <span class="product-discount"> -2% </span>
-              </div>
-              <div class="product-color-list">
-                <a href="#" class="product-color">
-                  <div class="product-color-child">
-                    <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- end item -->
-            <!-- start item -->
-            <div class="product-item">
-              <a href="#" class="product-image-item">
-                <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              </a>
-              <div class="product-title">
-                <a href="#" class="product-name">
-                  Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                </a>
-              </div>
-              <div class="product-price">
-                <span class="product-newPrice">441.000₫</span>
-                <span class="product-oldPrice">499.000₫</span>
-                <span class="product-discount"> -2% </span>
-              </div>
-              <div class="product-color-list">
-                <a href="#" class="product-color">
-                  <div class="product-color-child">
-                    <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- end item -->
-            <!-- start item -->
-            <div class="product-item">
-              <a href="#" class="product-image-item">
-                <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-              </a>
-              <div class="product-title">
-                <a href="#" class="product-name">
-                  Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-                </a>
-              </div>
-              <div class="product-price">
-                <span class="product-newPrice">441.000₫</span>
-                <span class="product-oldPrice">499.000₫</span>
-                <span class="product-discount"> -2% </span>
-              </div>
-              <div class="product-color-list">
-                <a href="#" class="product-color">
-                  <div class="product-color-child">
-                    <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-                  </div>
-                </a>
-              </div>
-            </div>
-
+            <?php endforeach ?>
           </div>
 <?php require "./includes/footer.php" ?>
