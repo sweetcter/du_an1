@@ -19,8 +19,6 @@ function loadall_comment($product_id){
     $sql.=" order by comment_id  desc";
     $listbl=pdo_query($sql);
     return $listbl;
-     // $sql="SELECT sanpham.name_sp, binhluan.noidung
-    // FROM sanpham
-    // JOIN binhluan ON sanpham.id = binhluan.idpro";
+ 
 }
 ?>

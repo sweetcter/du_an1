@@ -11,7 +11,7 @@ function productFilter() {
       filterList[0].scrollHeight + listPadding + "px";
   }
   for (let i = 0; i < filterCategory.length; i++) {
-    filterCategory[i].onclick = function (e) {
+    filterCategory[i].onclick = function (e) {  
       let filterListHeight = filterList[i].scrollHeight;
       let paddingB = 18;
       if (!e.target.closest(".active")) {
@@ -139,13 +139,15 @@ let quen = document.getElementById("quen-modal");
 let closeButton = document.getElementById("close-button");
 let close_quen = document.getElementById("close_quen");
 
-openRegister.onclick = function () {
-  let menuSidebar = document.querySelector(".header-menu-sidebar");
-  signUp.style.top = "0";
-  signUp.style.opacity = "1";
-  menuSidebar.style.transform = `translateX(-100%)`;
-  menuSidebar.style.opacity = `1`;
-};
+if(openRegister){
+  openRegister.onclick = function () {
+    let menuSidebar = document.querySelector(".header-menu-sidebar");
+    signUp.style.top = "0";
+    signUp.style.opacity = "1";
+    menuSidebar.style.transform = `translateX(-100%)`;
+    menuSidebar.style.opacity = `1`;
+  };
+}
 
 // open_icon_re.onclick = function () {
 //   let menuSidebar = document.querySelector(".header-menu-sidebar");

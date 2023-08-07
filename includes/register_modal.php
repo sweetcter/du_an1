@@ -4,7 +4,7 @@
   <div class="modal-content">
     <span id="close-button" class="close">&times;</span>
     <h2>Đăng ký</h2>
-    <form action="index.php?action=dangky" method="POST" id="register-form">
+    <form action="../../du_an1/view/progess-signup.php" method="POST" id="register-form">
       <div class="form-group">
         <label for="full_name">Full Name*</label>
         <input type="text" name="full_name" id="full_name" placeholder="Full name" required>

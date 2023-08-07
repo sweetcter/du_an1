@@ -35,10 +35,25 @@
       <li><a href="#">TIN THỜI TRANG</a></li>
     </ul>
     <ul class="header-menu-bottom">
-      <i class="fa-regular fa-user header-menu-icon-user"></i>
-      <li id="open-modal-btn">ĐĂNG NHẬP</li>
-      <li id="register-button">ĐĂNG KÝ</li>
-    </ul>
+        <i class="fa-regular fa-user header-menu-icon-user"></i>
+        <?php if (!isset($_SESSION['username'])) : ?>
+          <li id="open-modal-btn">ĐĂNG NHẬP</li>
+          <li id="register-button">ĐĂNG KÝ</li>
+          <li id="quenpass">QUÊN MẬT KHẨU</li>
+        <?php else : ?>
+          <?php if (isset($_SESSION['username']) && $_SESSION['username']['role'] == 1) : ?>
+            <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/admin/index.php">ADMIN</a> </li>
+            <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=thoat">ĐĂNG XUẤT</a> </li>
+            <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=myaccount">MY ACCOUNT</a> </li>
+          <?php else : ?>
+            <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=thoat">ĐĂNG XUẤT</a> </li>
+            <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=myaccount">MY ACCOUNT</a> </li>
+
+
+
+          <?php endif; ?>
+        <?php endif; ?>
+      </ul>
   </div>
   <!-- Hidden when scoll -->
   <div class="header-bar">
@@ -46,7 +61,7 @@
   </div>
   <div class="overlay"></div>
   <div class="header-logo">
-    <a href="./index.html">
+    <a href="./index.php">
       <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
     </a>
   </div>
@@ -54,7 +69,7 @@
   <!-- second header -->
   <ul class="header-nav">
     <div class="header-second-logo">
-      <a href="./index.html">
+      <a href="./index.php">
         <img src="../<?= $ROOT_URL ?>/asset/images/routine_log.png" alt="" class="header-logo-img" />
       </a>
     </div>
@@ -86,7 +101,8 @@
     </div>
     <div class="header-content-tool">
       <div>
-        <i class="fa-regular fa-user header-content-user"></i>
+        <a href="index.php?action=myaccount"> <i class="fa-regular fa-user header-content-user"></i></a>
+       
       </div>
       <div>
         <i id="header-content-heart" class="fa-regular fa-heart header-content-heart"></i>

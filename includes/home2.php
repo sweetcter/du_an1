@@ -38,10 +38,15 @@
     <div class="modal-content">
       <span id="close-button" class="close">&times;</span>
       <h2>Đăng ký</h2>
-      <form action="index.php?action=dangky" method="POST" id="register-form">
+      <?php 
+          if(isset($_GET['error'])){
+            echo $_GET['error'];
+          }
+      ?>
+      <form action="../../du_an1/view/progess-signup.php" method="POST" id="register-form">
         <div class="form-group">
           <label for="full_name">Full Name*</label>
-          <input type="text" name="full_name" id="full_name" placeholder="Full name" required />
+          <input type="text" name="full_name" id="full_name" plac eholder="Full name" required />
         </div>
         <div class="form-group">
           <label for="username">UserName*</label>
@@ -71,7 +76,7 @@
   </div>
   <div id="quen-modal" class="modal">
     <div class="modal-content">
-      <span class="close" id="close_quen">&times;</span>
+      <span class="close" id="quenpass">&times;</span>
       <h2>Quên mật khẩu</h2>
       <form id="forgotPasswordForm" method="post" action="index.php?action=quenmk">
         <div class="form-group">
@@ -208,7 +213,7 @@
         <div>
           <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
         </div>
-        <form action="">
+        <form action="index.php?action=timkiem">
           <input type="text" name="" placeholder="Tìm kiếm" class="header-search-content" />
         </form>
       </div>
