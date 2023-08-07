@@ -40,7 +40,6 @@
         <form action="./index.php?act=listbl" method="post">
             <table class=" table">
                 <tr class="table-primary">
-                   
                     <th>ID BÌNH LUẬN</th>
                     <th>TÊN ĐĂNG NHẬP</th>
                     <th>MỘI DUNG</th>
@@ -66,9 +65,6 @@
                 <?php endforeach ?>
 
             </table>
-            <input type="submit" class="btn btn-success" value="Chọn tất cả"></input>
-            <input type="submit" class="btn btn-danger" value="Bỏ chọn tất cả"></input>
-            <input type="submit" class="btn btn-warning" value="Xóa các mục chọn"></input>
         </form>
     </div>
 </div>

@@ -1,6 +1,9 @@
    
 <div class="main">
     <div class="main-content dashboard">
+    <a href="./index.php?act=add-Category" class="mb-4">
+        <button class="btn btn-primary">Thêm</button>
+      </a>
         <div class="row">
             <form action="" method="post">
                 <table class=" table">
@@ -19,7 +22,7 @@
                     ?>
                 
                             <tr class="table-success">
-                                <td><input type="checkbox"></td>
+                                <td></td>
                                 <td><?php  echo $name_category?></td>
                                 <td>
                                     <a href="<?php echo $edit ?>"><input class="btn btn-success"  type="button" value="Sửa"></a>
@@ -33,10 +36,6 @@
                           
                     
                 </table>
-                <input type="button" class="btn btn-success" value="Chọn tất cả"></input>
-                    <input type="button" class="btn btn-danger" value="Bỏ chọn tất cả"></input>
-                    <input type="button" class="btn btn-warning" value="Xóa các mục chọn"></input>
-                    <a href=""><input type="button" class="btn btn-info" value="Nhập lại"></input></a>
             </form>
 
         </div>

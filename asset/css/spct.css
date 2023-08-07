@@ -390,12 +390,12 @@ select:focus {
   width: 100%;
 }
 .main_noidung_binhluan .noidung{
+  width: 100%;
   padding: 0px 20px;
 }
 .noidung .noidung_name{
-  width: 200px;
+  width: 100%;
   display: flex;
-  justify-items: center;
   gap: 20;
 }
 .noidung .noidung_name span{

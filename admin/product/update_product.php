@@ -151,10 +151,6 @@
                     <textarea type="text" class="form-control" rows="6" name="product_desc" id="product_desc" required><?= $product_result['product_desc']; ?></textarea>
                 </div>
                 <div class="form-group mb-3">
-                    <label for="import_date">Ngày nhập</label>
-                    <input type="date" class="form-control" value="<?= $product_result['product_import_date'] ?>" name="import_date" id="import_date" required>
-                </div>
-                <div class="form-group mb-3">
                     <label for="product_cat_id">Loại sản phẩm</label>
                     <!-- Select product caregory id -->
                     <?php $categories_result = listCategory();
