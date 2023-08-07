@@ -221,7 +221,7 @@
             SẢN PHẨM ROUTINE GỢI Ý RIÊNG CHO BẠN
           </h3>
           <div class="my-slickSilder">
-          <?php $product_result = select_home_product(true,1); ?>
+          <?php $product_result = select_home_product(true,2); ?>
           <?php foreach ($product_result as $key => $value) : ?>
             <!-- start item -->
             <div class="product-item">
