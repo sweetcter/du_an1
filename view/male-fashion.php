@@ -271,7 +271,6 @@
       </div>
       <?php endforeach ?>
     </div>
+    <?php require "./includes/footer.php" ?>
   </div>
 </div>
-
-<?php require "./includes/footer.php" ?>

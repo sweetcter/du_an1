@@ -172,7 +172,7 @@
             ?>
               <div class="main_noidung_binhluan">
                 <div class="anh_user" style="width: 120px; height: 200px;">
-                  <img src="../../du_an1/asset/images/banner_dm.png" alt="" width="100%">
+                  <img src="../../du_an1/asset/images/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg" alt="" width="100%">
                 </div>
                 <div class="noidung">
                   <div class="noidung_name">
