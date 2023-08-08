@@ -116,8 +116,9 @@
         <i class="fa-solid fa-filter"></i>
       </div>
       <div class="view-function">
-        <strong>363</strong>
-        Sản phẩm
+        <?php $count_product = count_home_product(2); ?>
+        <strong><?= $count_product ?></strong>
+        sản phẩm
       </div>
       <div class="sort-function">
         Sắp xếp
@@ -132,183 +133,24 @@
     <div class="main-colums">
       <!-- block filter -->
 
-      <div class="filter-sidebar">
-        <div class="filter-block">
-          <div class="filter-category active">
-            <ul>
-              DANH MỤC
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list">
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Áo Nữ</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nữ</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Chân Váy - Đầm Nữ</a>
-            </li>
-          </div>
-        </div>
-
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              NHÓM SẢN PHẨM
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list">
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Áo Nữ</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Áo Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Áo Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Áo Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Áo Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Áo Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Áo Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
-            </li>
-          </div>
-        </div>
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              GIỚI TÍNH
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list">
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Nữ</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Unisex</a>
-            </li>
-          </div>
-        </div>
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              SIZE
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list flex-col-4">
-            <span class="filter-list-size"> 28 </span>
-            <span class="filter-list-size"> M </span>
-            <span class="filter-list-size"> L </span>
-            <span class="filter-list-size"> xl</span>
-          </div>
-        </div>
-
-          <?php require "./includes/filter_product.php" ?>
-          <div class="product-colum">
-            <div class="product-row row-col-4">
-              <!-- start item -->
-          <?php $product_result = select_home_product(true,2); ?>
+      <?php require "./includes/filter_product.php" ?>
+      <div class="product-colum">
+        <div class="product-row row-col-4">
+          <!-- start item -->
+          <?php $product_result = select_home_product(true, 2); ?>
           <?php foreach ($product_result as $key => $value) : ?>
-              <div class="product-item">
-                <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
-                  <img
-                    src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>"
-                    alt=""
-                    class="product-image"
-                  />
-                  <img
-                    src="../<?= $ROOT_URL ?><?= $value['hover_main_image_url'] ?>"
-                    alt=""
-                    class="product-image-second"
-                  />
-                </a>
-                <div class="product-title">
-                  <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
+            <div class="product-item">
+              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
+                <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
+                <img src="../<?= $ROOT_URL ?><?= $value['hover_main_image_url'] ?>" alt="" class="product-image-second" />
+              </a>
+              <div class="product-title">
+                <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
                   <?= $value['product_name'] ?>
-                  </a>
-                  <i class="fa-regular fa-heart product-icon"></i>
-                </div>
-                <div class="product-price">
+                </a>
+                <i class="fa-regular fa-heart product-icon"></i>
+              </div>
+              <div class="product-price">
                 <?php
                 $locale = 'vi_VN';
                 $currency = $value['product_price'];
@@ -319,561 +161,84 @@
                 ?>
                 <span class="product-newPrice"><?= $discount_price ?></span>
                 <span class="product-oldPrice"><?= $product_vn_price ?></span>
-                </div>
-              
-                <span class="product-newProduct">
-                  <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
-                </span>
-                <span class="product-discount"> -<?= $value['discount']; ?>% </span> 
-                <?php $product_color_result = select_product_color($value['product_code']); ?>
-                <div class="product-color-list">
+              </div>
+
+              <span class="product-newProduct">
+                <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
+              </span>
+              <span class="product-discount"> -<?= $value['discount']; ?>% </span>
+              <?php $product_color_result = select_product_color($value['product_code']); ?>
+              <div class="product-color-list">
                 <?php foreach ($product_color_result as $value) : ?>
                   <div class="product-color">
                     <div class="product-color-child">
-                      <img
-                        src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>"
-                        alt=""
-                        class="product-color-img"
-                      />
+                      <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img" />
                     </div>
                     <div class="product-color-hover">
-                      <img
-                        src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>"
-                        alt=""
-                        class="product-color-img-hover"
-                      />
+                      <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img-hover" />
                       <span class="product-color-name"> <?= $value['color_name'] ?></span>
                     </div>
                   </div>
 
-                  <?php endforeach ?>
-                </div>
+                <?php endforeach ?>
               </div>
-              <!-- end item -->
-              <?php endforeach ?>
-            </div>  
-          </div>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-      <div class="product-suggest">
-        <h3 class="product-suggest-title">
-          GỢI Ý CHO BẠN: CÁC SẢN PHẨM ĐƯỢC QUAN TÂM NHẤT
-        </h3>
-        <div class="my-slickSilder">
-        <?php $product_result = select_home_product(true,2); ?>
-    <?php foreach ($product_result as $key => $value) : ?>
-          <!-- start item -->
-          <div class="product-item">
-            <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
-              <img
-                src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>"
-                alt=""
-                class="product-image"
-              />
-            </a>
-            <div class="product-title">
-              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
-              <?= $value['product_name'] ?>
-              </a>
-              <i class="fa-regular fa-heart product-icon"></i>
             </div>
-            <div class="product-price">
-            <?php
-                $locale = 'vi_VN';
-                $currency = $value['product_price'];
-                $discount = $currency - ($currency * $value['discount'] / 100);
-                $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
-                $product_vn_price = $formatter->format($currency);
-                $discount_price = $formatter->format($discount);
-                ?>
-                <span class="product-newPrice"><?= $discount_price ?></span>
-                <span class="product-oldPrice"><?= $product_vn_price ?></span>
-                <span class="product-discount"> -<?= $value['discount']; ?>% </span>
-            </div>
-          
-            <span class="product-newProduct">
-              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
-            </span>
-            <?php $product_color_result = select_product_color($value['product_code']); ?>
-            <div class="product-color-list">
-            <?php foreach ($product_color_result as $value) : ?>
-              <div class="product-color">
-                <div class="product-color-child">
-                  <img
-                    src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>"
-                    alt=""
-                    class="product-color-img"
-                  />
-                </div>
-              </div>
-
-      
-              <?php endforeach ?>
-            </div>
-          </div>
+            <!-- end item -->
           <?php endforeach ?>
         </div>
       </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop
+    </div>
+  </main>
+
+  <div class="product-suggest">
+    <h3 class="product-suggest-title">
+      GỢI Ý CHO BẠN: CÁC SẢN PHẨM ĐƯỢC QUAN TÂM NHẤT
+    </h3>
+    <div class="my-slickSilder">
+      <?php $product_result = select_home_product(true, 2); ?>
+      <?php foreach ($product_result as $key => $value) : ?>
+        <!-- start item -->
+        <div class="product-item">
+          <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
+            <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
           </a>
-          <i class="fa-regular fa-heart product-icon"></i>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
+          <div class="product-title">
+            <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
+              <?= $value['product_name'] ?>
+            </a>
+            <i class="fa-regular fa-heart product-icon"></i>
+          </div>
+          <div class="product-price">
+            <?php
+            $locale = 'vi_VN';
+            $currency = $value['product_price'];
+            $discount = $currency - ($currency * $value['discount'] / 100);
+            $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
+            $product_vn_price = $formatter->format($currency);
+            $discount_price = $formatter->format($discount);
+            ?>
+            <span class="product-newPrice"><?= $discount_price ?></span>
+            <span class="product-oldPrice"><?= $product_vn_price ?></span>
+            <span class="product-discount"> -<?= $value['discount']; ?>% </span>
           </div>
 
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
+          <span class="product-newProduct">
+            <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
+          </span>
+          <?php $product_color_result = select_product_color($value['product_code']); ?>
+          <div class="product-color-list">
+            <?php foreach ($product_color_result as $value) : ?>
+              <div class="product-color">
+                <div class="product-color-child">
+                  <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img" />
+                </div>
+              </div>
 
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
+
+            <?php endforeach ?>
           </div>
         </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop
-          </a>
-          <i class="fa-regular fa-heart product-icon"></i>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop
-          </a>
-          <i class="fa-regular fa-heart product-icon"></i>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop
-          </a>
-          <i class="fa-regular fa-heart product-icon"></i>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop
-          </a>
-          <i class="fa-regular fa-heart product-icon"></i>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop
-          </a>
-          <i class="fa-regular fa-heart product-icon"></i>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop
-          </a>
-          <i class="fa-regular fa-heart product-icon"></i>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop
-          </a>
-          <i class="fa-regular fa-heart product-icon"></i>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop
-          </a>
-          <i class="fa-regular fa-heart product-icon"></i>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop
-          </a>
-          <i class="fa-regular fa-heart product-icon"></i>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop
-          </a>
-          <i class="fa-regular fa-heart product-icon"></i>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">324.000₫</span>
-          <span class="product-oldPrice">329.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <span class="product-newProduct">
-          <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-        </span>
-
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end item -->
+      <?php endforeach ?>
     </div>
   </div>
   <?php require "./includes/footer.php"; ?>

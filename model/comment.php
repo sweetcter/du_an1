@@ -9,7 +9,7 @@ function delete_comment($comment_id){
     pdo_execute($sql,$comment_id);
 }
 function getUserName($user_id) {
-    $sql = "SELECT username FROM user WHERE id = $user_id";
+    $sql = "SELECT * FROM user WHERE id = $user_id";
     $result = pdo_query_one($sql);
     return $result;
 }

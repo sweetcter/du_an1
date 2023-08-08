@@ -48,9 +48,6 @@
           <?php else : ?>
             <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=thoat">ĐĂNG XUẤT</a> </li>
             <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=myaccount">MY ACCOUNT</a> </li>
-
-
-
           <?php endif; ?>
         <?php endif; ?>
       </ul>

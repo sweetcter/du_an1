@@ -32,7 +32,7 @@ $(document).ready(function () {
         quanity: quanity,
         productId: productId,
       },
-      dataType: "json",
+      // dataType: "json",
     //   success: function (result, status, xhr) {
     //     let cartItems = result;
     //     console.log(cartItems.quantity);
@@ -77,9 +77,6 @@ $(document).ready(function () {
     //     $("#favoriteProduct-containter").append(productInfo);
     //     $("#favoriteProduct-containter").text(JSON.stringify(cartItems));
     //   },
-      error: function (xhr, stauts, error) {
-        $("#favoriteProduct-containter").html(error);
-      },
     });
     $(".cart-modal").addClass("cart-open");
     $(".cart-modal-container").addClass("cart-open");

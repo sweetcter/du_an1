@@ -190,17 +190,19 @@ function increaseValue(incValue, inputName, quantity, isquantity) {
   let increaseValue = document.querySelector(`${incValue}`);
   let incNumber = document.querySelector(`${inputName}`);
   let getQuantity = document.querySelector(`${quantity}`);
-  increaseValue.onclick = function () {
-    let newValue = Number(incNumber.value);
-    if (newValue < 1000000) {
-      incNumber.value = newValue + 1;
-    }
-    if (isquantity) {
-      getQuantity.textContent = incNumber.value;
-    }
-  };
+  if(increaseValue){
+    increaseValue.onclick = function () {
+      let newValue = Number(incNumber.value);
+      if (newValue < 1000000) {
+        incNumber.value = newValue + 1;
+      }
+      if (isquantity) {
+        getQuantity.textContent = incNumber.value;
+      }
+    };
+  }
 }
-increaseValue("#favoriteProduct-inc-plus", "#favoriteProduct-inc-quantity");
+// increaseValue("#favoriteProduct-inc-plus", "#favoriteProduct-inc-quantity");
 // increaseValue("#cartModal-inc-plus", "#cartModal-inc-quantity");
 increaseValue(
   "#product-detail-inc-plus",
@@ -214,18 +216,20 @@ function reduceValue(incValue, inputName, quantity, isquantity) {
   let reduceValue = document.querySelector(`${incValue}`);
   let reduceNumber = document.querySelector(`${inputName}`);
   let getQuantity = document.querySelector(`${quantity}`);
-  reduceValue.onclick = function () {
-    // debugger
-    let newValue = Number(reduceNumber.value);
-    if (newValue > 1) {
-      reduceNumber.value = newValue - 1;
-    }
-    if (isquantity) {
-      getQuantity.textContent = reduceNumber.value;
-    }
-  };
+  if(reduceValue){
+    reduceValue.onclick = function () {
+      // debugger
+      let newValue = Number(reduceNumber.value);
+      if (newValue > 1) {
+        reduceNumber.value = newValue - 1;
+      }
+      if (isquantity) {
+        getQuantity.textContent = reduceNumber.value;
+      }
+    };
+  }
 }
-reduceValue("#favoriteProduct-inc-minus", "#favoriteProduct-inc-quantity");
+// reduceValue("#favoriteProduct-inc-minus", "#favoriteProduct-inc-quantity");
 // reduceValue("#cartModal-inc-minus", "#cartModal-inc-quantity");
 
 
