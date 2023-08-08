@@ -181,11 +181,31 @@
                     <h4><?php echo $comment_time; ?></h4>
                   </div>
                   <?php if (isset($_SESSION['username'])) {?>
-                  <a href="">Update</a>
-                  <a href="../../du_an1/view/binhluan/delete_bl.php">Delete</a>
+                  <a href="../../du_an1/update_bl&comment_id=<?= $comment_id?>&ql_binh_luan=&product_id=<?= $product_id?>">Update</a>
+                  <a href="../../du_an1/delete_bl&comment_id=<?= $comment_id?>&product_id=<?= $product_id?>">Delete</a>
                   <?php } ?>
                 </div>
               </div>
+
+              <?php if (
+                isset($_GET['ql_binh_luan'])
+                && isset($_GET['comment_id']) && $comment_id == $_GET['comment_id']
+              ) : ?>
+              <?php
+                $comment_id = $_GET['comment_id'];
+                $binh_luan_result = comment_select_by_id($comment_id);
+                ?>
+              <form action="../../du_an1/view/binhluan/update_bl.php" method="post">
+                  <input type="hidden" name="product_id" value="<?= $product_id ?>">
+                  <input type="hidden" name="comment_id" value="<?= $comment_id ?>">
+                  <textarea name="content" cols="30" rows="5" placeholder="Viết lại đánh giá..."><?= $binh_luan_result['content'] ?></textarea>
+                  <div class="btn-group">
+                    <button type="submit" class="btn submit" name="guibinhluan">Submit</button>
+                    <button class="btn cancel">Cancel</button>
+                  </div>
+                </form>
+              <?php endif ?>
+
             <?php
             }
             ?>

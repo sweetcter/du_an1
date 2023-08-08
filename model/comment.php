@@ -21,4 +21,14 @@ function loadall_comment($product_id){
     return $listbl;
  
 }
+
+function comment_select_by_id($comment_id){
+    $sql = "SELECT * FROM comment
+    WHERE comment_id = ?";   
+    return pdo_query_one($sql,$comment_id);
+}
+function comment_update($content,$comment_id){
+    $sql = "UPDATE comment SET content = ? WHERE comment_id = ?";
+    pdo_execute($sql,$content,$comment_id);
+ }
 ?>

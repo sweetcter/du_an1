@@ -10,7 +10,7 @@ require ".$MODEL_URL/banner.php";
 require ".$MODEL_URL/taikhoan.php";
 require ".$MODEL_URL/category.php";
 require ".$MODEL_URL/comment.php";
-
+require ".$MODEL_URL/timkiemsp.php";
 // $listCategory=listCategory();
 // function dd($data) {
 //   echo '<pre>';
@@ -25,11 +25,9 @@ switch ($action) {
   case 'index';
     require ".$VIEW_URL/main.php";
     break;
+  // ----------San Pham---------------
   case 'male-fashion':
     require ".$VIEW_URL/male-fashion.php";
-    break;
-    case 'view-cart':
-      require ".$VIEW_URL/view-cart.php";
     break;
   case 'product_detail':
     require ".$VIEW_URL/product_detail.php";
@@ -37,12 +35,24 @@ switch ($action) {
   case 'female-fashion':
     require ".$VIEW_URL/female-fashion.php";
     break;
+
+  // --------Gio Hang-----------  
   case 'bill':
     require ".$VIEW_URL/bill.php";
     break;
   case 'view-cart':
     require ".$VIEW_URL/view-cart.php";
     break;
+
+  //  ------------Binh Luan------------- 
+  case 'delete_bl':
+    require ".$VIEW_URL/binhluan/delete_bl.php";
+    break;
+  case 'update_bl':
+    require ".$VIEW_URL/binhluan/update_bl.php";
+    break;
+
+  // -----------Tai Khoan--------------
   case 'admin':
     // header('admin/index.php');
     require "../<?= $ROOTt_URL?>/admin/index.php";
@@ -133,6 +143,14 @@ switch ($action) {
       }
       require ".$VIEW_URL/myaccount.php";
       break;
+
+  case 'timkiem':
+      if(isset($_POST['timkiem'])){
+            $tukhoa = $_POST['tukhoa'];
+          
+      }
+      require ".$VIEW_URL/timkiem.php";
+      break;    
   case 'thoat':
     session_unset();
     header('Location: index.php');

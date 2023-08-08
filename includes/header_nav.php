@@ -1,8 +1,8 @@
 <header class="header">
   <div class="header-menu-sidebar">
     <ul class="header-menu-top-title">
-      <li><a href="#" class="menu-sidebar-active">NAM</a></li>
-      <li><a href="#">NỮ</a></li>
+      <li><a href="/du_an1/male-fashion" class="menu-sidebar-active">NAM</a></li>
+      <li><a href="/du_an1/female-fashion">NỮ</a></li>
       <li><a href="#">BỘ SƯU TẬP</a></li>
     </ul>
 
@@ -77,7 +77,7 @@
       <a class="header-nav-link" href="/du_an1/male-fashion">NAM</a>
     </li>
     <li class="header-nav-item">
-      <a class="header-nav-link" href="../../du_an1/index.php?action=female-fashion">NỮ</a>
+      <a class="header-nav-link" href="/du_an1/female-fashion">NỮ</a>
     </li>
     <li class="header-nav-item">
       <a class="header-nav-link" href="#">NEW</a>
@@ -95,8 +95,9 @@
       <div>
         <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
       </div>
-      <form action="">
-        <input type="text" name="" placeholder="Tìm kiếm" class="header-search-content" />
+      <form action="/du_an1/timkiem" method="get">
+        <input type="text" name="tukhoa" placeholder="Tìm kiếm" class="header-search-content" />
+        <button type="submit" name="timkiem" hidden></button>
       </form>
     </div>
     <div class="header-content-tool">

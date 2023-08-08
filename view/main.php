@@ -236,14 +236,14 @@
         <div class="div1_1 div1_1_cart">
           <img src="../<?= $ROOTt_URL ?>/asset/images/banner_dm.png" alt="" />
           <div class="xemngay">
-            <button><a href="#">Xem ngay</a></button>
+            <button><a href="/du_an1/male-fashion">Xem ngay</a></button>
           </div>
         </div>
 
         <div class="div1_1 div1_1_cart">
           <img src="../<?= $ROOTt_URL ?>/asset/images/banner_dm2.png" alt="" />
           <div class="xemngay">
-            <button><a href="#">Xem ngay</a></button>
+            <button><a href="/du_an1/female-fashion">Xem ngay</a></button>
           </div>
         </div>
       </div>
@@ -253,7 +253,7 @@
     <h1>Thời trang</h1>
   </div>
 
-  <div class="row_girdx">
+  <div class="row_girdx"  style="gap: 20px;">
     <div class="col column font_roboto">
       <div class="column_img">
         <img src="../<?= $ROOTt_URL ?>/asset/images/tintuc1.jpg" style="width: 100%; height: 100%" alt="" />
