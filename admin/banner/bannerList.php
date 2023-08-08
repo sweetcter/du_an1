@@ -45,6 +45,7 @@
       <form action="./index.php" method="post">
         <table class="table">
           <tr class="table-primary">
+            <th></th>
             <th>Mã loại</th>
             <th>Tên banner</th>
             <th>Ảnh banner</th>
@@ -56,6 +57,7 @@
           <?php $banner_result = selectAll_banner(false); ?>
           <?php foreach ($banner_result as $value) : ?>
             <tr class="table-success">
+              <th></th>
               <td><?= $value['banner_id']; ?></td>
               <td><?= $value['banner_name']; ?></td>
               <td><img src="../..<?= $ROOT_URL ?><?= $value['banner_image'] ?>" width="100px" alt=""></td>
@@ -68,10 +70,6 @@
             </tr>
           <?php endforeach ?>
         </table>
-        <input type="button" class="btn btn-success" value="Chọn tất cả" />
-        <input type="button" class="btn btn-danger" value="Bỏ chọn tất cả" />
-        <input type="button" class="btn btn-warning" value="Xóa các mục chọn" />
-        <input type="reset" class="btn btn-info" value="Nhập lại" />
       </form>
     </div>
   </div>

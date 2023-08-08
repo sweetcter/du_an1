@@ -1,9 +1,9 @@
 <?php
 
-function add_product($product_name, $product_price, $product_main_image, $product_hover_main_image, $quantity, $product_import_date, $product_discount, $product_code, $product_description, $category_id)
+function add_product($product_name, $product_price, $product_main_image, $product_hover_main_image, $quantity, $product_discount, $product_code, $product_description, $category_id)
 {
-    $sql = "INSERT INTO products(product_name,product_price,main_image_url,hover_main_image_url,quantity,product_import_date,discount,product_code,product_desc,category_id) VALUES(?,?,?,?,?,?,?,?,?,?)";
-    return pdo_execute_return_lastInsertId($sql, $product_name, $product_price, $product_main_image, $product_hover_main_image, $quantity, $product_import_date, $product_discount, $product_code, $product_description, $category_id);
+    $sql = "INSERT INTO products(product_name,product_price,main_image_url,hover_main_image_url,quantity,product_import_date,discount,product_code,product_desc,category_id) VALUES(?,?,?,?,?,now(),?,?,?,?)";
+    return pdo_execute_return_lastInsertId($sql, $product_name, $product_price, $product_main_image, $product_hover_main_image, $quantity,$product_discount, $product_code, $product_description, $category_id);
 }
 function add_images_product($images, $product_id)
 {

@@ -8,7 +8,6 @@ $product_price = $_POST['product_price'];
 $product_discount = $_POST['product_discount'];
 $product_desc = $_POST['product_desc'];
 $product_quantity = $_POST['product_quantity'];
-$product_import_date = $_POST['import_date'];
 $product_cat_id = $_POST['product_cat_id'];
 $product_image = $_FILES['product_main_image'];
 $product_second_image = $_FILES['product_hover_main_image'];
@@ -34,7 +33,7 @@ if (!$save_second_img) {
     header("location: ../index.php?act=update_product");
     setcookie('notification', "Không đúng định dạng ảnh", time() + 1, "/");
 }
-$product_id_result = add_product($product_name, $product_price, $save_main_img, $save_second_img, $product_quantity, $product_import_date, $product_discount,$product_code, $product_desc, $product_cat_id);
+$product_id_result = add_product($product_name, $product_price, $save_main_img, $save_second_img, $product_quantity,$product_discount,$product_code, $product_desc, $product_cat_id);
 $color_image_result = add_image($product_color_image,$product_color_tmp_name,$ASSET_URL);
 $color_id_result = add_color_name($product_color_name, $color_image_result);
 $size_id_result = add_product_size($product_id_result,$product_size);

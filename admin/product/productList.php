@@ -63,7 +63,7 @@
           <?php $product_result = select_all_product_admin(); ?>
           <?php foreach ($product_result as $value) : ?>
             <tr class="table-success">
-              <td><input type="checkbox" /></td>
+              <td></td>
               <td><?= $value['product_name']; ?></td>
               <td><img src="../..<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" width="100px" alt=""></td>
               <td><?= $value['product_price']; ?></td>
@@ -90,10 +90,6 @@
             </tr>
           <?php endforeach ?>
         </table>
-        <input type="button" class="btn btn-success" value="Chọn tất cả" />
-        <input type="button" class="btn btn-danger" value="Bỏ chọn tất cả" />
-        <input type="button" class="btn btn-warning" value="Xóa các mục chọn" />
-        <input type="reset" class="btn btn-info" value="Nhập lại" />
       </form>
     </div>
   </div>

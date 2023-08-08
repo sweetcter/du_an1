@@ -232,240 +232,45 @@
       GỢI Ý CHO BẠN: CÁC SẢN PHẨM ĐƯỢC QUAN TÂM NHẤT
     </h3>
     <div class="my-slickSilder">
+    <?php $product_result = select_home_product(true,1); ?>
+    <?php foreach ($product_result as $key => $value) : ?>
       <!-- start item -->
       <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
+        <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
+          <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
         </a>
         <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
+          <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
+          <?= $value['product_name'] ?>
           </a>
         </div>
         <div class="product-price">
-          <span class="product-newPrice">441.000₫</span>
-          <span class="product-oldPrice">499.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
+        <?php
+                $locale = 'vi_VN';
+                $currency = $value['product_price'];
+                $discount = $currency - ($currency * $value['discount'] / 100);
+                $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
+                $product_vn_price = $formatter->format($currency);
+                $discount_price = $formatter->format($discount);
+                ?>
+                <span class="product-newPrice"><?= $discount_price ?></span>
+                <span class="product-oldPrice"><?= $product_vn_price ?></span>
+                <span class="product-discount"> -<?= $value['discount']; ?>% </span>
+        </div>  
+        <?php $product_color_result = select_product_color($value['product_code']); ?>
+       
         <div class="product-color-list">
+        <?php foreach ($product_color_result as $value) : ?>
           <a href="#" class="product-color">
             <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
+              <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img" />
             </div>
           </a>
         </div>
+        <?php endforeach ?>
       </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-          </a>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">441.000₫</span>
-          <span class="product-oldPrice">499.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <div class="product-color-list">
-          <a href="#" class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-          </a>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">441.000₫</span>
-          <span class="product-oldPrice">499.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <div class="product-color-list">
-          <a href="#" class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-          </a>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">441.000₫</span>
-          <span class="product-oldPrice">499.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <div class="product-color-list">
-          <a href="#" class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-          </a>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">441.000₫</span>
-          <span class="product-oldPrice">499.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <div class="product-color-list">
-          <a href="#" class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-          </a>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">441.000₫</span>
-          <span class="product-oldPrice">499.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <div class="product-color-list">
-          <a href="#" class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-          </a>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">441.000₫</span>
-          <span class="product-oldPrice">499.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <div class="product-color-list">
-          <a href="#" class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- end item -->
-      <!-- start item -->
-      <div class="product-item">
-        <a href="#" class="product-image-item">
-          <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-image" />
-        </a>
-        <div class="product-title">
-          <a href="#" class="product-name">
-            Áo Sơ Mi Nam Tay Ngắn Linen Xếp Ly Trước Form Fitted
-          </a>
-        </div>
-        <div class="product-price">
-          <span class="product-newPrice">441.000₫</span>
-          <span class="product-oldPrice">499.000₫</span>
-          <span class="product-discount"> -2% </span>
-        </div>
-        <div class="product-color-list">
-          <a href="#" class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/ao-so-mi-nam-10s23shs004_ballad_blue_1__1.jpg" alt="" class="product-color-img" />
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- end item -->
+      <?php endforeach ?>
     </div>
+    <?php require "./includes/footer.php" ?>
   </div>
 </div>
-<script>let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-
-    function showMenubar() {
-      document.onscroll = function() {
-        const scollTop = window.scrollY || document.documentElement.scrollTop;
-        const header = document.getElementsByClassName("header_row1");
-        const header1 = document.getElementsByClassName("header1");
-        // console.log(header);
-        header[0].style.display = "";
-        if (scollTop >= 300) {
-          header[1].style.display = "none";
-          header1[0].style.background = "#fff";
-        } else {
-          header[0].style.display = "none";
-          header[1].style.display = "";
-          header1[0].style.background = "";
-        }
-      };
-    }
-    showMenubar();
-  </script>
-<?php require "./includes/footer.php" ?>
