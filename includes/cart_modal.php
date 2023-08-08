@@ -6,67 +6,56 @@
             <span>Giỏ hàng</span>
         </div>
         <div class="cart-header-second">
-            <span>3 sản phẩm</span>
+            <span>0 sản phẩm</span>
             <i id="cart-header-close" class="fa-solid fa-xmark favoriteProduct-header-close"></i>
         </div>
-        <div class="favoriteProduct-containter">
-            <div class="favoriteProduct-info">
-                <a href="#" class="favoriteProduct-img">
-                    <div class="favoriteProduct-img-first">
-                        <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" />
-                    </div>
-                    <div class="favoriteProduct-second-img">
-                        <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
-                    </div>
-                </a>
-                <div class="favoriteProduct-details">
-                    <a href="" class="favoriteProduct-link">Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop</a>
-                    <div class="favoriteProduct-option">
-                        <div class="favoriteProduct-choose">
-                            <div class="favoriteProduct-choose-color">
-                                Màu sắc
-                                <i class="fa-solid fa-angle-down"></i>
-                                <div class="favoriteProduct-choose-color-list">
-                                    <span>
-                                        <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
-                                        BLACK
-                                    </span>
-                                    <span>
-                                        <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" />
-                                        WHITE
-                                    </span>
-                                    <span>
-                                        <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" />
-                                        GRAY
-                                    </span>
-                                </div>
+        <div id="favoriteProduct-containter" class="favoriteProduct-containter">
+            <?php //unset($_SESSION['cart']); ?>
+            <?php if (!isset($_SESSION['cart'])) : // var_dump($_SESSION['cart']);
+            ?>
+                <span style="text-align: center; font-weight: 600;display:<?= isset($_SESSION['cart']) ? "none" : "block"; ?>;padding:16px 0">Bạn không có sản phẩm nào trong giỏ hàng của bạn.</span>
+            <?php else : ?>
+                <?php foreach ($_SESSION['cart'] as $key => $value) : ?>
+                    <div class="favoriteProduct-info">
+                        <a href="#" class="favoriteProduct-img">
+                            <div class="favoriteProduct-img-first">
+                                <img src="../<?= $ROOT_URL . $value['main_image_url'] ?>" alt="" />
                             </div>
-                            <div class="favoriteProduct-choose-size">
-                                SIZE
-                                <i class="fa-solid fa-angle-down"></i>
-                                <div class="favoriteProduct-choose-size-list">
-                                    <span>M</span>
-                                    <span>L</span>
-                                    <span>Xl</span>
+                            <div class="favoriteProduct-second-img">
+                                <img src="../<?= $ROOT_URL . $value['second_image_url'] ?>" alt="" />
+                            </div>
+                        </a>
+                        <div class="favoriteProduct-details">
+                            <a href="" class="favoriteProduct-link"><?= $value['product_name'] ?></a>
+                            <div class="favoriteProduct-option">
+                                <div class="favoriteProduct-choose">
+                                    <div class="favoriteProduct-choose-color">
+                                        Màu sắc
+                                        <?php $color_result = select_color_name_by_id(2); ?>
+                                        <span>
+                                            <?= $color_result['color_name'] ?>
+                                        </span>
+                                    </div>
+                                    <div class="favoriteProduct-choose-size">
+                                        SIZE:
+                                        <?php $get_size = select_size_by_id($key); ?>
+                                        <span><?= $get_size['size_name'] ?></span>
+                                    </div>
                                 </div>
+                                <div class="favoriteProduct-inc">
+                                    <i class="fa-solid fa-minus" id="cartModal-inc-minus"></i>
+                                    <input type="number" disabled value="<?= $value['quantity'] ?>" id="cartModal-inc-quantity" class="favoriteProduct-inc-quantity" />
+                                    <i class="fa-solid fa-plus" id="cartModal-inc-plus"></i>
+                                </div>
+                                <span class="favoriteProduct-price"><?= $value['product_price'] ?>₫</span>
                             </div>
                         </div>
-                        <div class="favoriteProduct-inc">
-                            <i class="fa-solid fa-minus" id="favoriteProduct-inc-minus"></i>
-                            <input type="number" value="1" id="favoriteProduct-inc-quantity" class="favoriteProduct-inc-quantity" />
-                            <i class="fa-solid fa-plus" id="favoriteProduct-inc-plus"></i>
+                        <div class="favoriteProduct-close">
+                            <i class="fa-solid fa-xmark"></i>
                         </div>
-                        <span class="favoriteProduct-price">199.000 ₫</span>
-                        <form action="index.php?url=cart_shop" method="post">
-                            <!-- <div class="favoriteProduct-button">Thêm vào giỏ hàng</div> -->
-                        </form>
                     </div>
-                </div>
-                <div class="favoriteProduct-close">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-            </div>
-            
+                <?php endforeach ?>
+            <?php endif ?>
         </div>
     </div>
 </div>

@@ -4,8 +4,8 @@ require "../..$MODEL_URL/pdo.php";
 require "../..$MODEL_URL/product.php";
 $firtsRecord = 0;
 $product_id = $_POST['product_id'];
-$color_id = $_POST['color_id'];
-$size_id = $_POST['size_id'];
+// $color_id = $_POST['color_id'];
+// $size_id = $_POST['size_id'];
 $product_name = $_POST['product_name'];
 $product_price = $_POST['product_price'];
 $product_discount = $_POST['product_discount'];
@@ -32,6 +32,7 @@ $tmp_second_image = $product_second_image['tmp_name'];
 
 $save_main_img = "";
 $save_second_img = "";
+// die();
 
 // $checkTail = ['png', 'jpg', 'webp', 'jfif', 'gif', 'jepg'];
 // check main image
@@ -63,13 +64,16 @@ if ($product_color_image['size'] > 0) {
 } else {
     $save_color_img = $old_color_image;
 }
-update_color_name($product_color_name, $save_color_img, $product_id);
+update_product_color($product_color_type,$product_id);
+$color_id_result = select_product_color_by_product_id($product_id);
+update_color_name($product_color_name, $save_color_img, $color_id_result['color_name_id']);
 
 
 if ($product_detail_image['size'][$firtsRecord] > 0) {
     $detail_image = restructureFilesArray($product_detail_image);
     $image_result = select_images_by_id($product_id);
     $detail_image_length = count($detail_image);
+    echo $detail_image_length;
     // die();
     foreach ($image_result as $key => $value) {
         echo $value['image_url'] . "<br>";

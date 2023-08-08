@@ -13,14 +13,14 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css" />
   <link rel="stylesheet" href="..<?= $ROOT_URL ?>/asset/css/jqueryUI.css" />
   <link rel="stylesheet" type="text/css" href="../<?= $ROOT_URL ?>/asset/slick-master/slick/slick.css" />
+  <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/index.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/slick.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/base.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/grid.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/user.css" />
-  <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/style.css" />
-  <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/index.css" />
-  <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/spct.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/comment.css" />
+  <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/spct.css" />
+  <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/style.css" />
   
 
 </head>

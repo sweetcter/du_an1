@@ -28,8 +28,8 @@ switch ($action) {
   case 'male-fashion':
     require ".$VIEW_URL/male-fashion.php";
     break;
-    case 'view-cart':
-      require ".$VIEW_URL/view-cart.php";
+  case 'view-cart':
+    require ".$VIEW_URL/view-cart.php";
     break;
   case 'product_detail':
     require ".$VIEW_URL/product_detail.php";
@@ -47,19 +47,19 @@ switch ($action) {
     // header('admin/index.php');
     require "../<?= $ROOTt_URL?>/admin/index.php";
     break;
-  // case 'dangky':
-  //   if (isset($_POST['dangky'])) {
-  //     $full_name = $_POST['full_name'];
-  //     $username = $_POST['username'];
-  //     $password = $_POST['password'];
-  //     $email = $_POST['email'];
-  //     $phone = $_POST['phone'];
-  //     $address = $_POST['address'];   
-  //     insert_taikhoan($full_name, $username, $password, $email, $address, $phone);
-  //     echo '<script>alert("Bạn đã đăng ký thành công")</script>';
-  //   }
-  //   require ".$VIEW_URL/main.php";
-  //   break;
+    // case 'dangky':
+    //   if (isset($_POST['dangky'])) {
+    //     $full_name = $_POST['full_name'];
+    //     $username = $_POST['username'];
+    //     $password = $_POST['password'];
+    //     $email = $_POST['email'];
+    //     $phone = $_POST['phone'];
+    //     $address = $_POST['address'];   
+    //     insert_taikhoan($full_name, $username, $password, $email, $address, $phone);
+    //     echo '<script>alert("Bạn đã đăng ký thành công")</script>';
+    //   }
+    //   require ".$VIEW_URL/main.php";
+    //   break;
 
   case 'login':
     if (isset($_POST['login'])) {
@@ -75,7 +75,7 @@ switch ($action) {
         echo '<script>alert("Tài khoản hoặc mật khẩu không tồn tại")</script>';
       }
     }
-    
+
     require ".$VIEW_URL/main.php";
     break;
   case 'quenmk':
@@ -92,7 +92,7 @@ switch ($action) {
         echo '<script>alert("Email không khớp với email đã đăng ký!")</script>';
       }
     }
-  
+
     require ".$VIEW_URL/main.php";
     break;
   case 'myaccount':
@@ -104,10 +104,9 @@ switch ($action) {
       $email = $_POST['email'];
       $phone = $_POST['phone'];
       $address = $_POST['address'];
-      update_taikhoan_home($full_name, $username, $password, $email,$address, $phone, $id);
+      update_taikhoan_home($full_name, $username, $password, $email, $address, $phone, $id);
       $_SESSION['username'] = checkuser($username, $password);
       echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';
-
     }
     $listtaikhoan = loadall_taikhoan();
     require ".$VIEW_URL/myaccount.php";
@@ -115,29 +114,34 @@ switch ($action) {
 
   case 'updatetk':
 
-      if (isset($_POST['thaydoi']) && ($_POST['thaydoi'])) {
-        $id = $_POST['id'];
-        $full_name = $_POST['full_name'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $address = $_POST['address'];
-        $full_name = $_POST['full_name'];    
-        $role= $_POST['role'];
-        update_taikhoan($id, $full_name, $username, $password, $email,$address, $phone, $role);
-        $_SESSION['username'] = checkuser($username, $password);
-        echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';
-        // header('location: index.php?act=myaccount');
-        // $thongbao = "Bạn đã cập nhật thông tin thành công";
-      }
-      require ".$VIEW_URL/myaccount.php";
-      break;
+    if (isset($_POST['thaydoi']) && ($_POST['thaydoi'])) {
+      $id = $_POST['id'];
+      $full_name = $_POST['full_name'];
+      $username = $_POST['username'];
+      $password = $_POST['password'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
+      $address = $_POST['address'];
+      $full_name = $_POST['full_name'];
+      $role = $_POST['role'];
+      update_taikhoan($id, $full_name, $username, $password, $email, $address, $phone, $role);
+      $_SESSION['username'] = checkuser($username, $password);
+      echo '<script>alert("Bạn đã cập nhật thông tin thành công")</script>';
+      // header('location: index.php?act=myaccount');
+      // $thongbao = "Bạn đã cập nhật thông tin thành công";
+    }
+    require ".$VIEW_URL/myaccount.php";
+    break;
   case 'thoat':
     session_unset();
     header('Location: index.php');
     break;
-
+  case 'check-quanity':
+    require ".$VIEW_URL/check_product_quantity.php";
+    break;
+  case 'add-to-cart':
+    require ".$VIEW_URL/add_to_cart.php";
+    break;
   default:
     echo "Không có gì";
     break;

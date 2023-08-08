@@ -11,7 +11,7 @@ function productFilter() {
       filterList[0].scrollHeight + listPadding + "px";
   }
   for (let i = 0; i < filterCategory.length; i++) {
-    filterCategory[i].onclick = function (e) {  
+    filterCategory[i].onclick = function (e) {
       let filterListHeight = filterList[i].scrollHeight;
       let paddingB = 18;
       if (!e.target.closest(".active")) {
@@ -139,7 +139,7 @@ let quen = document.getElementById("quen-modal");
 let closeButton = document.getElementById("close-button");
 let close_quen = document.getElementById("close_quen");
 
-if(openRegister){
+if (openRegister) {
   openRegister.onclick = function () {
     let menuSidebar = document.querySelector(".header-menu-sidebar");
     signUp.style.top = "0";
@@ -165,7 +165,6 @@ if(openRegister){
 //   menuSidebar.style.opacity = `1`;
 // };
 
-
 // close register
 let closeRegister = document.querySelector("#close-button");
 closeRegister.onclick = function () {
@@ -184,31 +183,64 @@ closeRegister.onclick = function () {
 // end close register
 
 // increase value
-function increaseValue(incValue, inputName) {
+function increaseValue(incValue, inputName, quantity, isquantity) {
   let increaseValue = document.querySelector(`${incValue}`);
   let incNumber = document.querySelector(`${inputName}`);
+  let getQuantity = document.querySelector(`${quantity}`);
   increaseValue.onclick = function () {
     let newValue = Number(incNumber.value);
     if (newValue < 1000000) {
       incNumber.value = newValue + 1;
     }
+    if (isquantity) {
+      getQuantity.textContent = incNumber.value;
+    }
   };
 }
 increaseValue("#favoriteProduct-inc-plus", "#favoriteProduct-inc-quantity");
+// increaseValue("#cartModal-inc-plus", "#cartModal-inc-quantity");
+increaseValue(
+  "#product-detail-inc-plus",
+  "#product-detail-inc-quantity",
+  "#product_detail_quantity",
+  true
+);
 // end
 // reduce value
-function reduceValue(incValue, inputName) {
+function reduceValue(incValue, inputName, quantity, isquantity) {
   let reduceValue = document.querySelector(`${incValue}`);
   let reduceNumber = document.querySelector(`${inputName}`);
+  let getQuantity = document.querySelector(`${quantity}`);
   reduceValue.onclick = function () {
+    // debugger
     let newValue = Number(reduceNumber.value);
-    if (newValue > 0) {
+    if (newValue > 1) {
       reduceNumber.value = newValue - 1;
+    }
+    if (isquantity) {
+      getQuantity.textContent = reduceNumber.value;
     }
   };
 }
 reduceValue("#favoriteProduct-inc-minus", "#favoriteProduct-inc-quantity");
+// reduceValue("#cartModal-inc-minus", "#cartModal-inc-quantity");
+
+
+reduceValue(
+  "#product-detail-inc-minus",
+  "#product-detail-inc-quantity",
+  "#product_detail_quantity",
+  true
+);
 // end
+
+// let containerQuantity = document.querySelector("#product-detail-inc-quantity");
+// let getQuantity = document.querySelector("#product_detail_quantity");
+// console.log(containerQuantity.value);
+// containerQuantity.onchange = function () {
+//   console.log("hello");
+//   getQuantity.value = containerQuantity.value;
+// };
 
 // handle open sidebar
 function handleOpensTheSidebar(
@@ -300,3 +332,27 @@ handleOpensTheSidebar(
   "cart-open",
   true
 );
+
+let chooseSize = document.querySelectorAll(".product-detail-size");
+let boxSizeId = document.querySelector(".box-size-id");
+let showSize = document.querySelector('#product_detail_size');
+
+for (let i = 0; i < chooseSize.length; i++) {
+  chooseSize[i].onclick = function () {
+    let colorIdValue = chooseSize[i].getAttribute("size-id");
+    boxSizeId.value = colorIdValue;
+    showSize.textContent = chooseSize[i].textContent;
+  };
+}
+
+// let chooseColor = document.querySelectorAll(".product_detail_image");
+// let boxClorId = document.querySelector(".box-color-id");
+// let showColor = document.querySelector('#product_detail_color');
+// for (let i = 0; i < chooseColor.length; i++) {
+//   chooseColor[i].onclick = function () {
+//     let colorIdValue = chooseColor[i].getAttribute("color-id");
+//     // let colorNameValue = chooseColor[i].getAttribute("color-name");
+//     boxClorId.value = colorIdValue;
+//     // showColor.textContent = colorNameValue;
+//   };
+// }

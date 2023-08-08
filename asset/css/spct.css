@@ -216,13 +216,13 @@ select:focus {
   margin-top: 42px;
 }
 .product-content-left {
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: row-reverse;
 }
 .product-content-right {
   padding-left: 50px;
-  width: 56%;
+  width: 50%;
 }
 .slider-for.main-image-slider img {
   display: block;

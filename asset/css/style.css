@@ -1149,6 +1149,7 @@ span.quenmk a{
 }
 
 .favoriteProduct-info {
+  margin-top: 14px;
   display: flex;
   justify-content: space-between;
 }
@@ -1209,7 +1210,9 @@ span.quenmk a{
 .favoriteProduct-choose i {
   font-size: 1.2rem;
 }
-
+.favoriteProduct-choose-color{
+  font-size: 1.4rem;
+}
 .favoriteProduct-choose-color:hover .favoriteProduct-choose-color-list {
   display: block;
 }
@@ -1256,7 +1259,7 @@ span.quenmk a{
 .favoriteProduct-choose-size-list {
   position: absolute;
   top: 100%;
-  right: 0;
+  right: 50px;
   background-color: #fff;
   width: 120px;
   padding: 6px 2px;

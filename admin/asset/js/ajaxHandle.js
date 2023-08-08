@@ -1,7 +1,5 @@
 $(document).ready(function () {
   let colors = [];
-  let isCheck = false;
-
   $("#add-color").click(function () {
     let newColor = $("#ad_color_type").val();
     let typeColor = $("#ad_color_type option:selected").text();
