@@ -363,26 +363,6 @@
           <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
         </span>
 
-<<<<<<< HEAD
-        <div class="product-color-list">
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganden.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-
-          <div class="product-color">
-            <div class="product-color-child">
-              <img src="../<?= $ROOT_URL ?>/asset/images/aothuntaynganbe.jpg" alt="" class="product-color-img" />
-            </div>
-          </div>
-=======
       <div class="product-suggest">
         <h3 class="product-suggest-title">
           GỢI Ý CHO BẠN: CÁC SẢN PHẨM ĐƯỢC QUAN TÂM NHẤT
@@ -440,7 +420,6 @@
             </div>
           </div>
           <?php endforeach ?>
->>>>>>> 69f6a8b2a787a53d9498970c3c7cf14326d549af
         </div>
       </div>
       <!-- end item -->
