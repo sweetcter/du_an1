@@ -11,12 +11,12 @@
               <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
               </label>
-              <a href="#">Áo Nam</a>
+              <a href="aonam">Áo Nam</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
+              <a href="quannam">Quần Nam</a>
             </li>
           </div>
         </div>
@@ -33,102 +33,71 @@
               <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
               </label>
-              <a href="#">Áo Nam</a>
+              <a href="aosomi">Áo Sơ Mi</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
+              <a href="aothun">Áo Thun</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
               </label>
-              <a href="#">Áo Nam</a>
+              <a href="hoodie">Áo Hoodie</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
+              <a href="polo">Áo polo</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
               </label>
-              <a href="#">Áo Nam</a>
+              <a href="aosomi">Áo Sơ Mi</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
+              <a href="aothun">Áo Thun</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
               </label>
-              <a href="#">Áo Nam</a>
+              <a href="hoodie">Áo Hoodie</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
+              <a href="polo">Áo polo</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
               </label>
-              <a href="#">Áo Nam</a>
+              <a href="aosomi">Áo Sơ Mi</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
+              <a href="aothun">Áo Thun</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
               </label>
-              <a href="#">Áo Nam</a>
+              <a href="hoodie">Áo Hoodie</a>
             </li>
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Áo Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Quần Nam</a>
+              <a href="polo">Áo polo</a>
             </li>
           </div>
         </div>
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              GIỚI TÍNH
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list">
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Unisex</a>
-            </li>
-          </div>
-        </div>
+    
         <div class="filter-block">
           <div class="filter-category">
             <ul>
@@ -137,7 +106,8 @@
             <i class="fa-solid fa-chevron-down filter-dropdown"></i>
           </div>
           <div class="filter-list flex-col-4">
-            <span class="filter-list-size"> 28 </span>
+            <a href="size28"><span class="filter-list-size"> 28 </span></a>
+        
             <span class="filter-list-size"> M </span>
             <span class="filter-list-size"> L </span>
             <span class="filter-list-size"> xl</span>
@@ -151,7 +121,7 @@
             </ul>
             <i class="fa-solid fa-chevron-down filter-dropdown"></i>
           </div>
-          <div class="filter-list row-col-2">
+          <div class="filter-list row-filter-col-2">
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
