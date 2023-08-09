@@ -93,8 +93,7 @@
         <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
       </div>
       <form action="/du_an1/timkiem" method="get">
-        <input type="text" name="tukhoa" placeholder="Tìm kiếm" class="header-search-content" />
-        <button type="submit" name="timkiem" hidden></button>
+        <input type="text" name="tukhoa" placeholder="Tìm kiếm" class="header-search-content"/>
       </form>
     </div>
     <div class="header-content-tool">

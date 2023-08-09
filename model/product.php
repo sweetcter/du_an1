@@ -319,3 +319,26 @@ function restructureFilesArray($files)
 function paginate()
 {
 }
+
+// function phantrang_product(){
+//     $sql = "SELECT product_id,COUNT(product_id) AS number FROM products";
+//     return pdo_query($sql);
+// }
+// function phantrang_product($itemsPerPage) {
+//     $totalProducts = pdo_query_value("SELECT COUNT(*) FROM products");
+//     $totalPages = ceil($totalProducts / $itemsPerPage);
+
+//     return $totalPages;
+// }
+
+function count_all_products()
+{
+    $sql = "SELECT COUNT(*) FROM products";
+    return pdo_query_value($sql);
+}
+
+function selectAll_product_phantrang($category_id,$sortDescending,$start, $limit)
+{
+    $sql = "SELECT * FROM products WHERE category_id = ?  GROUP BY product_code ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC") . " LIMIT $start, $limit";
+    return pdo_query($sql,$category_id);
+}

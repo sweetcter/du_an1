@@ -106,9 +106,24 @@
       <div class="product-colum">
         <div class="product-row row-col-4">
             <?php 
-            $keyword = $_GET['tukhoa'];
-            $b = timkiem($keyword) ?>
-          <?php foreach ($b as $key => $value) : ?>
+           $keyword = $_GET['tukhoa'];
+           $b = timkiem($keyword); 
+           
+           $currentpage = isset($_GET['page']) ? intval($_GET['page']) : 1;
+   
+           // $itemsPerPage là số sản phẩm hiển thị trên mỗi trang
+           $itemsPerPage = 8;
+           
+           // Tính toán vị trí bắt đầu của sản phẩm trên trang hiện tại
+           $start = ($currentpage - 1) * $itemsPerPage;
+   
+           // Lấy tổng số sản phẩm
+           $totalProducts = count_all_products();
+          
+           // Tính tổng số trang dựa trên tổng số sản phẩm và số sản phẩm trên mỗi trang
+           $totalPages = ceil($totalProducts / $itemsPerPage);
+           foreach ($b as $key => $value) :
+            ?>
             <!-- start item -->
             <div class="product-item">
               <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
@@ -155,41 +170,22 @@
             <!-- end item -->
           <?php endforeach ?>
         </div>
-
         <ul class="home-pagination">
-          <li class="home-pagination-item home-pagination-disable">
-            <a href="#" class="home-pagination-link">
-              <i class="fa-solid fa-angle-left home-pagination-icon"></i>
-            </a>
-          </li>
-          <li class="home-pagination-item home-pagination-disable">
-            <a href="#" class="home-pagination-link">
-              <i class="fa-solid fa-angles-left home-pagination-icon"></i>
-            </a>
-          </li>
-          <li class="home-pagination-item home-pagination-active">
-            <a class="home-pagination-link" href="#">1</a>
-          </li>
-          <li class="home-pagination-item">
-            <a class="home-pagination-link" href="#">2</a>
-          </li>
-          <li class="home-pagination-item">...</li>
-          <li class="home-pagination-item">
-            <a class="home-pagination-link" href="#">15</a>
-          </li>
-          <li class="home-pagination-item">
-            <a class="home-pagination-link" href="#">16</a>
-          </li>
-          <li class="home-pagination-item">
-            <a href="#" class="home-pagination-link">
-              <i class="fa-solid fa-angle-right home-pagination-icon"></i>
-            </a>
-          </li>
-          <li class="home-pagination-item">
-            <a href="#" class="home-pagination-link">
-              <i class="fa-solid fa-angles-right home-pagination-icon"></i>
-            </a>
-          </li>
+            <li class="home-pagination-item <?php echo ($currentpage == 1) ? 'home-pagination-disable' : ''; ?>">
+                <a href="timkiem?tukhoa=<?= $keyword ?>&page=<?php echo $currentpage - 1; ?>" class="home-pagination-link">
+                    <i class="fa-solid fa-angle-left home-pagination-icon"></i>
+                </a>
+            </li>
+            <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+                <li class="home-pagination-item <?php echo ($i == $currentpage) ? 'home-pagination-active' : ''; ?>">
+                    <a href="timkiem?tukhoa=<?= $keyword ?>&page=<?php echo $i; ?>" class="home-pagination-link"><?php echo $i; ?></a>
+                </li>
+            <?php endfor; ?>
+            <li class="home-pagination-item <?php echo ($currentpage == $totalPages) ? 'home-pagination-disable' : ''; ?>">
+                <a href="timkiem?tukhoa=<?= $keyword ?>&page=<?php echo $currentpage + 1; ?>" class="home-pagination-link">
+                    <i class="fa-solid fa-angle-right home-pagination-icon"></i>
+                </a>
+            </li>
         </ul>
       </div>
     </div>
