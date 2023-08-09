@@ -25,7 +25,7 @@
                             <div class="favoriteProduct-second-img">
                                 <img src="../<?= $ROOT_URL . $value['second_image_url'] ?>" alt="" />
                             </div>
-                        </a>
+                        </a>gi
                         <div class="favoriteProduct-details">
                             <a href="" class="favoriteProduct-link"><?= $value['product_name'] ?></a>
                             <div class="favoriteProduct-option">

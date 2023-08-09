@@ -445,12 +445,15 @@
   align-items: flex-start;
   position: relative;
 }
-/* .filter-category-name + .filter-category-name {
+.filter-category-name + .filter-category-name {
   margin-top: 1.4rem;
-} */
+}
 /* .filter-category-name:last-child {
   margin-bottom: 2.8rem;
 } */
+.row-filter-col-2 li:first-child{
+  margin-top: 1.4rem;
+}
 .filter-category-name input[type="checkbox"] {
   display: none;
 }

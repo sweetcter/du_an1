@@ -152,6 +152,34 @@ switch ($action) {
     }
     require ".$VIEW_URL/timkiem.php";
     break;
+  case 'aosomi':
+    require ".$VIEW_URL/boloc/ao-so-mi.php";
+    break;
+  case 'aothun':
+    require ".$VIEW_URL/boloc/ao-thun.php";
+    break;
+  case 'hoodie':
+    require ".$VIEW_URL/boloc/hoodie.php";
+    break;
+  case 'quannam':
+    require ".$VIEW_URL/boloc/quannam.php";
+    break;
+  case 'aonam':
+    require ".$VIEW_URL/boloc/ao-nam.php";
+    break;
+  case 'polo':
+    require ".$VIEW_URL/boloc/polo.php";
+    break;
+  case 'aonu':
+    require ".$VIEW_URL/boloc/ao-nu.php";
+    break;
+  case 'quannu':
+    require ".$VIEW_URL/boloc/quan-nu.php";
+    break;
+  case 'vaynu':
+    require ".$VIEW_URL/boloc/vay-nu.php";
+    break;
+
   case 'thoat':
     session_unset();
     header('Location: index.php');
