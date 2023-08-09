@@ -151,7 +151,7 @@
             </ul>
             <i class="fa-solid fa-chevron-down filter-dropdown"></i>
           </div>
-          <div class="filter-list row-col-2">
+          <div class="filter-list row-filter-col-2">
             <li class="filter-category-name">
               <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
               <label class="filter-newCheckbox" for="filter-checkbox-manShirt">

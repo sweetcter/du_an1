@@ -18,3 +18,7 @@
     flex-wrap: wrap;
     gap: 2rem;
 }
+.row-filter-col-2 {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}

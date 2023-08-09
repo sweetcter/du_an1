@@ -39,27 +39,18 @@
         <button type="submit" class="buttonregister" name="dangky">Đăng ký</button>
       </form>
     </div>
-
-    <h3 class="category-title">Thời Trang Nữ</h3>
-
-    <div class="functions">
-      <div class="filter-function">
-        Bộ lọc
-        <i class="fa-solid fa-filter"></i>
-      </div>
-      <div class="view-function">
-        <?php $count_product = count_home_product(2); ?>
-        <strong><?= $count_product ?></strong>
-        sản phẩm
-      </div>
-      <div class="sort-function">
-        Sắp xếp
-        <form action="">
-          <select name="" id="" class="sort-function-select">
-            <option value="">Mặc định</option>
-          </select>
-        </form>
-      </div>
+  </div>
+  <div id="quen-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close_quen">&times;</span>
+      <h2>Quên mật khẩu</h2>
+      <form id="forgotPasswordForm" method="post" action="index.php?action=quenmk">
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" name="email" id="email" placeholder="Your email" required />
+        </div>
+        <button type="submit" class="buttonregister" name="btnsubmit">Gửi</button>
+      </form>
     </div>
   </div>
   <!-- ĐĂNG NHẬP -->
@@ -103,24 +94,74 @@
       <!-- Nav -->
       <!-- end sign in -->
 
-      <?php require "./includes/filter_product.php" ?>
-      <div class="product-colum">
-        <div class="product-row row-col-4">
-          <!-- start item -->
-          <?php $product_result = select_home_product(true, 2); ?>
+      <?php require "./includes/header_nav.php" ?> 
+
+    <!-- End nav -->
+    <div class="wrapper">
+      <ul class="breadcrumbs">
+        <li>Trang chủ /</li>
+        <li>Thời trang nữ</li>
+      </ul>
+
+      <main id="main-content">
+        <div class="main-banner">
+          <img
+            src="../<?= $ROOT_URL?>/asset/images/rainFashion.jpg"
+            alt=""
+            class="main-banner-img"
+          />
+        </div>
+
+        <h3 class="category-title">Thời Trang Nữ</h3>
+
+        <div class="functions">
+          <div class="filter-function">
+            Bộ lọc
+            <i class="fa-solid fa-filter"></i>
+          </div>
+          <div class="view-function">
+            <strong>363</strong>
+            Sản phẩm
+          </div>
+          <div class="sort-function">
+            Sắp xếp
+            <form action="">
+              <select name="" id="" class="sort-function-select">
+                <option value="">Mặc định</option>
+              </select>
+            </form>
+          </div>
+        </div>
+
+        <div class="main-colums">
+          <!-- block filter -->
+
+          <?php require "./includes/filter_product.php" ?>
+          <div class="product-colum">
+            <div class="product-row row-col-4">
+              <!-- start item -->
+          <?php $product_result = select_home_product(true,2); ?>
           <?php foreach ($product_result as $key => $value) : ?>
-            <div class="product-item">
-              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
-                <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
-                <img src="../<?= $ROOT_URL ?><?= $value['hover_main_image_url'] ?>" alt="" class="product-image-second" />
-              </a>
-              <div class="product-title">
-                <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
-                  <?= $value['product_name'] ?>
+              <div class="product-item">
+                <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
+                  <img
+                    src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>"
+                    alt=""
+                    class="product-image"
+                  />
+                  <img
+                    src="../<?= $ROOT_URL ?><?= $value['hover_main_image_url'] ?>"
+                    alt=""
+                    class="product-image-second"
+                  />
                 </a>
-                <i class="fa-regular fa-heart product-icon"></i>
-              </div>
-              <div class="product-price">
+                <div class="product-title">
+                  <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
+                  <?= $value['product_name'] ?>
+                  </a>
+                  <i class="fa-regular fa-heart product-icon"></i>
+                </div>
+                <div class="product-price">
                 <?php
                 $locale = 'vi_VN';
                 $currency = $value['product_price'];
@@ -131,84 +172,102 @@
                 ?>
                 <span class="product-newPrice"><?= $discount_price ?></span>
                 <span class="product-oldPrice"><?= $product_vn_price ?></span>
-              </div>
-
-              <span class="product-newProduct">
-                <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
-              </span>
-              <span class="product-discount"> -<?= $value['discount']; ?>% </span>
-              <?php $product_color_result = select_product_color($value['product_code']); ?>
-              <div class="product-color-list">
+                </div>
+              
+                <span class="product-newProduct">
+                  <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
+                </span>
+                <span class="product-discount"> -<?= $value['discount']; ?>% </span> 
+                <?php $product_color_result = select_product_color($value['product_code']); ?>
+                <div class="product-color-list">
                 <?php foreach ($product_color_result as $value) : ?>
                   <div class="product-color">
                     <div class="product-color-child">
-                      <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img" />
+                      <img
+                        src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>"
+                        alt=""
+                        class="product-color-img"
+                      />
                     </div>
                     <div class="product-color-hover">
-                      <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img-hover" />
+                      <img
+                        src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>"
+                        alt=""
+                        class="product-color-img-hover"
+                      />
                       <span class="product-color-name"> <?= $value['color_name'] ?></span>
                     </div>
                   </div>
 
-                <?php endforeach ?>
+                  <?php endforeach ?>
+                </div>
               </div>
-            </div>
-            <!-- end item -->
-          <?php endforeach ?>
+              <!-- end item -->
+              <?php endforeach ?>
+            </div>  
+          </div>
         </div>
-      </div>
-    </div>
-  </main>
+      </main>
 
-  <div class="product-suggest">
-    <h3 class="product-suggest-title">
-      GỢI Ý CHO BẠN: CÁC SẢN PHẨM ĐƯỢC QUAN TÂM NHẤT
-    </h3>
-    <div class="my-slickSilder">
-      <?php $product_result = select_home_product(true, 2); ?>
-      <?php foreach ($product_result as $key => $value) : ?>
-        <!-- start item -->
-        <div class="product-item">
-          <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
-            <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
-          </a>
-          <div class="product-title">
-            <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
-              <?= $value['product_name'] ?>
+      <div class="product-suggest">
+        <h3 class="product-suggest-title">
+          GỢI Ý CHO BẠN: CÁC SẢN PHẨM ĐƯỢC QUAN TÂM NHẤT
+        </h3>
+        <div class="my-slickSilder">
+        <?php $product_result = select_home_product(true,2); ?>
+    <?php foreach ($product_result as $key => $value) : ?>
+          <!-- start item -->
+          <div class="product-item">
+            <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
+              <img
+                src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>"
+                alt=""
+                class="product-image"
+              />
             </a>
-            <i class="fa-regular fa-heart product-icon"></i>
-          </div>
-          <div class="product-price">
+            <div class="product-title">
+              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
+              <?= $value['product_name'] ?>
+              </a>
+              <i class="fa-regular fa-heart product-icon"></i>
+            </div>
+            <div class="product-price">
             <?php
-            $locale = 'vi_VN';
-            $currency = $value['product_price'];
-            $discount = $currency - ($currency * $value['discount'] / 100);
-            $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
-            $product_vn_price = $formatter->format($currency);
-            $discount_price = $formatter->format($discount);
-            ?>
-            <span class="product-newPrice"><?= $discount_price ?></span>
-            <span class="product-oldPrice"><?= $product_vn_price ?></span>
-            <span class="product-discount"> -<?= $value['discount']; ?>% </span>
-          </div>
-
-          <span class="product-newProduct">
-            <img src="../<?= $ROOT_URL ?>/asset/images/newProduct.png" alt="" />
-          </span>
-          <?php $product_color_result = select_product_color($value['product_code']); ?>
-          <div class="product-color-list">
+                $locale = 'vi_VN';
+                $currency = $value['product_price'];
+                $discount = $currency - ($currency * $value['discount'] / 100);
+                $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
+                $product_vn_price = $formatter->format($currency);
+                $discount_price = $formatter->format($discount);
+                ?>
+                <span class="product-newPrice"><?= $discount_price ?></span>
+                <span class="product-oldPrice"><?= $product_vn_price ?></span>
+                <span class="product-discount"> -<?= $value['discount']; ?>% </span>
+            </div>
+          
+            <span class="product-newProduct">
+              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
+            </span>
+            <?php $product_color_result = select_product_color($value['product_code']); ?>
+            <div class="product-color-list">
             <?php foreach ($product_color_result as $value) : ?>
               <div class="product-color">
                 <div class="product-color-child">
-                  <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img" />
+                  <img
+                    src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>"
+                    alt=""
+                    class="product-color-img"
+                  />
                 </div>
               </div>
 
-
-            <?php endforeach ?>
+      
+              <?php endforeach ?>
+            </div>
           </div>
+          <?php endforeach ?>
         </div>
-      <?php endforeach ?>
-    </div>
-  </div>
-  <?php require "./includes/footer.php"; ?>
+      </div>
+<?php require "./includes/footer.php"; ?>
+ 
+                          

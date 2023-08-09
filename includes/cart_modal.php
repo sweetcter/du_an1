@@ -11,10 +11,11 @@
         </div>
         <div id="favoriteProduct-containter" class="favoriteProduct-containter">
             <?php //unset($_SESSION['cart']); ?>
-            <?php if (!isset($_SESSION['cart'])) : // var_dump($_SESSION['cart']);
+            <?php if (!isset($_SESSION['cart'])) :  //var_dump($_SESSION['cart']);
             ?>
                 <span style="text-align: center; font-weight: 600;display:<?= isset($_SESSION['cart']) ? "none" : "block"; ?>;padding:16px 0">Bạn không có sản phẩm nào trong giỏ hàng của bạn.</span>
             <?php else : ?>
+                <?php //var_dump($_SESSION['cart']); ?>
                 <?php foreach ($_SESSION['cart'] as $key => $value) : ?>
                     <div class="favoriteProduct-info">
                         <a href="#" class="favoriteProduct-img">

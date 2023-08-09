@@ -2,7 +2,7 @@
 $product_id = $_POST['productId'];
 $colorId = $_POST['colorId'];
 $sizeId = $_POST['sizeId'];
-$quanity = $_POST['quanity'];
+$quantity = $_POST['quantity'];
 $addToCart = select_product_by_id($product_id);
 $currentDateTime = date("Y-m-d");
 // session_start();
@@ -10,7 +10,6 @@ $currentDateTime = date("Y-m-d");
 
 if (!isset($_SESSION['cart'][$product_id])) {
     foreach ($addToCart as $key => $value) {
-        $newQuantity = $_SESSION['cart'][$product_id]['quantity'] += $quanity;
         $_SESSION['cart'][$product_id]['product_name'] = $addToCart['product_name'];
         $_SESSION['cart'][$product_id]['product_price'] = $addToCart['product_price'];
         $_SESSION['cart'][$product_id]['main_image_url'] = $addToCart['main_image_url'];
@@ -20,19 +19,18 @@ if (!isset($_SESSION['cart'][$product_id])) {
         $_SESSION['cart'][$product_id]['product_price'] = $addToCart['product_price'];
         $_SESSION['cart'][$product_id]['discount'] = $addToCart['discount'];
         $_SESSION['cart'][$product_id]['date'] = $currentDateTime;
-        if ($newQuantity > $addToCart['quantity']) {
-            $_SESSION['cart'][$product_id]['quantity'] = $addToCart['quantity'];
-        } else {
-            $_SESSION['cart'][$product_id]['quantity'] += $quanity;
-        }
+        // if ($_SESSION['cart'][$product_id]['quantity'] += $quantity > $addToCart['quantity']) {
+        //     $_SESSION['cart'][$product_id]['quantity'] = $addToCart['quantity'];
+        // } else {
+        $_SESSION['cart'][$product_id]['quantity'] = $quantity;
+        // }
     }
 } else {
-    $newQuantity = $_SESSION['cart'][$product_id]['quantity'] += $quanity;
-    if ($newQuantity > $addToCart['quantity']) {
-        $_SESSION['cart'][$product_id]['quantity'] = $addToCart['quantity'];
-    } else {
-        $_SESSION['cart'][$product_id]['quantity'] += $quanity;
-    }
+    // if ($_SESSION['cart'][$product_id]['quantity'] += $quantity > $addToCart['quantity']) {
+    //     $_SESSION['cart'][$product_id]['quantity'] = $addToCart['quantity'];
+    // } else {
+    $_SESSION['cart'][$product_id]['quantity']++;
+    // }
 }
 
 // echo json_encode($_SESSION['cart'][$product_id]);

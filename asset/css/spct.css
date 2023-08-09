@@ -330,6 +330,7 @@ select:focus {
   padding-left: 16px;
   height: 20px;
   user-select: none;
+  background: #fff;
 }
 .product-detail-inc i {
   font-size: 1.3rem;

@@ -162,6 +162,9 @@ switch ($action) {
   case 'add-to-cart':
     require ".$VIEW_URL/add_to_cart.php";
     break;
+  case 'reload_cart':
+    require ".$INCLUDES_URL/cart_modal.php";
+    break;
   default:
     echo "Không có gì";
     break;
