@@ -108,7 +108,7 @@
         </div>
         <div class="container">
 
-          <div class="colums row-col-2" style="margin: 60px 0px;">
+          <div class="colums row-col-2" style="margin: 70px 0px;">
           
             <div class="sidebar-main">
               <div class="title_taikhoan">
@@ -175,32 +175,32 @@
                       <div class="col-lg-6">
                         <div class="checkout__input">
                           <p>Username <span>*</span></p>
-                          <input type="text" id="username" name='username' value="<?php if(isset($username)) echo $username  ?>" placeholder="username" required>
+                          <input type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" id="username" name='username' value="<?php if(isset($username)) echo $username  ?>" placeholder="username" required>
                         </div>
                       </div>
                       <div class="row-col-6">
 
                         <div class="checkout__input">
                           <p>Họ và tên <span>*</span></p>
-                          <input type="text" id="fullname" name='full_name' value="<?php if(isset($full_name)) echo $full_name  ?>" placeholder="Họ và tên" required>
+                          <input type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" id="fullname" name='full_name' value="<?php if(isset($full_name)) echo $full_name  ?>" placeholder="Họ và tên" required>
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="checkout__input">
                           <p>Email <span>*</span></p>
-                          <input type="email" id="email" name='email' value="<?php if(isset($email)) echo $email ?>" placeholder="Your email" required>
+                          <input type="email" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" id="email" name='email' value="<?php if(isset($email)) echo $email ?>" placeholder="Your email" required>
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="checkout__input">
                           <p>Số điện thoại <span>*</span></p>
-                          <input type="tel" value="<?php if(isset($phone)) echo $phone ?>" id="Number" name='phone' required>
+                          <input type="tel" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" value="<?php if(isset($phone)) echo $phone ?>" id="Number" name='phone' required>
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="checkout__input">
                           <p>Địa chỉ <span>*</span></p>
-                          <input type="text" value="<?php if(isset($address)) echo $address ?>" id="address" name='address' required>
+                          <input type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" value="<?php if(isset($address)) echo $address ?>" id="address" name='address' required>
                         </div>
                       </div>
                       <div class="col-lg-6">

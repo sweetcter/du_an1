@@ -307,8 +307,26 @@
 
       <div class="product-colum">
         <div class="product-row row-col-4">
-          <?php $product_result = select_home_product(true, 1); ?>
-          <?php foreach ($product_result as $key => $value) : ?>
+          <?php
+          $currentpage = isset($_GET['page']) ? intval($_GET['page']) : 1;
+
+          // $itemsPerPage là số sản phẩm hiển thị trên mỗi trang
+          $itemsPerPage = 8;
+
+          // Tính toán vị trí bắt đầu của sản phẩm trên trang hiện tại
+          $start = ($currentpage - 1) * $itemsPerPage;
+
+          // Lấy dữ liệu sản phẩm cho trang hiện tại
+
+          // Lấy tổng số sản phẩm
+          $totalProducts = count_all_products();
+          // var_dump($totalProducts);
+
+          // Tính tổng số trang dựa trên tổng số sản phẩm và số sản phẩm trên mỗi trang
+          $totalPages = ceil($totalProducts / $itemsPerPage);
+          $product_result = isset($_GET['page']) ? selectAll_product_phantrang(1, false, $start, $itemsPerPage) : select_home_product(true, 1);;
+          foreach ($product_result as $key => $value) :
+          ?>
             <!-- start item -->
             <div class="product-item">
               <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
@@ -357,46 +375,37 @@
             <!-- end item -->
           <?php endforeach ?>
         </div>
-
         <ul class="home-pagination">
-          <li class="home-pagination-item home-pagination-disable">
-            <a href="#" class="home-pagination-link">
-              <i class="fa-solid fa-angle-left home-pagination-icon"></i>
-            </a>
-          </li>
-          <li class="home-pagination-item home-pagination-disable">
-            <a href="#" class="home-pagination-link">
+          <li class="home-pagination-item" <?php echo ($currentpage == 1) ? 'home-pagination-disable' : ''; ?>>
+            <a href="?page=<?php echo 1; ?>" class="home-pagination-link" class="home-pagination-link">
               <i class="fa-solid fa-angles-left home-pagination-icon"></i>
             </a>
           </li>
-          <li class="home-pagination-item home-pagination-active">
-            <a class="home-pagination-link" href="#">1</a>
+          <li class="home-pagination-item <?php echo ($currentpage == 1) ? 'home-pagination-disable' : ''; ?>">
+            <a href="?page=<?php echo $currentpage - 1; ?>" class="home-pagination-link">
+              <i class="fa-solid fa-angle-left home-pagination-icon"></i>
+            </a>
           </li>
-          <li class="home-pagination-item">
-            <a class="home-pagination-link" href="#">2</a>
-          </li>
-          <li class="home-pagination-item">...</li>
-          <li class="home-pagination-item">
-            <a class="home-pagination-link" href="#">15</a>
-          </li>
-          <li class="home-pagination-item">
-            <a class="home-pagination-link" href="#">16</a>
-          </li>
-          <li class="home-pagination-item">
-            <a href="#" class="home-pagination-link">
+          <?php for ($i = 1; $i < $totalPages; $i++) : ?>
+            <li class="home-pagination-item <?php echo ($i == $currentpage) ? 'home-pagination-active' : ''; ?>">
+              <a href="?page=<?php echo $i; ?>" class="home-pagination-link"><?php echo $i; ?></a>
+            </li>
+          <?php endfor; ?>
+          <li class="home-pagination-item <?php echo ($currentpage == $totalPages) ? 'home-pagination-disable' : ''; ?>">
+            <a href="?page=<?php echo $currentpage + 1; ?>" class="home-pagination-link">
               <i class="fa-solid fa-angle-right home-pagination-icon"></i>
             </a>
           </li>
-          <li class="home-pagination-item">
-            <a href="#" class="home-pagination-link">
+          <li class="home-pagination-item <?php echo ($currentpage == $totalPages) ? 'home-pagination-disable' : ''; ?>" >
+            <a href="?page=<?php echo $totalPages-1; ?>" class="home-pagination-link">
               <i class="fa-solid fa-angles-right home-pagination-icon"></i>
             </a>
           </li>
         </ul>
+
       </div>
     </div>
   </main>
-
   <div class="product-suggest">
     <h3 class="product-suggest-title">
       GỢI Ý CHO BẠN: CÁC SẢN PHẨM ĐƯỢC QUAN TÂM NHẤT
@@ -428,7 +437,7 @@
             <span class="product-discount"> -<?= $value['discount']; ?>% </span>
           </div>
           <?php $product_color_result = select_product_color($value['product_code']); ?>
-
+  
           <div class="product-color-list">
             <?php foreach ($product_color_result as $value) : ?>
               <a href="#" class="product-color">
@@ -443,4 +452,6 @@
     </div>
     <?php require "./includes/footer.php" ?>
   </div>
+</div>
+
 </div>
