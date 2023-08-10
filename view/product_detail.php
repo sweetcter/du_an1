@@ -130,10 +130,13 @@
             <?php
             $locale = 'vi_VN';
             $currency = $product_result['product_price'];
+            $discount = $currency - ($currency * $product_result['discount'] / 100);
             $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
             $product_vn_price = $formatter->format($currency);
+            $discount_price = $formatter->format($discount);
             ?>
-            <h5 class="product_detail_price"><?= $product_vn_price ?></h5>
+            <span class="product_detail_price"><?= $discount_price ?></span>
+            <del class="product_detail_price-old"><?= $product_vn_price ?></del>
             <?php $product_color_result = select_product_color($product_result['product_code']);
             $color_name_result = select_color_by_product_id($product_id);
             ?>
@@ -142,7 +145,7 @@
               <a href="../..<?= $ROOT_URL ?>/index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product_detail_image" product_id="<?= $value['product_id']; ?>" color-id="<?= $value['color_name_id']; ?>" color-name="<?= $value['color_name']; ?>" style="background-image: url('..<?= $ROOT_URL ?><?= $value['color_image'] ?>');">
               </a>
             <?php endforeach ?>
-            <input type="hidden" class="box-color-id" value="<?= $color_name_result['color_name_id'] ?>">
+            <input type="hidden" class="box-color-name-id" value="<?= $color_name_result['color_name_id'] ?>">
             <span class="product_detail_choose_size">Chọn size: <strong id="product_detail_size" style="padding-left: 8px;"></strong></span>
             <div class="product-detail-list-size">
               <!-- <span class="product-detail-size size-empty">m</span> -->
@@ -156,10 +159,11 @@
             </div>
             <span class="product_detail_choose_quantity">Chọn số lượng: <strong id="product_detail_quantity"></strong></span>
             <div class="product-detail-toCart-field">
+              <input type="hidden" disabled value="<?= $product_result['quantity']; ?>" id="product_detail_contain_quantity">
               <div class="product-detail-inc">
-                <i class="fa-solid fa-minus" id="product-detail-inc-minus"></i>
-                <input type="number" disabled value="1" id="product-detail-inc-quantity" class="product-detail-inc-quantity" min="1" max="2" />
-                <i class="fa-solid fa-plus" id="product-detail-inc-plus"></i>
+                <i class="fa-solid fa-minus product-detail-inc-minus" id="product-detail-inc-minus"></i>
+                <input type="number" disabled value="1" id="product-detail-inc-quantity" class="product-detail-inc-quantity" />
+                <i class="fa-solid fa-plus product-detail-inc-plus" id="product-detail-inc-plus " class="cartModal-inc-plus"></i>
               </div>
               <button type="button" id="addToCart" class="product-detail-toCart" name="mua">Mua Ngay</button>
               <i class="fa-regular fa-heart product-detail-favorite"></i>

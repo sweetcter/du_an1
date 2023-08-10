@@ -2,8 +2,6 @@
 session_start();
 ob_start();
 require "./global.php";
-
-
 require ".$MODEL_URL/pdo.php";
 require ".$MODEL_URL/product.php";
 require ".$MODEL_URL/banner.php";
@@ -192,6 +190,15 @@ switch ($action) {
     break;
   case 'reload_cart':
     require ".$INCLUDES_URL/cart_modal.php";
+    break;
+  case 'update_quantity_product':
+    require ".$VIEW_URL/update_quantity_in_cart.php";
+    break;
+  case 'order-bill':
+    require ".$VIEW_URL/bill.php";
+    break;
+  case 'view-cart':
+    require ".$VIEW_URL/view-cart.php";
     break;
   default:
     echo "Không có gì";

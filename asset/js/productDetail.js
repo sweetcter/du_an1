@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#submitSize").click(function (e) {
+  $("#submitSize").click(function () {
     let sizeId = $(this).attr("size-id");
     let productId = $(this).attr("product_id");
     $.ajax({
@@ -20,14 +20,14 @@ $(document).ready(function () {
 
   $("#addToCart").click(function () {
     let productId = $("#submitSize").attr("product_id");
-    let colorId = $(".box-color-id").val();
+    let colorNameId = $(".box-color-name-id").val();
     let sizeId = $(".box-size-id").val();
     let quantity = $("#product-detail-inc-quantity").val();
     $.ajax({
       type: "POST",
       url: "../../du_an1/index.php?action=add-to-cart",
       data: {
-        colorId: colorId,
+        colorId: colorNameId,
         sizeId: sizeId,
         quantity: quantity,
         productId: productId,
@@ -80,13 +80,153 @@ $(document).ready(function () {
     });
     reloadPage();
   });
- function reloadPage() {
+  function decreaseQuantity(
+    decrBtn,
+    inputValue,
+    productQuantityValue,
+    showValue
+  ) {
+    $(document).on("click", `${decrBtn}`, function () {
+      // let productId = $("#submitSize").attr("product_id");
+      let quantityValue = $(`${inputValue}`).val();
+      let containQuantity = $(`${productQuantityValue}`).val();
+      $.ajax({
+        type: "POST",
+        url: "../../du_an1/index.php?action=update_quantity_product",
+        data: {
+          type: "decrease",
+          // productId: productId,
+          quantityValue: quantityValue,
+          containQuantity: containQuantity,
+        },
+        // dataType: "json",
+        success: function (result) {
+          // console.log(typeof result);
+          let stringToNumberResult = Number(result);
+          if (showValue) {
+            $(`${showValue}`).text(result);
+          }
+          $(`${inputValue}`).val(stringToNumberResult);
+        },
+        error: function (error) {
+          console.log(error);
+        },
+      });
+    });
+  }
+  decreaseQuantity(
+    ".product-detail-inc-minus",
+    "#product-detail-inc-quantity",
+    "#product_detail_contain_quantity",
+    "#product_detail_quantity"
+  );
+  //   cartModal-inc-minus
+  // cartModal-inc-quantity
+  // cartModal-inc-plus
+  function increaseQuantity(
+    decrBtn,
+    inputValue,
+    productQuantityValue,
+    showValue
+  ) {
+    $(document).on("click", `${decrBtn}`, function () {
+      // console.log("Cộng");
+      // let productId = $("#submitSize").attr("product_id");
+      let quantityValue = $(`${inputValue}`).val();
+      let containQuantity = $(`${productQuantityValue}`).val();
+      $.ajax({
+        type: "POST",
+        url: "../../du_an1/index.php?action=update_quantity_product",
+        data: {
+          type: "increase",
+          // productId: productId,
+          quantityValue: quantityValue,
+          containQuantity: containQuantity,
+        },
+        // dataType: "json",
+        success: function (result) {
+          // console.log(typeof result);
+          let stringToNumberResult = Number(result);
+          if (showValue) {
+            $(`${showValue}`).text(result);
+          }
+          $(`${inputValue}`).val(stringToNumberResult);
+        },
+      });
+    });
+  }
+  increaseQuantity(
+    ".product-detail-inc-plus",
+    "#product-detail-inc-quantity",
+    "#product_detail_contain_quantity",
+    "#product_detail_quantity"
+  );
+  $(".cartModal-inc-minus").click(function () {
+    // Xử lý sự kiện click
+    let productId = $("#submitSize").attr("product_id");
+    let getQuantity = $(this).siblings(".cart_product_quantity").val();
+    let boxQuantityValue = $(this).next();
+    let quantityLimitValue = $(this).next().val();
+    let limitNumber = 2;
+
+    if (Number(boxQuantityValue.val()) < limitNumber) {
+      return false;
+    }
+    $.ajax({
+      type: "POST",
+      url: "../../du_an1/index.php?action=update_quantity_product",
+      data: {
+        type: "decrease",
+        quantityValue: quantityLimitValue,
+        containQuantity: getQuantity,
+        productId:productId,
+      },
+      // dataType: "json",
+      success: function (result) {
+        // console.log(typeof result);
+        let stringToNumberResult = Number(result);
+        boxQuantityValue.val(stringToNumberResult);
+      },
+    });
+  });
+  $(".cartModal-inc-plus").click(function () {
+    // Xử lý sự kiện click
+    let productId = $("#submitSize").attr("product_id");
+    let getQuantity = $(this).siblings(".cart_product_quantity").val();
+    let boxQuantityValue = $(this).prev();
+    let quantityLimitValue = $(this).prev().val();
+    if (Number(quantityLimitValue) === Number(getQuantity)) {
+      return false;
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "../../du_an1/index.php?action=update_quantity_product",
+      data: {
+        type: "increase",
+        quantityValue: quantityLimitValue,
+        containQuantity: getQuantity,
+        productId:productId,
+      },
+      // dataType: "json",
+      success: function (result) {
+        // console.log(result);
+        let stringToNumberResult = Number(result);
+        // console.log(stringToNumberResult);
+        boxQuantityValue.val(stringToNumberResult);
+      },
+    });
+  });
+  function reloadPage() {
     // $.ajax({
     //   type: "GET",
     //   url: "../../du_an1/index.php?action=reload_cart",
     // });
+    // location.reload();
+    // $('#reloadPage').click();
     location.reload();
-    // $(".cart-modal").addClass("cart-open");
-    // $(".cart-modal-container").addClass("cart-open");
-  };
+    // setTimeout(function(){
+    //   $('#header-content-cart').click();
+    // },3000);
+  }
 });

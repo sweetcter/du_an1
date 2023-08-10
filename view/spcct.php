@@ -1,6 +1,4 @@
 
-
-
     <div class="container">
         <!-- Chi tiết 1 sản phẩm -->
         
