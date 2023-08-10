@@ -204,12 +204,12 @@ function increaseValue(incValue, inputName, quantity, isquantity) {
 }
 // increaseValue("#favoriteProduct-inc-plus", "#favoriteProduct-inc-quantity");
 // increaseValue("#cartModal-inc-plus", "#cartModal-inc-quantity");
-increaseValue(
-  "#product-detail-inc-plus",
-  "#product-detail-inc-quantity",
-  "#product_detail_quantity",
-  true
-);
+// increaseValue(
+//   "#product-detail-inc-plus",
+//   "#product-detail-inc-quantity",
+//   "#product_detail_quantity",
+//   true
+// );
 // end
 // reduce value
 function reduceValue(incValue, inputName, quantity, isquantity) {
@@ -233,12 +233,12 @@ function reduceValue(incValue, inputName, quantity, isquantity) {
 // reduceValue("#cartModal-inc-minus", "#cartModal-inc-quantity");
 
 
-reduceValue(
-  "#product-detail-inc-minus",
-  "#product-detail-inc-quantity",
-  "#product_detail_quantity",
-  true
-);
+// reduceValue(
+//   "#product-detail-inc-minus",
+//   "#product-detail-inc-quantity",
+//   "#product_detail_quantity",
+//   true
+// );
 // end
 
 // let containerQuantity = document.querySelector("#product-detail-inc-quantity");

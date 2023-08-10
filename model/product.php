@@ -3,7 +3,7 @@
 function add_product($product_name, $product_price, $product_main_image, $product_hover_main_image, $quantity, $product_discount, $product_code, $product_description, $category_id)
 {
     $sql = "INSERT INTO products(product_name,product_price,main_image_url,hover_main_image_url,quantity,product_import_date,discount,product_code,product_desc,category_id) VALUES(?,?,?,?,?,now(),?,?,?,?)";
-    return pdo_execute_return_lastInsertId($sql, $product_name, $product_price, $product_main_image, $product_hover_main_image, $quantity,$product_discount, $product_code, $product_description, $category_id);
+    return pdo_execute_return_lastInsertId($sql, $product_name, $product_price, $product_main_image, $product_hover_main_image, $quantity, $product_discount, $product_code, $product_description, $category_id);
 }
 function add_images_product($images, $product_id)
 {
@@ -48,6 +48,11 @@ function select_all_size_by_product_id($product_id)
 {
     $sql = "SELECT size.* FROM product_size JOIN size ON product_size.size_id = size.size_id WHERE product_size.product_id = ?";
     return pdo_query($sql, $product_id);
+}
+function select_products_by_type_excluding_color()
+{
+    $sql = "SELECT products.*,product_color.*,color_name.* FROM products JOIN product_color ON products.product_id = product_size.product_id 
+    JOIN color_name ON product_color.color_name_id = color_name.color_name_id";
 }
 function select_all_color()
 {
@@ -301,10 +306,10 @@ function select_all_product_admin()
     JOIN color_type ON product_color.color_type_id = color_type.color_type_id ";
     return pdo_query($sql);
 }
-function select_quantity_by_size($size_id,$product_id)
+function select_quantity_by_size($size_id, $product_id)
 {
     $sql = "SELECT products.* FROM products JOIN product_size ON products.product_id = product_size.product_id WHERE product_size.size_id = ? and product_size.product_id = ?";
-    return pdo_query_one($sql,$size_id,$product_id);
+    return pdo_query_one($sql, $size_id, $product_id);
 }
 function restructureFilesArray($files)
 {
