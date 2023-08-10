@@ -29,5 +29,11 @@ function delete($id_category)
     $sql = "DELETE FROM categories WHERE `categories`.`id_category` = $id_category";
     pdo_execute($sql);
 }
-
+function getSizesByCategory($category_id) {
+    $sql = "SELECT DISTINCT size.* FROM size 
+            JOIN product_size ON size.size_id = product_size.size_id 
+            JOIN products ON product_size.product_id = products.product_id 
+            WHERE products.category_id = ?";
+    return pdo_query($sql, $category_id);
+}
 ?>
