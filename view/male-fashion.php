@@ -235,20 +235,24 @@
         </div>
 
         <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              SIZE
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list flex-col-4">
-            <a href="size28"><span class="filter-list-size"> 28 </span></a>
+  <div class="filter-category">
+    <ul>
+      SIZE
+    </ul>
+    <i class="fa-solid fa-chevron-down filter-dropdown"></i>
+  </div>
+  <div class="filter-list flex-col-4">
+    <?php
+    // Gọi hàm để lấy danh sách kích thước sản phẩm theo danh mục
+    $category_id = 1; // ID của danh mục cần lấy
+    $sizes = getSizesByCategory($category_id);
 
-            <span class="filter-list-size"> M </span>
-            <span class="filter-list-size"> L </span>
-            <span class="filter-list-size"> xl</span>
-          </div>
-        </div>
+    foreach ($sizes as $size) {
+        echo '<a href="size' . $size['size_id'] . '"><span class="filter-list-size">' . $size['size_name'] . '</span></a>';
+    }
+    ?>
+  </div>
+</div>
 
         <div class="filter-block">
           <div class="filter-category">
