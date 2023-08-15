@@ -89,6 +89,7 @@
 <!-- end -->
 <!-- Start Cart -->
 <?php require "./includes/cart_modal.php" ?>
+<?php require ".$INCLUDES_URL/delete_cart_confirm.php" ?>
 <!-- sign in -->
 
 <!-- Nav -->
@@ -108,7 +109,8 @@
         ?>
         <ul class="breadcrumbs">
           <li>Trang chủ /</li>
-          <li><?= $product_result['product_name'] . "-" . $product_result['product_code'] ?></li>
+          <li><?= $product_result['product_name'] . " - " . $product_result['product_code'] ?></li>
+          <!-- <li id="test2">Click Me</li> -->
         </ul>
         <div class="product-content col-2">
           <div class="product-content-left">

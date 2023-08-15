@@ -1,47 +1,14 @@
-<div class="favoriteProduct-info">
-                <a href="#" class="favoriteProduct-img">
-                    <div class="favoriteProduct-img-first">
-                        <img src="../<?= $ROOT_URL ?>/asset/images/product1.jpg" alt="" />
-                    </div>
-                    <div class="favoriteProduct-second-img">
-                        <img src="../<?= $ROOT_URL ?>/asset/images/aothuntayngan1.jpg" alt="" />
-                    </div>
-                </a>
-                <div class="favoriteProduct-details">
-                    <a href="" class="favoriteProduct-link">Áo Thun Tay Ngắn Nữ Họa Tiết In Phối Chỉ Form Fitted Crop</a>
-                    <div class="favoriteProduct-option">
-                        <div class="favoriteProduct-choose">
-                            <div class="favoriteProduct-choose-color">
-                                Màu sắc
-                                <i class="fa-solid fa-angle-down"></i>
-                                <div class="favoriteProduct-choose-color-list">
-                                    <span>
-                                    </span>
-                                   
-                                </div>
-                            </div>
-                            <div class="favoriteProduct-choose-size">
-                                SIZE
-                                <i class="fa-solid fa-angle-down"></i>
-                                <div class="favoriteProduct-choose-size-list">
-                                   
-                                    <span>L</span>
-                                    <span>Xl</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="favoriteProduct-inc">
-                            <i class="fa-solid fa-minus" id="favoriteProduct-inc-minus"></i>
-                            <input type="number" value="1" id="favoriteProduct-inc-quantity" class="favoriteProduct-inc-quantity" />
-                            <i class="fa-solid fa-plus" id="favoriteProduct-inc-plus"></i>
-                        </div>
-                        <span class="favoriteProduct-price">199.000 ₫</span>
-                        <form action="index.php?url=cart_shop" method="post">
-                            <div class="favoriteProduct-button">Thêm vào giỏ hàng</div>
-                        </form>
-                    </div>
-                </div>
-                <div class="favoriteProduct-close">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
+$("#product-cart-bottom-container").html(cartTotalInfo);
+let cartTotalInfo = `
+      <div class="product-cart-bottom">
+        <div class="cart-total-price">
+            <span class="cart-total-price-title">Tổng tiền:</span>
+            <div class="cart-total-price">
+                <span id="cart-total-new-price" class="cart-total-new-price"></span>
+                <span id="cart-total-old-price" class="cart-total-old-price"></span>
             </div>
+        </div>
+        <div class="pay-to-cart">
+            <button>Tiếp tục mua sắm</button>
+            <button class="btn-pay-to-cart">Thanh Toán</button>
+        </div></div>`;

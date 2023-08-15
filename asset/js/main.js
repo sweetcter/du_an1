@@ -276,6 +276,7 @@ function handleOpensTheSidebar(
   });
   // event wheb click hidden  modal
   openModal.addEventListener("click", function () {
+    localStorage.setItem("openModal",false);
     handleCLoseTheSidebar(
       openModal,
       sidebarName,
@@ -308,6 +309,7 @@ function handleCLoseTheSidebar(
 ) {
   // let handleModalName = document.querySelector(`#${modalName}`);
   // let handleSidebarName = document.querySelector(`#${sidebarName}`);
+  localStorage.setItem("openModal",false);
   let hiddenBodyScollbar = document.querySelector("body");
   if (isHiddenBodyScollbar) {
     hiddenBodyScollbar.style.overflowY = "visible";

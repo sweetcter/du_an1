@@ -17,10 +17,7 @@
             <i id="cart-header-close" class="fa-solid fa-xmark favoriteProduct-header-close"></i>
         </div>
         <div id="favoriteProduct-containter" class="favoriteProduct-containter">
-            <?php if (!isset($_SESSION['cart'])) :  //var_dump($_SESSION['cart']);
-            ?>
-                <span style="text-align: center; font-weight: 600;display:<?= isset($_SESSION['cart']) ? "none" : "block"; ?>;padding:16px 0">
-                    Bạn không có sản phẩm nào trong giỏ hàng của bạn.</span>
+            <?php if (!isset($_SESSION['cart'])) :  //var_dump($_SESSION['cart']);?>
             <?php else : ?>
                 <?php //var_dump($_SESSION['cart']); 
                 ?>
@@ -29,10 +26,10 @@
                     <div class="favoriteProduct-info">
                         <a href="" class="favoriteProduct-img">
                             <div class="favoriteProduct-img-first">
-                                <img src="../<?= $ROOT_URL . $value['main_image_url'] ?>" alt="" />
+                                <img src="..<?= $ROOT_URL . $value['main_image_url'] ?>" alt="" />
                             </div>
                             <div class="favoriteProduct-second-img">
-                                <img src="../<?= $ROOT_URL . $value['second_image_url'] ?>" alt="" />
+                                <img src="..<?= $ROOT_URL . $value['second_image_url'] ?>" alt="" />
                             </div>
                         </a>
                         <div class="favoriteProduct-details">
@@ -52,6 +49,7 @@
                                     </div>
                                 </div>
                                 <div class="favoriteProduct-inc">
+                                    <span id="cart_product_id" product_id="<?= $key ?>"></span>
                                     <i class="fa-solid fa-minus cartModal-inc-minus" id="cartModal-inc-minus"></i>
                                     <input type="number" disabled value="<?= $value['quantity'] ?>" id="cartModal-inc-quantity" class="favoriteProduct-inc-quantity" />
                                     <i class="fa-solid fa-plus cartModal-inc-plus" id="cartModal-inc-plus"></i>
@@ -73,32 +71,34 @@
                                 <del class="favoriteProduct-price-old"><?= $product_vn_price ?></del>
                             </div>
                         </div>
-                        <div class="favoriteProduct-close">
+                        <div class="delete-from-cart favoriteProduct-close" product_id="<?= $key ?>">
                             <i class="fa-solid fa-xmark"></i>
                         </div>
                     </div>
                 <?php endforeach ?>
             <?php endif ?>
         </div>
-        <?php if (!empty($_SESSION['cart'])) : ?>
-            <div class="product-cart-bottom">
-                <div class="cart-total-price">
-                    <span class="cart-total-price-title">Tổng tiền:</span>
+        <div class="" id="product-cart-bottom-container">
+            <?php if (!empty($_SESSION['cart'])) : ?>
+                <div class="product-cart-bottom">
                     <div class="cart-total-price">
-                        <?php
-                        $total_price = $formatter->format($total_price);
-                        $total_new_price = $formatter->format($total_new_price);
-                        ?>
-                        <span class="cart-total-new-price"><?= $total_new_price ?></span>
-                        <span class="cart-total-old-price"><?= $total_price ?></span>
+                        <span class="cart-total-price-title">Tổng tiền:</span>
+                        <div class="cart-total-price">
+                            <?php
+                            $total_price = $formatter->format($total_price);
+                            $total_new_price = $formatter->format($total_new_price);
+                            ?>
+                            <span id="cart-total-new-price" class="cart-total-new-price"><?= $total_new_price ?></span>
+                            <span id="cart-total-old-price" class="cart-total-old-price"><?= $total_price ?></span>
+                        </div>
+                    </div>
+                    <div class="pay-to-cart">
+                        <button>Tiếp tục mua sắm</button>
+                        <button class="btn-pay-to-cart">Thanh Toán</button>
                     </div>
                 </div>
-                <div class="pay-to-cart">
-                    <button>Tiếp tục mua sắm</button>
-                    <button class="btn-pay-to-cart">Thanh Toán</button>
-                </div>
-            </div>
-        <?php endif ?>
+            <?php endif ?>
+        </div>
     </div>
 </div>
 </div>

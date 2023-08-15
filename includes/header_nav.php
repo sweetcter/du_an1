@@ -35,22 +35,22 @@
       <li><a href="#">TIN THỜI TRANG</a></li>
     </ul>
     <ul class="header-menu-bottom">
-        <i class="fa-regular fa-user header-menu-icon-user"></i>
-        <?php if (!isset($_SESSION['username'])) : ?>
-          <li id="open-modal-btn">ĐĂNG NHẬP</li>
-          <li id="register-button">ĐĂNG KÝ</li>
-          <li id="quenpass">QUÊN MẬT KHẨU</li>
+      <i class="fa-regular fa-user header-menu-icon-user"></i>
+      <?php if (!isset($_SESSION['username'])) : ?>
+        <li id="open-modal-btn">ĐĂNG NHẬP</li>
+        <li id="register-button">ĐĂNG KÝ</li>
+        <li id="quenpass">QUÊN MẬT KHẨU</li>
+      <?php else : ?>
+        <?php if (isset($_SESSION['username']) && $_SESSION['username']['role'] == 1) : ?>
+          <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/admin/index.php">ADMIN</a> </li>
+          <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=thoat">ĐĂNG XUẤT</a> </li>
+          <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=myaccount">MY ACCOUNT</a> </li>
         <?php else : ?>
-          <?php if (isset($_SESSION['username']) && $_SESSION['username']['role'] == 1) : ?>
-            <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/admin/index.php">ADMIN</a> </li>
-            <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=thoat">ĐĂNG XUẤT</a> </li>
-            <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=myaccount">MY ACCOUNT</a> </li>
-          <?php else : ?>
-            <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=thoat">ĐĂNG XUẤT</a> </li>
-            <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=myaccount">MY ACCOUNT</a> </li>
-          <?php endif; ?>
+          <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=thoat">ĐĂNG XUẤT</a> </li>
+          <li id="open-modal-btn"> <a style="color: #000; text-decoration: none;" href="../../du_an1/index.php?action=myaccount">MY ACCOUNT</a> </li>
         <?php endif; ?>
-      </ul>
+      <?php endif; ?>
+    </ul>
   </div>
   <!-- Hidden when scoll -->
   <div class="header-bar">
@@ -86,20 +86,19 @@
       <a class="header-nav-link" href="#">SALE</a>
     </li>
   </ul>
-
   <div class="header-content-right">
     <div class="header-search-bar">
       <div>
         <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
       </div>
       <form action="/du_an1/timkiem" method="get">
-        <input type="text" name="tukhoa" placeholder="Tìm kiếm" class="header-search-content"/>
+        <input type="text" name="tukhoa" placeholder="Tìm kiếm" class="header-search-content" />
       </form>
     </div>
     <div class="header-content-tool">
       <div>
         <a href="index.php?action=myaccount"> <i class="fa-regular fa-user header-content-user"></i></a>
-       
+
       </div>
       <div>
         <i id="header-content-heart" class="fa-regular fa-heart header-content-heart"></i>
@@ -108,7 +107,9 @@
         <i class="fa-solid fa-heart header-content-heart" style="display: none"></i>
       </div>
       <div id="header-content-cart">
-        <i class="fa-solid fa-cart-shopping header-content-cart"></i>
+        <i class="fa-solid fa-cart-shopping header-content-cart">
+        <span class="<?= !empty($_SESSION['count_cart']) ? "product-quantity" : ""; ?>"><?php if(!empty($_SESSION['count_cart'])) echo (int)$_SESSION['count_cart']; ?></span>
+        </i>
       </div>
     </div>
   </div>

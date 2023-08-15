@@ -185,7 +185,7 @@ switch ($action) {
   case 'check-quanity':
     require ".$VIEW_URL/check_product_quantity.php";
     break;
-  case 'add-to-cart':
+  case 'add_to_cart':
     require ".$VIEW_URL/add_to_cart.php";
     break;
   case 'reload_cart':
@@ -199,6 +199,18 @@ switch ($action) {
     break;
   case 'view-cart':
     require ".$VIEW_URL/view-cart.php";
+    break;
+  case 'load_cart':
+    require ".$VIEW_URL/return_data_cart.php";
+    break;
+  case 'product_add_quantity_to_cart':
+    require ".$VIEW_URL/product_add_quantity_to_cart.php";
+    break;
+  case 'product_delete_quantity_to_cart':
+    require ".$VIEW_URL/delete_product_in_cart.php";
+    break;
+  case 'show_quantity_in_cart':
+    require ".$VIEW_URL/return_cart_quantity.php";
     break;
   default:
     echo "Không có gì";

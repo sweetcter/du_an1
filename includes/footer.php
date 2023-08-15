@@ -9,6 +9,7 @@
     ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
     <script
       type="text/javascript"
       src="..<?= $ROOT_URL?>/asset/slick-master/slick/slick.min.js"
