@@ -17,7 +17,6 @@ $(document).ready(function () {
       },
     });
   });
-
   $("#addToCart").click(function () {
     let productId = $("#submitSize").attr("product_id");
     let colorNameId = $(".box-color-name-id").val();

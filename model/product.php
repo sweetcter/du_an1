@@ -92,7 +92,7 @@ function select_size_by_id($product_id)
 
 function select_home_product($sortDescending, $category_id)
 {
-    $sql = "SELECT * FROM products WHERE category_id = ? GROUP BY product_code ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC");
+    $sql = "SELECT * FROM products WHERE category_id = ? GROUP BY product_code ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC") . " LIMIT 0,8";
     return pdo_query($sql, $category_id);
 }
 function count_home_product($category_id)
@@ -299,7 +299,7 @@ function getProductSizes($product_id, $color_id)
 }
 function select_all_product_admin()
 {
-    $sql = "SELECT products.*,product_color.*,color_type.*,size.* FROM products 
+    $sql = "SELECT products.*,product_color.*,color_type.*,size.* FROM products
     JOIN product_size ON products.product_id = product_size.product_id 
     JOIN size ON product_size.size_id = size.size_id 
     JOIN product_color ON products.product_id = product_color.product_id 

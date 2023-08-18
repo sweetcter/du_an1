@@ -6,7 +6,7 @@
   
     $product_id = $_POST['product_id'];
     $comment_id = $_POST['comment_id'];
-    $content = $_POST['content'];
+    $content = $_POST['comment_content'];
     comment_update($content,$comment_id);
-    header("location: ../du_an1/index.php?action=product_detail&product_id=$product_id");
+    header("location: ../../index.php?action=product_detail&product_id=$product_id");
 ?>
