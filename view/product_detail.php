@@ -191,17 +191,19 @@
                 <div class="noidung">
                   <div class="noidung_name">
                     <h4><?php echo $username; ?></h4>
-                    <h5 style="padding: 0px 50px;"><?php echo $content; ?></h5>
+                    <h5 style="padding: 0px 50px; font-weight: 300;"><?php echo $content; ?></h5>
                     <h4><?php echo $comment_time; ?></h4>
                   </div>
                   <?php if (isset($_SESSION['username'])) { ?>
-                    <a href="">Update</a>
+                    <a href="../du_an1/index.php?action=product_detail&product_id=<?= $product_id ?>&comment_id=<?= $comment_id?>&comment_manager=update_bl">Update</a>
                     <a href="../../du_an1/view/binhluan/delete_bl.php">Delete</a>
                   <?php } ?>
-                  <?php if (isset($_GET['comment_manager']) && $_GET['comment_manager'] == 'update_bl') : ?>
-                    <form action="" method="post" class="update_comment">
-                      <textarea name="" id="" cols="10" rows="4" placeholder="Viết gì đó...."></textarea>
-                      <button>Sửa</button>
+                  <?php if (isset($_GET['comment_manager']) && $_GET['comment_manager'] == 'update_bl' && $_GET['comment_id'] == $comment_id) : ?>
+                    <form action="../../du_an1/view/binhluan/update_bl.php" method="post" class="update_comment">
+                      <input type="hidden" value="<?= $_GET['comment_id'] ?>" name="comment_id">
+                      <input type="hidden" value="<?= $product_id ?>" name="product_id">  
+                      <textarea  id="" cols="10" name="comment_content" rows="4" placeholder="Viết gì đó...."></textarea>
+                      <button class="btn_sua">Sửa</button>
                     </form>
                   <?php endif ?>
                 </div>
@@ -214,7 +216,7 @@
             <?php if (isset($_SESSION['username'])) {
             ?>
               <div class="wrapper">
-                <h2>ĐÁNH GIÁ SẢN PHẨM</h2>
+                <h3 style="font-size: 20px;">ĐÁNH GIÁ SẢN PHẨM</h3>
                 <form action="../../du_an1/view/binhluan/add_bl.php" method="post">
                   <input type="hidden" name="product_id" value="<?= $product_id ?>">
                   <textarea name="content" cols="30" rows="5" placeholder="Viết đánh giá..."></textarea>

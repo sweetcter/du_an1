@@ -126,6 +126,10 @@ switch ($act) {
     case 'add_color':
         require "./product/add_color.php";
         break;
+    case 'check-phantrang':
+        require "./admin/check-phantrang.php";
+        break;
+   
     default:
         echo "Không có gì";
         echo "admin";

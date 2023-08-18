@@ -44,23 +44,26 @@
         <?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?>
       </span>
       <form action="./index.php" method="post">
-        <table class="table">
+      <table id="example" class="table" style="width:100%">
+        <thead>
           <tr class="table-primary">
-            <th></th>
-            <th>Tên sản phẩm</th>
-            <th>Ảnh</th>
-            <th>Giá</th>
-            <th>Giảm giá</th>
-            <th>Mô tả</th>
-            <th>Size</th>
-            <th>Color Name</th>
-            <th>Color Type</th>
-            <th>Ngày nhập hàng</th>
-            <th>Danh mục</th>
-            <th>Sửa</th>
-            <th>Xóa</th>
-          </tr>
-          <?php $product_result = select_all_product_admin(); ?>
+              <th></th>
+              <th>Tên sản phẩm</th>
+              <th>Ảnh</th>
+              <th>Giá</th>
+              <th>Giảm giá</th>
+              <th>Mô tả</th>
+              <th>Size</th>
+              <th>Color Name</th>
+              <th>Color Type</th>
+              <th>Ngày nhập hàng</th>
+              <th>Danh mục</th>
+              <th>Sửa</th>
+              <th>Xóa</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php $product_result = select_all_product_admin(); ?>
           <?php foreach ($product_result as $value) : ?>
             <tr class="table-success">
               <td></td>
@@ -89,8 +92,12 @@
               </td>
             </tr>
           <?php endforeach ?>
-        </table>
+        </tbody>
+    </table>
       </form>
+  <script>
+    $('#example').DataTable();
+  </script>
     </div>
   </div>
 

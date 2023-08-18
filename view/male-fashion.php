@@ -125,7 +125,6 @@
           </select>
         </form>
       </div>
-      <div id="testClick" style="cursor: pointer;">Click me</div>
     </div>
 
     <div class="main-colums">
@@ -322,6 +321,7 @@
 
           // Lấy tổng số sản phẩm
           $totalProducts = count_all_products();
+          // var_dump($totalProducts);
 
           // Tính tổng số trang dựa trên tổng số sản phẩm và số sản phẩm trên mỗi trang
           $totalPages = ceil($totalProducts / $itemsPerPage);

@@ -19,7 +19,6 @@ function loadall_comment($product_id){
     $sql.=" order by comment_id  desc";
     $listbl=pdo_query($sql);
     return $listbl;
- 
 }
 
 function comment_select_by_id($comment_id){
