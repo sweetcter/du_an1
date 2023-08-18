@@ -10,6 +10,7 @@ $addToCart = select_product_by_id($product_id);
 $color_name = select_color_name_by_id($colorNameId);
 $size_name = select_size_by_id($product_id);
 $currentDateTime = date("Y-m-d");
+$total_cart_discount_price = 0;
 
 if (empty($_SESSION['cart'][$product_id])) {
     $_SESSION['cart'][$product_id]['product_id'] = (int)$product_id;
@@ -33,4 +34,6 @@ if (empty($_SESSION['cart'][$product_id])) {
         $_SESSION['cart'][$product_id]['quantity']++;
     }
 }
+
+
 

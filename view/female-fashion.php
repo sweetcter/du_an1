@@ -89,6 +89,8 @@
 <!-- end -->
 <!-- Start Cart -->
 <?php require "./includes/cart_modal.php" ?>
+<?php require ".$INCLUDES_URL/delete_cart_confirm.php" ?>
+
 <!-- sign in -->
 
 <!-- Nav -->
@@ -396,8 +398,8 @@
               <i class="fa-solid fa-angle-right home-pagination-icon"></i>
             </a>
           </li>
-          <li class="home-pagination-item <?php echo ($currentpage == $totalPages) ? 'home-pagination-disable' : ''; ?>" >
-            <a href="?page=<?php echo $totalPages-1; ?>" class="home-pagination-link">
+          <li class="home-pagination-item <?php echo ($currentpage == $totalPages) ? 'home-pagination-disable' : ''; ?>">
+            <a href="?page=<?php echo $totalPages - 1; ?>" class="home-pagination-link">
               <i class="fa-solid fa-angles-right home-pagination-icon"></i>
             </a>
           </li>
@@ -406,7 +408,7 @@
       </div>
     </div>
   </main>
-  
+
   <div class="product-suggest">
     <h3 class="product-suggest-title">
       GỢI Ý CHO BẠN: CÁC SẢN PHẨM ĐƯỢC QUAN TÂM NHẤT
@@ -438,7 +440,7 @@
             <span class="product-discount"> -<?= $value['discount']; ?>% </span>
           </div>
           <?php $product_color_result = select_product_color($value['product_code']); ?>
-  
+
           <div class="product-color-list">
             <?php foreach ($product_color_result as $value) : ?>
               <a href="#" class="product-color">
@@ -451,7 +453,6 @@
         </div>
       <?php endforeach ?>
     </div>
+  </div>
 </div>
-  <?php require "./includes/footer.php" ?>
-</div>
-</div>
+<?php require "./includes/footer.php" ?>

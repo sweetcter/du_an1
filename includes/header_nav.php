@@ -96,9 +96,13 @@
       </form>
     </div>
     <div class="header-content-tool">
-      <div>
-        <a href="index.php?action=myaccount"> <i class="fa-regular fa-user header-content-user"></i></a>
-
+      <div class="action showCustomer" style="margin-right: <?= isset($_SESSION['username']) ? '8px' : '' ?>">
+        <i class="fa-regular fa-user header-content-user"></i>
+        <span style="<?php if (!isset($_SESSION['username'])) {
+                        echo "display:none;";
+                      } ?>">
+          Hi
+        </span>
       </div>
       <div>
         <i id="header-content-heart" class="fa-regular fa-heart header-content-heart"></i>
@@ -108,7 +112,7 @@
       </div>
       <div id="header-content-cart">
         <i class="fa-solid fa-cart-shopping header-content-cart">
-        <span class="<?= !empty($_SESSION['count_cart']) ? "product-quantity" : ""; ?>"><?php if(!empty($_SESSION['count_cart'])) echo (int)$_SESSION['count_cart']; ?></span>
+          <span class="product-quantity" style="display:<?= empty($_SESSION['count_cart']) ? "none" : ""; ?>"><?php if (!empty($_SESSION['count_cart'])) echo $_SESSION['count_cart']; ?></span>
         </i>
       </div>
     </div>

@@ -29,7 +29,7 @@
         pdo_execute($sql);
     }
     function loadone_taikhoan($id){
-        $sql = "SELECT *FROM user where id=".$id;
+        $sql = "SELECT * FROM user where id=".$id;
         $tk=pdo_query_one($sql);
         return $tk;
     }

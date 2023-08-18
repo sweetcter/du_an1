@@ -80,15 +80,12 @@
     <p id="message"></p>
   </div>
 </div>
-<!-- Nav -->
-<div></div>
-<!-- Nav -->
-<!-- end sign-up -->
-<!--  favoriteProduct-->
+
 <?php require "./includes/favorite_product.php" ?>
 <!-- end -->
 <!-- Start Cart -->
 <?php require "./includes/cart_modal.php" ?>
+<?php require ".$INCLUDES_URL/delete_cart_confirm.php" ?>
 <!-- sign in -->
 
 <!-- Nav -->
@@ -235,24 +232,24 @@
         </div>
 
         <div class="filter-block">
-  <div class="filter-category">
-    <ul>
-      SIZE
-    </ul>
-    <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-  </div>
-  <div class="filter-list flex-col-4">
-    <?php
-    // Gọi hàm để lấy danh sách kích thước sản phẩm theo danh mục
-    $category_id = 1; // ID của danh mục cần lấy
-    $sizes = getSizesByCategory($category_id);
+          <div class="filter-category">
+            <ul>
+              SIZE
+            </ul>
+            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
+          </div>
+          <div class="filter-list flex-col-4">
+            <?php
+            // Gọi hàm để lấy danh sách kích thước sản phẩm theo danh mục
+            $category_id = 1; // ID của danh mục cần lấy
+            $sizes = getSizesByCategory($category_id);
 
-    foreach ($sizes as $size) {
-        echo '<a href="size' . $size['size_id'] . '"><span class="filter-list-size">' . $size['size_name'] . '</span></a>';
-    }
-    ?>
-  </div>
-</div>
+            foreach ($sizes as $size) {
+              echo '<a href="size' . $size['size_id'] . '"><span class="filter-list-size">' . $size['size_name'] . '</span></a>';
+            }
+            ?>
+          </div>
+        </div>
 
         <div class="filter-block">
           <div class="filter-category">
@@ -400,8 +397,8 @@
               <i class="fa-solid fa-angle-right home-pagination-icon"></i>
             </a>
           </li>
-          <li class="home-pagination-item <?php echo ($currentpage == $totalPages) ? 'home-pagination-disable' : ''; ?>" >
-            <a href="?page=<?php echo $totalPages-1; ?>" class="home-pagination-link">
+          <li class="home-pagination-item <?php echo ($currentpage == $totalPages) ? 'home-pagination-disable' : ''; ?>">
+            <a href="?page=<?php echo $totalPages - 1; ?>" class="home-pagination-link">
               <i class="fa-solid fa-angles-right home-pagination-icon"></i>
             </a>
           </li>
@@ -441,7 +438,7 @@
             <span class="product-discount"> -<?= $value['discount']; ?>% </span>
           </div>
           <?php $product_color_result = select_product_color($value['product_code']); ?>
-  
+
           <div class="product-color-list">
             <?php foreach ($product_color_result as $value) : ?>
               <a href="#" class="product-color">
@@ -454,8 +451,7 @@
         </div>
       <?php endforeach ?>
     </div>
-    <?php require "./includes/footer.php" ?>
   </div>
 </div>
 
-</div>
+<?php require "./includes/footer.php" ?>

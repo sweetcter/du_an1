@@ -7,6 +7,7 @@ $currentQuantity = $_POST['currentQuantity'];
 $currentQuantity = (int) $currentQuantity;
 $result = [];
 $total_cart_price = 0;
+$total_quantity = 0;
 $total_cart_discount_price = 0;
 
 if ($type == 'increase') {
@@ -26,10 +27,13 @@ if ($type == 'increase') {
 }
 foreach ($_SESSION['cart'] as $each) {
     $total_cart_price += $each['product_price'] * $each['quantity'];
-    $total_cart_discount_price += $total_cart_price - ($total_cart_price * $each['discount'] / 100);
+    $cart_discount_price = $each['product_price'] - ($each['product_price'] * $each['discount'] / 100);
+    $total_cart_discount_price += $cart_discount_price * $each['quantity'];
+    $total_quantity += $each['quantity'];
 }
 
 $result['new_price'] = $total_cart_discount_price;
 $result['old_price'] = $total_cart_price;
 $result['currentQuantity'] = $currentQuantity;
+$result['total_quantity'] = $total_quantity;
 echo json_encode($result);

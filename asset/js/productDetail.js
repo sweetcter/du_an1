@@ -9,10 +9,10 @@ $(document).ready(function () {
         sizeId: sizeId,
         productId: productId,
       },
-      success: function (result, status, xhr) {
+      success: function (result) {
         $("#quantity_product").text(`Còn lại: ${result} sản phẩm`);
       },
-      error: function (xhr, stauts, error) {
+      error: function (error) {
         $("#quantity_product").text(error);
       },
     });
@@ -156,9 +156,26 @@ $(document).ready(function () {
           // console.log("ok");
           let stringToNumberResult = Number(result.currentQuantity);
           boxQuantityInput.val(stringToNumberResult);
-
+          let allInputQuantity = $(".favoriteProduct-inc-quantity");
+          for (let i = 0; i < allInputQuantity.length; i++) {
+            const element = allInputQuantity[i];
+            if (element.getAttribute("product-cart")) {
+              element.value = stringToNumberResult;
+            }
+          }
           let newPrice = document.querySelector("#cart-total-new-price");
           let oldPrice = document.querySelector("#cart-total-old-price");
+          // this is total price in cart detail
+          let provisionalPrice = document.querySelector(
+            ".checkout__order__provisional__rice__value"
+          );
+          let totalPrice = document.querySelector(
+            ".checkout__order__total__price_value"
+          );
+          let totalQuantity = document.querySelector(
+            ".checkout__oder__quantity_value"
+          );
+          let btnPay = document.querySelector(".btn-pay");
 
           // localStorage.setItem("newPrice",`${result.new_price}₫`);
           const newPriceFormatted = new Intl.NumberFormat("vi-VN", {
@@ -171,9 +188,15 @@ $(document).ready(function () {
           }).format(result.old_price);
           newPrice.textContent = newPriceFormatted;
           oldPrice.textContent = oldPriceFormatted;
+          if (totalPrice) {
+            totalPrice.textContent = newPriceFormatted;
+            provisionalPrice.textContent = newPriceFormatted;
+            totalQuantity.textContent = result.total_quantity;
+            btnPay.textContent = newPriceFormatted;
+          }
         },
         error: function (error) {
-          console.log(error + "Lỗi");
+          console.log(error);
         },
       });
     });
@@ -187,10 +210,10 @@ $(document).ready(function () {
       let remainingAmount = $(that).siblings(".cart_product_quantity").val();
       let boxQuantityInput = $(that).prev();
       let currentQuantity = $(that).prev().val();
-      console.log(productId);
-      console.log(remainingAmount);
-      console.log(boxQuantityInput);
-      console.log(currentQuantity);
+      // console.log(productId);
+      // console.log(remainingAmount);
+      // console.log(boxQuantityInput);
+      // console.log(currentQuantity);
       if (Number(remainingAmount) === Number(currentQuantity)) {
         return false;
       }
@@ -207,8 +230,29 @@ $(document).ready(function () {
         success: function (result) {
           let stringToNumberResult = Number(result.currentQuantity);
           boxQuantityInput.val(stringToNumberResult);
+          let allInputQuantity = $(".favoriteProduct-inc-quantity");
+          for (let i = 0; i < allInputQuantity.length; i++) {
+            const element = allInputQuantity[i];
+            if (element.getAttribute("product-cart")) {
+              element.value = stringToNumberResult;
+            }
+          }
+          // console.log(element.getAttribute("product-cart"));
+          // console.log(allInputQuantity.length);
           let newPrice = document.querySelector("#cart-total-new-price");
           let oldPrice = document.querySelector("#cart-total-old-price");
+          // this is total price in cart detail
+          let provisionalPrice = document.querySelector(
+            ".checkout__order__provisional__rice__value"
+          );
+          let totalPrice = document.querySelector(
+            ".checkout__order__total__price_value"
+          );
+          // update quantity
+          let totalQuantity = document.querySelector(
+            ".checkout__oder__quantity_value"
+          );
+          let btnPay = document.querySelector(".btn-pay");
 
           const newPriceFormatted = new Intl.NumberFormat("vi-VN", {
             style: "currency",
@@ -221,19 +265,26 @@ $(document).ready(function () {
 
           newPrice.textContent = newPriceFormatted;
           oldPrice.textContent = oldPriceFormatted;
+          if (totalPrice) {
+            totalPrice.textContent = newPriceFormatted;
+            provisionalPrice.textContent = newPriceFormatted;
+            totalQuantity.textContent = result.total_quantity;
+            btnPay.textContent = newPriceFormatted;
+          }
+
           // console.log("ổn");
         },
         error: function (error) {
-          console.log(error + "Lỗi");
+          console.log(error);
         },
       });
     });
   }
   increaseProductInCart();
-  // $("#test2").click(function () {
-  //   let testQuery = $('.hehe');
-  //   $("#test2").html('<div class="hehe">Đã thêm</div>');
-  //   console.log(testQuery);
+
+  // $("#testClick").click(function () {
+  //   console.log("ok");
+  //   localStorage.setItem("emptyCart", false);
   // });
   function reloadCart(
     increaseCallBack,
@@ -247,6 +298,7 @@ $(document).ready(function () {
       success: function (responve) {
         let cartItems = responve;
         let productInfo = ``;
+        let productDetailInfo = ``;
         let cartTotalInfo = `
       <div class="product-cart-bottom">
         <div class="cart-total-price">
@@ -258,7 +310,7 @@ $(document).ready(function () {
         </div>
         <div class="pay-to-cart">
             <button>Tiếp tục mua sắm</button>
-            <button class="btn-pay-to-cart">Thanh Toán</button>
+            <button class="btn-pay-to-cart"><a href="/du_an1/order-detail">Thanh Toán</a></button>
         </div></div>`;
         const productQuantityInCart = Object.keys(cartItems).length;
         if (productQuantityInCart == 0) {
@@ -297,7 +349,7 @@ $(document).ready(function () {
                     <div class="favoriteProduct-inc">
                         <span id="cart_product_id" product_id="${item.product_id}"></span>
                         <i class="fa-solid fa-minus cartModal-inc-minus" id="cartModal-inc-minus"></i>
-                        <input type="number" disabled value="${item.quantity}" id="cartModal-inc-quantity" class="favoriteProduct-inc-quantity" />
+                        <input type="number" disabled value="${item.quantity}" class="favoriteProduct-inc-quantity " product-cart="${item.product_id}" />
                         <i class="fa-solid fa-plus cartModal-inc-plus" id="cartModal-inc-plus"></i>
                         <input type="hidden" value="${item.remainingAmount}" class="cart_product_quantity">
                     </div>
@@ -309,9 +361,48 @@ $(document).ready(function () {
                 <i class="fa-solid fa-xmark"></i>
             </div>
         </div>`;
+            productDetailInfo += `<div class="favoriteProduct-info order">
+        <a href="" class="favoriteProduct-img">
+            <div class="favoriteProduct-img-first">
+                <img src="../du_an1/${item.main_image_url}" alt="" />
+            </div>
+            <div class="favoriteProduct-second-img">
+                <img src="../du_an1/${item.second_image_url}" alt="" />
+            </div>
+        </a>
+        <div class="favoriteProduct-details">
+            <a href="#" class="favoriteProduct-link">${item.product_name}</a>
+            <div class="favoriteProduct-option">
+                <div class="favoriteProduct-choose cart">
+                    <div class="favoriteProduct-choose-color c">
+                        MÀU:
+                        <span>${item.color_name}</span>
+                    </div>
+                    <div class="favoriteProduct-choose-size">
+                        SIZE:
+                        <span>${item.size_name}</span>
+                    </div>
+                </div>
+                <div class="favoriteProduct-inc">
+                    <span id="cart_product_id" product_id="${item.product_id}"></span>
+                    <i class="fa-solid fa-minus cartModal-inc-minus" id="cartModal-inc-minus"></i>
+                    <input type="number" disabled value="${item.quantity}" id="cartModal-inc-quantity" class="favoriteProduct-inc-quantity" />
+                    <i class="fa-solid fa-plus cartModal-inc-plus" id="cartModal-inc-plus"></i>
+                    <input type="hidden" value="${item.remainingAmount}" class="cart_product_quantity">
+                </div>
+                <span class="favoriteProduct-price">${item.product_price}</span>
+                <del class="favoriteProduct-price-old">${item.product_price}</del>
+            </div>
+        </div> 
+        <div class="delete-from-cart favoriteProduct-close" product_id="${item.product_id}">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+      </div>`;
           }
         }
         $("#favoriteProduct-containter").html(productInfo);
+        $(".show-cart-products").html(productDetailInfo);
+        console.log(productDetailInfo);
         // console.log(productInfo);
         $("#product-cart-bottom-container").html(cartTotalInfo);
         if (typeof increaseCallBack === "function") {
@@ -397,7 +488,7 @@ $(document).ready(function () {
       dataType: "json",
       success: function (responve) {
         // console.log(responve);
-        $("#product-quantity").text(`${responve}`);
+        $(".product-quantity").text(`${responve}`);
         $(".cart-header-second span").text(`${responve} sản phẩm`);
       },
       error: function (error) {
@@ -405,6 +496,7 @@ $(document).ready(function () {
       },
     });
   }
+
   // reloadShowQuantity();
 
   // let openModal = localStorage.getItem("openModal") || "false";
@@ -418,7 +510,6 @@ $(document).ready(function () {
       $("#header-content-cart").click();
     }, 100);
   }
-  localStorage.setItem("emptyCart", true);
   function showCartNotitication() {
     let checkEmptyCart = localStorage.getItem("emptyCart") || "false";
     if (checkEmptyCart !== "false") {

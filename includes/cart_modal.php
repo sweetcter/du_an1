@@ -17,9 +17,11 @@
             <i id="cart-header-close" class="fa-solid fa-xmark favoriteProduct-header-close"></i>
         </div>
         <div id="favoriteProduct-containter" class="favoriteProduct-containter">
-            <?php if (!isset($_SESSION['cart'])) :  //var_dump($_SESSION['cart']);?>
+            <?php if (!isset($_SESSION['cart'])) : ?>
+                <span style="text-align: center; font-weight: 600;display:block">Bạn không có sản phẩm nào trong giỏ hàng của bạn. </span>
             <?php else : ?>
-                <?php //var_dump($_SESSION['cart']); 
+                <?php var_dump($_SESSION['cart']);
+                var_dump($_SESSION['count_cart']);
                 ?>
                 <?php foreach ($_SESSION['cart'] as $key => $value) : ?>
                     <?php $product_result = select_product_by_id($key); ?>
@@ -51,7 +53,7 @@
                                 <div class="favoriteProduct-inc">
                                     <span id="cart_product_id" product_id="<?= $key ?>"></span>
                                     <i class="fa-solid fa-minus cartModal-inc-minus" id="cartModal-inc-minus"></i>
-                                    <input type="number" disabled value="<?= $value['quantity'] ?>" id="cartModal-inc-quantity" class="favoriteProduct-inc-quantity" />
+                                    <input type="number" disabled value="<?= $value['quantity'] ?>" class="favoriteProduct-inc-quantity" product-cart="<?= $value['product_id'] ?>" />
                                     <i class="fa-solid fa-plus cartModal-inc-plus" id="cartModal-inc-plus"></i>
                                     <input type="hidden" value="<?= $product_result['quantity'] ?>" class="cart_product_quantity">
                                 </div>
@@ -93,8 +95,8 @@
                         </div>
                     </div>
                     <div class="pay-to-cart">
-                        <button>Tiếp tục mua sắm</button>
-                        <button class="btn-pay-to-cart">Thanh Toán</button>
+                        <button class="close-cart-modal">Tiếp tục mua sắm</button>
+                        <button class="btn-pay-to-cart"><a href="<?= $ROOT_URL ?>/order-detail">Thanh Toán</a></button>
                     </div>
                 </div>
             <?php endif ?>

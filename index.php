@@ -9,13 +9,8 @@ require ".$MODEL_URL/taikhoan.php";
 require ".$MODEL_URL/category.php";
 require ".$MODEL_URL/comment.php";
 require ".$MODEL_URL/timkiemsp.php";
-// $listCategory=listCategory();
-// function dd($data) {
-//   echo '<pre>';
-//   print_r($data);
-//   echo '</pre>';
-//   die;
-// }
+require ".$MODEL_URL/orders.php";
+
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 // echo $action;
@@ -194,8 +189,8 @@ switch ($action) {
   case 'update_quantity_product':
     require ".$VIEW_URL/update_quantity_in_cart.php";
     break;
-  case 'order-bill':
-    require ".$VIEW_URL/bill.php";
+  case 'order-detail':
+    require ".$VIEW_URL/order_detail.php";
     break;
   case 'view-cart':
     require ".$VIEW_URL/view-cart.php";
@@ -211,6 +206,12 @@ switch ($action) {
     break;
   case 'show_quantity_in_cart':
     require ".$VIEW_URL/return_cart_quantity.php";
+    break;
+  case 'get_customer_info':
+    require ".$VIEW_URL/get_customer_info.php";
+    break;
+  case 'order_handle':
+    require ".$VIEW_URL/progress_order.php";
     break;
   default:
     echo "Không có gì";

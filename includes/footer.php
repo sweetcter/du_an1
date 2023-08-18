@@ -16,6 +16,7 @@
     ></script>
     <script type="text/javascript" src="..<?= $ROOT_URL?>/asset/js/slick.js"></script>
     <script type="text/javascript" src="..<?= $ROOT_URL?>/asset/js/mutipleRangeJquery.js"></script>
+    <script type="text/javascript" src="..<?= $ROOT_URL?>/asset/js/orderDetail.js"></script>
     <script type="text/javascript" src="..<?= $ROOT_URL?>/asset/js/productDetail.js"></script>
     <script type="text/javascript" src="..<?= $ROOT_URL?>/asset/js/main.js"></script>
   </body>

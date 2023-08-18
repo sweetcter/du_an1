@@ -92,7 +92,7 @@ function select_size_by_id($product_id)
 
 function select_home_product($sortDescending, $category_id)
 {
-    $sql = "SELECT * FROM products WHERE category_id = ? GROUP BY product_code ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC");
+    $sql = "SELECT * FROM products WHERE category_id = ? GROUP BY product_code ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC") . " LIMIT 8";
     return pdo_query($sql, $category_id);
 }
 function count_home_product($category_id)
@@ -346,4 +346,10 @@ function selectAll_product_phantrang($category_id,$sortDescending,$start, $limit
 {
     $sql = "SELECT * FROM products WHERE category_id = ?  GROUP BY product_code ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC") . " LIMIT $start, $limit";
     return pdo_query($sql,$category_id);
+}
+function dd($data) {
+  echo '<pre>';
+  print_r($data);
+  echo '</pre>';
+  die;
 }

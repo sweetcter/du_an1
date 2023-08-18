@@ -147,8 +147,10 @@
               <hr>
               <div class="account-information row-col-2">
                 <?php
+                $user_id = 0;
                 if (isset($_SESSION['username'])&&(is_array($_SESSION['username']))) {
                   extract($_SESSION['username']);
+                  $user_id = $_SESSION['username']['id'];
                 }else{
                   echo '';
                 }
@@ -218,7 +220,7 @@
                       }
                     </style>
                     <div class="submit">
-                      <input type="hidden" name="id" value="<?= $id ?>">
+                      <input type="hidden" name="id" value="<?= $user_id ?>">
                       <input type="submit" name="thaydoi" id="updatetk" value="Lưu thay đổi" style="color: white;">
                     </div>
 

@@ -156,16 +156,16 @@ if (openRegister) {
 //   menuSidebar.style.transform = `translateX(-100%)`;
 //   menuSidebar.style.opacity = `1`;
 // };
-if(quenpass){
-quenpass.onclick = function () {
-  let menuSidebar = document.querySelector(".header-menu-sidebar");
-  let quen = document.getElementById("quen-modal"); // Thêm đoạn này nếu chưa có
+if (quenpass) {
+  quenpass.onclick = function () {
+    let menuSidebar = document.querySelector(".header-menu-sidebar");
+    let quen = document.getElementById("quen-modal"); // Thêm đoạn này nếu chưa có
 
-  quen.style.top = "0";
-  quen.style.opacity = "1";
-  menuSidebar.style.transform = `translateX(-100%)`;
-  menuSidebar.style.opacity = `1`;
-};
+    quen.style.top = "0";
+    quen.style.opacity = "1";
+    menuSidebar.style.transform = `translateX(-100%)`;
+    menuSidebar.style.opacity = `1`;
+  };
 }
 
 // close register
@@ -190,7 +190,7 @@ function increaseValue(incValue, inputName, quantity, isquantity) {
   let increaseValue = document.querySelector(`${incValue}`);
   let incNumber = document.querySelector(`${inputName}`);
   let getQuantity = document.querySelector(`${quantity}`);
-  if(increaseValue){
+  if (increaseValue) {
     increaseValue.onclick = function () {
       let newValue = Number(incNumber.value);
       if (newValue < 1000000) {
@@ -216,7 +216,7 @@ function reduceValue(incValue, inputName, quantity, isquantity) {
   let reduceValue = document.querySelector(`${incValue}`);
   let reduceNumber = document.querySelector(`${inputName}`);
   let getQuantity = document.querySelector(`${quantity}`);
-  if(reduceValue){
+  if (reduceValue) {
     reduceValue.onclick = function () {
       // debugger
       let newValue = Number(reduceNumber.value);
@@ -231,7 +231,6 @@ function reduceValue(incValue, inputName, quantity, isquantity) {
 }
 // reduceValue("#favoriteProduct-inc-minus", "#favoriteProduct-inc-quantity");
 // reduceValue("#cartModal-inc-minus", "#cartModal-inc-quantity");
-
 
 // reduceValue(
 //   "#product-detail-inc-minus",
@@ -276,7 +275,7 @@ function handleOpensTheSidebar(
   });
   // event wheb click hidden  modal
   openModal.addEventListener("click", function () {
-    localStorage.setItem("openModal",false);
+    localStorage.setItem("openModal", false);
     handleCLoseTheSidebar(
       openModal,
       sidebarName,
@@ -309,7 +308,8 @@ function handleCLoseTheSidebar(
 ) {
   // let handleModalName = document.querySelector(`#${modalName}`);
   // let handleSidebarName = document.querySelector(`#${sidebarName}`);
-  localStorage.setItem("openModal",false);
+  // localStorage.setItem("openModal",false);
+
   let hiddenBodyScollbar = document.querySelector("body");
   if (isHiddenBodyScollbar) {
     hiddenBodyScollbar.style.overflowY = "visible";
@@ -342,9 +342,18 @@ handleOpensTheSidebar(
   true
 );
 
+let continueBuy = document.querySelector(".close-cart-modal");
+if (continueBuy) {
+  let cartModal = document.querySelector(".cart-modal");
+  let cartModalContainer = document.querySelector(".cart-modal-container");
+  continueBuy.onclick = function () {
+    cartModal.classList.remove(`cart-open`);
+    cartModalContainer.classList.remove(`cart-open`);
+  };
+}
 let chooseSize = document.querySelectorAll(".product-detail-size");
 let boxSizeId = document.querySelector(".box-size-id");
-let showSize = document.querySelector('#product_detail_size');
+let showSize = document.querySelector("#product_detail_size");
 
 for (let i = 0; i < chooseSize.length; i++) {
   chooseSize[i].onclick = function () {

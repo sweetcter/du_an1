@@ -6,10 +6,11 @@ $product_id = isset($_POST['productId']) ? (int)$_POST['productId'] : null;
 
 if (!empty($product_id)) {
     unset($_SESSION['cart'][$product_id]);
-    $isCheck = false;
-    if ($_SESSION['count_cart'] > 0 && !$isCheck) {
+    if ($_SESSION['count_cart'] > 0) {
         $_SESSION['count_cart']--;
-        $isCheck = true;
+    }
+    if($_SESSION['count_cart'] < 1){
+        unset($_SESSION['cart']);
     }
 }
 echo json_encode($_SESSION['count_cart']);
