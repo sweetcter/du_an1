@@ -23,8 +23,6 @@ function quan_nam(){
     $a = pdo_query($sql);
     return $a;
 }
-
-
 function ao_so_mi(){
     $sql = "SELECT *
     FROM products

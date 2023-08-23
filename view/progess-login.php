@@ -16,4 +16,6 @@ if (isset($_POST['login'])) {
     } else {
         echo '<script>alert("Tài khoản hoặc mật khẩu không tồn tại"); window.location="../index.php";</script>';
     }
+
+
 }
