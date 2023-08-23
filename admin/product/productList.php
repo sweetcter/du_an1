@@ -44,7 +44,7 @@
         <?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?>
       </span>
       <form action="./index.php" method="post">
-      <table id="example" class="table" style="width:100%">
+      <table id="example" class="table table-striped" style="width:100%">
         <thead>
           <tr class="table-primary">
               <th></th>
