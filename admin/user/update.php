@@ -1,3 +1,4 @@
+<?php require "./header.php" ?>
 <!--  Phàn content -->
 <div class="main">
     <div class="main-content dashboard">

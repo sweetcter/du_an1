@@ -32,7 +32,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username']['role'] == 1)) {
             require ".$PRODUCT_URL/add_product.php";
             break;
         case 'view_product':
-            require ".$PRODUCT_URL/productList.php";
+            require ".$PRODUCT_URL/product_list.php";
             break;
         case 'update_product':
             require ".$PRODUCT_URL/update_product.php";

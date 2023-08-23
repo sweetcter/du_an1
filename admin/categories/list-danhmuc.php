@@ -1,3 +1,4 @@
+<?php require "./header.php" ?>
    <div class="main">
        <div class="main-content dashboard">
            <a href="./index.php?act=add-Category" class="mb-4">
