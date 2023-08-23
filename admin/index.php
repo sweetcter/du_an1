@@ -1,6 +1,5 @@
 <?php
 require "../global.php";
-require "./header.php";
 require "..$MODEL_URL/pdo.php";
 require "..$MODEL_URL/product.php";
 require "..$MODEL_URL/banner.php";
@@ -31,13 +30,22 @@ switch ($act) {
         require ".$PRODUCT_URL/add_product.php";
         break;
     case 'view_product':
-        require ".$PRODUCT_URL/productList.php";
+        require ".$PRODUCT_URL/product_list.php";
         break;
     case 'update_product':
         require ".$PRODUCT_URL/update_product.php";
         break;
-     // ---------------Xử lí Comment-------------------
-     case 'view_comment':
+    case 'add_color_and_size':
+        require ".$PRODUCT_URL/handle_add_color_and_size.php";
+        break;
+    case 'delete_color_name':
+        require ".$PRODUCT_URL/handle_delete_color_name.php";
+        break;
+    case 'show_product_update':
+        require ".$PRODUCT_URL/handle_product_quantity_update.php";
+        break;
+        // ---------------Xử lí Comment-------------------
+    case 'view_comment':
         require ".$COMMENT_URL/commentList.php";
         break;
     case 'delete_comment':
@@ -116,7 +124,7 @@ switch ($act) {
             $address = $_POST['address'];
             $phone = $_POST['phone'];
             $role = $_POST['role'];
-          
+
             $listsanpham = update_taikhoan($id, $full_name, $username, $password, $email, $address, $phone, $role,);
             $thongbao = "Cập nhật thành công";
         }
@@ -129,10 +137,8 @@ switch ($act) {
     case 'check-phantrang':
         require "./admin/check-phantrang.php";
         break;
-   
     default:
         echo "Không có gì";
         echo "admin";
         break;
 }
-require "./footer.php";

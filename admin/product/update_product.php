@@ -41,10 +41,7 @@
         if (isset($_GET['product_id'])) {
             $product_id = $_GET['product_id'];
             $product_result = select_product_by_id($product_id);
-            $color_result_by_id = select_color_by_id($product_id);
-            $image_result = select_images_by_id($product_id);
-            $color_name_result_by_id = select_color_name_by_product_id($product_id);
-            $size_result_by_id = select_size_by_id($product_id);
+
         ?>
             <form action="..<?= $ADMIN_URL . $PRODUCT_URL; ?>/progess_update_product.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="product_id" value="<?= $product_id; ?>">
@@ -64,49 +61,87 @@
                     <label for="product_discount">Giảm giá</label>
                     <input type="number" class="form-control" name="product_discount" value="<?= $product_result['discount'] ?>" min="0" max="99" id="product_discount" required>
                 </div>
-                <div class="form-group mb-3">
-                    <label for="product_size">Kích cỡ</label>
-                    <?php $size_result = select_all_size(); ?>
-                    <select class="form-control" name="product_size" id="product_size">
-                        <option value="<?= $size_result_by_id['size_id'] ?>"><?= $size_result_by_id['size_name'] ?></option>
-                        <?php foreach ($size_result as $value) :
-                            if ($size_result_by_id['size_id'] == $value['size_id']) continue
-                        ?>
-                            <option value="<?= $value['size_id']; ?>"><?= $value['size_name'] ?></option>
-                        <?php endforeach ?>
-                    </select>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_quantity">Số lượng</label>
-                    <input type="number" class="form-control" name="product_quantity" value="<?= $product_result['quantity'] ?>" id="product_quantity" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_color">Loại màu</label>
-                    <?php $color_result = select_all_color(); ?>
-                    <select class="form-control" name="color_type" id="ad_color_type">
-                        <option value="<?= $color_result_by_id['color_type_id'] ?>"><?= $color_result_by_id['color_type_name'] ?></option>
-                        <?php foreach ($color_result as $value) : ?>
-                            <?php if ($value['color_type_id'] == $color_result_by_id['color_type_id']) : continue ?>
-                            <?php else : ?>
-                                <option value="<?= $value['color_type_id']; ?>"><?= $value['color_type_name'] ?></option>
-                            <?php endif ?>
-                        <?php endforeach ?>
-                    </select>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="product_color_name">Tên màu</label>
-                    <input type="text" class="form-control" name="product_color_name" value="<?= $color_name_result_by_id['color_name'] ?>" id="product_color_name" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label>
+
+                <!-- <div class="form-group mb-3"> -->
+                <!-- <label>
                         Ảnh màu cũ
                     </label>
                     <div class="mb-3">
-                        <img src="../..<?= $ROOT_URL ?><?= $color_name_result_by_id['color_image'] ?>" width="100px" alt="">
-                    </div>
-                    <label for="product_color_image">Ảnh màu</label>
+                        <img src="" width="100px" alt="">
+                    </div> -->
+                <!-- <label for="product_color_image">Ảnh màu</label>
                     <input type="file" class="form-control" name="product_color_image" id="product_color_image">
-                    <input type="hidden" name="old_color_image" value="<?= $color_name_result_by_id['color_image'] ?>">
+                    <input type="hidden" name="old_color_image"> -->
+                <!-- </div> -->
+
+                <?php $quantities_result = select_quantities_by_product_id($product_id); ?>
+                <div id="container-color">
+                    <?php foreach ($quantities_result as $quantity) : ?>
+                        <br>
+                        <span>Quantity id <?= $quantity['quantity_id']; ?></span>
+                        <span>Product id <?= $quantity['product_id']; ?></span>
+                        <span>Color name id <?= $quantity['color_name_id']; ?></span>
+                        <span>Size id <?= $quantity['size_id']; ?></span>
+                        <span>Số lượng <?= $quantity['quantity']; ?></span>
+                        <div>
+                            <?php $color_name_result = select_all_color_name_by_id($quantity['color_name_id']); ?>
+                            <?php foreach ($color_name_result as $color_name) : ?>
+                                <div><?= $color_name['color_name'] ?></div>
+                                <div><?= $color_name['color_image'] ?></div>
+                            <?php endforeach ?>
+                        </div>
+                        <div>
+                            <?php $size_result = select_all_size_by_product_id($quantity['product_id']); ?>
+                            <?php foreach ($size_result as $size) : ?>
+                                <span><?= $size['size_id'] ?></span>
+                                <span><?= $size['size_name'] ?></span>
+                            <?php endforeach ?>
+                        </div>
+                        <span hidden product-id="<?= $product_id; ?>" size-id="<?= $quantity['size_id'];  ?>" color-name-id="<?= $quantity['color_name_id']; ?>" data-quantity="<?= $quantity['quantity'] ?>"></span>
+                        <!-- <button type="button" class="btn btn-primary update-color-and-size">Sửa</button> -->
+                        <i class="fa-regular fa-pen-to-square update-color-and-size" style="font-size: 1.6rem;cursor: pointer;color: #000000;padding:6px;"></i>
+                    <?php endforeach ?>
+                </div>
+                <div id="show-color-and-size-update" class="color-update-hidden" style="display:none">
+                    <div class="form-group mb-3">
+                        <label for="product_color">Loại màu</label>
+                        <?php $color_result = select_all_color(); ?>
+                        <select class="form-control" name="color_type" id="color_type">
+                            <option value="0" id="color_name_id_update">Lựa chọn màu</option>
+                            <?php foreach ($color_result as $value) : ?>
+                                <option value="<?= $value['color_type_id']; ?>"><?= $value['color_type_name'] ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_color_name">Tên màu</label>
+                        <input type="text" class="form-control" id="color_name_update" required>
+                        <label>
+                            Ảnh màu cũ
+                        </label>
+                        <div class="mb-3">
+                            <img src="" width="100px" alt="" id="old_image">
+                        </div>
+                        <label for="product_color_image">Ảnh màu mới</label>
+                        <input type="file" class="form-control" name="product_color_image" id="color_image">
+                        <input type="hidden" name="old_image">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_size">Kích cỡ</label>
+                        <?php $size_result = select_all_size(); ?>
+                        <select class="form-control" name="product_size" id="size">
+                            <option value="0" id="size_id_update">Lựa chọn Size</option>
+                            <?php foreach ($size_result as $value) : ?>
+                                <option value="<?= $value['size_id']; ?>"><?= $value['size_name'] ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="product_quantity">Số lượng</label>
+                        <input type="number" class="form-control" name="product_quantity" id="product_quantity" required>
+                    </div>
+                    <button type="button" id="updateProductCSQ" class="btn btn-success">Cập nhật</button>
+                    <button type="button" id="QuantityRetype" class="btn btn-warning">Nhập lại</button>
                 </div>
                 <div class="form-group mb-3">
                     <label>
@@ -131,22 +166,6 @@
                     <input type="hidden" name="old_second_image" value="<?= $product_result['hover_main_image_url'] ?>">
                 </div>
                 <div class="form-group mb-3">
-                    <label style="display: block;">
-                        Ảnh chi tiết sản phẩm cũ
-                    </label>
-                    <?php foreach ($image_result as $key => $value) : ?>
-                        <div class="mb-3" style="display:inline-block;">
-                            <img src="../..<?= $ROOT_URL ?><?= $value['image_url'] ?>" width="100px" alt="">
-                        </div>
-                    <?php endforeach ?>
-                    <br>
-                    <label for="product_detail_image">Ảnh chi tiết sản phẩm mới</label>
-                    <input type="file" class="form-control" name="product_detail_image[]" id="product_detail_image" multiple>
-                    <?php foreach ($image_result as $key => $value) : ?>
-                        <input type="hidden" name="old_detail_image[]" value="<?= $value['image_url'] ?>">
-                    <?php endforeach ?>
-                </div>
-                <div class="form-group mb-3">
                     <label for="product_desc">Mô tả</label>
                     <textarea type="text" class="form-control" rows="6" name="product_desc" id="product_desc" required><?= $product_result['product_desc']; ?></textarea>
                 </div>
@@ -161,7 +180,6 @@
                         <?php foreach ($categories_result as $value) :
                             if ($value['id_category'] == $product_result['category_id']) continue
                         ?>
-
                             <option value="<?= $value['id_category'] ?>"><?= $value['name_category'] ?></option>
                         <?php endforeach ?>
                     </select>

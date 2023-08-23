@@ -58,10 +58,10 @@
   }
 
   /* Fading animation */
-  .fade {
+  /* .fade {
     animation-name: fade;
     animation-duration: 3s;
-  }
+  } */
 
   @keyframes fade {
     from {
@@ -90,7 +90,7 @@
       $dsBanner = selectAll_banner();
       foreach ($dsBanner as $bn) {
         extract($bn);
-        echo '<div class="mySlides fade">
+        echo '<div class="mySlides">
                         <img  src=".' . $bn['banner_image'] . '" alt="" style="width: 100%">
         </div>';
       }

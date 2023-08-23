@@ -33,9 +33,9 @@
 
 <div class="main">
     <div class="main-content dashboard">
-            <a href="./index.php?act=view_product" class="mb-4">
-                 <button class="btn btn-primary">Dach sach</button>
-            </a>
+        <a href="./index.php?act=view_product" class="mb-4">
+            <button class="btn btn-primary">Danh sách</button>
+        </a>
         <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> "><?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?></span>
         <form action="..<?= $ADMIN_URL . $PRODUCT_URL; ?>/progess_add_product.php" method="post" enctype="multipart/form-data">
             <div class="form-group mb-3">
@@ -47,6 +47,13 @@
                 <input type="text" class="form-control" name="product_code" id="product_code" required>
             </div>
             <div class="form-group mb-3">
+                <label>Giới tính</label><br>
+                <input type="radio" name="product_gender" id="male" value="0" checked required>
+                <label for="male" class="gender">Nam</label>
+                <input type="radio" name="product_gender" id="female" value="1" required>
+                <label for="female" class="gender">Nữ</label>
+            </div>
+            <div class="form-group mb-3">
                 <label for="product_price">Giá sản phẩm</label>
                 <input type="number" class="form-control" name="product_price" id="product_price" required>
             </div>
@@ -54,35 +61,55 @@
                 <label for="product_discount">Giảm giá</label>
                 <input type="number" class="form-control" name="product_discount" min="0" max="99" id="product_discount" required>
             </div>
-            <div class="form-group mb-3">
-                <label for="product_size">Kích cỡ</label>
-                <?php $size_result = select_all_size(); ?>
-                <select class="form-control" name="product_size" id="product_size">
-                    <?php foreach ($size_result as $value) : ?>
-                        <option value="<?= $value['size_id']; ?>"><?= $value['size_name'] ?></option>
-                    <?php endforeach ?>
-                </select>
-            </div>
-            <div class="form-group mb-3">
-                <label for="product_quantity">Số lượng</label>
-                <input type="number" class="form-control" name="product_quantity" id="product_quantity" required>
-            </div>
+            <!-- <div class="form-group mb-3">
+                <label for="product_quantity">Số lượng kích cỡ</label>
+                <input type="number" class="form-control" id="sizeQuantities" required>
+            </div> -->
+            <!-- <div class="form-group mb-3">
+                <div id="showSizeMessage" style="color:red"></div>
+                <div id="showNewSize">
+
+                </div>
+                <input type="text" id="size_input" name="size_info">
+                <i class="fa-solid fa-square-plus" id="submitSize" style="color: #05a34a;cursor: pointer;font-size: 2.4rem;"></i>
+            </div> -->
             <div class="form-group mb-3">
                 <label for="product_color">Loại màu</label>
                 <?php $color_result = select_all_color(); ?>
-                <select class="form-control" name="color_type" id="ad_color_type">
+                <select class="form-control" name="color_type" id="add_color_type">
                     <?php foreach ($color_result as $value) : ?>
                         <option value="<?= $value['color_type_id']; ?>"><?= $value['color_type_name'] ?></option>
                     <?php endforeach ?>
                 </select>
             </div>
             <div class="form-group mb-3">
-                <label for="product_color_name">Tên màu</label>
-                <input type="text" class="form-control" name="product_color_name" id="product_color_name" required>
+                <label for="color_name">Tên màu</label>
+                <input type="text" class="form-control" name="color_name" id="color_name" required>
             </div>
             <div class="form-group mb-3">
                 <label for="product_color_image">Ảnh Màu</label>
-                <input type="file" class="form-control" name="product_color_image" id="product_color_image" required>
+                <input type="file" class="form-control" name="color_image" id="product_color_image" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="product_size">Kích cỡ</label>
+                <?php $size_result = select_all_size(); ?>
+                <select class="form-control" name="product_size" id="add_size">
+                    <?php foreach ($size_result as $value) : ?>
+                        <option value="<?= $value['size_id']; ?>"><?= $value['size_name'] ?></option>
+                    <?php endforeach ?>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label for="color_quantities">Số lượng</label>
+                <input type="number" class="form-control" id="colorAndSizequantities" required>
+            </div>
+            <div class="form-group mb-3">
+                <div id="showMessage" style="color:red"></div>
+                <div id="showNewColorAndSize">
+                        
+                </div>
+                <input type="text" id="colorAndSizeInfo" name="colorAndSizeInfo">
+                <i class="fa-solid fa-square-plus" id="submitColorAndSize" style="color: #05a34a;cursor: pointer;font-size: 2.4rem;"></i>
             </div>
             <div class="form-group mb-3">
                 <label for="product_main_image">Ảnh chính</label>
@@ -92,10 +119,10 @@
                 <label for="product_hover_main_image">Ảnh phụ</label>
                 <input type="file" class="form-control" name="product_hover_main_image" id="product_hover_main_image">
             </div>
-            <div class="form-group mb-3">
+            <!-- <div class="form-group mb-3">
                 <label for="product_main_image">Chi tiết ảnh sản phẩm</label>
                 <input type="file" class="form-control" name="product_detail_image[]" id="product_detail_image" multiple>
-            </div>
+            </div> -->
             <div class="form-group mb-3">
                 <label for="product_desc">Mô tả</label>
                 <textarea type="text" class="form-control" rows="6" name="product_desc" id="product_desc" required></textarea>
@@ -113,6 +140,9 @@
             <div class="mt-3">
                 <button type="submit" name='addProduct' class="btn btn-success">Thêm</button>
                 <button type="reset" class="btn btn-warning">Nhập lại</button>
+                <a href="./index.php?act=view_product" class="mb-4">
+                    <button type="button" class="btn btn-primary">Danh sách</button>
+                </a>
             </div>
         </form>
     </div>
