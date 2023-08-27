@@ -1,4 +1,4 @@
-<?php require_once "../admin/header.php" ?> 
+<?php require "./header.php" ?>
 <div class="main-header">
     <div class="d-flex">
         <div class="mobile-toggle" id="mobile-toggle">
@@ -68,4 +68,4 @@
         </form>
     </div>
 </div>
-<?php require_once "../admin/footer.php" ?> 
+<?php require_once "./footer.php" ?> 

@@ -118,7 +118,6 @@
         <i class="fa-solid fa-filter"></i>
       </div>
       <div class="view-function">
-
         Sản phẩm
       </div>
       <div class="sort-function">

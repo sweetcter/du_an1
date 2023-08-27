@@ -1,17 +1,17 @@
-<?php require "./header.php " ?>
-<div class="main">
-    <div class="main-content dashboard">
-        <a href="./index.php?act=add-Category" class="mb-4">
-            <button class="btn btn-primary">Thêm</button>
-        </a>
-        <div class="row">
-            <form action="" method="post">
-                <table class=" table">
-                    <tr class="table-primary">
-                        <th></th>
-                        <th>Tên loại</th>
-                        <th></th>
-                    </tr>
+<?php require "./header.php" ?>
+   <div class="main">
+       <div class="main-content dashboard">
+           <a href="./index.php?act=add-Category" class="mb-4">
+               <button class="btn btn-primary">Thêm</button>
+           </a>
+           <div class="row">
+               <form action="" method="post">
+                   <table class=" table">
+                       <tr class="table-primary">
+                           <th></th>
+                           <th>Tên loại</th>
+                           <th></th>
+                       </tr>
 
                     <?php
                     foreach ($list as $key) {
