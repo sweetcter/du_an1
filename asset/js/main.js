@@ -248,6 +248,23 @@ function reduceValue(incValue, inputName, quantity, isquantity) {
 //   getQuantity.value = containerQuantity.value;
 // };
 
+// handle open modal
+
+const button = document.querySelector(".header-content-user");
+
+const user_modal = document.querySelector(".modal_user");
+const modal = document.querySelector(".user_modal_container");
+button.addEventListener("click", () => {
+  user_modal.classList.toggle("open");
+});
+modal.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+user_modal.onclick = function (e) {
+  user_modal.classList.toggle("open");
+};
+
 // handle open sidebar
 function handleOpensTheSidebar(
   openButton,
@@ -374,3 +391,4 @@ for (let i = 0; i < chooseSize.length; i++) {
 //     // showColor.textContent = colorNameValue;
 //   };
 // }
+

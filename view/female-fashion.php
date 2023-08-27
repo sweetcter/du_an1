@@ -241,11 +241,14 @@
             <i class="fa-solid fa-chevron-down filter-dropdown"></i>
           </div>
           <div class="filter-list flex-col-4">
-            <a href="size28"><span class="filter-list-size"> 28 </span></a>
+            <?php
+            // Lấy danh sách tất cả các kích thước từ cơ sở dữ liệu
+            $sizes = select_all_size(); // Gọi hàm select_all_size() để lấy danh sách
 
-            <span class="filter-list-size"> M </span>
-            <span class="filter-list-size"> L </span>
-            <span class="filter-list-size"> xl</span>
+            foreach ($sizes as $size) {
+              echo '<span class="filter-list-size" data-size-id="' . $size['size_id'] . '">' . $size['size_name'] . '</span>';
+            }
+            ?>
           </div>
         </div>
 
@@ -257,31 +260,17 @@
             <i class="fa-solid fa-chevron-down filter-dropdown"></i>
           </div>
           <div class="filter-list row-filter-col-2">
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Đen</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/black.png')"></div>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Trắng</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/white.png')"></div>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Be</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/be.png')"></div>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Xám bạc</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/xam_bac.png')"></div>
-            </li>
+            <?php
+            // Lấy danh sách tất cả các màu từ cơ sở dữ liệu
+            $colors = select_all_color(); // Gọi hàm select_all_color() để lấy danh sách màu
+            ?>
+            <?php foreach ($colors as $color) { ?>
+              <li class="filter-category-name">
+                <input type="checkbox" name="color_checkbox_<?php echo $color['color_type_name']; ?>" id="filter-checkbox-<?php echo $color['color_type_name']; ?>" class="filter-checkbox" />
+                <label class="filter-newCheckbox" for="filter-checkbox-<?php echo $color['color_type_name']; ?>"></label>
+                <a href="../../du_an1/index.php?action=color_filter&color_type_id=<?php echo $color['color_type_id'] ?>"><?php echo $color['color_type_name']; ?></a>
+              </li>
+            <?php } ?>
           </div>
         </div>
         <div class="filter-block">
@@ -295,12 +284,15 @@
             <div id="multi-range-slider" class="filter-price"></div>
             <div class="filter-price-control">
               <div>
-                <span>₫</span><span id="start-value" class="filter-price-min">79000đ</span>
+                <span>₫</span><span id="start-value" class="filter-price-min">0đ</span>
               </div>
               <div>
                 <span>₫</span><span id="end-value" class="filter-price-max">1375000đ</span>
               </div>
             </div>
+
+            <a href=""></a>
+            <!-- <p id="price_show">2000 - 1375000</p> -->
           </div>
         </div>
       </div>
@@ -415,7 +407,7 @@
       <?php $product_result = select_home_product(true, 2); ?>
       <?php foreach ($product_result as $key => $value) : ?>
         <!-- start item -->
-        <div class="product-item">
+        <div class="product-item" id="product-list">
           <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
             <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
           </a>
@@ -453,4 +445,24 @@
     </div>
   </div>
 </div>
+<!-- <script>
+        $(document).ready(function() {
+            // Lắng nghe sự kiện khi giá trị slider thay đổi
+            $("#multi-range-slider").on("change", function() {
+                var startValue = $("#start-value").text();
+                var endValue = $("#end-value").text();
+
+                // Gửi dữ liệu lọc qua AJAX
+                $.ajax({
+                    url: "filter_products.php", // Điều chỉnh đúng đường dẫn của tệp xử lý
+                    type: "POST",
+                    data: { startValue: startValue, endValue: endValue },
+                    success: function(response) {
+                        // Cập nhật danh sách sản phẩm sau khi lọc
+                        $("#product-list").html(response);
+                    }
+                });
+            });
+        });
+    </script> -->
 <?php require "./includes/footer.php" ?>

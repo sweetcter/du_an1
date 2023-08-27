@@ -159,6 +159,15 @@ require ".$MODEL_URL/orders.php";
     case 'vaynu':
       require ".$VIEW_URL/boloc/vay-nu.php";
       break;
+    case 'price_filter':
+      require ".$VIEW_URL/boloc/locgiatien.php";
+      break;
+    case 'size_filter':
+      require ".$VIEW_URL/boloc/loc-size.php";
+      break;
+    case 'color_filter':
+      require ".$VIEW_URL/boloc/mau-sac.php";
+      break;
   
     case 'thoat':
       session_unset();

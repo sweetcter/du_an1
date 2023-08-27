@@ -98,6 +98,22 @@
     <div class="header-content-tool">
       <div class="action showCustomer" style="margin-right: <?= isset($_SESSION['username']) ? '8px' : '' ?>">
         <i class="fa-regular fa-user header-content-user"></i>
+        <?php if (!isset($_SESSION['username'])) {
+        ?>  
+        <div class="modal_user">
+          <div class="user_modal_container">
+            <div class="btn_link_user"></div>
+              <button>ĐĂNG NHẬP</button>
+              <button>ĐĂNG KÝ</button>
+              <div class="a_link_user">
+                <a href="">Theo dõi đơn hàng</a>
+                <a href="">Khách hàng thành viên</a>
+                <a href="">Danh sách cửa hàng</a>
+              </div>
+          </div>
+        </div>
+        <?php }?>
+
         <span style="<?php if (!isset($_SESSION['username'])) {
                         echo "display:none;";
                       } ?>">
