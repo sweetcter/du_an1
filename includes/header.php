@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/slick.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/base.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/grid.css" />
+  <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/loading.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/user.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/comment.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/spct.css" />

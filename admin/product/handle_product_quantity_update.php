@@ -9,6 +9,7 @@ $size_result = select_one_size_by_size_id($sizeId);
 $result_array = [
     'color_name' => $color_name_result['color_name'],
     'color_image' => $color_name_result['color_image'],
+    'color_name_id' => $color_name_result['color_name_id'],
     'color_type_name' => $color_type_result['color_type_name'],
     'color_type_id' => $color_type_result['color_type_id'],
     'size_id' => $size_result['size_id'],

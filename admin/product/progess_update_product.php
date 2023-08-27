@@ -41,8 +41,7 @@ if ($product_second_image['size'] > 0) {
 } else {
     $save_second_img = $product_old_second_image;
 }
-
-product_update($product_name, $product_price, $save_main_img, $save_second_img, $product_quantity, $product_discount, $product_import_date, $product_code, $product_desc, $product_cat_id, $product_id);
+product_update($product_name, $product_price, $save_main_img, $save_second_img, $product_discount, $product_code, $product_desc, $product_cat_id, $product_id);
 
 // if ($product_color_image['size'] > 0) {
 //     $save_color_img = add_image($product_color_image, $product_color_image['tmp_name'], $ASSET_URL);
@@ -77,5 +76,5 @@ product_update($product_name, $product_price, $save_main_img, $save_second_img, 
 //     }
 // }
 // update_size($product_size, $product_id);
-// header("location: ../index.php?act=update_product&product_id=" . $product_id);
-// setcookie('notification', "Cập nhật thành công", time() + 1, "/");
+header("location: ../index.php?act=update_product&product_id=" . $product_id);
+setcookie('notification', "Cập nhật thành công", time() + 1, "/");

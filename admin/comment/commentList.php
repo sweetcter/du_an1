@@ -1,4 +1,4 @@
-
+<?php require_once "../admin/header.php" ?> 
 <div class="main-header">
     <div class="d-flex">
         <div class="mobile-toggle" id="mobile-toggle">

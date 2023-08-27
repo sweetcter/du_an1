@@ -1,5 +1,5 @@
 
-
+<?php require "./header.php " ?>
 
 <!--   Phần content -->
 
@@ -130,4 +130,4 @@
 
 
 <div class="overlay"></div>
-
+<?php require "./footer.php " ?>

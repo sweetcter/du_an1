@@ -113,8 +113,7 @@
         <i class="fa-solid fa-filter"></i>
       </div>
       <div class="view-function">
-        <?php $count_product = count_home_product(1); ?>
-        <strong><?= $count_product ?></strong>
+
         Sản phẩm
       </div>
       <div class="sort-function">
@@ -440,14 +439,14 @@
           <?php $product_color_result = select_product_color($value['product_code']); ?>
 
           <div class="product-color-list">
-            <?php foreach ($product_color_result as $value) : ?>
+            <?php foreach ($product_color_result as $color) : ?>
               <a href="#" class="product-color">
                 <div class="product-color-child">
-                  <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img" />
+                  <img src="../<?= $ROOT_URL ?><?= $color['color_image'] ?>" alt="" class="product-color-img" />
                 </div>
               </a>
+            <?php endforeach ?>
           </div>
-        <?php endforeach ?>
         </div>
       <?php endforeach ?>
     </div>

@@ -118,8 +118,7 @@
         <i class="fa-solid fa-filter"></i>
       </div>
       <div class="view-function">
-        <?php $count_product = count_home_product(1); ?>
-        <strong><?= $count_product ?></strong>
+
         Sản phẩm
       </div>
       <div class="sort-function">
@@ -327,11 +326,10 @@
           // Tính tổng số trang dựa trên tổng số sản phẩm và số sản phẩm trên mỗi trang
           $totalPages = ceil($totalProducts / $itemsPerPage);
           $product_result = isset($_GET['page']) ? selectAll_product_phantrang(2, false, $start, $itemsPerPage) : select_home_product(true, 2);;
-          foreach ($product_result as $key => $value) :
-          ?>
+          foreach ($product_result as $key => $value) :?>
             <!-- start item -->
             <div class="product-item">
-              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
+              <a href="./product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
                 <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
                 <img src="../<?= $ROOT_URL ?><?= $value['hover_main_image_url'] ?>" alt="" class="product-image-second" />
               </a>
@@ -448,8 +446,8 @@
                   <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img" />
                 </div>
               </a>
+            <?php endforeach ?>
           </div>
-        <?php endforeach ?>
         </div>
       <?php endforeach ?>
     </div>

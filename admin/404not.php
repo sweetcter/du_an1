@@ -14,7 +14,8 @@
     <input type="password" id="password" name="password" required>
     <br>
     <button type="button" id="dangnhap">Đăng nhập</button>
-    <a href="../../du_an1/admin/index.php" id="login_success" >12</a>
+    <span id="message" style="color: red;"></span>
+    <!-- <a href="../../du_an1/admin/index.php" id="login_success" >12</a> -->
 </body>
 
 </html>
@@ -32,11 +33,14 @@
                     username: username,
                     password: password
                 },
-                dataType:"json",
+                dataType: "json",
                 success: function(result) {
-                    if(!result.status){
+                    const firstMessage = 0;
+                    if (result[firstMessage].status === "success") {
                         location.href = `../../du_an1/admin/index.php`;
                         console.log(result);
+                    } else {
+                        $("#message").text(result[firstMessage].message);
                     }
                 },
                 error: function(error) {

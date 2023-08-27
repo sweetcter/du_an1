@@ -97,16 +97,18 @@
                                 <span><?= $size['size_name'] ?></span>
                             <?php endforeach ?>
                         </div>
-                        <span hidden product-id="<?= $product_id; ?>" size-id="<?= $quantity['size_id'];  ?>" color-name-id="<?= $quantity['color_name_id']; ?>" data-quantity="<?= $quantity['quantity'] ?>"></span>
+                        <span class="attr-container" hidden quantity-id="<?= $quantity['quantity_id']; ?>" product-id="<?= $product_id; ?>" size-id="<?= $quantity['size_id'];  ?>" color-name-id="<?= $quantity['color_name_id']; ?>" data-quantity="<?= $quantity['quantity'] ?>"></span>
                         <!-- <button type="button" class="btn btn-primary update-color-and-size">Sửa</button> -->
                         <i class="fa-regular fa-pen-to-square update-color-and-size" style="font-size: 1.6rem;cursor: pointer;color: #000000;padding:6px;"></i>
                     <?php endforeach ?>
                 </div>
-                <div id="show-color-and-size-update" class="color-update-hidden" style="display:none">
+                <div id="show_color_and_size_update" class="color-update-hidden" style="display:none">
+                <!-- input lưu color name id  -->
+                    <input type="hidden" id="color_name_id">
                     <div class="form-group mb-3">
                         <label for="product_color">Loại màu</label>
                         <?php $color_result = select_all_color(); ?>
-                        <select class="form-control" name="color_type" id="color_type">
+                        <select class="form-control"  id="color_type_update">
                             <option value="0" id="color_name_id_update">Lựa chọn màu</option>
                             <?php foreach ($color_result as $value) : ?>
                                 <option value="<?= $value['color_type_id']; ?>"><?= $value['color_type_name'] ?></option>
@@ -115,7 +117,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="product_color_name">Tên màu</label>
-                        <input type="text" class="form-control" id="color_name_update" required>
+                        <input type="text" class="form-control" id="color_name_update">
                         <label>
                             Ảnh màu cũ
                         </label>
@@ -123,13 +125,13 @@
                             <img src="" width="100px" alt="" id="old_image">
                         </div>
                         <label for="product_color_image">Ảnh màu mới</label>
-                        <input type="file" class="form-control" name="product_color_image" id="color_image">
-                        <input type="hidden" name="old_image">
+                        <input type="file" class="form-control" id="new_color_image">
+                        <input type="hidden" id="old_image_path">
                     </div>
                     <div class="form-group mb-3">
                         <label for="product_size">Kích cỡ</label>
                         <?php $size_result = select_all_size(); ?>
-                        <select class="form-control" name="product_size" id="size">
+                        <select class="form-control" id="size">
                             <option value="0" id="size_id_update">Lựa chọn Size</option>
                             <?php foreach ($size_result as $value) : ?>
                                 <option value="<?= $value['size_id']; ?>"><?= $value['size_name'] ?></option>
@@ -138,7 +140,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="product_quantity">Số lượng</label>
-                        <input type="number" class="form-control" name="product_quantity" id="product_quantity" required>
+                        <input type="number" class="form-control"  id="new_quantity">
                     </div>
                     <button type="button" id="updateProductCSQ" class="btn btn-success">Cập nhật</button>
                     <button type="button" id="QuantityRetype" class="btn btn-warning">Nhập lại</button>
