@@ -1,21 +1,83 @@
 $(document).ready(function () {
   let colors = [];
   let sizes = [];
+  let itsOK = false;
   let colorAndSizeContainer = [];
+  $("#check_color_name_duplicate").on("click", function () {
+    // BLACK
+    let colorName = $("#color_name");
+    console.log(colorName.val());
+    if (colorName.val() === "") {
+      $(".color_name_notifi").text("Tên màu trống");
+      return;
+    }
+    let colorNameList = $("#color_name_duplicate_list");
+    $.ajax({
+      type: "POST",
+      url: "../../du_an1/admin/index.php?act=check_duplicate_color",
+      data: {
+        colorName: colorName.val(),
+      },
+      dataType: "json",
+      success: function (responve) {
+        console.log(responve);
+        // console.log(responve.color_name_id);
+        let html = ``;
+        for (const item in responve) {
+          if (responve.hasOwnProperty(item)) {
+            const value = responve[item];
+            console.log(value.color_name_id);
+            html += `<option value="${value.color_name_id}">${value.color_name} id ${value.color_name_id} ${value.product_name}</option>`;
+          }
+        }
+        colorNameList.html(html);
+        colorNameList.append(
+          $("<option>", {
+            value: `0`,
+            text: `Tạo mới`,
+          })
+        );
+      },
+      error: function (error) {
+        console.log(error);
+      },
+    });
+  });
+  // $(".duplication_allowed").on("click", function () {
+  //   itsOK = itsOK === false ? true : false;
+  //   $("#itsOKValueField").val(itsOK);
+  //   if (itsOK) {
+  //     $(".notifi").text("Chấp thuận");
+  //   } else {
+  //     $(".notifi").text("Từ chối");
+  //   }
+  // });
   $("#submitColorAndSize").on("click", function () {
     let fileInput = $("#product_color_image")[0];
     let formData = new FormData();
     let colorType = $("#add_color_type");
     let colorName = $("#color_name");
+    let colorNameId = $("#color_name_duplicate_list");
+    if ($("#color_name_duplicate_list").val() === "0") {
+      colorName = $("#color_name");
+      console.log("1");
+      formData.append("colorName", colorName.val());
+    } else {
+      console.log("2");
+      console.log(colorNameId.val());
+      formData.append("colorNameId", colorNameId.val());
+    }
     let quantity = $("#colorAndSizequantities").val();
     let sizeId = $("#add_size");
     let sizeName = sizeId.find(":selected").text();
-    let currentSizeId = 0;
     let currentQuantity = 0;
 
     formData.append("colorImage", fileInput.files[0]);
-    formData.append("colorName", colorName.val());
     formData.append("colorType", colorType.val());
+    if (colorName.val() === "") {
+      $(".color_name_notifi").text("Tên màu trống");
+      return;
+    }
     // console.log(colorType);
     $.ajax({
       type: "POST",
@@ -26,6 +88,7 @@ $(document).ready(function () {
       dataType: "json",
       success: function (response) {
         let isCheckMatch = false;
+        console.log(response);
         if (colorAndSizeContainer.length >= 1) {
           for (let i = 0; i < colorAndSizeContainer.length; i++) {
             const sizeIdIndex = 2;
@@ -65,7 +128,9 @@ $(document).ready(function () {
                 // update lại số lượng nếu trùng
                 currentQuantity =
                   showSizeQuantity !== 0 ? showSizeQuantity : newQuantities;
-                let queryColorNameId = $(`[color-and-size-id=c${currentColorNameId}s${colorAndSizeContainer[i][sizeIdIndex]}]`);
+                let queryColorNameId = $(
+                  `[color-and-size-id=c${currentColorNameId}s${colorAndSizeContainer[i][sizeIdIndex]}]`
+                );
                 queryColorNameId.text(
                   `Color: ${colorName.val()} | Size: ${sizeName} | Số lượng: ${currentQuantity}`
                 );
@@ -95,7 +160,11 @@ $(document).ready(function () {
           console.log("I'm here");
           let colorAndSizeElement = `<span class="color-name" style="padding: 6px 12px;margin-bottom: 8px;display: inline-flex;align-items: center;border: 1px solid #dedede;border-radius: 4px;
             margin-right:12px;">
-            <span color-and-size-id=c${response.color_name_id}s${sizeId.val()}  style="font-size: 1rem;margin-right: 12px;user-select: none;">Color: ${response.color_name} | Size: ${sizeName} | Số lượng: ${quantity}</span>
+            <span color-and-size-id=c${
+              response.color_name_id
+            }s${sizeId.val()}  style="font-size: 1rem;margin-right: 12px;user-select: none;">Color: ${
+            response.color_name
+          } | Size: ${sizeName} | Số lượng: ${quantity}</span>
             <i class="fa-solid fa-circle-xmark delete-color-name" style="color: #ff0000;font-size: 1.6rem;cursor: pointer;"></i>
             </span>`;
           $("#showNewColorAndSize").append(colorAndSizeElement);
@@ -105,7 +174,7 @@ $(document).ready(function () {
             Number(sizeId.val()),
             sizeName,
             Number(quantity),
-            `c${response.color_name_id}s${sizeId.val()}`
+            `c${response.color_name_id}s${sizeId.val()}`,
           ];
           colorAndSizeContainer.push(colorAndSizeInfo);
           handleDelete();

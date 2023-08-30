@@ -82,7 +82,7 @@
           </a>
         </li>
         <li>
-          <a href="../..<?= $ROOT_URL ?>/admin/index.php?act=view_product" style="text-decoration: none;">
+          <a href="../..<?= $ROOT_URL ?>/admin/index.php?act=view_bill" style="text-decoration: none;">
             <i class="bx bxs-dashboard"></i>
             <span>Hóa đơn</span>
           </a>

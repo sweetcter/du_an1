@@ -120,7 +120,6 @@ if (openModalBtn) {
     hiddenBodyScollbar.style.overflowY = `auto`;
   });
 }
-
 if (closeBtn) {
   closeBtn.addEventListener("click", () => {
     modal1.style.top = "-124%";
@@ -347,30 +346,9 @@ if (continueBuy) {
   let cartModal = document.querySelector(".cart-modal");
   let cartModalContainer = document.querySelector(".cart-modal-container");
   continueBuy.onclick = function () {
+    let hiddenBodyScollbar = document.querySelector("body");
+    hiddenBodyScollbar.style.overflowY = "visible";
     cartModal.classList.remove(`cart-open`);
     cartModalContainer.classList.remove(`cart-open`);
   };
 }
-let chooseSize = document.querySelectorAll(".product-detail-size");
-let boxSizeId = document.querySelector(".box-size-id");
-let showSize = document.querySelector("#product_detail_size");
-
-for (let i = 0; i < chooseSize.length; i++) {
-  chooseSize[i].onclick = function () {
-    let colorIdValue = chooseSize[i].getAttribute("size-id");
-    boxSizeId.value = colorIdValue;
-    showSize.textContent = chooseSize[i].textContent;
-  };
-}
-
-// let chooseColor = document.querySelectorAll(".product_detail_image");
-// let boxClorId = document.querySelector(".box-color-id");
-// let showColor = document.querySelector('#product_detail_color');
-// for (let i = 0; i < chooseColor.length; i++) {
-//   chooseColor[i].onclick = function () {
-//     let colorIdValue = chooseColor[i].getAttribute("color-id");
-//     // let colorNameValue = chooseColor[i].getAttribute("color-name");
-//     boxClorId.value = colorIdValue;
-//     // showColor.textContent = colorNameValue;
-//   };
-// }

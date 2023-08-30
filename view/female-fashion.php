@@ -258,10 +258,12 @@
           </div>
           <div class="filter-list row-filter-col-2">
             <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Đen</a>
+              <div>
+                <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
+                <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
+                </label>
+                <a href="#">Đen</a>
+              </div>
               <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/black.png')"></div>
             </li>
             <li class="filter-category-name">

@@ -49,6 +49,7 @@ $(document).ready(function () {
     let customerNumberPhone = $("#customerNumberPhone");
     let customerEmail = $("#customerEmail");
     let customerNote = $("#customerNote");
+    
     $.ajax({
       type: "POST",
       url: "../../du_an1/index.php?action=order_handle",

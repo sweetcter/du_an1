@@ -83,8 +83,19 @@
                 </select>
             </div>
             <div class="form-group mb-3">
-                <label for="color_name">Tên màu</label>
-                <input type="text" class="form-control" name="color_name" id="color_name" required>
+                <label for="color_name">Tên màu:</label><br>
+                <!-- <div style="display: fle;align-items: baseline;"> -->
+                    <!-- <span style="margin-bottom: 12px;display: inline-block;margin-right: 12px;">Tạo ra tên 1 màu trùng nhưng khác sản phẩm ?</span> -->
+                    <!-- <i class="fa-solid fa-square-check duplication_allowed" style="color: #1aa82b;font-size: 2rem;cursor: pointer;user-select: none;"></i>
+                    <span class="notifi"></span>
+                    <input type="hidden" id="itsOKValueField"> -->
+                <!-- </div> -->
+                <input type="text" class="form-control" name="color_name" id="color_name">
+                <span class="color_name_notifi" style="color:red"></span><br>
+                <button type="button" class="btn btn-warning" id="check_color_name_duplicate">Kiểm tra trùng</button>
+                <select name="" id="color_name_duplicate_list">
+                    <option value="0">Tạo mới</option>
+                </select>
             </div>
             <div class="form-group mb-3">
                 <label for="product_color_image">Ảnh Màu</label>
@@ -106,9 +117,9 @@
             <div class="form-group mb-3">
                 <div id="showMessage" style="color:red"></div>
                 <div id="showNewColorAndSize">
-                        
+
                 </div>
-                <input type="text" id="colorAndSizeInfo" name="colorAndSizeInfo">
+                <input type="hidden" id="colorAndSizeInfo" name="colorAndSizeInfo">
                 <i class="fa-solid fa-square-plus" id="submitColorAndSize" style="color: #05a34a;cursor: pointer;font-size: 2.4rem;"></i>
             </div>
             <div class="form-group mb-3">

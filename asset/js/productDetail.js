@@ -1,40 +1,43 @@
 $(document).ready(function () {
   let isCheckClickSize = false;
   let isCheckClickColor = false;
-  let isCheckChooseColor = false;
+  // let isCheckChooseColor = false;
   function reloadSlick() {
-    $(".slider-for").slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      asNavFor: ".slider-nav",
-      infinite: true,
-      nextArrow: '<i class="fa-solid fa-angle-right slick-next-list"></i>',
-      prevArrow: '<i class="fa-solid fa-angle-left slick-prev-list"></i>',
-    });
-    $(".slider-nav").slick({
-      accessibility: true,
-      slidesToShow: 3,
-      vertical: true,
-      slidesToScroll: 1,
-      arrows: false,
-      asNavFor: ".slider-for",
-      infinite: true,
-      centerMode: true,
-      focusOnSelect: true,
-    });
+    setTimeout(function () {
+      $(".slider-for").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: ".slider-nav",
+        infinite: true,
+        nextArrow: '<i class="fa-solid fa-angle-right slick-next-list"></i>',
+        prevArrow: '<i class="fa-solid fa-angle-left slick-prev-list"></i>',
+      });
+      $(".slider-nav").slick({
+        accessibility: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        vertical: true,
+        arrows: false,
+        asNavFor: ".slider-for",
+        infinite: true,
+        centerMode: true,
+        focusOnSelect: true,
+        // autoplay: true,
+        // autoplaySpeed: 1000,
+      });
+    }, 100);
   }
   $(".product_detail_image").on("click", function () {
     const that = this;
-    // if(!isCheckChooseColor){
-
-    // }
-
     let productId = $(that).attr("product_id");
     let colorNameId = $(that).attr("color_name_id");
+    $(".box-color-name-id").val(colorNameId);
     $(".data-id-container").attr("color_name_id", colorNameId);
     $(".product_detail_image").removeClass("active");
     $(that).addClass("active");
     $(".loading-container").show();
+    // đặt lại hiển thị số lượng thành rỗng
+    resetShowInfo();
     $.ajax({
       type: "POST",
       url: "../../du_an1/index.php?action=get_product_info",
@@ -44,7 +47,6 @@ $(document).ready(function () {
       },
       dataType: "json",
       success: function (result) {
-        $(".loading-container").hide();
         // console.log(result);
         const COLORNAME = result[1][0];
         const IMAGELENGTH = result[0].length;
@@ -69,7 +71,7 @@ $(document).ready(function () {
         // load size
         let sizeHtml = ``;
         const newColorNameId = result[2][0].color_name_id;
-        console.log(newColorNameId);
+        // console.log(newColorNameId);
         for (let i = 0; i < SIZELENGTH; i++) {
           const element = result[2][i];
           const sizeName = result[3][i];
@@ -87,6 +89,7 @@ $(document).ready(function () {
         $(".submitSize").eq(0).click();
         // load all iamge slider
         reloadSlick();
+        $(".loading-container").hide();
       },
       error: function (error) {
         $(".loading-container").hide();
@@ -94,6 +97,10 @@ $(document).ready(function () {
       },
     });
   });
+  function resetShowInfo() {
+    $("#product_detail_quantity").text("");
+    $("#product-detail-inc-quantity").val("1");
+  }
   function submitSize() {
     $(".submitSize").click(function () {
       const that = this;
@@ -101,10 +108,15 @@ $(document).ready(function () {
       let productId = $(that).attr("product_id");
       let colorNameId = $(".data-id-container").attr("color_name_id");
       $(".submitSize").removeClass("active");
+
       $(that).addClass("active");
+
       $("#product_detail_size").text($(that).text());
+
       $(".box-size-id").val($(that).attr("size-id"));
-      console.log("OK");
+
+      resetShowInfo();
+      // console.log("OK");
       $.ajax({
         type: "POST",
         url: "../../du_an1/index.php?action=check-quanity",
@@ -115,6 +127,7 @@ $(document).ready(function () {
         },
         dataType: "json",
         success: function (result) {
+          $("#product_detail_contain_quantity").val(result);
           $("#quantity_product").text(`Còn lại: ${result} sản phẩm`);
         },
         error: function (error) {
@@ -132,11 +145,17 @@ $(document).ready(function () {
     $(".product_detail_image").eq(0).click();
   }
   // end
+
   $("#addToCart").click(function () {
     let productId = $(".submitSize").eq(0).attr("product_id");
-    let colorNameId = $(".box-color-name-id").val();
+    let colorNameId = $(".data-id-container").attr("color_name_id");
     let sizeId = $(".box-size-id").val();
     let quantity = $("#product-detail-inc-quantity").val();
+    // console.log(productId);
+    // console.log(colorNameId);
+    // console.log(sizeId);
+    $("#addToCart").text("Đang thêm");
+    $("#addToCart").css("opacity", "0.7");
     $.ajax({
       type: "POST",
       url: "../../du_an1/index.php?action=add_to_cart",
@@ -148,14 +167,20 @@ $(document).ready(function () {
       },
       // dataType: "json",
       success: function () {
+        $("#addToCart").text("Đã thêm");
         reloadCart(
           increaseProductInCart,
           decreaseQuantityInCart,
           handleDeleteProductInCart
         );
         openModalCart();
+        setTimeout(function () {
+          $("#addToCart").css("opacity", "1");
+          $("#addToCart").text("Mua Ngay");
+        }, 1000);
       },
       error: function (error) {
+        $("#addToCart").css("opacity", "1");
         console.error("lỗi", error);
       },
     });
@@ -244,9 +269,12 @@ $(document).ready(function () {
       // Xử lý sự kiện click
       let that = this;
       let productId = $(that).prev().attr("product_id");
+      let sizeId = $(that).prev().attr("size_id");
+      let colorNameId = $(that).prev().attr("color_name_id");
       let remainingAmount = $(that).siblings(".cart_product_quantity").val();
       let boxQuantityInput = $(that).next();
       let currentQuantity = $(that).next().val();
+      const variantKey = `i${productId}C${colorNameId}Z${sizeId}`;
       let limitNumber = 2;
       // console.log(remainingAmount);
       // console.log(productId);
@@ -263,6 +291,8 @@ $(document).ready(function () {
           remainingAmount: remainingAmount,
           currentQuantity: currentQuantity,
           productId: productId,
+          sizeId: sizeId,
+          colorNameId: colorNameId,
         },
         dataType: "json",
         success: function (result) {
@@ -273,7 +303,7 @@ $(document).ready(function () {
           let allInputQuantity = $(".favoriteProduct-inc-quantity");
           for (let i = 0; i < allInputQuantity.length; i++) {
             const element = allInputQuantity[i];
-            if (element.getAttribute("product-cart")) {
+            if (variantKey === element.getAttribute("idcz")) {
               element.value = stringToNumberResult;
             }
           }
@@ -320,10 +350,14 @@ $(document).ready(function () {
     $(".cartModal-inc-plus").click(function () {
       // Xử lý sự kiện click
       let that = this;
+      // lấy productId thông qua phần tử ở sau thứ 3
       let productId = $(that).prev().prev().prev().attr("product_id");
+      let sizeId = $(that).prev().prev().prev().attr("size_id");
+      let colorNameId = $(that).prev().prev().prev().attr("color_name_id");
       let remainingAmount = $(that).siblings(".cart_product_quantity").val();
       let boxQuantityInput = $(that).prev();
       let currentQuantity = $(that).prev().val();
+      const variantKey = `i${productId}C${colorNameId}Z${sizeId}`;
       // console.log(productId);
       // console.log(remainingAmount);
       // console.log(boxQuantityInput);
@@ -339,6 +373,8 @@ $(document).ready(function () {
           remainingAmount: remainingAmount,
           currentQuantity: currentQuantity,
           productId: productId,
+          sizeId: sizeId,
+          colorNameId: colorNameId,
         },
         dataType: "json",
         success: function (result) {
@@ -347,7 +383,7 @@ $(document).ready(function () {
           let allInputQuantity = $(".favoriteProduct-inc-quantity");
           for (let i = 0; i < allInputQuantity.length; i++) {
             const element = allInputQuantity[i];
-            if (element.getAttribute("product-cart")) {
+            if (variantKey === element.getAttribute("idcz")) {
               element.value = stringToNumberResult;
             }
           }
@@ -355,6 +391,8 @@ $(document).ready(function () {
           // console.log(allInputQuantity.length);
           let newPrice = document.querySelector("#cart-total-new-price");
           let oldPrice = document.querySelector("#cart-total-old-price");
+          // console.log(newPrice);
+          // console.log(oldPrice);
           // this is total price in cart detail
           let provisionalPrice = document.querySelector(
             ".checkout__order__provisional__rice__value"
@@ -410,22 +448,34 @@ $(document).ready(function () {
       url: "../../du_an1/index.php?action=load_cart",
       dataType: "json",
       success: function (responve) {
-        let cartItems = responve;
+        // console.log(responve);
+        let cartItems = responve.cart;
+        let totalPrice = responve.total_cart;
+        let totalNewPrice = "";
+        let totalOldPrice = "";
+        totalNewPrice = formatMoney("vi-VN", "VND", totalPrice.new_price);
+        totalOldPrice = formatMoney("vi-VN", "VND", totalPrice.old_price);
         let productInfo = ``;
         let productDetailInfo = ``;
         let cartTotalInfo = `
+        
       <div class="product-cart-bottom">
         <div class="cart-total-price">
             <span class="cart-total-price-title">Tổng tiền:</span>
             <div class="cart-total-price">
-                <span id="cart-total-new-price" class="cart-total-new-price"></span>
-                <span id="cart-total-old-price" class="cart-total-old-price"></span>
+                <span id="cart-total-new-price" class="cart-total-new-price">${
+                  totalPrice.new_price === "" ? "" : totalNewPrice
+                }</span>
+                <span id="cart-total-old-price" class="cart-total-old-price">${
+                  totalPrice.old_price === "" ? "" : totalOldPrice
+                }</span>
             </div>
         </div>
         <div class="pay-to-cart">
-            <button>Tiếp tục mua sắm</button>
-            <button class="btn-pay-to-cart"><a href="/du_an1/order-detail">Thanh Toán</a></button>
+            <button class="close-cart-modal">Tiếp tục mua sắm</button>
+            <button class="btn-pay-to-cart"><a class="cart-modal-to-pay"href="/du_an1/order-detail" style="">Thanh Toán</a></button>
         </div></div>`;
+        // Kiểm tra giỏ hàng có rỗng hay không
         const productQuantityInCart = Object.keys(cartItems).length;
         if (productQuantityInCart == 0) {
           localStorage.setItem("emptyCart", true);
@@ -435,102 +485,114 @@ $(document).ready(function () {
         } else {
           localStorage.setItem("emptyCart", false);
         }
-        for (const cartItem in cartItems) {
-          if (cartItems.hasOwnProperty(cartItem)) {
-            const item = cartItems[cartItem];
-            productInfo += ` <div class="favoriteProduct-info">
-            <a href="" class="favoriteProduct-img">
-                <div class="favoriteProduct-img-first">
-                    <img src="../du_an1/${item.main_image_url}" alt="" />
-                </div>
-                <div class="favoriteProduct-second-img">
-                    <img src="../du_an1/${item.second_image_url}" alt="" />
-                </div>
-            </a>
-            <div class="favoriteProduct-details">
-                <a href="#" class="favoriteProduct-link">${item.product_name}</a>
-                <div class="favoriteProduct-option">
-                    <div class="favoriteProduct-choose cart">
-                        <div class="favoriteProduct-choose-color c">
-                            MÀU:
-                            <span>${item.color_name}</span>
-                        </div>
-                        <div class="favoriteProduct-choose-size">
-                            SIZE:
-                            <span>${item.size_name}</span>
-                        </div>
-                    </div>
-                    <div class="favoriteProduct-inc">
-                        <span id="cart_product_id" product_id="${item.product_id}"></span>
-                        <i class="fa-solid fa-minus cartModal-inc-minus" id="cartModal-inc-minus"></i>
-                        <input type="number" disabled value="${item.quantity}" class="favoriteProduct-inc-quantity " product-cart="${item.product_id}" />
-                        <i class="fa-solid fa-plus cartModal-inc-plus" id="cartModal-inc-plus"></i>
-                        <input type="hidden" value="${item.remainingAmount}" class="cart_product_quantity">
-                    </div>
-                    <span class="favoriteProduct-price">${item.product_price}</span>
-                    <del class="favoriteProduct-price-old">${item.product_price}</del>
-                </div>
-            </div>
-            <div class="delete-from-cart favoriteProduct-close" product_id="${item.product_id}">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
+        const percent = 100;
+        if (cartItems) {
+          for (const cartItem in cartItems) {
+            if (cartItems.hasOwnProperty(cartItem)) {
+              const item = cartItems[cartItem];
+
+              const discount =
+                item.product_price -
+                (item.product_price * item.discount) / percent;
+              const newPriceFormatted = formatMoney("vi-VN", "VND", discount);
+              const oldPriceFormatted = formatMoney(
+                "vi-VN",
+                "VND",
+                item.product_price
+              );
+
+              productInfo += ` <div class="favoriteProduct-info">
+              <a href="" class="favoriteProduct-img">
+                  <div class="favoriteProduct-img-first">
+                      <img src="../du_an1/${item.main_image_url}" alt="" />
+                  </div>
+              </a>
+              <div class="favoriteProduct-details">
+                  <a href="#" class="favoriteProduct-link">${item.product_name}</a>
+                  <div class="favoriteProduct-option">
+                      <div class="favoriteProduct-choose cart">
+                          <div class="favoriteProduct-choose-color c">
+                              MÀU:
+                              <span>${item.color_name}</span>
+                          </div>
+                          <div class="favoriteProduct-choose-size">
+                              SIZE:
+                              <span>${item.size_name}</span>
+                          </div>
+                      </div>
+                      <div class="favoriteProduct-inc">
+                          <span id="cart_product_id" color_name_id="${item.colorNameId}" size_id="${item.sizeId}" product_id="${item.product_id}"></span>
+                          <i class="fa-solid fa-minus cartModal-inc-minus" id="cartModal-inc-minus"></i>
+                          <input type="number" disabled value="${item.quantity}" class="favoriteProduct-inc-quantity" idcz="i${item.product_id}c${item.colorNameId}z${item.sizeId}"/>
+                          <i class="fa-solid fa-plus cartModal-inc-plus" id="cartModal-inc-plus"></i>
+                          <input type="hidden" value="${item.remainingAmount}" class="cart_product_quantity">
+                      </div>
+                      <span class="favoriteProduct-price">${newPriceFormatted}</span>
+                      <del class="favoriteProduct-price-old">${oldPriceFormatted}</del>
+                  </div>
+              </div>
+              <div class="delete-from-cart favoriteProduct-close" idcz="${cartItem}">
+                  <i class="fa-solid fa-xmark"></i>
+              </div>
+          </div>`;
+              productDetailInfo += `<div class="favoriteProduct-info order">
+          <a href="" class="favoriteProduct-img">
+              <div class="favoriteProduct-img-first">
+                  <img src="../du_an1/${item.main_image_url}" alt="" />
+              </div>
+              <div class="favoriteProduct-second-img">
+                  <img src="../du_an1/${item.second_image_url}" alt="" />
+              </div>
+          </a>
+          <div class="favoriteProduct-details">
+              <a href="#" class="favoriteProduct-link">${item.product_name}</a>
+              <div class="favoriteProduct-option">
+                  <div class="favoriteProduct-choose cart">
+                      <div class="favoriteProduct-choose-color c">
+                          MÀU:
+                          <span>${item.color_name}</span>
+                      </div>
+                      <div class="favoriteProduct-choose-size">
+                          SIZE:
+                          <span>${item.size_name}</span>
+                      </div>
+                  </div>
+                  <div class="favoriteProduct-inc">
+                      <span id="cart_product_id" color_name_id="${item.colorNameId}" size_id="${item.sizeId}" product_id="${item.product_id}"></span>
+                      <i class="fa-solid fa-minus cartModal-inc-minus" id="cartModal-inc-minus"></i>
+                      <input type="number" disabled value="${item.quantity}" id="cartModal-inc-quantity" class="favoriteProduct-inc-quantity" />
+                      <i class="fa-solid fa-plus cartModal-inc-plus" id="cartModal-inc-plus"></i>
+                      <input type="hidden" value="${item.remainingAmount}" class="cart_product_quantity">
+                  </div>
+                  <span class="favoriteProduct-price">${item.product_price}</span>
+                  <del class="favoriteProduct-price-old">${item.product_price}</del>
+              </div>
+          </div> 
+          <div class="delete-from-cart favoriteProduct-close" product_id="${item.product_id}">
+                  <i class="fa-solid fa-xmark"></i>
+              </div>
         </div>`;
-            productDetailInfo += `<div class="favoriteProduct-info order">
-        <a href="" class="favoriteProduct-img">
-            <div class="favoriteProduct-img-first">
-                <img src="../du_an1/${item.main_image_url}" alt="" />
-            </div>
-            <div class="favoriteProduct-second-img">
-                <img src="../du_an1/${item.second_image_url}" alt="" />
-            </div>
-        </a>
-        <div class="favoriteProduct-details">
-            <a href="#" class="favoriteProduct-link">${item.product_name}</a>
-            <div class="favoriteProduct-option">
-                <div class="favoriteProduct-choose cart">
-                    <div class="favoriteProduct-choose-color c">
-                        MÀU:
-                        <span>${item.color_name}</span>
-                    </div>
-                    <div class="favoriteProduct-choose-size">
-                        SIZE:
-                        <span>${item.size_name}</span>
-                    </div>
-                </div>
-                <div class="favoriteProduct-inc">
-                    <span id="cart_product_id" product_id="${item.product_id}"></span>
-                    <i class="fa-solid fa-minus cartModal-inc-minus" id="cartModal-inc-minus"></i>
-                    <input type="number" disabled value="${item.quantity}" id="cartModal-inc-quantity" class="favoriteProduct-inc-quantity" />
-                    <i class="fa-solid fa-plus cartModal-inc-plus" id="cartModal-inc-plus"></i>
-                    <input type="hidden" value="${item.remainingAmount}" class="cart_product_quantity">
-                </div>
-                <span class="favoriteProduct-price">${item.product_price}</span>
-                <del class="favoriteProduct-price-old">${item.product_price}</del>
-            </div>
-        </div> 
-        <div class="delete-from-cart favoriteProduct-close" product_id="${item.product_id}">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-      </div>`;
+            }
           }
         }
         $("#favoriteProduct-containter").html(productInfo);
         $(".show-cart-products").html(productDetailInfo);
-        console.log(productDetailInfo);
+        // console.log(productDetailInfo);
         // console.log(productInfo);
         $("#product-cart-bottom-container").html(cartTotalInfo);
-        if (typeof increaseCallBack === "function") {
+        if (
+          typeof increaseCallBack === "function" &&
+          typeof decreaseCallBack === "function" &&
+          typeof deleteProductInCartCb === "function"
+        ) {
           increaseCallBack();
-        }
-        if (typeof decreaseCallBack === "function") {
           decreaseCallBack();
-        }
-        if (typeof deleteProductInCartCb === "function") {
           deleteProductInCartCb();
         }
         reloadShowQuantity();
 
         showCartNotitication();
+        handlecontinueBuy();
       },
       error: function (error) {
         console.log(error, "lỗi");
@@ -538,11 +600,11 @@ $(document).ready(function () {
     });
   }
   function handleDeleteProductInCart() {
-    let thisProductId = 0;
+    let thisIdcz = 0;
     $(".delete-from-cart").on("click", function () {
       $(".confirm-modal").addClass("open-confirm");
       $(".confirm-container").addClass("open-confirm");
-      thisProductId = $(this).attr("product_id");
+      thisIdcz = $(this).attr("idcz");
     });
     $(".confirm-container").on("click", function (e) {
       e.stopPropagation();
@@ -563,18 +625,21 @@ $(document).ready(function () {
     closeConfirmModal(".cancel-confirm");
 
     $("#agree-confirm").on("click", function () {
-      let getProductId = thisProductId;
-      console.log(getProductId);
+      let getIdcz = thisIdcz;
+      console.log(getIdcz);
       $.ajax({
         type: "POST",
         url: "../../du_an1/index.php?action=product_delete_quantity_to_cart",
         data: {
-          productId: getProductId,
+          Idcz: getIdcz,
         },
-        dataType: "json",
         success: function (responve) {
           // console.log(responve);
-          $("#product-quantity").text(`${responve}`);
+          if(responve === 0){
+            $("#product-quantity").hide();
+          }else {
+            $("#product-quantity").text(`${responve}`);
+          }
           $(".cart-header-second span").text(`${responve} sản phẩm`);
           autoCloseConfirmModal();
           reloadCart(
@@ -631,5 +696,25 @@ $(document).ready(function () {
       $("#favoriteProduct-containter").append(cartNotitication);
     }
   }
-  showCartNotitication();
+  // showCartNotitication();
 });
+
+function formatMoney(locale, currency, price) {
+  return new Intl.NumberFormat(`${locale}`, {
+    style: "currency",
+    currency: `${currency}`,
+  }).format(price);
+}
+function handlecontinueBuy() {
+  let continueBuy = document.querySelector(".close-cart-modal");
+  if (continueBuy) {
+    let cartModal = document.querySelector(".cart-modal");
+    let cartModalContainer = document.querySelector(".cart-modal-container");
+    continueBuy.onclick = function () {
+      let hiddenBodyScollbar = document.querySelector("body");
+      hiddenBodyScollbar.style.overflowY = "visible";
+      cartModal.classList.remove(`cart-open`);
+      cartModalContainer.classList.remove(`cart-open`);
+    };
+  }
+}

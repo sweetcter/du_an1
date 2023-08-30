@@ -7,6 +7,7 @@ require "..$MODEL_URL/banner.php";
 require "../$MODEL_URL/category.php";
 require "../$MODEL_URL/taikhoan.php";
 require "../$MODEL_URL/comment.php";
+require "../$MODEL_URL/orders.php";
 
 // if (isset($_SESSION['username']) && ($_SESSION['username']['role'] == 1)) {
 $act = isset($_GET['act']) ? $_GET['act'] : 'index';
@@ -63,6 +64,9 @@ switch ($act) {
         break;
     case 'delete_detail_image':
         require ".$PRODUCT_URL/delete_detail_image.php";
+        break;
+    case 'check_duplicate_color':
+        require ".$PRODUCT_URL/check_duplicate_color.php";
         break;
         // ---------------Xử lí Comment-------------------
     case 'view_comment':
@@ -157,9 +161,16 @@ switch ($act) {
     case 'check-phantrang':
         require "./admin/check-phantrang.php";
         break;
+        // ------------------ Orders -------------------
+    case 'view_bill':
+        require "./bill/bill_list.php";
+        break;
 
+    case 'detail_bill':
+        require "./bill/order_detail.php";
+        break;
     default:
-        echo "Không có gì";
+        echo "Không có gì ";
         echo "admin";
         break;
 }
