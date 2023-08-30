@@ -68,4 +68,4 @@
         </form>
     </div>
 </div>
-<?php require_once "../admin/footer.php" ?> 
+<?php require_once "./footer.php" ?> 

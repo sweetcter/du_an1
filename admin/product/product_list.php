@@ -44,10 +44,10 @@
       <?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?>
     </span>
     <form action="./index.php" method="post">
-      <table id="example" class="table" style="width:100%">
+      <table id="example" class="table table-bordered table-hover" style="width:100%">
         <thead>
-          <tr class="table-primary">
-            <th></th>
+          <!-- <tr class="table-primary"> -->
+          <tr>
             <th>Tên sản phẩm</th>
             <th>Ảnh</th>
             <th>Giá</th>
@@ -64,8 +64,8 @@
         <tbody>
           <?php $product_result = select_all_product_admin(); ?>
           <?php foreach ($product_result as $value) : ?>
-            <tr class="table-success">
-              <td></td>
+            <!-- <tr class="table-success"> -->
+            <tr>
               <td><?= $value['product_name']; ?></td>
               <td><img src="../..<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" width="100px" alt=""></td>
               <td><?= formatMoney($value['product_price']); ?></td>

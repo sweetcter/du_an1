@@ -33,7 +33,11 @@ if (check_product_exist($product_code) >= 1) {
         if (check_product_size_exist($size_id) < 1) {
             add_product_size($product_id, $size_id);
         }
-        add_quantities($product_id, $color_name_id, $size_id, $quantity);
+        if (check_product_quantites_exist($product_id, $color_name_id, $size_id) >= 1) {
+            quantity_update($quantity, $product_id, $color_name_id, $size_id);
+        } else {
+            add_quantities($product_id, $color_name_id, $size_id, $quantity);
+        }
     }
 } else {
     $save_main_img = add_image($product_image, $tmp_image, $ASSET_URL);

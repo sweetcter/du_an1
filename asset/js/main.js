@@ -121,6 +121,19 @@ if (openModalBtn) {
   });
 }
 
+const dangnhap_user = document.getElementById("dangnhap_user");
+const dangki_user = document.getElementById("dangki_user");
+
+
+dangnhap_user.addEventListener("click", function() {
+  openModalBtn.click();
+  user_modal.classList.toggle("open");
+});
+dangki_user.addEventListener("click", function() {
+  openRegister.click();
+  user_modal.classList.toggle("open");
+});
+
 if (closeBtn) {
   closeBtn.addEventListener("click", () => {
     modal1.style.top = "-124%";

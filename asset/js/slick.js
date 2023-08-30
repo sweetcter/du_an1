@@ -8,6 +8,7 @@ $(document).ready(function () {
     nextArrow: '<i class="fa-solid fa-angle-right slick-next"></i>',
     prevArrow: '<i class="fa-solid fa-angle-left slick-prev"></i>',
   });
+  
   $(".slider-for").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -18,7 +19,7 @@ $(document).ready(function () {
   });
   $(".slider-nav").slick({
     accessibility: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     vertical:true,
     slidesToScroll: 1,
     arrows: false,

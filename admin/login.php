@@ -8,19 +8,19 @@ $checkuser = checkuser($username, $password);
 // print_r($_SESSION['username']);
 // session_unset();
 if (!is_array($checkuser)) {
-   $array = [
-    [
-    "status" => "error",
-    "mess" => "Tài khoản hoặc mật khẩu không chính xác"
-    ]
-   ];
-  echo json_encode($array);  
-} else {
-    $array = [
+    $error = [
         [
-        "status" => "suss",
+            "status" => "error",
+            "message" => "Tài khoản hoặc mật khẩu không chính xác"
         ]
-       ];
+    ];
+    echo json_encode($error);
+} else {
     $_SESSION['username'] = $checkuser;
-    echo json_encode($array); 
+    $success = [
+        [
+            "status" => "success",
+        ]
+    ];
+    echo json_encode($success);
 }

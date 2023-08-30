@@ -19,6 +19,7 @@
                 <input type="text" id="username" name="username" placeholder="Tên đăng nhập:">
                 <input type="password" id="password" name="password" placeholder="Mật khẩu:">
                 <input type="button" class="button" id="dangnhap" value="Đăng nhập">
+                <span id="message" style="color: red;"></span>
             </form>
         </div>
     </div>
@@ -28,38 +29,42 @@
     <label for="password">Mật khẩu:</label>
     <input type="password" id="password" name="password" required>
     <br>
-    <button type="button" id="dangnhap">Đăng nhập</button> -->
-    <!-- <a href="../../du_an1/admin/index.php" id="login_success" >12</a> -->
+    <button type="button" id="dangnhap">Đăng nhập</button>
+    <span id="message" style="color: red;"></span>
+    <a href="../../du_an1/admin/index.php" id="login_success" >12</a> -->
 </body>
 
 </html>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function() {
-    $('#dangnhap').click(function() {
-        console.log("OK");
-        var username = $('#username').val();
-        var password = $('#password').val();
-        $.ajax({
-            type: 'POST',
-            url: './login.php',
-            data: {
-                username: username,
-                password: password
-            },
-            dataType: "json",
-            success: function(result) {
-                if (!result.status) {
-                    location.href = `../../du_an1/admin/index.php`;
-                    console.log(result);
-                }
-            },
-            error: function(error) {
-                console.log("lỗi", error);
-            },
+    $(document).ready(function() {
+        $('#dangnhap').click(function() {
+            console.log("OK");
+            var username = $('#username').val();
+            var password = $('#password').val();
+            $.ajax({
+                type: 'POST',
+                url: './login.php',
+                data: {
+                    username: username,
+                    password: password
+                },
+                dataType: "json",
+                success: function(result) {
+                    const firstMessage = 0;
+                    if (result[firstMessage].status === "success") {
+                        location.href = `../../du_an1/admin/index.php`;
+                        console.log(result);
+                    } else {
+                        $("#message").text(result[firstMessage].message);
+                    }
+                },
+                error: function(error) {
+                    console.log("lỗi", error);
+                },
+            });
         });
     });
-});
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');

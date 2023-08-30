@@ -80,22 +80,17 @@
     <p id="message"></p>
   </div>
 </div>
-<!-- Nav -->
-<div></div>
-<!-- Nav -->
-<!-- end sign-up -->
-<!--  favoriteProduct-->
-<?php require "./includes/favorite_product.php" ?>
-<!-- end -->
-<!-- Start Cart -->
-<?php require "./includes/cart_modal.php" ?>
+
+
+<?php require ".$INCLUDES_URL/favorite_product.php" ?>
+
+<?php require ".$INCLUDES_URL/cart_modal.php" ?>
+
 <?php require ".$INCLUDES_URL/delete_cart_confirm.php" ?>
-<!-- sign in -->
 
-<!-- Nav -->
-<!-- end sign in -->
+<?php require ".$INCLUDES_URL/loading.php" ?>
 
-<?php require "./includes/header_nav.php" ?>
+<?php require ".$INCLUDES_URL/header_nav.php" ?>
 <div class="wrapper">
   <main id="main-content">
     <div class="main-colums">
@@ -105,6 +100,8 @@
         <!-- Chi tiết 1 sản phẩm -->
         <?php
         $product_id = $_GET['product_id'];
+        $first_color_name_id = select_first_product_color_by_product_id($product_id);
+        $color_name_id = $first_color_name_id['color_name_id'];
         $product_result = select_product_by_id($product_id);
         ?>
         <ul class="breadcrumbs">
@@ -113,22 +110,27 @@
           <!-- <li id="test2">Click Me</li> -->
         </ul>
         <div class="product-content col-2">
-          <div class="product-content-left">
-            <?php $image_result = select_all_image($product_id); ?>
-            <div class="slider-for main-image-slider">
+          <!-- Show images -->
+          <div id="show_slider" class="product-content-left">
+            <?php $image_result = select_image_by_color_name_id_and_product_id($color_name_id, $product_id); ?>
+            <div id="main-slider" class="slider-for main-image-slider">
               <?php foreach ($image_result as $key => $value) : ?>
-                <img src="../..<?= $ROOT_URL . $value['image_url'] ?>" alt="">
+                <img src="../..<?= $ROOT_URL . $value['image_url'] ?>" alt="Ảnh sản phẩm">
               <?php endforeach ?>
             </div>
-            <div class="slider-nav second-image-slider">
+            <div id="second-slider" class="slider-nav second-image-slider">
               <?php foreach ($image_result as $key => $value) : ?>
                 <img src="../..<?= $ROOT_URL .  $value['image_url'] ?>" alt="">
               <?php endforeach ?>
             </div>
           </div>
+          <!-- end show -->
 
           <div class="product-content-right">
+            <!--Show Product Name -->
             <h1 class="product_detail_name"><?= $product_result['product_name'] . "-" . $product_result['product_code'] ?></h1>
+            <!-- End -->
+            <!-- format money -->
             <?php
             $locale = 'vi_VN';
             $currency = $product_result['product_price'];
@@ -139,29 +141,41 @@
             ?>
             <span class="product_detail_price"><?= $discount_price ?></span>
             <del class="product_detail_price-old"><?= $product_vn_price ?></del>
+            <!-- end -->
             <?php $product_color_result = select_product_color($product_result['product_code']);
             $color_name_result = select_color_by_product_id($product_id);
             ?>
+            <!-- Box chứa data-id -->
+            <div class="data-id-container" color_name_id="<?= $color_name_id ?>"></div>
             <span class="product_detail_choose_color">Chọn màu sắc: <strong id="product_detail_color"><?= $color_name_result['color_name']; ?></strong></span>
             <?php foreach ($product_color_result as $key => $value) : ?>
-              <a href="../..<?= $ROOT_URL ?>/index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product_detail_image" product_id="<?= $value['product_id']; ?>" color-id="<?= $value['color_name_id']; ?>" color-name="<?= $value['color_name']; ?>" style="background-image: url('..<?= $ROOT_URL ?><?= $value['color_image'] ?>');">
-              </a>
+              <span class="product_detail_image" product_id="<?= $value['product_id']; ?>" color_name_id="<?= $value['color_name_id']; ?>" color-name="<?= $value['color_name']; ?>" style="background-image: url('..<?= $ROOT_URL ?><?= $value['color_image'] ?>');">
+              </span>
+              <!-- Chỉ active lần phần tử đầu tiên -->
             <?php endforeach ?>
-            <input type="hidden" class="box-color-name-id" value="<?= $color_name_result['color_name_id'] ?>">
+            <!-- box color  -->
+            <input type="hidden" class="box-color-name-id"  value="<?= $color_name_result['color_name_id'] ?>">
+            <!-- end box -->
             <span class="product_detail_choose_size">Chọn size: <strong id="product_detail_size" style="padding-left: 8px;"></strong></span>
             <div class="product-detail-list-size">
               <!-- <span class="product-detail-size size-empty">m</span> -->
-              <?php $select_all_size = select_all_size_by_product_id($_GET['product_id']);
+              <?php $select_all_size = select_all_size_by_product_id_and_color_name_id($color_name_id, $_GET['product_id']);
               ?>
-              <?php foreach ($select_all_size as $key => $value) : ?>
-                <span class="product-detail-size" id="submitSize" product_id="<?= $_GET['product_id']; ?>" size-id="<?= $value['size_id'] ?>"><?= $value['size_name'] ?></span>
+              <?php foreach ($select_all_size as $key => $size) : ?>
+                <?php $size_result = select_size_by_id($size['size_id']); ?>
+                <span class="product-detail-size submitSize" product_id="<?= $_GET['product_id']; ?>" size-id="<?= $size['size_id'] ?>"><?= $size_result['size_name'] ?></span>
               <?php endforeach ?>
-              <input type="hidden" class="box-size-id">
               <!-- <span class="product-detail-size">XL</span> -->
             </div>
+            <!-- box size -->
+            <input type="hidden" class="box-size-id">
+            <!-- end box size -->
+            <!-- Hiện thị số lượng sản phẩm đang chọn -->
             <span class="product_detail_choose_quantity">Chọn số lượng: <strong id="product_detail_quantity"></strong></span>
             <div class="product-detail-toCart-field">
-              <input type="hidden" disabled value="<?= $product_result['quantity']; ?>" id="product_detail_contain_quantity">
+              <!-- box số lượng sản phẩm còn lại -->
+              <input type="hidden" disabled value="2" id="product_detail_contain_quantity">
+              <!-- end -->
               <div class="product-detail-inc">
                 <i class="fa-solid fa-minus product-detail-inc-minus" id="product-detail-inc-minus"></i>
                 <input type="number" disabled value="1" id="product-detail-inc-quantity" class="product-detail-inc-quantity" />
@@ -195,14 +209,14 @@
                     <h4><?php echo $comment_time; ?></h4>
                   </div>
                   <?php if (isset($_SESSION['username'])) { ?>
-                    <a href="../du_an1/index.php?action=product_detail&product_id=<?= $product_id ?>&comment_id=<?= $comment_id?>&comment_manager=update_bl">Update</a>
+                    <a href="../du_an1/index.php?action=product_detail&product_id=<?= $product_id ?>&comment_id=<?= $comment_id ?>&comment_manager=update_bl">Update</a>
                     <a href="../../du_an1/view/binhluan/delete_bl.php">Delete</a>
                   <?php } ?>
                   <?php if (isset($_GET['comment_manager']) && $_GET['comment_manager'] == 'update_bl' && $_GET['comment_id'] == $comment_id) : ?>
                     <form action="../../du_an1/view/binhluan/update_bl.php" method="post" class="update_comment">
                       <input type="hidden" value="<?= $_GET['comment_id'] ?>" name="comment_id">
-                      <input type="hidden" value="<?= $product_id ?>" name="product_id">  
-                      <textarea  id="" cols="10" name="comment_content" rows="4" placeholder="Viết gì đó...."></textarea>
+                      <input type="hidden" value="<?= $product_id ?>" name="product_id">
+                      <textarea id="" cols="10" name="comment_content" rows="4" placeholder="Viết gì đó...."></textarea>
                       <button class="btn_sua">Sửa</button>
                     </form>
                   <?php endif ?>

@@ -116,8 +116,7 @@
         <i class="fa-solid fa-filter"></i>
       </div>
       <div class="view-function">
-        <?php $count_product = count_home_product(1); ?>
-        <strong><?= $count_product ?></strong>
+      
         Sản phẩm
       </div>
       <div class="sort-function">
@@ -133,7 +132,7 @@
     <div class="main-colums">
       <!-- block filter -->
 
-      <?php require "./includes/filter_product.php" ?>
+      <?php require "./includes/filter_product_nam.php" ?>
 
       <div class="product-colum">
         <div class="product-row row-col-4">

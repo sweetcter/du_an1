@@ -1,24 +1,139 @@
 $(document).ready(function () {
-  $("#submitSize").click(function () {
-    let sizeId = $(this).attr("size-id");
-    let productId = $(this).attr("product_id");
+  let isCheckClickSize = false;
+  let isCheckClickColor = false;
+  let isCheckChooseColor = false;
+  function reloadSlick() {
+    $(".slider-for").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      asNavFor: ".slider-nav",
+      infinite: true,
+      nextArrow: '<i class="fa-solid fa-angle-right slick-next-list"></i>',
+      prevArrow: '<i class="fa-solid fa-angle-left slick-prev-list"></i>',
+    });
+    $(".slider-nav").slick({
+      accessibility: true,
+      slidesToShow: 3,
+      vertical: true,
+      slidesToScroll: 1,
+      arrows: false,
+      asNavFor: ".slider-for",
+      infinite: true,
+      centerMode: true,
+      focusOnSelect: true,
+    });
+  }
+  $(".product_detail_image").on("click", function () {
+    const that = this;
+    // if(!isCheckChooseColor){
+
+    // }
+
+    let productId = $(that).attr("product_id");
+    let colorNameId = $(that).attr("color_name_id");
+    $(".data-id-container").attr("color_name_id", colorNameId);
+    $(".product_detail_image").removeClass("active");
+    $(that).addClass("active");
+    $(".loading-container").show();
     $.ajax({
       type: "POST",
-      url: "../../du_an1/index.php?action=check-quanity",
+      url: "../../du_an1/index.php?action=get_product_info",
       data: {
-        sizeId: sizeId,
         productId: productId,
+        colorNameId: colorNameId,
       },
+      dataType: "json",
       success: function (result) {
-        $("#quantity_product").text(`Còn lại: ${result} sản phẩm`);
+        $(".loading-container").hide();
+        // console.log(result);
+        const COLORNAME = result[1][0];
+        const IMAGELENGTH = result[0].length;
+        const SIZELENGTH = result[2].length;
+        // update color name
+        $("#product_detail_color").text(COLORNAME);
+        // progress load image
+        let html = ` <div id="main-slider" class="slider-for main-image-slider">`;
+        for (let i = 0; i < IMAGELENGTH; i++) {
+          const element = result[0][i];
+          html += `<img src="../../du_an1${element}" alt="Ảnh sản phẩm"></img>`;
+        }
+        html += `</div>`;
+        html += ` <div id="second-slider" class="slider-nav second-image-slider">`;
+        for (let i = 0; i < IMAGELENGTH; i++) {
+          const element = result[0][i];
+          html += `<img src="../../du_an1${element}" alt="Ảnh sản phẩm"></img>`;
+        }
+        html += `</div>`;
+        $("#show_slider").html(html);
+        // end load image
+        // load size
+        let sizeHtml = ``;
+        const newColorNameId = result[2][0].color_name_id;
+        console.log(newColorNameId);
+        for (let i = 0; i < SIZELENGTH; i++) {
+          const element = result[2][i];
+          const sizeName = result[3][i];
+          sizeHtml += `<span class="product-detail-size submitSize" product_id="${element.product_id}" size-id="${element.size_id}">${sizeName.size_name}</span>`;
+        }
+        // update color_name_id;
+        $(".data-id-container").attr("color_name_id", newColorNameId);
+
+        // console.log(sizeHtml);
+        $(".product-detail-list-size").html(sizeHtml);
+        // end load size
+        // query submitSize again
+        submitSize();
+        // click first size Element
+        $(".submitSize").eq(0).click();
+        // load all iamge slider
+        reloadSlick();
       },
       error: function (error) {
-        $("#quantity_product").text(error);
+        $(".loading-container").hide();
+        console.log(error);
       },
     });
   });
+  function submitSize() {
+    $(".submitSize").click(function () {
+      const that = this;
+      let sizeId = $(that).attr("size-id");
+      let productId = $(that).attr("product_id");
+      let colorNameId = $(".data-id-container").attr("color_name_id");
+      $(".submitSize").removeClass("active");
+      $(that).addClass("active");
+      $("#product_detail_size").text($(that).text());
+      $(".box-size-id").val($(that).attr("size-id"));
+      console.log("OK");
+      $.ajax({
+        type: "POST",
+        url: "../../du_an1/index.php?action=check-quanity",
+        data: {
+          sizeId: sizeId,
+          productId: productId,
+          colorNameId: colorNameId,
+        },
+        dataType: "json",
+        success: function (result) {
+          $("#quantity_product").text(`Còn lại: ${result} sản phẩm`);
+        },
+        error: function (error) {
+          console.log(error);
+        },
+      });
+    });
+  }
+  submitSize();
+  // Auto click when each pages loads
+  if (!isCheckClickSize) {
+    $(".submitSize").eq(0).click();
+  }
+  if (!isCheckClickColor) {
+    $(".product_detail_image").eq(0).click();
+  }
+  // end
   $("#addToCart").click(function () {
-    let productId = $("#submitSize").attr("product_id");
+    let productId = $(".submitSize").eq(0).attr("product_id");
     let colorNameId = $(".box-color-name-id").val();
     let sizeId = $(".box-size-id").val();
     let quantity = $("#product-detail-inc-quantity").val();

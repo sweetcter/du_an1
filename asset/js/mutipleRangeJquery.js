@@ -13,8 +13,16 @@ $(document).ready(function () {
       console.log(a);
 
       a = getValue(startValue, endValue);
-
-      location.href = `../../du_an1/index.php?action=price_filter&start=${a[0]}&end=${a[1]}`;
+      
+      var dataId = $('.filter_type').attr('filter_type');
+      console.log(dataId);
+      if (dataId==='0') {
+        location.href = `../../du_an1/index.php?action=price_filter_nam&start=${a[0]}&end=${a[1]}`;
+      }else if(dataId==='1'){
+        location.href = `../../du_an1/index.php?action=price_filter_nu&start=${a[0]}&end=${a[1]}`;  
+      }else{
+        location.href = `../../du_an1/index.php?action=price_filter&start=${a[0]}&end=${a[1]}`;  
+      }  
     },
     slide: function (event, ui) {
       var startValue = ui.values[0];
@@ -51,7 +59,14 @@ $(document).ready(function () {
     let that = this;
     let data_size_id = $(this).attr("data-size-id");
     console.log(data_size_id);
-
-    location.href = `../../du_an1/index.php?action=size_filter&size_id=${data_size_id}`;
+    var dataId_size = $('.filter_type_size').attr('filter_type_size');
+      console.log(dataId_size);
+      if (dataId_size==='0') {
+        location.href = `../../du_an1/index.php?action=size_filter_nam&size_id=${data_size_id}`;
+      }else if(dataId_size==='1'){
+        location.href = `../../du_an1/index.php?action=size_filter_nu&size_id=${data_size_id}`;
+      }else{
+        location.href = `../../du_an1/index.php?action=size_filter&size_id=${data_size_id}`;
+      }  
   });
 });

@@ -13,35 +13,35 @@
                            <th></th>
                        </tr>
 
-                       <?php
-                        foreach ($list as $key) {
-                            extract($key);
-                            $edit = "index.php?act=editCategory&id_cate=$id_category";
-                            $delete = "index.php?act=deleteCategory&id_cate=$id_category";
+                    <?php
+                    foreach ($list as $key) {
+                        extract($key);
+                        $edit = "index.php?act=editCategory&id_cate=$id_category";
+                        $delete = "index.php?act=deleteCategory&id_cate=$id_category";
 
-                        ?>
+                    ?>
 
-                           <tr class="table-success">
-                               <td></td>
-                               <td><?php echo $name_category ?></td>
-                               <td>
-                                   <a href="<?php echo $edit ?>"><input class="btn btn-success" type="button" value="Sửa"></a>
-                                   <a href="<?php echo $delete ?>"><input class="btn btn-warning" type="button" value="Xóa"></a>
-                               </td>
-                           </tr>
+                        <tr class="table-success">
+                            <td></td>
+                            <td><?php echo $name_category ?></td>
+                            <td>
+                                <a href="<?php echo $edit ?>"><input class="btn btn-success" type="button" value="Sửa"></a>
+                                <a href="<?php echo $delete ?>"><input class="btn btn-warning" type="button" value="Xóa"></a>
+                            </td>
+                        </tr>
 
-                       <?php
-                        }
-                        ?>
-
-
-                   </table>
-               </form>
-
-           </div>
-
-       </div>
-   </div>
+                    <?php
+                    }
+                    ?>
 
 
-   <div class="overlay"></div>
+                </table>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="overlay"></div>

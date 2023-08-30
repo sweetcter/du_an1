@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+
+<?php require "./header.php " ?>
+=======
 <?php require "./header.php" ?>
 
+>>>>>>> 039c9898662851dbd6e20d532bd537efdc0bf6f5
 
 <!--   Phần content -->
 
@@ -130,4 +135,4 @@
 
 
 <div class="overlay"></div>
-
+<?php require "./footer.php " ?>

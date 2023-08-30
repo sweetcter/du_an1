@@ -133,169 +133,7 @@
     <div class="main-colums">
       <!-- block filter -->
 
-      <div class="filter-sidebar">
-        <div class="filter-block">
-          <div class="filter-category active">
-            <ul>
-              DANH MỤC
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list">
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="aonam">Áo Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="quannam">Quần Nam</a>
-            </li>
-          </div>
-        </div>
-
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              NHÓM SẢN PHẨM
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list">
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="aosomi">Áo Sơ Mi</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="aothun">Áo Thun</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="hoodie">Áo Hoodie</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="polo">Áo polo</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="aosomi">Áo Sơ Mi</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="aothun">Áo Thun</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="hoodie">Áo Hoodie</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="polo">Áo polo</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="aosomi">Áo Sơ Mi</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="aothun">Áo Thun</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="hoodie">Áo Hoodie</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="polo">Áo polo</a>
-            </li>
-          </div>
-        </div>
-
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              SIZE
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list flex-col-4">
-            <?php
-            // Lấy danh sách tất cả các kích thước từ cơ sở dữ liệu
-            $sizes = select_all_size(); // Gọi hàm select_all_size() để lấy danh sách
-
-            foreach ($sizes as $size) {
-              echo '<span class="filter-list-size" data-size-id="' . $size['size_id'] . '">' . $size['size_name'] . '</span>';
-            }
-            ?>
-          </div>
-        </div>
-
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              MÀU SẮC
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list row-filter-col-2">
-            <?php
-            // Lấy danh sách tất cả các màu từ cơ sở dữ liệu
-            $colors = select_all_color(); // Gọi hàm select_all_color() để lấy danh sách màu
-            ?>
-            <?php foreach ($colors as $color) { ?>
-              <li class="filter-category-name">
-                <input type="checkbox" name="color_checkbox_<?php echo $color['color_type_name']; ?>" id="filter-checkbox-<?php echo $color['color_type_name']; ?>" class="filter-checkbox" />
-                <label class="filter-newCheckbox" for="filter-checkbox-<?php echo $color['color_type_name']; ?>"></label>
-                <a href="../../du_an1/index.php?action=color_filter&color_type_id=<?php echo $color['color_type_id'] ?>"><?php echo $color['color_type_name']; ?></a>
-              </li>
-            <?php } ?>
-          </div>
-        </div>
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              GIÁ TIỀN
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list">
-            <div id="multi-range-slider" class="filter-price"></div>
-            <div class="filter-price-control">
-              <div>
-                <span>₫</span><span id="start-value" class="filter-price-min">0đ</span>
-              </div>
-              <div>
-                <span>₫</span><span id="end-value" class="filter-price-max">1375000đ</span>
-              </div>
-            </div>
-
-            <a href=""></a>
-            <!-- <p id="price_show">2000 - 1375000</p> -->
-          </div>
-        </div>
-      </div>
+      <?php require "./includes/filter_product_nu.php" ?>
 
       <div class="product-colum">
         <div class="product-row row-col-4">
@@ -317,11 +155,10 @@
           // Tính tổng số trang dựa trên tổng số sản phẩm và số sản phẩm trên mỗi trang
           $totalPages = ceil($totalProducts / $itemsPerPage);
           $product_result = isset($_GET['page']) ? selectAll_product_phantrang(2, false, $start, $itemsPerPage) : select_home_product(true, 2);;
-          foreach ($product_result as $key => $value) :
-          ?>
+          foreach ($product_result as $key => $value) :?>
             <!-- start item -->
             <div class="product-item">
-              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
+              <a href="./product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
                 <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
                 <img src="../<?= $ROOT_URL ?><?= $value['hover_main_image_url'] ?>" alt="" class="product-image-second" />
               </a>
@@ -378,7 +215,7 @@
               <i class="fa-solid fa-angle-left home-pagination-icon"></i>
             </a>
           </li>
-          <?php for ($i = 1; $i < $totalPages; $i++) : ?>
+          <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
             <li class="home-pagination-item <?php echo ($i == $currentpage) ? 'home-pagination-active' : ''; ?>">
               <a href="?page=<?php echo $i; ?>" class="home-pagination-link"><?php echo $i; ?></a>
             </li>
@@ -438,8 +275,8 @@
                   <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img" />
                 </div>
               </a>
+            <?php endforeach ?>
           </div>
-        <?php endforeach ?>
         </div>
       <?php endforeach ?>
     </div>
