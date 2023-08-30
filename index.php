@@ -162,6 +162,33 @@ switch ($action) {
   case 'vaynu':
     require ".$VIEW_URL/boloc/vay-nu.php";
     break;
+  case 'price_filter_nam':
+    require ".$VIEW_URL/boloc/loc-giatien-nam.php";
+    break;
+  case 'price_filter_nu':
+    require ".$VIEW_URL/boloc/loc-giatien-nu.php";
+    break;
+  case 'price_filter':
+    require ".$VIEW_URL/boloc/loc-giatien-all.php";
+    break;
+  // case 'size_filter':
+  //   require ".$VIEW_URL/boloc/loc-size.php";
+  //   break;
+  case 'size_filter_nam':
+    require ".$VIEW_URL/boloc/loc-size-nam.php";
+    break;
+  case 'size_filter_nu':
+    require ".$VIEW_URL/boloc/loc-size-nu.php";
+    break;
+  case 'color_filter_nam':
+    require ".$VIEW_URL/boloc/mau-sac-nam.php";
+    break;
+  case 'color_filter_nu':
+    require ".$VIEW_URL/boloc/mau-sac-nu.php";
+    break;
+  // case 'color_filter':
+  //   require ".$VIEW_URL/boloc/mau-sac.php";
+  //   break;
     // -----------Product detail and cart--------------
   case 'check-quanity':
     require ".$VIEW_URL/check_product_quantity.php";

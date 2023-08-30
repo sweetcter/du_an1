@@ -20,7 +20,7 @@
             <?php if (!isset($_SESSION['cart'])) : ?>
                 <span style="text-align: center; font-weight: 600;display:block">Bạn không có sản phẩm nào trong giỏ hàng của bạn. </span>
             <?php else : ?>
-                <?php //var_dump($_SESSION['cart']);
+                <?php var_dump($_SESSION['cart']);
                 //var_dump($_SESSION['count_cart']);
                 ?>
                 <?php foreach ($_SESSION['cart'] as $key => $value) : ?>

@@ -160,7 +160,7 @@
                           <del class="favoriteProduct-price-old"><?= $product_vn_price ?></del>
                         </div>
                       </div>
-                      <div class="delete-from-cart favoriteProduct-close" product_id="<?= $key ?>">
+                      <div class="delete-from-cart favoriteProduct-close" idcz="<?= $key ?>">
                         <i class="fa-solid fa-xmark"></i>
                       </div>
                     </div>

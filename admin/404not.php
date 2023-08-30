@@ -73,7 +73,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family:'Roboto Condensed','Arial', sans-serif;
 }
 
 body {
@@ -148,7 +148,7 @@ body {
 
 .form input.button {
     color: #fff;
-    background: blue;
+    background: #000;
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 1px;
@@ -158,7 +158,7 @@ body {
 }
 
 .form input.button:hover {
-    background: blue;
+   opacity: 0.8;
 }
 
 .signup {

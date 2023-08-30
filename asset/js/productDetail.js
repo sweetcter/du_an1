@@ -88,8 +88,8 @@ $(document).ready(function () {
         // click first size Element
         $(".submitSize").eq(0).click();
         // load all iamge slider
-        reloadSlick();
         $(".loading-container").hide();
+        reloadSlick();
       },
       error: function (error) {
         $(".loading-container").hide();

@@ -101,7 +101,7 @@
     <div class="main-colums">
       <!-- block filter -->
 
-  <?php  require "./includes/filter_product.php"?>
+  <?php  require "./includes/filter_product_nam.php"?>
 
       <div class="product-colum">
         <div class="product-row row-col-4">

@@ -62,11 +62,12 @@ $(document).ready(function () {
         customerNote: customerNote.val(),
       },
       // dataType:"json",
-      success: function () {
+      success: function (responve) {
         reloadShowQuantity();
         alert("Đặt hàng thành công, đang xử lý đơn hàng");
         // location.reload();
         console.log("OK");
+        console.log(responve);
       },
       error: function (error) {
         console.log(error);

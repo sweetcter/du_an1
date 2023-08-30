@@ -43,4 +43,3 @@
 
 
 <div class="overlay"></div>
-<?php require "./footer.php " ?>

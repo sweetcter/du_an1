@@ -9,7 +9,7 @@ require "../$MODEL_URL/taikhoan.php";
 require "../$MODEL_URL/comment.php";
 require "../$MODEL_URL/orders.php";
 
-// if (isset($_SESSION['username']) && ($_SESSION['username']['role'] == 1)) {
+if (isset($_SESSION['username']) && ($_SESSION['username']['role'] == 1)) {
 $act = isset($_GET['act']) ? $_GET['act'] : 'index';
 switch ($act) {
     case 'index':
@@ -174,6 +174,6 @@ switch ($act) {
         echo "admin";
         break;
 }
-// } else {
-//     require "..$VIEW_URL/404.php";
-// }
+} else {
+    require "..$VIEW_URL/404.php";
+}

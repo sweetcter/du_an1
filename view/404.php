@@ -19,7 +19,8 @@
                        </div>
                        <div class="content_box_404">
                            <h3 class="title_dau">Bạn không phải là người quản trị</h3>
-                           <a href="../../du_an1/admin/404not.php" class="gohome">Sign in</a>
+                           <a href="../../du_an1/index.php" class="gohome">Go to Home</a>
+                           <a href="../../du_an1/admin/404not.php" class="gohome">Sign In</a>
                        </div>
                    </div>
                </div>

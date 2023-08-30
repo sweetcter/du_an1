@@ -79,4 +79,24 @@ function vay_nu(){
     $a = pdo_query($sql);
     return $a;
 }
-?>  
+function price_bo_loc($min,$max,$gender){
+    $sql = "SELECT *
+    FROM products
+    WHERE product_price >= ? AND product_price <= ? AND gender = ?
+    ORDER BY product_id DESC";
+    return pdo_query($sql,$min,$max,$gender);
+}
+
+function filterProductsBySize($size,$gender) {
+    $sql = "SELECT * FROM products p 
+            JOIN product_size ps ON p.product_id = ps.product_id
+            WHERE ps.size_id = ? AND gender = ?";
+    return pdo_query($sql, $size,$gender);
+}
+function getProductsByColor($color_id,$gender) {
+    $sql = "SELECT products.* FROM products 
+    JOIN product_color ON products.product_id = product_color.product_id 
+    JOIN color_name ON product_color.color_name_id = color_name.color_name_id
+    WHERE color_name.color_type_id = ? AND gender = ?";
+    return pdo_query($sql, $color_id,$gender);
+}

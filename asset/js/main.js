@@ -56,6 +56,7 @@ let hiddenBodyScollbar = document.querySelector("body");
 function closeMenuSidebar(className) {
   let menuClassName = `.${className}`;
   let menuSidebar = document.querySelector(menuClassName);
+  let signUp = document.getElementById("register-modal");
   overlay.onclick = function () {
     menuSidebar.style.transform = `translateX(-100%)`;
     menuSidebar.style.opacity = `0`;
@@ -120,6 +121,36 @@ if (openModalBtn) {
     hiddenBodyScollbar.style.overflowY = `auto`;
   });
 }
+
+const dangnhap_user = document.getElementById("dangnhap_user");
+const dangki_user = document.getElementById("dangki_user");
+
+const button = document.querySelector(".header-content-user");
+
+const user_modal = document.querySelector(".modal_user");
+const modal = document.querySelector(".user_modal_container");
+button.addEventListener("click", () => {
+  user_modal.classList.toggle("open");
+});
+modal.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+user_modal.onclick = function (e) {
+  user_modal.classList.toggle("open");
+};
+if (dangnhap_user) {
+  dangnhap_user.addEventListener("click", function () {
+    openModalBtn.click();
+    user_modal.classList.toggle("open");
+  });
+
+  dangki_user.addEventListener("click", function () {
+    openRegister.click();
+    user_modal.classList.toggle("open");
+  });
+}
+
 if (closeBtn) {
   closeBtn.addEventListener("click", () => {
     modal1.style.top = "-124%";
@@ -246,6 +277,8 @@ function reduceValue(incValue, inputName, quantity, isquantity) {
 //   console.log("hello");
 //   getQuantity.value = containerQuantity.value;
 // };
+
+// handle open modal
 
 // handle open sidebar
 function handleOpensTheSidebar(
