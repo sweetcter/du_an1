@@ -20,7 +20,7 @@
             <?php if (!isset($_SESSION['cart'])) : ?>
                 <span style="text-align: center; font-weight: 600;display:block">Bạn không có sản phẩm nào trong giỏ hàng của bạn. </span>
             <?php else : ?>
-                <?php var_dump($_SESSION['cart']);
+                <?php //var_dump($_SESSION['cart']);
                 //var_dump($_SESSION['count_cart']);
                 ?>
                 <?php foreach ($_SESSION['cart'] as $key => $value) : ?>
@@ -50,7 +50,7 @@
                                 <div class="favoriteProduct-inc">
                                     <span id="cart_product_id" color_name_id="<?= $value['colorNameId'] ?>" size_id="<?= $value['sizeId'] ?>" product_id="<?= $value['product_id'] ?>"></span>
                                     <i class="fa-solid fa-minus cartModal-inc-minus" id="cartModal-inc-minus"></i>
-                                    <input type="number" disabled value="<?= $value['quantity'] ?>" class="favoriteProduct-inc-quantity" idcz="<?= "i" . $value['product_id'] . "C" . $value['colorNameId'] . "Z" . $value['sizeId'] ?>" />
+                                    <input type="number" disabled value="<?= $value['quantity'] ?>" class="favoriteProduct-inc-quantity" idcz="<?= "i" . $value['product_id'] . "c" . $value['colorNameId'] . "z" . $value['sizeId'] ?>" />
                                     <i class="fa-solid fa-plus cartModal-inc-plus" id="cartModal-inc-plus"></i>
                                     <input type="hidden" value="<?= $quantity_result['quantity'] ?>" class="cart_product_quantity">
                                 </div>

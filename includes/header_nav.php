@@ -108,7 +108,7 @@
               <button id="dangnhap_user">ĐĂNG NHẬP</button>
               <button id="dangki_user" style="background: #fff;color: #000;">ĐĂNG KÝ</button>
               <div class="a_link_user">
-                <a href="">Theo dõi đơn hàng</a>
+                <a href="/du_an1/order_details_infomation">Theo dõi đơn hàng</a>
                 <a href="">Khách hàng thành viên</a>
                 <a href="">Danh sách cửa hàng</a>
               </div>

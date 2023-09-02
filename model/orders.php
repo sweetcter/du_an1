@@ -115,7 +115,7 @@ function select_quantity_order_product($order_id)
 }
 function select_product_order_product($order_id)
 {
-    $sql = "SELECT products.* FROM orders 
+    $sql = "SELECT products.*,order_product.* FROM orders 
     JOIN order_product ON orders.order_id = order_product.order_id 
     JOIN products ON products.product_id = order_product.product_id 
     WHERE orders.order_id = ? ";

@@ -196,7 +196,8 @@
         </div>
     </div>
 <?php elseif (isset($_SESSION['username'])) : ?>
-    <?php //var_dump($_SESSION['username']); ?>
+    <?php //var_dump($_SESSION['username']); 
+    ?>
     <div class="wrapper">
         <div class="order_body">
             <h3>THÔNG TIN ĐƠN HÀNG</h3>
@@ -262,7 +263,15 @@
                                     <?php $product_name_result = select_product_order_product($value['order_id']); ?>
                                     <span style="margin: 8px 0;display: block;">Sản Phẩm: </span>
                                     <?php foreach ($product_name_result as $key => $product) : ?>
-                                        <span class="product_name"><?= $product['product_name'] ?> </span>
+                                        <div class="product_info">
+                                            <span class="product_name"><?= $product['product_name'] ?> </span>
+                                            <div style="margin-top:8px;">
+                                                <?php $color_result = select_color_name_by_id($product['color_name_id']); ?>
+                                                <?php $size_result = select_size_by_id($product['size_id']); ?>
+                                                <span class="size_name">MÀU: <?= $color_result['color_name']; ?></span>
+                                                <span class="color_name">SIZE: <?= $size_result['size_name'] ?></span>
+                                            </div>
+                                        </div>
                                     <?php endforeach ?>
                                     <span class="product_total__quantity">Tổng số lượng: <span><?= $quantity_result ?></span></span>
                                     <span class="payment_methods">Phương thức thanh toán: <span class="payment_method">
@@ -280,7 +289,7 @@
                                         <span class="product_total__price">Tổng tiền: <strong><?= formatMoney($value['total_price']); ?></strong></span>
                                         <div class="bill_status">
                                             <?php $status_result = select_status_by_id($status_id); ?>
-                                            
+
                                             Trạng thái:
                                             <span class="status_name" status="<?= $status_id ?>" style="color: <?= $status_id == 1 || $status_id == 6 ? "#e03033;" : "#26820b;"; ?>"> <?= $status_result['status'] ?></span>
                                         </div>
