@@ -387,10 +387,10 @@ function check_product_exist($product_code)
 //     return $totalPages;
 // }
 
-function count_all_products()
+function count_all_products($category_id)
 {
-    $sql = "SELECT COUNT(*) FROM products";
-    return pdo_query_value($sql);
+    $sql = "SELECT COUNT(*) FROM products WHERE category_id = ?";
+    return pdo_query_value($sql,$category_id);
 }
 
 function selectAll_product_phantrang($category_id, $sortDescending, $start, $limit)
@@ -452,7 +452,7 @@ function check_product_color_exist($color_name_id, $product_id)
 function check_product_size_exist($size_id, $product_id)
 {
     $sql = "SELECT COUNT(*) FROM product_size WHERE size_id = ? AND product_id = ?";
-    return pdo_query_value($sql, $size_id, $$product_id);
+    return pdo_query_value($sql, $size_id, $product_id);
 }
 function select_all_color_name()
 {

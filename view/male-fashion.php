@@ -144,7 +144,7 @@
           // Lấy dữ liệu sản phẩm cho trang hiện tại
 
           // Lấy tổng số sản phẩm
-          $totalProducts = count_all_products();
+          $totalProducts = count_all_products(1);
           // var_dump($totalProducts);
 
           // Tính tổng số trang dựa trên tổng số sản phẩm và số sản phẩm trên mỗi trang
