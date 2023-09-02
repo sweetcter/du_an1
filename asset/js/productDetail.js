@@ -635,9 +635,9 @@ $(document).ready(function () {
         },
         success: function (responve) {
           // console.log(responve);
-          if(responve === 0){
+          if (responve === 0) {
             $("#product-quantity").hide();
-          }else {
+          } else {
             $("#product-quantity").text(`${responve}`);
           }
           $(".cart-header-second span").text(`${responve} sản phẩm`);
@@ -664,10 +664,14 @@ $(document).ready(function () {
     $.ajax({
       type: "GET",
       url: "../../du_an1/index.php?action=show_quantity_in_cart",
-      dataType: "json",
+      // dataType: "json",
       success: function (responve) {
         // console.log(responve);
-        $(".product-quantity").text(`${responve}`);
+        if (responve != 0) {
+          $(".product-quantity").text(`${responve}`);
+        } else {
+          $(".product-quantity").css("display", "none");
+        }
         $(".cart-header-second span").text(`${responve} sản phẩm`);
       },
       error: function (error) {

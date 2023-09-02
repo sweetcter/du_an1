@@ -19,6 +19,7 @@ $tmp_image = $product_image['tmp_name'];
 $tmp_second_image = $product_second_image['tmp_name'];
 $product_code = $_POST['product_code'];
 $size_and_color_info = json_decode($_POST['colorAndSizeInfo']);
+dd($size_and_color_info);
 
 if (check_product_exist($product_code) >= 1) {
     $product_id_result = select_product_by_product_code($product_code);
@@ -56,6 +57,7 @@ if (check_product_exist($product_code) >= 1) {
         $color_name_id = $value[COLORNAMEIDINDEX];
         $size_id = $value[SIZEIDINDEX];
         $quantity = $value[QUANTITYINDEX];
+
         if (check_product_color_exist($color_name_id,$product_id_result) < 1) {
             add_product_color($product_id_result, $color_name_id);
         }

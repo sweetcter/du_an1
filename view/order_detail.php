@@ -116,7 +116,7 @@
                 ?>
                   <?php foreach ($_SESSION['cart'] as $key => $value) : ?>
                     <?php $quantity_result = select_quantity_by_product_id_color_name_id_and_size_id($value['sizeId'], $value['colorNameId'], $value['product_id']);
-                    $cart_quantity += $quantity_result['quantity'] ?>
+                    $cart_quantity += $value['quantity'] ?>
                     <div class="favoriteProduct-info order">
                       <a href="/du_an1/product_detail&product_id=<?= $value['product_id'] ?>" class="favoriteProduct-img">
                         <div class="favoriteProduct-img-first">
@@ -174,25 +174,30 @@
                   <div class="checkout__tittle">
                     <span>Họ Tên</span> <span>*</span>
                   </div>
-                  <input type="text" required id="customerFirstAndLastName">
+                  <input type="text" id="customerFirstAndLastName">
+                  <span class="order-notifi_name"></span>
                 </div>
                 <div class="checkout__input">
                   <div class="checkout__tittle">
                     <span>Địa chỉ</span> <span>*</span>
                   </div>
-                  <input type="text" required class="checkout__input__add" id="customerAddress">
+                  <input type="text" class="checkout__input__add" id="customerAddress">
+                  <span class="order-notifi_address"></span>
                 </div>
                 <div class="checkout__input">
                   <div class="checkout__tittle">
                     <span>Số điện thoại</span> <span>*</span>
                   </div>
-                  <input type="number" required id="customerNumberPhone">
+                  <input type="number" id="customerNumberPhone">
+                  <span class="order-notifi_phone_number"></span>
+
                 </div>
                 <div class="checkout__input">
                   <div class="checkout__tittle">
                     <span>Email</span><span>*</span>
                   </div>
-                  <input type="email" required id="customerEmail">
+                  <input type="email" id="customerEmail">
+                  <span class="order-notifi_email"></span>
                 </div>
               </div>
               <div class="checkout__input">
@@ -217,7 +222,7 @@
                   </div>
                   <div class="checkout__order__list">
                     <span>Phí vận chuyển:</span>
-                    <span>0</span>
+                    <span><?= isset($_SESSION['username']) ? 0 : formatMoney(10000) ?></span>
                   </div>
                   <div class="checkout__order__total__price">
                     <span>Tổng cộng</span>
@@ -240,20 +245,20 @@
                   </div>
 
                   <div class="form-check payment-check">
-                    <input class="form-check-input" type="radio" value="1" name="pttt" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" value="1" name="pttt" id="flexRadioDefault1" checked>
+                    <label class="form-check-label flexRadioDefault" for="flexRadioDefault1">
                       Thanh toán khi nhận hàng
                     </label>
                   </div>
                   <div class="form-check payment-check">
-                    <input class="form-check-input" type="radio" value="2" name="pttt" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" value="2" name="pttt" id="flexRadioDefault2">
+                    <label class="form-check-label flexRadioDefault" for="flexRadioDefault2">
                       Thanh toán bằng chuyển khoản
                     </label>
                   </div>
                   <div class="form-check payment-check paypal">
-                    <input class="form-check-input" type="radio" value="3" name="pttt" id="flexRadioDefault3" checked>
-                    <label class="form-check-label" for="flexRadioDefault3">
+                    <input class="form-check-input" type="radio" value="3" name="pttt" id="flexRadioDefault3">
+                    <label class="form-check-label flexRadioDefault" for="flexRadioDefault3">
                       Thanh toán online
                     </label>
                     <!-- <img src="../../du_an1/asset/images/payment-cards.png" alt=""> -->
@@ -271,6 +276,9 @@
   </section>
 <?php else : ?>
   <div class="empty-space">
+    <div class="empty_product__notifi">
+      Bạn chưa có sản phẩm nào
+    </div>
   </div>
 <?php endif ?>
 <?php require "./includes/footer.php" ?>

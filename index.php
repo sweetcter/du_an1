@@ -171,9 +171,9 @@ switch ($action) {
   case 'price_filter':
     require ".$VIEW_URL/boloc/loc-giatien-all.php";
     break;
-  // case 'size_filter':
-  //   require ".$VIEW_URL/boloc/loc-size.php";
-  //   break;
+    // case 'size_filter':
+    //   require ".$VIEW_URL/boloc/loc-size.php";
+    //   break;
   case 'size_filter_nam':
     require ".$VIEW_URL/boloc/loc-size-nam.php";
     break;
@@ -186,9 +186,9 @@ switch ($action) {
   case 'color_filter_nu':
     require ".$VIEW_URL/boloc/mau-sac-nu.php";
     break;
-  // case 'color_filter':
-  //   require ".$VIEW_URL/boloc/mau-sac.php";
-  //   break;
+    // case 'color_filter':
+    //   require ".$VIEW_URL/boloc/mau-sac.php";
+    //   break;
     // -----------Product detail and cart--------------
   case 'check-quanity':
     require ".$VIEW_URL/check_product_quantity.php";
@@ -228,6 +228,15 @@ switch ($action) {
     break;
   case 'get_product_info':
     require ".$VIEW_URL/get_product_info.php";
+    break;
+  case 'order_details_infomation':
+    require ".$VIEW_URL/order_details_infomation.php";
+    break;
+  case 'get_anomyous_customer_info':
+    require ".$VIEW_URL/get_anomyous_customer_info.php";
+    break;
+  case 'cancel_order':
+    require ".$VIEW_URL/cancel_order.php";
     break;
   default:
     echo "Không có gì";

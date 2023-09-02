@@ -42,8 +42,11 @@
             <thead>
                 <!-- <tr class="table-primary"> -->
                 <tr>
-                    <th>Tên sản phẩm</th>
                     <th>Người đặt</th>
+                    <th>Email</th>
+                    <th>Địa chỉ</th>
+                    <th>Số điện thoại</th>
+                    <th>Ngày đặt</th>
                     <th>Trạng thái</th>
                     <th>Chi tiết</th>
                 </tr>
@@ -53,9 +56,12 @@
                 <?php foreach ($order_info as $key => $value) : ?>
                     <?php $status_result = select_status_by_id($value['status_id']); ?>
                     <tr>
-                        <td><?= $value['product_name'] ?></td>
                         <td><?= $value['receiver_name'] ?></td>
-                        <td><span class="status_name" status="<?= $value['status_id'] ?>" style="font-weight: 500;"><?= $status_result['status'] ?></span></td>
+                        <td><?= $value['receiver_email'] ?></td>
+                        <td><?= $value['receiver_number_phone'] ?></td>
+                        <td><?= $value['receiver_address'] ?></td>
+                        <td><?= $value['created_at'] ?></td>
+                        <td><span class="status_name" status="<?= $value['status_id'] ?>" style="font-weight: 500;color:<?= $value['status_id'] == 1 || $value['status_id'] == 6 ? "#e03033" : "#26820b"; ?>"><?= $status_result['status'] ?></span></td>
                         <td>
                             <a href="/du_an1/admin/detail_bill&order_id=<?= $value['order_id'] ?>" style="display: block;text-decoration: none;">
                                 <i class="fa-solid fa-circle-info" style="color: #4287ff;font-size: 1.8rem;cursor: pointer;text-align: center;display: block;padding: 6px;"></i>

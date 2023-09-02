@@ -149,13 +149,14 @@
           // Lấy dữ liệu sản phẩm cho trang hiện tại
 
           // Lấy tổng số sản phẩm
-          $totalProducts = count_all_products();
+          $category_id = 2;
+          $totalProducts = count_all_products($category_id);
           // var_dump($totalProducts);
 
           // Tính tổng số trang dựa trên tổng số sản phẩm và số sản phẩm trên mỗi trang
           $totalPages = ceil($totalProducts / $itemsPerPage);
-          $product_result = isset($_GET['page']) ? selectAll_product_phantrang(2, false, $start, $itemsPerPage) : select_home_product(true, 2);;
-          foreach ($product_result as $key => $value) :?>
+          $product_result = isset($_GET['page']) ? selectAll_product_phantrang($category_id, false, $start, $itemsPerPage) : select_home_product(true, 2);;
+          foreach ($product_result as $key => $value) : ?>
             <!-- start item -->
             <div class="product-item">
               <a href="./product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">

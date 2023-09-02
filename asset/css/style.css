@@ -1,4 +1,9 @@
-/* css for scollbar */
+.wrapper {
+  width: 100%;
+  max-width: 127.06rem;
+  padding: 0px 1.2rem;
+  margin: 0 auto;
+}
 .header {
   display: flex;
   align-items: center;
@@ -207,12 +212,6 @@
   background-color: rgba(0, 0, 0, 0.4);
   animation: fadeIn linear 0.2s;
   display: none;
-}
-.wrapper {
-  width: 100%;
-  max-width: 127.06rem;
-  padding: 0px 1.2rem;
-  margin: 0 auto;
 }
 .header-bar {
   margin-right: auto;
@@ -844,8 +843,10 @@ footer {
   font-size: 1.6rem;
   text-align: center;
   background-color: #d6d6d6;
+  margin: 0;
   line-height: 24px;
   color: var(--primary-color);
+  margin-bottom: -10px;
 }
 .empty-space {
   padding-bottom: 120vh;
@@ -1106,7 +1107,7 @@ span.quenmk:hover {
 span.quenmk a {
   text-decoration: none;
 }
-.form-check-input{
+.form-check-input {
   cursor: pointer;
 }
 .form-check-label {
@@ -1185,7 +1186,7 @@ span.quenmk a {
   justify-content: space-between;
 }
 .favoriteProduct-info.order {
-  margin-top: 14px;
+  margin-top: 24px;
   display: flex;
   justify-content: unset;
 }
@@ -1250,7 +1251,6 @@ span.quenmk a {
   align-items: center;
   gap: 32px;
   font-size: 1.5rem;
-  cursor: pointer;
 }
 .favoriteProduct-choose.cart {
   color: #6f6f6f;
@@ -1584,7 +1584,7 @@ span.quenmk a {
   padding-left: 8px;
   font-size: 1.6rem;
 }
-.checkout__order__title{
+.checkout__order__title {
   padding-left: 8px;
   font-size: 1.6rem;
   margin-bottom: 8px;
@@ -1718,38 +1718,37 @@ span.quenmk a {
 .site-btn:hover {
   opacity: 0.86;
 }
-.btn-pay{
+.btn-pay {
   color: #fff;
   display: inline-block;
 }
-.payment-methods{
+.payment-methods {
   border: 1px solid #dedede;
   padding: 10px;
   margin-top: 16px;
   margin-bottom: 16px;
 }
-.form-check.payment-check{
+.form-check.payment-check {
   display: flex;
   align-items: baseline;
   margin: 12px 0;
 }
-.payment_method_title{
+.payment_method_title {
   display: flex;
   align-items: center;
 }
-.payment_method_title_icon{
+.payment_method_title_icon {
   margin-bottom: -6px;
 }
-.status_name{
+.status_name {
   font-weight: 600;
 }
-.status_name._1{
+.status_name._1 {
   color: #ff0000;
 }
-.status_name._5{
-  
+.status_name._5 {
+  color: #22c55e;
 }
-
 .modal_user {
   position: fixed;
   top: 0;
@@ -1767,19 +1766,18 @@ span.quenmk a {
   position: absolute;
   top: 76px;
   right: 77px;
-  box-shadow: 0 6px 4px rgba(179,179,179,.25);
-
+  box-shadow: 0 6px 4px rgba(179, 179, 179, 0.25);
 }
-.modal_user.open{
+.modal_user.open {
   display: block;
 }
-.a_link_user{
+.a_link_user {
   padding: 10px 0px;
 }
-.btn_link_user{
+.btn_link_user {
   padding: 5px 0px;
 }
-.user_modal_container button{
+.user_modal_container button {
   width: 80%;
   padding: 12px 10px;
   margin: 10px 20px;
@@ -1788,7 +1786,7 @@ span.quenmk a {
   font-weight: 600;
   font-size: 1.5rem;
 }
-.user_modal_container a{
+.user_modal_container a {
   margin-left: 20px;
   display: block;
   padding: 5px 0px;
@@ -1796,7 +1794,7 @@ span.quenmk a {
   color: #000;
   font-size: 16px;
 }
-.user_modal_container a:hover{
+.user_modal_container a:hover {
   cursor: pointer;
   text-decoration: solid;
   list-style: none;
@@ -1812,4 +1810,160 @@ span.quenmk a {
   z-index: 2;
   right: 12px;
   top: -5px;
+}
+.order-notifi_name,
+.order-notifi_email,
+.order-notifi_address,
+.order-notifi_phone_number,
+.checkout__input > .order-notifi {
+  color: red;
+  margin-top: 12px;
+  display: block;
+}
+.order_body {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+.show_orders {
+  display: flex;
+  padding: 12px 24px;
+}
+.orders_product {
+  flex-basis: 45%;
+}
+.orders_detail {
+  margin-left: 18px;
+  flex-basis: 45%;
+  padding: 0 0 0 24px;
+}
+
+.view_product {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 16px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #000;
+  background: var(--primary-color);
+  text-transform: uppercase;
+  padding: 12px 5px;
+  width: calc((100% - 18px) / 2);
+  width: -moz-calc((90% - 18px)/2);
+  width: -webkit-calc((80% - 18px)/2);
+  width: -o-calc((90% - 18px)/2);
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 0 0 10px;
+  border-radius: 10px;
+  margin-top: 18px;
+}
+.btn_view_product {
+  text-decoration: none;
+}
+.order_detail_quantity {
+  margin-top: 12px;
+}
+.bill_container_detail {
+  margin-bottom: 32px;
+}
+.bill_container_detail .receiver_name {
+  display: block;
+  line-height: 1.8;
+  font-size: 1.8rem;
+  width: 48rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bill_container_detail + .bill_container_detail {
+  margin-top: 6px;
+}
+
+.bill_container_detail .receiver_address {
+  margin-top: 4px;
+  display: block;
+}
+.product_total__quantity {
+  margin-top: 12px;
+  display: block;
+}
+.product_total__price {
+  margin-top: 16px;
+  font-size: 1.8rem;
+  display: block;
+}
+.bill_status {
+  font-size: 1.6rem;
+}
+.bill_status_and_total_price {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.status_name {
+  margin-right: 16px;
+}
+.cancel_order {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #000;
+  background: var(--primary-color);
+  text-transform: uppercase;
+  padding: 12px 5px;
+  width: calc((100% - 18px) / 2);
+  width: -moz-calc((100% - 18px)/2);
+  width: -webkit-calc((100% - 18px)/2);
+  width: -o-calc((100% - 18px)/2);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 0 0 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 40px;
+}
+.view_product,
+.cancel_order:hover {
+  opacity: 0.9;
+}
+.product_name {
+  display: block;
+}
+.product_name + .product_name {
+  margin-top: 12px;
+}
+.empty_session {
+  margin-top: 60px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  height: 100vh;
+}
+.empty_notifi {
+  display: flex;
+  justify-content: center;
+}
+.payment_methods {
+  margin-top: 12px;
+  display: block;
+  margin-right: 8px;
+}
+.empty_product__notifi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 50px;
 }
