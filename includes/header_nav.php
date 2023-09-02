@@ -113,7 +113,17 @@
                 <a href="">Danh sách cửa hàng</a>
               </div>
             <?php else : ?>
-              Đây là đăng nhập
+              <a href="../../du_an1/index.php?action=myaccount" class="ten_user">Chào <?php if (isset($_SESSION['username'])) echo $_SESSION['username']['full_name'] ?></a>
+              <p class="new_user">NEW</p>
+              <div class="a_link_user">
+                <?php
+                $order_id = isset($_COOKIE['order_details_infomation']) ? $_COOKIE['order_details_infomation'] : null;
+                ?>
+                <a href="/du_an1/order_details_infomation">Thông tin đơn hàng</a>
+                <a href="">Khách hàng thành viên</a>
+                <a href="">Danh sách cửa hàng</a>
+              </div>
+              <a href="../../du_an1/index.php?action=thoat" class="dangxuat_user">Đăng xuất</a>
             <?php endif ?>
           </div>
         </div>

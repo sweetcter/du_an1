@@ -1773,6 +1773,14 @@ span.quenmk a {
 }
 .a_link_user {
   padding: 10px 0px;
+  display: block;
+  width: 80%;
+  margin-left: 19px;
+  border-top: 1px solid #999; /* Màu và kiểu gạch chân ở đây */
+  margin-top: 5px; /* Khoảng cách giữa chữ và gạch chân */
+}
+.a_link_user a{
+  padding: 5px 0px;
 }
 .btn_link_user {
   padding: 5px 0px;
@@ -1786,11 +1794,10 @@ span.quenmk a {
   font-weight: 600;
   font-size: 1.5rem;
 }
-.user_modal_container a {
-  margin-left: 20px;
+.user_modal_container a{
   display: block;
-  padding: 5px 0px;
-  text-decoration: none;
+
+  text-decoration: none;  
   color: #000;
   font-size: 16px;
 }
@@ -1966,4 +1973,28 @@ span.quenmk a {
   font-size: 2rem;
   font-weight: 600;
   margin-top: 50px;
+}
+.user_modal_container .ten_user{
+  color: #000000;
+  font-weight: 600;
+  margin: 10px 20px;
+  font-size: 1.5rem;
+  
+}
+.dangxuat_user{
+  padding-top: 22px;
+  margin-left: 20px;
+  display: block;
+  width: 80%;
+  border-top: 1px solid #999; /* Màu và kiểu gạch chân ở đây */
+  margin-top: 5px; /* Khoảng cách giữa chữ và gạch chân */
+}
+.user_modal_container .new_user {
+  width: 22%;
+  background: #ffc700;
+  padding: 5px 12px;
+  border-radius: 19px;
+  margin: 0px 20px 10px;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
