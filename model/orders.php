@@ -131,3 +131,7 @@ function delete_orders_by_order_id($order_id)
     $sql = "DELETE FROM orders WHERE order_id = ?";
     pdo_execute($sql, $order_id);
 }
+function update_completed($time,$order_id){
+    $sql = "UPDATE orders SET completed_at = ? WHERE order_id = ?";
+    pdo_execute($sql,$time,$order_id);
+}
