@@ -107,23 +107,23 @@
     <nav>
       <div class="div1">
         <div class="div1_1 div1_1_cart">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/bannerroww1.png" alt="" />
+          <img src="../<?= $ROOTt_URL ?>/asset/images/ECOM_600x950_2.jpg" alt="" />
           <div class="xemngay">
-            <button><a href="#">xem ngay</a></button>
+            <button><a href="/du_an1/sale-fashion">xem ngay</a></button>
           </div>
         </div>
 
         <div class="div1_1 div1_1_cart">
           <img src="../<?= $ROOTt_URL ?>/asset/images/bannerrow2.jpg" alt="" />
           <div class="xemngay">
-            <button><a href="#">xem ngay</a></button>
+            <button><a href="/du_an1/news-fashion">xem ngay</a></button>
           </div>
         </div>
 
         <div class="div1_1 div1_1_cart">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/bannerroww2.webp" alt="" />
+          <img src="../<?= $ROOTt_URL ?>/asset/images/ECOM_600x950_copy_2.jpg" alt="" />
           <div class="xemngay">
-            <button><a href="#">xem ngay</a></button>
+            <button><a href="/du_an1/sale-fashion">xem ngay</a></button>
           </div>
         </div>
       </div>
@@ -251,7 +251,7 @@
   </div>
 
   <div class="title_rowgird font_roboto">
-    <h1>Thời trang</h1>
+    <h1 style="font-size: 40px;">TIN THỜI TRANG</h1>
   </div>
 
   <div class="row_girdx" style="gap: 20px;">

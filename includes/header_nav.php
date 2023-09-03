@@ -77,13 +77,10 @@
       <a class="header-nav-link" href="/du_an1/female-fashion?page=1">NỮ</a>
     </li>
     <li class="header-nav-item">
-      <a class="header-nav-link" href="#">NEW</a>
+      <a class="header-nav-link" href="/du_an1/news-fashion?page=1">NEW</a>
     </li>
     <li class="header-nav-item">
-      <a class="header-nav-link" href="#">BEST</a>
-    </li>
-    <li class="header-nav-item">
-      <a class="header-nav-link" href="#">SALE</a>
+      <a class="header-nav-link" href="/du_an1/sale-fashion?page=1">SALE</a>
     </li>
   </ul>
   <div class="header-content-right">

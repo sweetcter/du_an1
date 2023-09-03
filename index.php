@@ -32,7 +32,12 @@ switch ($action) {
   case 'female-fashion':
     require ".$VIEW_URL/female-fashion.php";
     break;
-
+  case 'news-fashion':
+    require ".$VIEW_URL/news-fashion.php";
+    break;
+  case 'sale-fashion':
+    require ".$VIEW_URL/sale-fashion.php";
+    break;
     // --------Gio Hang-----------  
   case 'bill':
     require ".$VIEW_URL/bill.php";
