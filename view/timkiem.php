@@ -101,7 +101,7 @@
     <div class="main-colums">
       <!-- block filter -->
 
-  <?php  require "./includes/filter_product.php"?>
+  <?php  require "./includes/filter_product_nam.php"?>
 
       <div class="product-colum">
         <div class="product-row row-col-4">
@@ -118,7 +118,7 @@
            $start = ($currentpage - 1) * $itemsPerPage;
    
            // Lấy tổng số sản phẩm
-           $totalProducts = count_all_products();
+           $totalProducts = count_all_products(0);
           
            // Tính tổng số trang dựa trên tổng số sản phẩm và số sản phẩm trên mỗi trang
            $totalPages = ceil($totalProducts / $itemsPerPage);
@@ -170,23 +170,6 @@
             <!-- end item -->
           <?php endforeach ?>
         </div>
-        <ul class="home-pagination">
-            <li class="home-pagination-item <?php echo ($currentpage == 1) ? 'home-pagination-disable' : ''; ?>">
-                <a href="timkiem?tukhoa=<?= $keyword ?>&page=<?php echo $currentpage - 1; ?>" class="home-pagination-link">
-                    <i class="fa-solid fa-angle-left home-pagination-icon"></i>
-                </a>
-            </li>
-            <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
-                <li class="home-pagination-item <?php echo ($i == $currentpage) ? 'home-pagination-active' : ''; ?>">
-                    <a href="timkiem?tukhoa=<?= $keyword ?>&page=<?php echo $i; ?>" class="home-pagination-link"><?php echo $i; ?></a>
-                </li>
-            <?php endfor; ?>
-            <li class="home-pagination-item <?php echo ($currentpage == $totalPages) ? 'home-pagination-disable' : ''; ?>">
-                <a href="timkiem?tukhoa=<?= $keyword ?>&page=<?php echo $currentpage + 1; ?>" class="home-pagination-link">
-                    <i class="fa-solid fa-angle-right home-pagination-icon"></i>
-                </a>
-            </li>
-        </ul>
       </div>
     </div>
   </main>

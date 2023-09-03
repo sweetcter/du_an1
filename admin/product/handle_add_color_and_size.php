@@ -1,11 +1,12 @@
 <?php
-$color_name = $_POST['colorName'];
+$color_name = isset($_POST['colorName']) ? $_POST['colorName'] : "";
+$colorNameId = isset($_POST['colorNameId']) ? $_POST['colorNameId'] : "";
 $colorType = $_POST['colorType'];
 $color_image = !empty($_FILES['colorImage']) ? $_FILES['colorImage'] : "";
 $color_tmp_image = $color_image['tmp_name'];
 $color_name_id = 0;
-if (check_color_name_exist($color_name) >= 1) {
-    $color_name_reuslt = select_color_name_by_name($color_name);
+if ($colorNameId != "") {
+    $color_name_reuslt = select_color_name_by_id($colorNameId);
     $array = [
         'status' => 'error',
         'color_name_id' => $color_name_reuslt['color_name_id'],

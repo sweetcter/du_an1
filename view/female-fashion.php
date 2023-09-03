@@ -133,177 +133,7 @@
     <div class="main-colums">
       <!-- block filter -->
 
-      <div class="filter-sidebar">
-        <div class="filter-block">
-          <div class="filter-category active">
-            <ul>
-              DANH MỤC
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list">
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="aonam">Áo Nam</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="quannam">Quần Nam</a>
-            </li>
-          </div>
-        </div>
-
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              NHÓM SẢN PHẨM
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list">
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="aosomi">Áo Sơ Mi</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="aothun">Áo Thun</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="hoodie">Áo Hoodie</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="polo">Áo polo</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="aosomi">Áo Sơ Mi</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="aothun">Áo Thun</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="hoodie">Áo Hoodie</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="polo">Áo polo</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="aosomi">Áo Sơ Mi</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="aothun">Áo Thun</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="hoodie">Áo Hoodie</a>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="polo">Áo polo</a>
-            </li>
-          </div>
-        </div>
-
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              SIZE
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list flex-col-4">
-            <a href="size28"><span class="filter-list-size"> 28 </span></a>
-
-            <span class="filter-list-size"> M </span>
-            <span class="filter-list-size"> L </span>
-            <span class="filter-list-size"> xl</span>
-          </div>
-        </div>
-
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              MÀU SẮC
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list row-filter-col-2">
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manShirt" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manShirt">
-              </label>
-              <a href="#">Đen</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/black.png')"></div>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Trắng</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/white.png')"></div>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Be</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/be.png')"></div>
-            </li>
-            <li class="filter-category-name">
-              <input type="checkbox" name="" id="filter-checkbox-manPants" class="filter-checkbox" />
-              <label class="filter-newCheckbox" for="filter-checkbox-manPants"></label>
-              <a href="#">Xám bạc</a>
-              <div class="filter-list-color" style="background-image: url('../<?= $ROOT_URL ?>/asset/images/xam_bac.png')"></div>
-            </li>
-          </div>
-        </div>
-        <div class="filter-block">
-          <div class="filter-category">
-            <ul>
-              GIÁ TIỀN
-            </ul>
-            <i class="fa-solid fa-chevron-down filter-dropdown"></i>
-          </div>
-          <div class="filter-list">
-            <div id="multi-range-slider" class="filter-price"></div>
-            <div class="filter-price-control">
-              <div>
-                <span>₫</span><span id="start-value" class="filter-price-min">79000đ</span>
-              </div>
-              <div>
-                <span>₫</span><span id="end-value" class="filter-price-max">1375000đ</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php require "./includes/filter_product_nu.php" ?>
 
       <div class="product-colum">
         <div class="product-row row-col-4">
@@ -319,13 +149,14 @@
           // Lấy dữ liệu sản phẩm cho trang hiện tại
 
           // Lấy tổng số sản phẩm
-          $totalProducts = count_all_products();
+          $category_id = 2;
+          $totalProducts = count_all_products($category_id);
           // var_dump($totalProducts);
 
           // Tính tổng số trang dựa trên tổng số sản phẩm và số sản phẩm trên mỗi trang
           $totalPages = ceil($totalProducts / $itemsPerPage);
-          $product_result = isset($_GET['page']) ? selectAll_product_phantrang(2, false, $start, $itemsPerPage) : select_home_product(true, 2);;
-          foreach ($product_result as $key => $value) :?>
+          $product_result = isset($_GET['page']) ? selectAll_product_phantrang($category_id, false, $start, $itemsPerPage) : select_home_product(true, 2);;
+          foreach ($product_result as $key => $value) : ?>
             <!-- start item -->
             <div class="product-item">
               <a href="./product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
@@ -385,7 +216,7 @@
               <i class="fa-solid fa-angle-left home-pagination-icon"></i>
             </a>
           </li>
-          <?php for ($i = 1; $i < $totalPages; $i++) : ?>
+          <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
             <li class="home-pagination-item <?php echo ($i == $currentpage) ? 'home-pagination-active' : ''; ?>">
               <a href="?page=<?php echo $i; ?>" class="home-pagination-link"><?php echo $i; ?></a>
             </li>
@@ -414,7 +245,7 @@
       <?php $product_result = select_home_product(true, 2); ?>
       <?php foreach ($product_result as $key => $value) : ?>
         <!-- start item -->
-        <div class="product-item">
+        <div class="product-item" id="product-list">
           <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
             <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
           </a>
@@ -452,4 +283,24 @@
     </div>
   </div>
 </div>
+<!-- <script>
+        $(document).ready(function() {
+            // Lắng nghe sự kiện khi giá trị slider thay đổi
+            $("#multi-range-slider").on("change", function() {
+                var startValue = $("#start-value").text();
+                var endValue = $("#end-value").text();
+
+                // Gửi dữ liệu lọc qua AJAX
+                $.ajax({
+                    url: "filter_products.php", // Điều chỉnh đúng đường dẫn của tệp xử lý
+                    type: "POST",
+                    data: { startValue: startValue, endValue: endValue },
+                    success: function(response) {
+                        // Cập nhật danh sách sản phẩm sau khi lọc
+                        $("#product-list").html(response);
+                    }
+                });
+            });
+        });
+    </script> -->
 <?php require "./includes/footer.php" ?>

@@ -2,15 +2,20 @@
 header("Cache-Control: no-cache, no-store, must-revalidate");
 header("Pragma: no-cache");
 header("Expires: 0");
-$product_id = isset($_POST['productId']) ? (int)$_POST['productId'] : null;
 
-if (!empty($product_id)) {
-    unset($_SESSION['cart'][$product_id]);
+
+if (!empty($_POST['Idcz'])) {
+    $variantKey = $_POST['Idcz'];
+    unset($_SESSION['cart'][$variantKey]);
     if ($_SESSION['count_cart'] > 0) {
         $_SESSION['count_cart']--;
     }
-    if($_SESSION['count_cart'] < 1){
+    if (empty($_SESSION['cart'])) {
         unset($_SESSION['cart']);
     }
 }
-echo json_encode($_SESSION['count_cart']);
+if (isset($_SESSION['count_cart'])) {
+    echo $_SESSION['count_cart'];
+} else {
+    echo 0;
+}

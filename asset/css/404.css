@@ -33,15 +33,17 @@
 .title_dau
 {
     font-size: 30px;
-    margin-bottom: 70px;
+    margin-bottom: 28px;
 }
 
 .gohome
 {
+    font-family: roboto;
+    font-size: 18px;
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
-    background: #39ac31;
+    background: #000;
     display: inline-block;
 }
 

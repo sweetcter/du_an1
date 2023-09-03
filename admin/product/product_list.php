@@ -73,15 +73,16 @@
               <td>
                 <?php $quantity_result = select_quantities_by_product_id($value['product_id']);
                 $total_quantity = 0;
+                $product_id = $value['product_id'];
+                $size_unduplicate_result = select_size_unduplicate($product_id);
                 ?>
                 <?php foreach ($quantity_result as $quantity) {
                   $total_quantity += $quantity['quantity'];
                 } ?>
                 <?= $total_quantity; ?>
               </td>
-              <!-- <td>Đây là mô tả</td> -->
               <td>
-                <?php foreach ($quantity_result as $quantity) : ?>
+                <?php foreach ($size_unduplicate_result as $quantity) : ?>
                   <?php $size_result = select_one_size_by_size_id($quantity['size_id']); ?>
                   <span><?= $size_result['size_name']; ?>,</span>
                 <?php endforeach ?>
@@ -89,7 +90,7 @@
               <td>
                 <?php $color_result = select_all_color_name_by_product_id($value['product_id']); ?>
                 <?php foreach ($color_result as $color) : ?>
-                  <span><?= $color['color_name']; ?></span>
+                  <span><?= $color['color_name']; ?>,</span>
                 <?php endforeach ?>
               </td>
               <td>

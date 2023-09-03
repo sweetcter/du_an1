@@ -1,12 +1,17 @@
 $(document).ready(function () {
+  let paymentMethods = 1;
   function reloadShowQuantity() {
     $.ajax({
       type: "GET",
       url: "../../du_an1/index.php?action=show_quantity_in_cart",
       dataType: "json",
       success: function (responve) {
-        console.log(responve);
-        $(".product-quantity").text(`${responve}`);
+        // console.log(responve);
+        if (responve != 0) {
+          $(".product-quantity").text(`${responve}`);
+        } else {
+          $(".product-quantity").css("display", "none");
+        }
         $(".cart-header-second span").text(`${responve} sản phẩm`);
       },
       error: function (error) {
@@ -41,14 +46,42 @@ $(document).ready(function () {
       },
     });
   });
-  $("#btn-pay").on("click", function (e) {
-    e.preventDefault();
+
+  $(".flexRadioDefault").on("click", function () {
+    const that = this;
+    paymentMethods = $(that).prev().val();
+  });
+
+  $("#btn-pay").on("click", function () {
+    let isCheck = false;
     let customerId = $("#customer_id");
     let customerfirstAndLastName = $("#customerFirstAndLastName");
     let customerAddress = $("#customerAddress");
     let customerNumberPhone = $("#customerNumberPhone");
     let customerEmail = $("#customerEmail");
     let customerNote = $("#customerNote");
+    let paymenMethod = paymentMethods;
+    console.log(paymenMethod);
+    // validate form basic
+    if (customerfirstAndLastName.val() === "") {
+      isCheck = true;
+      $(".order-notifi_name").text("Họ và tên không được để trống");
+    }
+    if (customerAddress.val() === "") {
+      isCheck = true;
+      $(".order-notifi_address").text("Địa chỉ không được để trống");
+    }
+    if (customerNumberPhone.val() === "") {
+      isCheck = true;
+      $(".order-notifi_phone_number").text("Số điện thoại không được để trống");
+    }
+    if (customerEmail.val() === "") {
+      isCheck = true;
+      $(".order-notifi_email").text("Email không được để trống");
+      if (isCheck) {
+        return;
+      }
+    }
     $.ajax({
       type: "POST",
       url: "../../du_an1/index.php?action=order_handle",
@@ -59,17 +92,63 @@ $(document).ready(function () {
         customerNumberPhone: customerNumberPhone.val(),
         customerEmail: customerEmail.val(),
         customerNote: customerNote.val(),
+        pay_methods: paymenMethod,
       },
-      // dataType:"json",
       success: function () {
         reloadShowQuantity();
         alert("Đặt hàng thành công, đang xử lý đơn hàng");
-        // location.reload();
-        console.log("OK");
+        setTimeout(() => {
+          location.href = `/du_an1/order_details_infomation`;
+        }, 1);
       },
       error: function (error) {
         console.log(error);
       },
     });
+  });
+  $(".cancel_order").on("click", function () {
+    const that = this;
+    let ischeck = confirm("Bạn có muốn hủy đơn hàng ?");
+    let orderId = $(that).attr("order_id");
+    console.log(orderId);
+    if (ischeck) {
+      $.ajax({
+        type: "POST",
+        url: "../../du_an1/index.php?action=cancel_order",
+        data: {
+          orderId: orderId,
+        },
+        success: function (responve) {
+          if (responve === 0) {
+            alert("Xóa thất bại có lỗi");
+          } else {
+            console.log("Hủy đơn hàng thành công");
+          }
+          location.reload();
+        },
+        error: function (error) {
+          console.log(error);
+        },
+      });
+    }
+  });
+  
+  // let status = $(".status_name").attr("status");
+  // const that = this;
+  // if (status === "1" || status === "6") {
+  //   $(".status_name").css("color", "#dd0d0d");
+  // } else {
+  //   $(".status_name").css("color", "#2eab09");
+  // }
+
+  let isCheckGetCustomer = false;
+  $("#getCustomerInfo").on("click", function () {
+    if (isCheckGetCustomer) {
+      isCheckGetCustomer = false;
+      $(".get_anomyous_customer_info").css("display", "none");
+    } else {
+      isCheckGetCustomer = true;
+      $(".get_anomyous_customer_info").css("display", "block");
+    }
   });
 });

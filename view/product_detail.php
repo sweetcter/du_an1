@@ -103,7 +103,9 @@
         $first_color_name_id = select_first_product_color_by_product_id($product_id);
         $color_name_id = $first_color_name_id['color_name_id'];
         $product_result = select_product_by_id($product_id);
+        inc_view($product_id);
         ?>
+        
         <ul class="breadcrumbs">
           <li>Trang chủ /</li>
           <li><?= $product_result['product_name'] . " - " . $product_result['product_code'] ?></li>
@@ -154,7 +156,8 @@
               <!-- Chỉ active lần phần tử đầu tiên -->
             <?php endforeach ?>
             <!-- box color  -->
-            <input type="text" class="box-color-name-id" value="<?= $color_name_result['color_name_id'] ?>">
+            <!-- value="//<?php //$color_name_result['color_name_id'] ?>" -->
+            <!-- <input type="text" class="box-color-name-id" > -->
             <!-- end box -->
             <span class="product_detail_choose_size">Chọn size: <strong id="product_detail_size" style="padding-left: 8px;"></strong></span>
             <div class="product-detail-list-size">
@@ -181,7 +184,7 @@
                 <input type="number" disabled value="1" id="product-detail-inc-quantity" class="product-detail-inc-quantity" />
                 <i class="fa-solid fa-plus product-detail-inc-plus" id="product-detail-inc-plus " class="cartModal-inc-plus"></i>
               </div>
-              <button type="button" id="addToCart" class="product-detail-toCart" name="mua">Mua Ngay</button>
+              <button type="button" id="addToCart" class="product-detail-toCart">Mua Ngay</button>
               <i class="fa-regular fa-heart product-detail-favorite"></i>
             </div>
             <span id="quantity_product"></span>

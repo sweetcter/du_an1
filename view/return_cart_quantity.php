@@ -1,2 +1,6 @@
 <?php 
-echo json_encode($_SESSION['count_cart']);
+if(isset($_SESSION['count_cart'])){
+    echo $_SESSION['count_cart'];
+}else {
+    echo 0;
+}

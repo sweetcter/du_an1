@@ -77,38 +77,30 @@
                 <?php $quantities_result = select_quantities_by_product_id($product_id); ?>
                 <div id="container-color">
                     <?php foreach ($quantities_result as $quantity) : ?>
-                        <br>
-                        <span>Quantity id <?= $quantity['quantity_id']; ?></span>
-                        <span>Product id <?= $quantity['product_id']; ?></span>
-                        <span>Color name id <?= $quantity['color_name_id']; ?></span>
-                        <span>Size id <?= $quantity['size_id']; ?></span>
-                        <span>Số lượng <?= $quantity['quantity']; ?></span>
-                        <div>
+                        <div style="display: inline-block;border: 1px solid #dedede;padding: 12px;margin:12px;">
                             <?php $color_name_result = select_all_color_name_by_id($quantity['color_name_id']); ?>
-                            <?php foreach ($color_name_result as $color_name) : ?>
-                                <div><?= $color_name['color_name'] ?></div>
-                                <div><?= $color_name['color_image'] ?></div>
-                            <?php endforeach ?>
+                            <div>
+                                <?php foreach ($color_name_result as $color_name) : ?>
+                                    <div><img src="../..<?= $ROOT_URL ?><?= $color_name['color_image'] ?>" alt="Ảnh màu" height="70"></div>
+                                    <span><?= $color_name['color_name'] ?></span>
+                                <?php endforeach ?>
+                            </div>
+                            <?php $each_size = select_one_size_by_size_id($quantity['size_id']) ?>
+                            <span>Size <?= $each_size['size_name'] ?></span>
+                            <span>Số lượng <?= $quantity['quantity']; ?></span>
+                            <span class="attr-container" hidden quantity-id="<?= $quantity['quantity_id']; ?>" product-id="<?= $product_id; ?>" size-id="<?= $quantity['size_id'];  ?>" color-name-id="<?= $quantity['color_name_id']; ?>" data-quantity="<?= $quantity['quantity'] ?>"></span>
+                            <i class="fa-regular fa-pen-to-square update-color-and-size" style="font-size: 1.6rem;cursor: pointer;color: #000000;padding:6px;"></i>
                         </div>
-                        <div>
-                            <?php $size_result = select_all_size_by_product_id($quantity['product_id']); ?>
-                            <?php foreach ($size_result as $size) : ?>
-                                <span><?= $size['size_id'] ?></span>
-                                <span><?= $size['size_name'] ?></span>
-                            <?php endforeach ?>
-                        </div>
-                        <span class="attr-container" hidden quantity-id="<?= $quantity['quantity_id']; ?>" product-id="<?= $product_id; ?>" size-id="<?= $quantity['size_id'];  ?>" color-name-id="<?= $quantity['color_name_id']; ?>" data-quantity="<?= $quantity['quantity'] ?>"></span>
                         <!-- <button type="button" class="btn btn-primary update-color-and-size">Sửa</button> -->
-                        <i class="fa-regular fa-pen-to-square update-color-and-size" style="font-size: 1.6rem;cursor: pointer;color: #000000;padding:6px;"></i>
                     <?php endforeach ?>
                 </div>
                 <div id="show_color_and_size_update" class="color-update-hidden" style="display:none">
-                <!-- input lưu color name id  -->
+                    <!-- input lưu color name id  -->
                     <input type="hidden" id="color_name_id">
                     <div class="form-group mb-3">
                         <label for="product_color">Loại màu</label>
                         <?php $color_result = select_all_color(); ?>
-                        <select class="form-control"  id="color_type_update">
+                        <select class="form-control" id="color_type_update">
                             <option value="0" id="color_name_id_update">Lựa chọn màu</option>
                             <?php foreach ($color_result as $value) : ?>
                                 <option value="<?= $value['color_type_id']; ?>"><?= $value['color_type_name'] ?></option>
@@ -140,7 +132,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="product_quantity">Số lượng</label>
-                        <input type="number" class="form-control"  id="new_quantity">
+                        <input type="number" class="form-control" id="new_quantity">
                     </div>
                     <button type="button" id="updateProductCSQ" class="btn btn-success">Cập nhật</button>
                     <button type="button" id="QuantityRetype" class="btn btn-warning">Nhập lại</button>
