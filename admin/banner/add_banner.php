@@ -39,7 +39,7 @@
             <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> "><?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?></span>
             <form action="..<?= $ADMIN_URL . $BANNER_URL; ?>/progess_add_banner.php" method="post" enctype="multipart/form-data">
                 <div class="form-group mb-3">
-                    <label for="banner_name">Tên sản phẩm</label>
+                    <label for="banner_name">Tên banner</label>
                     <input type="text" class="form-control" name="banner_name" id="banner_name" required>
                 </div>
                 <div class="form-group mb-3">

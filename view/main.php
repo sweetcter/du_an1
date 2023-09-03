@@ -95,10 +95,12 @@
         </div>';
       }
       ?>
+
       <div style="text-align: center" class="to_dot">
+      <?php 
+      foreach ($dsBanner as $bn) { ?>
         <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+      <?php }?>
       </div>
     </div>
 
@@ -410,11 +412,11 @@
         slideIndex = 1;
       }
       for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+        dots[i].className = dots[i].className.replace("active", "");
       }
       slides[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 2000); // Change image every 2 seconds
+      setTimeout(showSlides, 3000); // Change image every 2 seconds
     }
     showSlides();
 
