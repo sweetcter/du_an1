@@ -1,6 +1,7 @@
 $(document).ready(function () {
   let isCheckClickSize = false;
   let isCheckClickColor = false;
+  let thisIdcz = 0;
   // let isCheckChooseColor = false;
   function reloadSlick() {
     setTimeout(function () {
@@ -448,18 +449,25 @@ $(document).ready(function () {
       url: "../../du_an1/index.php?action=load_cart",
       dataType: "json",
       success: function (responve) {
-        // console.log(responve);
         let cartItems = responve.cart;
         let totalPrice = responve.total_cart;
         let totalNewPrice = "";
         let totalOldPrice = "";
         totalNewPrice = formatMoney("vi-VN", "VND", totalPrice.new_price);
         totalOldPrice = formatMoney("vi-VN", "VND", totalPrice.old_price);
+        if (
+          typeof totalNewPrice === "string" &&
+          typeof totalPrice.new_price === "string"
+        ) {
+          totalNewPrice = 0;
+        }
         let productInfo = ``;
         let productDetailInfo = ``;
+
         let cartTotalInfo = `
-        
-      <div class="product-cart-bottom">
+      <div class="product-cart-bottom"  style="display:${
+        totalNewPrice === 0 ? "none" : "block"
+      }">
         <div class="cart-total-price">
             <span class="cart-total-price-title">Tổng tiền:</span>
             <div class="cart-total-price">
@@ -490,7 +498,7 @@ $(document).ready(function () {
           for (const cartItem in cartItems) {
             if (cartItems.hasOwnProperty(cartItem)) {
               const item = cartItems[cartItem];
-
+              // console.log(cartItem);
               const discount =
                 item.product_price -
                 (item.product_price * item.discount) / percent;
@@ -523,18 +531,28 @@ $(document).ready(function () {
                       <div class="favoriteProduct-inc">
                           <span id="cart_product_id" color_name_id="${item.colorNameId}" size_id="${item.sizeId}" product_id="${item.product_id}"></span>
                           <i class="fa-solid fa-minus cartModal-inc-minus" id="cartModal-inc-minus"></i>
-                          <input type="number" disabled value="${item.quantity}" class="favoriteProduct-inc-quantity" idcz="i${item.product_id}c${item.colorNameId}z${item.sizeId}"/>
+                          <input type="number" disabled value="${item.quantity}" class="favoriteProduct-inc-quantity" idcz="i${item.product_id}C${item.colorNameId}Z${item.sizeId}"/>
                           <i class="fa-solid fa-plus cartModal-inc-plus" id="cartModal-inc-plus"></i>
                           <input type="hidden" value="${item.remainingAmount}" class="cart_product_quantity">
                       </div>
-                      <span class="favoriteProduct-price">${newPriceFormatted}</span>
+                      <span class="favoriteProduct-price" >${newPriceFormatted}</span>
                       <del class="favoriteProduct-price-old">${oldPriceFormatted}</del>
                   </div>
               </div>
-              <div class="delete-from-cart favoriteProduct-close" idcz="${cartItem}">
+              <div class="delete-from-cart favoriteProduct-close" idcz="i${item.product_id}c${item.colorNameId}z${item.sizeId}">
                   <i class="fa-solid fa-xmark"></i>
               </div>
           </div>`;
+          
+          const orderDetailDiscount =
+          item.product_price -
+          (item.product_price * item.discount) / percent;
+        const orderDetailNewPriceFormatted = formatMoney("vi-VN", "VND", orderDetailDiscount);
+        const orderDetailOldPriceFormatted = formatMoney(
+          "vi-VN",
+          "VND",
+          item.product_price
+        );
               productDetailInfo += `<div class="favoriteProduct-info order">
           <a href="" class="favoriteProduct-img">
               <div class="favoriteProduct-img-first">
@@ -564,11 +582,11 @@ $(document).ready(function () {
                       <i class="fa-solid fa-plus cartModal-inc-plus" id="cartModal-inc-plus"></i>
                       <input type="hidden" value="${item.remainingAmount}" class="cart_product_quantity">
                   </div>
-                  <span class="favoriteProduct-price">${item.product_price}</span>
-                  <del class="favoriteProduct-price-old">${item.product_price}</del>
+                  <span class="favoriteProduct-price">${orderDetailNewPriceFormatted}</span>
+                  <del class="favoriteProduct-price-old">${orderDetailOldPriceFormatted}</del>
               </div>
           </div> 
-          <div class="delete-from-cart favoriteProduct-close" product_id="${item.product_id}">
+          <div class="delete-from-cart favoriteProduct-close" idcz="i${item.product_id}c${item.colorNameId}z${item.sizeId}">
                   <i class="fa-solid fa-xmark"></i>
               </div>
         </div>`;
@@ -580,6 +598,12 @@ $(document).ready(function () {
         // console.log(productDetailInfo);
         // console.log(productInfo);
         $("#product-cart-bottom-container").html(cartTotalInfo);
+        if(cartItems === ""){
+          $("#btn-pay").hide();
+          $(".checkout__oder__quantity_value").text("0");
+          $(".checkout__order__provisional__rice__value").text("0");
+          $(".checkout__order__total__price_value").text("0");
+        }
         if (
           typeof increaseCallBack === "function" &&
           typeof decreaseCallBack === "function" &&
@@ -600,11 +624,13 @@ $(document).ready(function () {
     });
   }
   function handleDeleteProductInCart() {
-    let thisIdcz = 0;
     $(".delete-from-cart").on("click", function () {
+      const that = this;
       $(".confirm-modal").addClass("open-confirm");
       $(".confirm-container").addClass("open-confirm");
-      thisIdcz = $(this).attr("idcz");
+      thisIdcz = $(that).attr("idcz");
+      // debugger;
+      $("#agree-confirm").attr("idcz", thisIdcz);
     });
     $(".confirm-container").on("click", function (e) {
       e.stopPropagation();
@@ -625,8 +651,7 @@ $(document).ready(function () {
     closeConfirmModal(".cancel-confirm");
 
     $("#agree-confirm").on("click", function () {
-      let getIdcz = thisIdcz;
-      console.log(getIdcz);
+      let getIdcz = $(this).attr("idcz");
       $.ajax({
         type: "POST",
         url: "../../du_an1/index.php?action=product_delete_quantity_to_cart",
@@ -668,6 +693,7 @@ $(document).ready(function () {
       success: function (responve) {
         // console.log(responve);
         if (responve != 0) {
+          $(".product-quantity").css("display", "flex");
           $(".product-quantity").text(`${responve}`);
         } else {
           $(".product-quantity").css("display", "none");

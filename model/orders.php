@@ -115,7 +115,7 @@ function select_quantity_order_product($order_id)
 }
 function select_product_order_product($order_id)
 {
-    $sql = "SELECT products.* FROM orders 
+    $sql = "SELECT products.*,order_product.* FROM orders 
     JOIN order_product ON orders.order_id = order_product.order_id 
     JOIN products ON products.product_id = order_product.product_id 
     WHERE orders.order_id = ? ";
@@ -130,4 +130,8 @@ function delete_orders_by_order_id($order_id)
 {
     $sql = "DELETE FROM orders WHERE order_id = ?";
     pdo_execute($sql, $order_id);
+}
+function update_completed($time,$order_id){
+    $sql = "UPDATE orders SET completed_at = ? WHERE order_id = ?";
+    pdo_execute($sql,$time,$order_id);
 }
