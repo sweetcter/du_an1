@@ -94,12 +94,17 @@ $(document).ready(function () {
         customerNote: customerNote.val(),
         pay_methods: paymenMethod,
       },
-      success: function () {
+      success: function (responve) {
         reloadShowQuantity();
-        alert("Đặt hàng thành công, đang xử lý đơn hàng");
-        setTimeout(() => {
-          location.href = `/du_an1/order_details_infomation`;
-        }, 1);
+        if(responve){
+          $("#payMenttotalPrice").val(responve);
+          $("#startPayment").click();
+        }else {
+          alert("Đặt hàng thành công, đang xử lý đơn hàng");
+          setTimeout(() => {
+            location.href = `/du_an1/order_details_infomation`;
+          }, 1);
+        }
       },
       error: function (error) {
         console.log(error);

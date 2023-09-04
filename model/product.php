@@ -56,7 +56,9 @@ function select_all_size_by_product_id($product_id)
 }
 function select_all_size_by_product_id_and_color_name_id($color_name_id, $product_id)
 {
-    $sql = "SELECT quantities.* FROM products JOIN quantities ON products.product_id = quantities.product_id WHERE quantities.color_name_id = ? AND quantities.product_id = ? ORDER BY size_id ASC";
+    $sql = "SELECT quantities.* FROM products JOIN quantities ON products.product_id = quantities.product_id WHERE quantities.color_name_id = ? 
+    AND quantities.product_id = ? 
+    AND quantities.quantity > 0 ORDER BY size_id ASC";
     return pdo_query($sql, $color_name_id, $product_id);
 }
 function select_all_color()
