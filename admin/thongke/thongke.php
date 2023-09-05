@@ -33,10 +33,10 @@
 <div class="main">
     <div class="main-content dashboard">
         <a href="./index.php?act=ngay" class="mb-4">
-            <button class="btn btn-primary">thống kê ngày</button>
+            <button class="btn btn-primary">Thống kê ngày</button>
         </a>
         <a href="./index.php?act=thang" class="mb-4">
-            <button class="btn btn-primary">thống kê tháng</button>
+            <button class="btn btn-primary">Thống kê tháng</button>
         </a>
         <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> ">
             <?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?>
@@ -45,29 +45,19 @@
             <thead>
                 <!-- <tr class="table-primary"> -->
                 <tr>
-                    <th>tên sản phẩm</th>
-                    <th>mã sản phẩm</th>
-                    <th>đơn vị tính</th>
-                    <th>số lượng bán</th>
-                    <th>số lượng hàng tồn kho</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Số lượng bán</th>
+                    <th>Số lượng hàng tồn kho</th>
                     <th>Giá nhập</th>
-                    <th>mã giảm giá</th>
+                    <th>Mã giảm giá</th>
                     <th>Thành tiền</th>
                     <th>Doanh thu</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    // $sum_order=sum_product_order();
-                    $status=bang();
-                    foreach ($status as $statu) {
-                        $product_id=$statu['product_id'];
-                        $order_id=$statu['order_id'];
-                        $quantity=$statu['quantity'];
-                        $status_id=$statu['status_id'];
-                        insert_status_order_product($product_id,$order_id,$quantity,$status_id);
-
-                    }
+  
                     
                     
                     $sum_quantity_product=sum_product_quantities();
@@ -84,15 +74,21 @@
                                  
                 ?>
                     <tr>
+                        <?php
+
+                        ?>
                         <td><?php if($name= select_all_product_by_d($x)) echo $name['product_name']?></td>
                         <td><?php if($name= select_all_product_by_d($x)) echo $name['product_code']?></td>
-                        <td>sản phẩm</td>
                         <td><?php  if(isset($hangban['soluongban'])){echo $hangban['soluongban'];}else{echo "0";}?></td>
-                        <td><?php $hangton=sum_product_quantities_by_id($quan['product_id']); echo $hangton['soluongton'];?></td>
-                        <td><?php if($name= select_all_product_by_d($x)) echo $name['product_price']?></td>
+                        <td>
+                        <?php   $hangton=sum_product_quantities_by_id($quan['product_id']);
+                                echo $hangton['soluongton'];       
+                        ?>
+                        </td>
+                        <td><?php if($name= select_all_product_by_d($x)) echo formatMoney($name['product_price'])?></td>
                         <td><?php if($name= select_all_product_by_d($x)) echo $name['discount']?></td>
-                        <td><?php $price=($name['product_price']-($name["product_price"]*($name['discount']/100))); if($name= select_all_product_by_d($x)) echo $price ?></td>
-                        <td><?php if(isset($hangban['soluongban'])){$doanhthu =($hangban['soluongban'] * $price); echo $doanhthu;}else{echo '0';}?></td>
+                        <td><?php $price=($name['product_price']-($name["product_price"]*($name['discount']/100))); if($name= select_all_product_by_d($x)) echo formatMoney($price) ?></td>
+                        <td><?php if(isset($hangban['soluongban'])){$doanhthu =($hangban['soluongban'] * $price); echo formatMoney($doanhthu);}else{echo '0';}?></td>
 
 
                         
@@ -107,8 +103,8 @@
                         extract($total);
                     
                 ?>
-                <td><h3>tổng doanh thu :</h3></td>
-                <td> <?php echo $tong?></td>
+                <td><h3>Tổng doanh thu :</h3></td>
+                <td> <?php echo formatMoney($tong)?></td>
                 <td><?php ?></td>
                 <?php
                 //   }

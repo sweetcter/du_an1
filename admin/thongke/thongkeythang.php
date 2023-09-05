@@ -33,7 +33,7 @@
 <div class="main">
     <div class="main-content dashboard">
         <a href="./index.php?act=thongke" class="mb-4">
-            <button class="btn btn-primary">thống kê theo danh sách</button>
+            <button class="btn btn-primary">Thống kê theo danh sách</button>
         </a>
         <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> ">
             <?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?>
@@ -116,8 +116,14 @@ foreach ($doanhthu as $key) {
             top:0
           }
         },
+  
         tooltips:{
-          enabled:true
+          enabled:true,
+          callbacks: {
+          label: function(tooltipItem, data) {
+              return tooltipItem.yLabel.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+          }
+      }
         }
       }
     });

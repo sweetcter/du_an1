@@ -33,7 +33,7 @@
 <div class="main">
     <div class="main-content dashboard">
         <a href="./index.php?act=thongke" class="mb-4">
-            <button class="btn btn-primary">thống kê theo danh sách</button>
+            <button class="btn btn-primary">Thống kê theo danh sách</button>
         </a>
         <span class="<?= isset($_COOKIE['notification']) ? "noti-success" : "" ?> ">
             <?= $notification = isset($_COOKIE['notification']) ? $_COOKIE['notification'] : ""; ?>
@@ -98,7 +98,7 @@ foreach ($doanhthu as $key) {
       options:{
         title:{
           display:true,
-          text:'thống kê doanh thu theo ngày',
+          text:'Thống kê doanh thu theo ngày',
           fontSize:25
         },
         legend:{
@@ -117,7 +117,12 @@ foreach ($doanhthu as $key) {
           }
         },
         tooltips:{
-          enabled:true
+          enabled:true,
+          callbacks: {
+          label: function(tooltipItem, data) {
+              return tooltipItem.yLabel.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+          }
+      }
         }
       }
     });
