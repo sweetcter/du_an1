@@ -140,3 +140,8 @@ function update_completed($time, $order_id)
     $sql = "UPDATE orders SET completed_at = ? WHERE order_id = ?";
     pdo_execute($sql, $time, $order_id);
 }
+function add_purchased_orders($customer_id, $product_id, $size_id, $color_name_id,$quantity, $created_at, $completed_at, $customer_email, $customer_phone_number, $total_price){
+    $sql = "INSERT INTO purchased_orders(customer_id, product_id, size_id, color_name_id,quantity, created_at, completed_at, customer_email, customer_phone_number, total_price) 
+    VALUES (?,?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql,$customer_id, $product_id, $size_id, $color_name_id,$quantity, $created_at, $completed_at, $customer_email, $customer_phone_number, $total_price);
+}

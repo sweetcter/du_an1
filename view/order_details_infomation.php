@@ -182,7 +182,9 @@
                                             <span class="status_name" status="<?= $status_id ?>"> <?= $status_result['status'] ?></span>
                                         </div>
                                     </div>
-                                    <button type="button" order_id="<?= $value['order_id'] ?>" style="display:<?= $status_id == 1 ? "block" : "none"; ?>" class="cancel_order">Hủy đơn hàng</button>
+                                    <?php if ($status_id != 1) : ?>
+                                        <button type="button" order_id="<?= $value['order_id'] ?>" class="cancel_order">Hủy đơn hàng</button>
+                                    <?php endif ?>
                                 </div>
                             <?php endforeach ?>
                         </div>
@@ -294,7 +296,13 @@
                                             <span class="status_name" status="<?= $status_id ?>" style="color: <?= $status_id == 1 || $status_id == 6 ? "#e03033;" : "#26820b;"; ?>"> <?= $status_result['status'] ?></span>
                                         </div>
                                     </div>
-                                    <button type="button" order_id="<?= $value['order_id'] ?>" style="display:<?= $status_id == 1 ? "block" : "none"; ?>" class="cancel_order">Hủy đơn hàng</button>
+                                    <?php if ($status_id == 1) : ?>
+                                        <button type="button" order_id="<?= $value['order_id'] ?>" class="cancel_order">Hủy đơn hàng</button>
+                                    <?php endif ?>
+                                    <?php if ($status_id == 3) : ?>
+                                        <button type="button" order_id="<?= $value['order_id'] ?>" class="receive">Đã nhận được hàng</button>
+                                    <?php endif ?>
+
                                 </div>
                             <?php endforeach ?>
                         </div>

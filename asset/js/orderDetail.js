@@ -94,12 +94,14 @@ $(document).ready(function () {
         customerNote: customerNote.val(),
         pay_methods: paymenMethod,
       },
+      dataType: "json",
       success: function (responve) {
+        console.log(responve);
         reloadShowQuantity();
-        if(responve){
+        if (typeof responve === "number") {
           $("#payMenttotalPrice").val(responve);
           $("#startPayment").click();
-        }else {
+        } else {
           alert("Đặt hàng thành công, đang xử lý đơn hàng");
           setTimeout(() => {
             location.href = `/du_an1/order_details_infomation`;
@@ -137,15 +139,31 @@ $(document).ready(function () {
       });
     }
   });
-  
-  // let status = $(".status_name").attr("status");
-  // const that = this;
-  // if (status === "1" || status === "6") {
-  //   $(".status_name").css("color", "#dd0d0d");
-  // } else {
-  //   $(".status_name").css("color", "#2eab09");
-  // }
-
+  $(".receive").on("click", function () {
+    const that = this;
+    let ischeck = confirm(
+      "Bạn xác nhận đã nhận được hàng ?,sau khi xác nhận không thể hoàn trả lại."
+    );
+    let orderId = $(that).attr("order_id");
+    console.log(orderId);
+    if (ischeck) {
+      $.ajax({
+        type: "POST",
+        url: "../../du_an1/index.php?action=receive",
+        data: {
+          orderId: orderId,
+        },
+        success: function (responve) {
+          // console.log(responve);
+          console.log("Xác nhận đơn hàng thành công");
+          location.reload();
+        },
+        error: function (error) {
+          console.log(error);
+        },
+      });
+    }
+  });
   let isCheckGetCustomer = false;
   $("#getCustomerInfo").on("click", function () {
     if (isCheckGetCustomer) {

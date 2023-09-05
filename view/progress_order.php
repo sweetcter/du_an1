@@ -31,7 +31,7 @@ if (empty($customerId)) {
 
 foreach ($_SESSION['cart'] as $each) {
     add_order_product($max_order_id_result, $each['product_id'], $each['sizeId'], $each['colorNameId'], $each['quantity']);
-    quantity_decrease($each['quantity'],$each['product_id'],$each['colorNameId'],$each['sizeId']);
+    quantity_decrease($each['quantity'], $each['product_id'], $each['colorNameId'], $each['sizeId']);
 }
 if ($customerId == null) {
     $order_result = select_all_order_product_by_id($max_order_id_result);
@@ -41,7 +41,8 @@ if ($customerId == null) {
 unset($_SESSION['cart']);
 unset($_SESSION['count_cart']);
 
-if($pay_methods == "3"){
-   echo $total_cart_discount_price;
+if ($pay_methods == "3") {
+    echo json_encode($total_cart_discount_price);
+} else {
+    echo json_encode("nothing");
 }
-
