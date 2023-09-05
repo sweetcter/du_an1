@@ -95,10 +95,12 @@
         </div>';
       }
       ?>
+
       <div style="text-align: center" class="to_dot">
+      <?php 
+      foreach ($dsBanner as $bn) { ?>
         <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+      <?php }?>
       </div>
     </div>
 
@@ -107,23 +109,23 @@
     <nav>
       <div class="div1">
         <div class="div1_1 div1_1_cart">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/bannerroww1.png" alt="" />
+          <img src="../<?= $ROOTt_URL ?>/asset/images/ECOM_600x950_2.jpg" alt="" />
           <div class="xemngay">
-            <button><a href="#">xem ngay</a></button>
+            <button><a href="/du_an1/sale-fashion">xem ngay</a></button>
           </div>
         </div>
 
         <div class="div1_1 div1_1_cart">
           <img src="../<?= $ROOTt_URL ?>/asset/images/bannerrow2.jpg" alt="" />
           <div class="xemngay">
-            <button><a href="#">xem ngay</a></button>
+            <button><a href="/du_an1/news-fashion">xem ngay</a></button>
           </div>
         </div>
 
         <div class="div1_1 div1_1_cart">
-          <img src="../<?= $ROOTt_URL ?>/asset/images/bannerroww2.webp" alt="" />
+          <img src="../<?= $ROOTt_URL ?>/asset/images/ECOM_600x950_copy_2.jpg" alt="" />
           <div class="xemngay">
-            <button><a href="#">xem ngay</a></button>
+            <button><a href="/du_an1/sale-fashion">xem ngay</a></button>
           </div>
         </div>
       </div>
@@ -251,7 +253,7 @@
   </div>
 
   <div class="title_rowgird font_roboto">
-    <h1>Thời trang</h1>
+    <h1 style="font-size: 40px;">TIN THỜI TRANG</h1>
   </div>
 
   <div class="row_girdx" style="gap: 20px;">
@@ -410,11 +412,11 @@
         slideIndex = 1;
       }
       for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+        dots[i].className = dots[i].className.replace("active", "");
       }
       slides[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 2000); // Change image every 2 seconds
+      setTimeout(showSlides, 3000); // Change image every 2 seconds
     }
     showSlides();
 

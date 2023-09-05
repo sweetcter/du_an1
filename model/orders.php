@@ -43,7 +43,8 @@ function select_status_by_id($status_id)
     $sql = "SELECT * FROM status WHERE status_id = ?";
     return pdo_query_one($sql, $status_id);
 }
-function select_all_status(){
+function select_all_status()
+{
     $sql = "SELECT * FROM status";
     return pdo_query($sql);
 }
@@ -57,13 +58,16 @@ function select_order_by_id($order_id)
     $sql = "SELECT * FROM orders WHERE order_id = ?";
     return pdo_query_one($sql, $order_id);
 }
-function orders_update($status_id,$order_id){
+function orders_update($status_id, $order_id)
+{
     $sql = "UPDATE orders SET status_id = ? WHERE order_id = ?";
-    pdo_execute($sql,$status_id,$order_id);
+    pdo_execute($sql, $status_id, $order_id);
 }
 function select_all_order_product_by_order_id($order_id)
 {
-    $sql = "SELECT * FROM order_product WHERE order_id = ?";
+    $sql = "SELECT orders.*,order_product.* FROM orders 
+    JOIN order_product ON orders.order_id = order_product.order_id 
+    WHERE orders.order_id = ?";
     return pdo_query($sql, $order_id);
 }
 function select_all_order_product_by_id($order_id)
@@ -131,9 +135,10 @@ function delete_orders_by_order_id($order_id)
     $sql = "DELETE FROM orders WHERE order_id = ?";
     pdo_execute($sql, $order_id);
 }
-function update_completed($time,$order_id){
+function update_completed($time, $order_id)
+{
     $sql = "UPDATE orders SET completed_at = ? WHERE order_id = ?";
-    pdo_execute($sql,$time,$order_id);
+    pdo_execute($sql, $time, $order_id);
 }
 
 function select_all_product_by_d($product_id)

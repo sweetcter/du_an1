@@ -444,11 +444,8 @@ background-color: #fff;
 }
 .title_rowgird > h1{
     font-weight: 900;
-
+    font-size: 40px;
 }
-
-
-
 .div_bottomrowgird{
     width: 100%;
     display: grid;

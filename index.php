@@ -32,7 +32,12 @@ switch ($action) {
   case 'female-fashion':
     require ".$VIEW_URL/female-fashion.php";
     break;
-
+  case 'news-fashion':
+    require ".$VIEW_URL/news-fashion.php";
+    break;
+  case 'sale-fashion':
+    require ".$VIEW_URL/sale-fashion.php";
+    break;
     // --------Gio Hang-----------  
   case 'bill':
     require ".$VIEW_URL/bill.php";
@@ -237,6 +242,9 @@ switch ($action) {
     break;
   case 'cancel_order':
     require ".$VIEW_URL/cancel_order.php";
+    break;
+  case 'thanks':
+    require ".$VIEW_URL/thanks.php";
     break;
   default:
     echo "Không có gì";
