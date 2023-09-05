@@ -110,7 +110,7 @@
       <img src="../../du_an1/asset/images/1920x450_banner_cate_outlet_t823_1_.png" alt="" class="main-banner-img" />
     </div>
 
-    <h3 class="category-title">Thời Trang Mới</h3>
+    <h3 class="category-title">ƯU ĐÃI ĐỒNG GIÁ</h3> 
 
     <div class="functions">
       <div class="filter-function">
@@ -136,7 +136,7 @@
     <div class="main-colums">
       <!-- block filter -->
 
-      <?php require "./includes/filter_product_nu.php" ?>
+      <?php require "./includes/filter_product_sale.php" ?>
 
       <div class="product-colum">
         <div class="product-row row-col-4">
