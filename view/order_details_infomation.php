@@ -280,7 +280,7 @@
                                             } else if ($value['pay_methods'] == 2) {
                                                 echo "Thanh toán Bằng cách chuyển khoản";
                                             } else {
-                                                echo "Thanh toán online";
+                                                echo "Thanh toán MOMO";
                                             }
                                             ?>
                                         </span>

@@ -112,9 +112,11 @@
         Bộ lọc
         <i class="fa-solid fa-filter"></i>
       </div>
+      <?php  // Lấy tổng số sản phẩm
+          $category_id = 1;
+          $totalProducts = count_all_products($category_id);?>
       <div class="view-function">
-
-        Sản phẩm
+      <strong><?php echo $totalProducts?></strong> sản phẩm 
       </div>
       <div class="sort-function">
         Sắp xếp
@@ -143,9 +145,7 @@
 
           // Lấy dữ liệu sản phẩm cho trang hiện tại
 
-          // Lấy tổng số sản phẩm
-          $category_id = 1;
-          $totalProducts = count_all_products($category_id);
+         
           // var_dump($totalProducts);
 
           // Tính tổng số trang dựa trên tổng số sản phẩm và số sản phẩm trên mỗi trang
@@ -179,7 +179,11 @@
                 <span class="product-oldPrice"><?= $product_vn_price ?></span>
               </div>
               <span class="product-newProduct">
-                <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
+                <?php if ($value['product_status']==1) {?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
+                <?php }elseif($value['product_status']==2){?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/sale-sinh-nhat-routine-10-tuoi.png" alt="" />
+                <?php }?> 
               </span>
               <span class="product-discount"> -<?= $value['discount']; ?>% </span>
               <!-- Select color by product -->

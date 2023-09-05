@@ -11,10 +11,10 @@ function add_images_product($images, $color_name_id, $product_id)
     $sql = "INSERT INTO images(image_url,color_name_id,product_id) VALUES(?,?,?)";
     pdo_execute($sql, $images, $color_name_id, $product_id);
 }
-function selectAll_product($sortDescending)
+function selectAll_product($sortDescending,$product_status)
 {
-    $sql = "SELECT * FROM products ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC");
-    return pdo_query($sql);
+    $sql = "SELECT * FROM products WHERE product_status = ? ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC");
+    return pdo_query($sql,$product_status);
 }
 function select_product_color_by_id($product_id)
 {
@@ -106,6 +106,11 @@ function select_size_by_id($size_Id)
 function select_home_product($sortDescending, $category_id)
 {
     $sql = "SELECT * FROM products WHERE category_id = ? ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC") . " LIMIT 8";
+    return pdo_query($sql, $category_id);
+}
+function select_home_top10_product($sortDescending, $category_id)
+{
+    $sql = "SELECT * FROM products WHERE view > 1 AND category_id = ? ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC") . " LIMIT 10";
     return pdo_query($sql, $category_id);
 }
 function count_home_product($category_id)
@@ -394,11 +399,21 @@ function count_all_products($category_id)
     $sql = "SELECT COUNT(*) FROM products WHERE category_id = ?";
     return pdo_query_value($sql,$category_id);
 }
+function count_allnews_products($product_status)
+{
+    $sql = "SELECT COUNT(*) FROM products WHERE product_status = ?";
+    return pdo_query_value($sql,$product_status);
+}
 
 function selectAll_product_phantrang($category_id, $sortDescending, $start, $limit)
 {
     $sql = "SELECT * FROM products WHERE category_id = ? ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC") . " LIMIT $start, $limit";
     return pdo_query($sql, $category_id);
+}
+function selectAll_news_product_phantrang($sortDescending, $start, $limit,$product_status)
+{
+    $sql = "SELECT * FROM products WHERE product_status = ? ORDER BY product_id " . ($sortDescending ? "DESC" : "ASC") . " LIMIT $start, $limit";
+    return pdo_query($sql,$product_status);
 }
 function check_color_name_exist($color_name)
 {

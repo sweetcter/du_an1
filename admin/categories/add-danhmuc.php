@@ -1,5 +1,5 @@
 
-<?php require "./header.php " ?>
+<?php require "./header.php" ?>
 
 <!--   Phần content -->
 
