@@ -140,3 +140,58 @@ function update_completed($time, $order_id)
     $sql = "UPDATE orders SET completed_at = ? WHERE order_id = ?";
     pdo_execute($sql, $time, $order_id);
 }
+
+function select_all_product_by_d($product_id)
+{
+    $sql = "SELECT * FROM products where product_id=$product_id";
+    return pdo_query_one($sql);
+}
+
+
+function sum_product_quantities()
+{
+    $sql="SELECT SUM(quantity) as soluongton, product_id FROM quantities GROUP BY product_id";
+    return pdo_query($sql);
+}
+
+function sum_product_quantities_by_id($product_id){
+    $sql="SELECT SUM(quantity) as soluongton, product_id FROM quantities where product_id=$product_id GROUP BY product_id";
+    return pdo_query_one($sql);
+}
+function total(){
+    $sql='SELECT SUBSTR(created_at, 6, 2) as thang,SUBSTR(created_at, 9, 2) as ngay, SUM(total_price) as tong, created_at FROM `orders`';
+    return pdo_query_one($sql);
+}
+
+function doanhthu_ngay(){
+    $sql='SELECT SUBSTR(created_at, 6, 2) as thang,SUBSTR(created_at, 9, 2) as ngay,total_price,order_id,sum(total_price) as doanhthungay FROM `orders` group by SUBSTR(created_at, 9, 2)';
+    return pdo_query($sql);
+}
+
+function doanhthu_thang(){
+    $sql='SELECT SUBSTR(created_at, 6, 2) as thang,SUBSTR(created_at, 9, 2) as ngay,total_price,order_id,sum(total_price) as doanhthuthang FROM `orders` group by SUBSTR(created_at, 6, 2)';
+    return pdo_query($sql);
+}
+
+function bang()
+{
+
+    $sql="SELECT product_id,order_product.order_id,quantity,orders.status_id FROM order_product JOIN orders ON orders.order_id = order_product.order_id WHERE status_id=4 or status_id=5";
+    return pdo_query($sql);
+}
+
+
+
+
+function insert_status_order_product($product_id,$order_id,$quantity,$status_id)
+{
+    $sql="INSERT INTO `status_order_product` (`product_id`, `order_id`, `quantity`, `status_id`) VALUES ('$product_id', '$order_id', '$quantity', '$status_id')";
+    pdo_execute($sql);
+}
+
+
+function sum_product_order($product_id)
+{
+    $sql="SELECT SUM(quantity) as soluongban, product_id FROM `status_order_product` WHERE product_id = $product_id GROUP BY product_id;";
+    return pdo_query_one($sql);
+}

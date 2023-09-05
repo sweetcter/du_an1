@@ -23,6 +23,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
 
 </head>
@@ -37,6 +42,11 @@
             object-fit: cover;
             height: auto;
           }
+
+          .error small{
+            color: red;
+          }
+        
         </style>
       </a>
       <div class="sidebar-close" id="sidebar-close">
@@ -95,7 +105,7 @@
           </a>
         </li>
         <li>
-          <a href="../..<?= $ROOT_URL ?>/admin/index.php?act=view_product" style="text-decoration: none;">
+          <a href="../..<?= $ROOT_URL ?>/admin/index.php?act=thongke" style="text-decoration: none;">
             <i class="bx bxs-component"></i>
             <span>Thống kê</span>
           </a>
@@ -112,3 +122,106 @@
       </ul>
     </div>
   </div>
+  <script>
+        function  showError(input, message) 
+{
+    let parent = input.parentElement;
+    let small = parent.querySelector('small');
+    parent.classList.add('error')
+    small.innerText = message
+}
+
+function  showSuccess(input) 
+{
+    let parent = input.parentElement;
+    let small = parent.querySelector('small');
+    parent.classList.remove('error')
+    small.innerText = ''
+}
+
+
+function checkRong(listInput) 
+{
+    let isEmpty = false
+    listInput.forEach(input => {
+       input.value = input.value.trim()
+       
+       if(!input.value){
+        isEmpty = true;
+        showError(input, "trường này không được để trống.")
+
+       }else{
+        showSuccess(input)
+       }
+    });
+
+    return isEmpty
+}
+
+
+
+
+// check email
+function  checkEmail(input) 
+{
+    const regexEmail=  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+
+    input.value = input.value.trim()
+
+    let isEmail = !regexEmail.test(input.value)
+
+    if(regexEmail.test(input.value)){
+        showSuccess(input);
+    }else{
+        showError(input, "email không hợp lệ.")
+    }
+    return isEmail;
+}
+
+// check lớn hơn 4 ký tự
+
+function  checkLength(input) {
+    input.value = input.value.trim()
+
+    if(input.value.length < 5){
+        showError(input, "trường này không được nhỏ hơn 5 ký tự.")
+        return true
+    }
+
+
+    showSuccess(input)
+    return false
+}
+
+
+function validateForm(){
+    let name = document.querySelector('#name_category');
+  let x = document.forms["form_category"]["name_category"].value;
+  if (x == "") {
+    showError(name, "trường này không dược bỏ trống")
+    return false;
+  }else if(x.length < 5){
+    showError(name, "trường này không nhỏ hơn 5 ký tự")
+    return false;
+  }else{
+    showSuccess(name)
+    return true;
+  }
+}
+
+function validateFormx(){
+    let name = document.querySelector('#name_category');
+  let x = document.forms["form_category_update"]["name_category"].value;
+  if (x == "") {
+    showError(name, "trường này không dược bỏ trống")
+    return false;
+  }else if(x.length < 5){
+    showError(name, "trường này không nhỏ hơn 5 ký tự")
+    return false;
+  }else{
+    showSuccess(name)
+    return true;
+  }
+}
+  </script>

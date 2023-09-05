@@ -94,7 +94,7 @@
    
     </style>
     <div class="account">
-        <form action="" method="post">
+        <form action="" method="post" name='form_category_update' onsubmit="return validateFormx()">
             <div class="title">
                 <h3>cap nhat danh mục</h3>
             </div>
@@ -105,8 +105,9 @@
                 // extract($list_one);
             
             ?>
-            <div class="danhmuc opa">
+            <div class="danhmuc opa error">
                 <input type="text" name="name_category" value="<?php echo $list_one['name_category']; ?>" checked placeholder="tên danh mục">
+                <small style=' float:left;margin-bottom:10px;'></small>
             </div>
             <div class="themmoi">
                 <input type="hidden" name="id_category" value="<?php echo $list_one['id_category'] ?>">

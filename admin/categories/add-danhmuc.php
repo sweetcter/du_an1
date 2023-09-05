@@ -93,18 +93,19 @@
    
     </style>
     <div class="account">
-        <form action="" method="post">
+        <form action="" method="post" name='form_category' onsubmit="return validateForm()">
             <div class="title">
                 <h3>Thêm mới danh mục</h3>
             </div>
             <div class="maloai opa">
                 <input type="text" checked placeholder="mã danh mục" >
             </div>
-            <div class="danhmuc opa">
-                <input type="text" name="name_category" checked placeholder="tên danh mục">
+            <div class="danhmuc opa error">
+                <input type="text" name="name_category" id='name_category' checked placeholder="tên danh mục">
+                <small style=' float:left;margin-bottom:10px;'></small>
             </div>
             <div class="themmoi">
-                <input class="opa" type="submit" name= "addCategory" value="thêm mới"></input>
+                <input  class="opa" type="submit" name= "addCategory" value="thêm mới"></input>
                 <input class="opa" type="reset" value="nhập lại"></input>
                 <a class="opa" href="<?= $ROOTt_URL?>/admin/listCategory"><input type="button" value="danh sách"></a>
             </div>
@@ -128,5 +129,41 @@
     </div>
 </div>
 
+<script>
 
+
+// $(document).ready(function() {
+//   $('#tabs > ul').tabs({ fx: { opacity: 'toggle' } });
+//   $('#featuredvid > ul').tabs();
+// });
+
+// function checkRongphantu(input) 
+// {
+//     let isEmpty = false
+    
+//        input.value = input.value.trim()
+       
+//        if(!input.value){
+//         isEmpty = true;
+//         showError(input, "trường này không được để trống.")
+
+//        }else{
+//         showSuccess(input)
+//        }
+
+
+//     return isEmpty
+// }
+// var form_category = document.querySelector('#form_category');
+// var name_category = document.querySelector('#name_category');
+// // console.log(form_category);
+
+
+// form_category.addEventListener('submit',function (e) {
+//     e.preventDefault();
+//     checkRongphantu(name_category);
+// })
+
+</script>
 <div class="overlay"></div>
+<?php require "./footer.php" ?>
