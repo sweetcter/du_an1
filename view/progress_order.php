@@ -40,3 +40,9 @@ if ($customerId == null) {
 }
 unset($_SESSION['cart']);
 unset($_SESSION['count_cart']);
+
+if ($pay_methods == "3") {
+    echo json_encode($total_cart_discount_price);
+} else {
+    echo json_encode("nothing");
+}

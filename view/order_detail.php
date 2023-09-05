@@ -81,12 +81,14 @@
   </div>
 </div>
 <!--  favoriteProduct-->
-<?php require "./includes/favorite_product.php" ?>
+<?php require ".$INCLUDES_URL/favorite_product.php" ?>
 <!-- end -->
-<?php require "./includes/cart_modal.php" ?>
+<?php require ".$INCLUDES_URL/cart_modal.php" ?>
 <?php require ".$INCLUDES_URL/delete_cart_confirm.php" ?>
 
-<?php require "./includes/header_nav.php" ?>
+<?php require ".$INCLUDES_URL/header_nav.php" ?>
+<?php require ".$INCLUDES_URL/momo_payment.php" ?>
+
 <ul class="breadcrumbs">
   <li>Trang chủ /</li>
   <li>Giỏ hàng</li>
@@ -244,26 +246,26 @@
                 </div>
 
                 <div class="form-check payment-check">
-                  <input class="form-check-input" type="radio" value="1" name="pttt" id="flexRadioDefault1" checked>
+                  <input class="form-check-input" type="radio" value="1" name="payment" id="flexRadioDefault1" checked>
                   <label class="form-check-label flexRadioDefault" for="flexRadioDefault1">
                     Thanh toán khi nhận hàng
                   </label>
                 </div>
-                <div class="form-check payment-check">
+                <!-- <div class="form-check payment-check">
                   <input class="form-check-input" type="radio" value="2" name="pttt" id="flexRadioDefault2">
                   <label class="form-check-label flexRadioDefault" for="flexRadioDefault2">
                     Thanh toán bằng chuyển khoản
                   </label>
-                </div>
+                </div> -->
                 <div class="form-check payment-check paypal">
-                  <input class="form-check-input" type="radio" value="3" name="pttt" id="flexRadioDefault3">
+                  <input class="form-check-input" type="radio" value="3" name="payment" id="flexRadioDefault3">
                   <label class="form-check-label flexRadioDefault" for="flexRadioDefault3">
-                    Thanh toán online
+                    Thanh toán MOMO
                   </label>
                   <!-- <img src="../../du_an1/asset/images/payment-cards.png" alt=""> -->
                 </div>
               </div>
-              <button type="button" class="site-btn" id="btn-pay" style="display:<?= isset($_SESSION['cart'])?"block":"none"; ?>">Thanh toán <span class="btn-pay"><?= $total_new_price ?></span></button>
+              <button type="button" class="site-btn" id="btn-pay" style="display:<?= isset($_SESSION['cart']) ? "block" : "none"; ?>">Thanh toán <span class="btn-pay"><?= $total_new_price ?></span></button>
             </div>
           </div>
         </div>

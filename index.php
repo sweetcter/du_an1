@@ -279,6 +279,9 @@ switch ($action) {
   case 'cancel_order':
     require ".$VIEW_URL/cancel_order.php";
     break;
+  case 'thanks':
+    require ".$VIEW_URL/thanks.php";
+    break;
   default:
     echo "Không có gì";
     break;
