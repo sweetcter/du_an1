@@ -172,6 +172,16 @@ if (isset($_SESSION['username']) && ($_SESSION['username']['role'] == 1)) {
         case 'change_status':
             require "./bill/change_status.php";
             break;
+
+        case 'thongke':
+            require_once "./thongke/thongke.php";
+            break;
+        case 'ngay':
+            require_once "./thongke/thongkengay.php";
+            break;
+        case 'thang':
+            require_once "./thongke/thongkeythang.php";
+            break;
         default:
             echo "Không có gì ";
             echo "admin";
