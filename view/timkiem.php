@@ -98,10 +98,10 @@
       </div>
     </div>
 
-    <div class="main-colums">
+    <div class="main-colums"> 
       <!-- block filter -->
 
-  <?php  require "./includes/filter_product_nam.php"?>
+  <?php  require "./includes/filter_product_all.php"?>
 
       <div class="product-colum">
         <div class="product-row row-col-4">
@@ -148,7 +148,11 @@
                 <span class="product-oldPrice">499.000₫</span>
               </div>
               <span class="product-newProduct">
-                <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
+                <?php if ($value['product_status']==1) {?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
+                <?php }elseif($value['product_status']==2){?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/sale-sinh-nhat-routine-10-tuoi.png" alt="" />
+                <?php }?> 
               </span>
               <span class="product-discount"> -2% </span>
               <!-- Select color by product -->
@@ -175,53 +179,73 @@
   </main>
 
   <div class="product-suggest">
-    <h3 class="product-suggest-title">
-      GỢI Ý CHO BẠN: CÁC SẢN PHẨM ĐƯỢC QUAN TÂM NHẤT
-    </h3>
-    <div class="my-slickSilder">
-      <?php $product_result = select_home_product(true,2); ?>
-      <?php foreach ($product_result as $key => $value) : ?>
-        <!-- start item -->
-        <div class="product-item">
-          <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
-            <img src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>" alt="" class="product-image" />
-          </a>
-          <div class="product-title">
-            <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
-              <?= $value['product_name'] ?>
+        <h3 class="product-suggest-title">
+          GỢI Ý CHO BẠN: CÁC SẢN PHẨM ĐƯỢC QUAN TÂM NHẤT
+        </h3>
+        <div class="my-slickSilder">
+        <?php $product_result = select_home_product(true,1); ?>
+        <?php foreach ($product_result as $key => $value) : ?>
+          <!-- start item -->
+          <div class="product-item">
+            <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">
+              <img
+                src="../<?= $ROOT_URL ?><?= $value['main_image_url'] ?>"
+                alt=""
+                class="product-image"
+              />
             </a>
-          </div>
-          <div class="product-price">
-            <?php
-            $locale = 'vi_VN';
-            $currency = $value['product_price'];
-            $discount = $currency - ($currency * $value['discount'] / 100);
-            $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
-            $product_vn_price = $formatter->format($currency);
-            $discount_price = $formatter->format($discount);
-            ?>
-            <span class="product-newPrice"><?= $discount_price ?></span>
-            <span class="product-oldPrice"><?= $product_vn_price ?></span>
-            <span class="product-discount"> -<?= $value['discount']; ?>% </span>
-          </div>
-          <?php $product_color_result = select_product_color($value['product_code']); ?>
-  
-          <div class="product-color-list">
-            <?php foreach ($product_color_result as $value) : ?>
-              <a href="#" class="product-color">
-                <div class="product-color-child">
-                  <img src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>" alt="" class="product-color-img" />
-                </div>
+            <div class="product-title">
+              <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-name">
+              <?= $value['product_name'] ?>
               </a>
+              <i class="fa-regular fa-heart product-icon"></i>
+            </div>
+            <div class="product-price">
+            <?php
+                $locale = 'vi_VN';
+                $currency = $value['product_price'];
+                $discount = $currency - ($currency * $value['discount'] / 100);
+                $formatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
+                $product_vn_price = $formatter->format($currency);
+                $discount_price = $formatter->format($discount);
+                ?>
+                <span class="product-newPrice"><?= $discount_price ?></span>
+                <span class="product-oldPrice"><?= $product_vn_price ?></span>
+                <span class="product-discount"> -<?= $value['discount']; ?>% </span>
+            </div>
+            <span class="product-newProduct">
+                <?php if ($value['product_status']==1) {?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
+                <?php }elseif($value['product_status']==2){?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/sale-sinh-nhat-routine-10-tuoi.png" alt="" />
+                <?php }?> 
+                </span>
+            <span class="product-newProduct">
+                <?php if ($value['product_status']==1) {?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
+                <?php }elseif($value['product_status']==2){?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/sale-sinh-nhat-routine-10-tuoi.png" alt="" />
+                <?php }?> 
+                </span>
+            <?php $product_color_result = select_product_color($value['product_code']); ?>
+            <div class="product-color-list">
+            <?php foreach ($product_color_result as $value) : ?>
+              <div class="product-color">
+                <div class="product-color-child">
+                  <img
+                    src="../<?= $ROOT_URL ?><?= $value['color_image'] ?>"
+                    alt=""
+                    class="product-color-img"
+                  />
+                </div>
+              </div>
+              <?php endforeach ?>
+            </div>
           </div>
-        <?php endforeach ?>
+          <?php endforeach ?>
         </div>
-      <?php endforeach ?>
-    </div>
-    <?php require "./includes/footer.php" ?>
-  </div>
-</div>
-
+      </div>
+<?php require "./includes/footer.php"; ?>
 
 
 

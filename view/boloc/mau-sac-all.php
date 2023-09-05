@@ -98,25 +98,16 @@
 
     <!-- End nav -->
     <div class="wrapper">
-      <ul class="breadcrumbs">
-        <li>Trang chủ /</li>
-        <li>Thời trang Nam</li>
-      </ul>
+    <ul class="breadcrumbs">
+      <li>Trang chủ /</li>
+      <li>Kết quả tìm kiếm</li>
+    </ul>
 
       <main id="main-content">
-      <div class="main-banner">
-            <img src="../../du_an1/asset/images/quan-ao-thoi-trang-nam.jpg" alt="" class="main-banner-img" />
-        </div>
-
-        <h3 class="category-title">Thời Trang Nam</h3>
         <div class="functions">
           <div class="filter-function">
             Bộ lọc
             <i class="fa-solid fa-filter"></i>
-          </div>
-          <div class="view-function">
-            <strong>363</strong>
-            Sản phẩm
           </div>
           <div class="sort-function">
             Sắp xếp
@@ -131,13 +122,13 @@
         <div class="main-colums">
           <!-- block filter -->
 
-          <?php require "./includes/filter_product_nam.php" ?>  
+          <?php require "./includes/filter_product_all.php" ?>  
           <div class="product-colum">
             <div class="product-row row-col-4">
               <!-- start item -->
            <?php 
                 $color_id = $_GET['color_type_id'];
-                $filter = getProductsByColor($color_id,0);
+                $filter = getProductsByColorAll($color_id);
            ?> 
           <?php foreach ($filter as $key => $value) : ?>
               <div class="product-item">
@@ -173,11 +164,7 @@
                 </div>
               
                 <span class="product-newProduct">
-                <?php if ($value['product_status']==1) {?>
-                    <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
-                <?php }elseif($value['product_status']==2){?>
-                    <img src="../<?= $ROOT_URL ?>/asset/images/sale-sinh-nhat-routine-10-tuoi.png" alt="" />
-                <?php }?> 
+                  <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
                 </span>
                 <span class="product-discount"> -<?= $value['discount']; ?>% </span> 
                 <?php $product_color_result = select_product_color($value['product_code']); ?>
@@ -217,7 +204,7 @@
         </h3>
         <div class="my-slickSilder">
         <?php $product_result = select_home_product(true,1); ?>
-        <?php foreach ($product_result as $key => $value) : ?>
+    <?php foreach ($product_result as $key => $value) : ?>
           <!-- start item -->
           <div class="product-item">
             <a href="./index.php?action=product_detail&product_id=<?= $value['product_id'] ?>" class="product-image-item">

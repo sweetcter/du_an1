@@ -13,7 +13,7 @@ $(document).ready(function () {
       console.log(a);
 
       a = getValue(startValue, endValue);
-      
+      var product_status = $('.filter_type').attr('product_status');
       var dataId = $('.filter_type').attr('filter_type');
       console.log(dataId);
       if (dataId==='0') {
@@ -21,8 +21,14 @@ $(document).ready(function () {
       }else if(dataId==='1'){
         location.href = `../../du_an1/index.php?action=price_filter_nu&start=${a[0]}&end=${a[1]}`;  
       }else{
-        location.href = `../../du_an1/index.php?action=price_filter&start=${a[0]}&end=${a[1]}`;  
-      }  
+        if (product_status==='1'){
+          location.href = `../../du_an1/index.php?action=price_filter_new&start=${a[0]}&end=${a[1]}&product_status=${product_status}`; 
+        }else if(product_status==='2'){
+          location.href = `../../du_an1/index.php?action=price_filter_sale&start=${a[0]}&end=${a[1]}&product_status=${product_status}`;  
+        }else{
+          location.href = `../../du_an1/index.php?action=price_filter&start=${a[0]}&end=${a[1]}`; 
+        } 
+      } 
     },
     slide: function (event, ui) {
       var startValue = ui.values[0];
@@ -57,16 +63,24 @@ $(document).ready(function () {
   }
   $(".filter-list-size").click(function () {
     let that = this;
-    let data_size_id = $(this).attr("data-size-id");
+    let data_size_id = $(that).attr("data-size-id");
     console.log(data_size_id);
-    var dataId_size = $('.filter_type_size').attr('filter_type_size');
+    var dataId_size = $(that).attr('filter_type_size');
+    let product_status = $('.filter_type_size').attr('product_status');
       console.log(dataId_size);
       if (dataId_size==='0') {
         location.href = `../../du_an1/index.php?action=size_filter_nam&size_id=${data_size_id}`;
       }else if(dataId_size==='1'){
         location.href = `../../du_an1/index.php?action=size_filter_nu&size_id=${data_size_id}`;
       }else{
-        location.href = `../../du_an1/index.php?action=size_filter&size_id=${data_size_id}`;
+        if (product_status==='1'){
+          location.href = `../../du_an1/index.php?action=size_filter_new&size_id=${data_size_id}&product_status=${product_status}`;
+        }else if(product_status==='2'){
+          location.href = `../../du_an1/index.php?action=size_filter_sale&size_id=${data_size_id}&product_status=${product_status}`;
+        }
+        else{
+          location.href = `../../du_an1/index.php?action=size_filter&size_id=${data_size_id}`; 
+        } 
       }  
   });
 });

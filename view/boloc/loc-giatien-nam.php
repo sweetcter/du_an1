@@ -100,7 +100,7 @@
     <div class="wrapper">
       <ul class="breadcrumbs">
         <li>Trang chủ /</li>
-        <li>Thời trang nữ</li>
+        <li>Thời trang Nam</li>
       </ul>
 
       <main id="main-content">
@@ -245,8 +245,12 @@
             </div>
           
             <span class="product-newProduct">
-              <img src="../<?= $ROOT_URL?>/asset/images/newProduct.png" alt="" />
-            </span>
+                <?php if ($value['product_status']==1) {?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
+                <?php }elseif($value['product_status']==2){?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/sale-sinh-nhat-routine-10-tuoi.png" alt="" />
+                <?php }?> 
+                </span>
             <?php $product_color_result = select_product_color($value['product_code']); ?>
             <div class="product-color-list">
             <?php foreach ($product_color_result as $value) : ?>
@@ -259,8 +263,6 @@
                   />
                 </div>
               </div>
-
-      
               <?php endforeach ?>
             </div>
           </div>

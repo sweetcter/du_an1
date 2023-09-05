@@ -165,8 +165,12 @@
                 <span class="product-oldPrice"><?= $product_vn_price ?></span>
               </div>
               <span class="product-newProduct">
-                <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
-              </span>
+                <?php if ($value['product_status']==1) {?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/Label_New_Arrivals_14T7.png" alt="" />
+                <?php }elseif($value['product_status']==2){?>
+                    <img src="../<?= $ROOT_URL ?>/asset/images/sale-sinh-nhat-routine-10-tuoi.png" alt="" />
+                <?php }?> 
+                </span>
               <span class="product-discount"> -<?= $value['discount']; ?>% </span>
               <!-- Select color by product -->
               <?php $product_color_result = select_product_color($value['product_code']); ?>
@@ -187,42 +191,6 @@
             <!-- end item -->
           <?php endforeach ?>
         </div>
-
-        <ul class="home-pagination">
-          <li class="home-pagination-item home-pagination-disable">
-            <a href="#" class="home-pagination-link">
-              <i class="fa-solid fa-angle-left home-pagination-icon"></i>
-            </a>
-          </li>
-          <li class="home-pagination-item home-pagination-disable">
-            <a href="#" class="home-pagination-link">
-              <i class="fa-solid fa-angles-left home-pagination-icon"></i>
-            </a>
-          </li>
-          <li class="home-pagination-item home-pagination-active">
-            <a class="home-pagination-link" href="#">1</a>
-          </li>
-          <li class="home-pagination-item">
-            <a class="home-pagination-link" href="#">2</a>
-          </li>
-          <li class="home-pagination-item">...</li>
-          <li class="home-pagination-item">
-            <a class="home-pagination-link" href="#">15</a>
-          </li>
-          <li class="home-pagination-item">
-            <a class="home-pagination-link" href="#">16</a>
-          </li>
-          <li class="home-pagination-item">
-            <a href="#" class="home-pagination-link">
-              <i class="fa-solid fa-angle-right home-pagination-icon"></i>
-            </a>
-          </li>
-          <li class="home-pagination-item">
-            <a href="#" class="home-pagination-link">
-              <i class="fa-solid fa-angles-right home-pagination-icon"></i>
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
   </main>
@@ -271,6 +239,6 @@
         </div>
       <?php endforeach ?>
     </div>
-    <?php require "./includes/footer.php" ?>
   </div>
 </div>
+<?php require "./includes/footer.php" ?>

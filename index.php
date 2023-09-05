@@ -10,9 +10,6 @@ require ".$MODEL_URL/category.php";
 require ".$MODEL_URL/comment.php";
 require ".$MODEL_URL/timkiemsp.php";
 require ".$MODEL_URL/orders.php";
-
-
-
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 // echo $action;
 switch ($action) {
@@ -140,6 +137,26 @@ switch ($action) {
     }
     require ".$VIEW_URL/timkiem.php";
     break;
+
+  // ------------Bộ lọc----------
+  case 'ao_new':
+    require ".$VIEW_URL/boloc/ao-new.php";
+    break;
+  case 'vay_new':
+    require ".$VIEW_URL/boloc/vay-new.php";
+    break;
+  case 'quan_new':
+    require ".$VIEW_URL/boloc/quan-new.php";
+    break;
+  case 'ao_sale':
+    require ".$VIEW_URL/boloc/ao-sale.php";
+    break;
+  case 'vay_sale':
+    require ".$VIEW_URL/boloc/vay-sale.php";
+    break;
+  case 'quan_sale':
+    require ".$VIEW_URL/boloc/quan-sale.php";
+    break;
   case 'aosomi':
     require ".$VIEW_URL/boloc/ao-so-mi.php";
     break;
@@ -167,18 +184,30 @@ switch ($action) {
   case 'vaynu':
     require ".$VIEW_URL/boloc/vay-nu.php";
     break;
+  case 'price_filter':
+    require ".$VIEW_URL/boloc/loc-giatien-all.php";
+    break;
+  case 'price_filter_new':
+    require ".$VIEW_URL/boloc/loc-giatien-new.php";
+    break;
+  case 'price_filter_sale':
+    require ".$VIEW_URL/boloc/loc-giatien-sale.php";
+    break;
   case 'price_filter_nam':
     require ".$VIEW_URL/boloc/loc-giatien-nam.php";
     break;
   case 'price_filter_nu':
     require ".$VIEW_URL/boloc/loc-giatien-nu.php";
     break;
-  case 'price_filter':
-    require ".$VIEW_URL/boloc/loc-giatien-all.php";
+  case 'size_filter':
+    require ".$VIEW_URL/boloc/loc-size-all.php";
     break;
-    // case 'size_filter':
-    //   require ".$VIEW_URL/boloc/loc-size.php";
-    //   break;
+  case 'size_filter_sale':
+    require ".$VIEW_URL/boloc/loc-size-sale.php";
+    break;
+  case 'size_filter_new':
+    require ".$VIEW_URL/boloc/loc-size-new.php";
+    break;
   case 'size_filter_nam':
     require ".$VIEW_URL/boloc/loc-size-nam.php";
     break;
@@ -191,9 +220,16 @@ switch ($action) {
   case 'color_filter_nu':
     require ".$VIEW_URL/boloc/mau-sac-nu.php";
     break;
-    // case 'color_filter':
-    //   require ".$VIEW_URL/boloc/mau-sac.php";
-    //   break;
+  case 'color_filter':
+    require ".$VIEW_URL/boloc/mau-sac-all.php";
+    break;
+  case 'color_filter_new':
+    require ".$VIEW_URL/boloc/mau-sac-new.php";
+    break;
+  case 'color_filter_sale':
+    require ".$VIEW_URL/boloc/mau-sac-sale.php";
+    break;
+
     // -----------Product detail and cart--------------
   case 'check-quanity':
     require ".$VIEW_URL/check_product_quantity.php";

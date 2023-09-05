@@ -94,9 +94,11 @@ $(document).ready(function () {
         customerNote: customerNote.val(),
         pay_methods: paymenMethod,
       },
+      dataType: "json",
       success: function (responve) {
+        console.log(responve);
         reloadShowQuantity();
-        if(responve){
+        if(typeof responve === "number"){
           $("#payMenttotalPrice").val(responve);
           $("#startPayment").click();
         }else {
