@@ -11,7 +11,7 @@
       </div>
       <div class="form-group">
         <label for="username">UserName*</label>
-        <input type="text" name="username" id="full_name" placeholder="Username" required>
+        <input type="text" name="username" id="user_name" placeholder="Username" required>
       </div>
       <div class="form-group">
         <label for="email">Email *</label>
@@ -39,3 +39,9 @@
     </form>
   </div>
 </div>
+
+
+<script>
+
+  
+</script>

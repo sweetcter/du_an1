@@ -117,7 +117,7 @@ $(document).ready(function () {
     const that = this;
     let ischeck = confirm("Bạn có muốn hủy đơn hàng ?");
     let orderId = $(that).attr("order_id");
-    console.log(orderId);
+    // console.log(orderId);
     if (ischeck) {
       $.ajax({
         type: "POST",
@@ -126,12 +126,14 @@ $(document).ready(function () {
           orderId: orderId,
         },
         success: function (responve) {
+          console.log(responve);
           if (responve === 0) {
             alert("Xóa thất bại có lỗi");
           } else {
+            console.log(responve);
             console.log("Hủy đơn hàng thành công");
           }
-          location.reload();
+          // location.reload();
         },
         error: function (error) {
           console.log(error);
@@ -145,7 +147,7 @@ $(document).ready(function () {
       "Bạn xác nhận đã nhận được hàng ?,sau khi xác nhận không thể hoàn trả lại."
     );
     let orderId = $(that).attr("order_id");
-    console.log(orderId);
+    // console.log(orderId);
     if (ischeck) {
       $.ajax({
         type: "POST",

@@ -179,11 +179,14 @@
                                         <div class="bill_status">
                                             <?php $status_result = select_status_by_id($status_id); ?>
                                             Trạng thái:
-                                            <span class="status_name" status="<?= $status_id ?>"> <?= $status_result['status'] ?></span>
+                                            <span class="status_name" status="<?= $status_id ?>" style="color: <?= $status_id == 1 || $status_id == 6 ? "#e03033;" : "#26820b;"; ?>"> <?= $status_result['status'] ?></span>
                                         </div>
                                     </div>
-                                    <?php if ($status_id != 1) : ?>
+                                    <?php if ($status_id == 1) : ?>
                                         <button type="button" order_id="<?= $value['order_id'] ?>" class="cancel_order">Hủy đơn hàng</button>
+                                    <?php endif ?>
+                                    <?php if ($status_id == 3 || $status_id == 4 || $status_id == 5) : ?>
+                                        <button type="button" order_id="<?= $value['order_id'] ?>" class="receive">Đã nhận được hàng</button>
                                     <?php endif ?>
                                 </div>
                             <?php endforeach ?>
@@ -299,7 +302,7 @@
                                     <?php if ($status_id == 1) : ?>
                                         <button type="button" order_id="<?= $value['order_id'] ?>" class="cancel_order">Hủy đơn hàng</button>
                                     <?php endif ?>
-                                    <?php if ($status_id == 3) : ?>
+                                    <?php if ($status_id == 3 || $status_id == 4 || $status_id == 5) : ?>
                                         <button type="button" order_id="<?= $value['order_id'] ?>" class="receive">Đã nhận được hàng</button>
                                     <?php endif ?>
 

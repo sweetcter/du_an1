@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['orderId'])) {
     $order_id = $_POST['orderId'];
-    $order_product_result = select_all_order_product_by_order_id($order_id);
+    $order_product_result = select_all_order_product_by_id($order_id);
     foreach ($order_product_result as $key => $value) {
         if ($value['status_id'] == 1) {
             quantity_update($value['quantity'], $value['product_id'], $value['color_name_id'], $value['size_id']);

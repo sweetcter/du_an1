@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['orderId'])) {
     $order_id = $_POST['orderId'];
-    $order_product_result = select_all_order_product_by_order_id($order_id);
+    $order_product_result = select_all_order_product_by_id($order_id);
     foreach ($order_product_result as $key => $value) {
         add_purchased_orders(
             $value['customer_id'],

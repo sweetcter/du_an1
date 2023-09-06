@@ -290,24 +290,4 @@
     </div>
   </div>
 </div>
-<!-- <script>
-        $(document).ready(function() {
-            // Lắng nghe sự kiện khi giá trị slider thay đổi
-            $("#multi-range-slider").on("change", function() {
-                var startValue = $("#start-value").text();
-                var endValue = $("#end-value").text();
-
-                // Gửi dữ liệu lọc qua AJAX
-                $.ajax({
-                    url: "filter_products.php", // Điều chỉnh đúng đường dẫn của tệp xử lý
-                    type: "POST",
-                    data: { startValue: startValue, endValue: endValue },
-                    success: function(response) {
-                        // Cập nhật danh sách sản phẩm sau khi lọc
-                        $("#product-list").html(response);
-                    }
-                });
-            });
-        });
-    </script> -->
 <?php require "./includes/footer.php" ?>
