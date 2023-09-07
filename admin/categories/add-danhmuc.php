@@ -130,8 +130,35 @@
 </div>
 
 <script>
+    function  showError(input, message) 
+{
+    let parent = input.parentElement;
+    let small = parent.querySelector('small');
+    parent.classList.add('error')
+    small.innerText = message
+}
 
-
+function  showSuccess(input) 
+{
+    let parent = input.parentElement;
+    let small = parent.querySelector('small');
+    parent.classList.remove('error')
+    small.innerText = ''
+}
+function validateForm(){
+    let name = document.querySelector('#name_category');
+  let x = document.forms["form_category"]["name_category"].value;
+  if (x == "") {
+    showError(name, "trường này không dược bỏ trống")
+    return false;
+  }else if(x.length < 5){
+    showError(name, "trường này không nhỏ hơn 5 ký tự")
+    return false;
+  }else{
+    showSuccess(name,)
+    return true;
+  }
+}
 // $(document).ready(function() {
 //   $('#tabs > ul').tabs({ fx: { opacity: 'toggle' } });
 //   $('#featuredvid > ul').tabs();

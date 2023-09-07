@@ -17,7 +17,7 @@
 <script src="../..<?= $ROOT_URL .  $ADMIN_URL ?>/asset/js/updateProduct.js"></script>
 <script src="../..<?= $ROOT_URL .  $ADMIN_URL ?>/asset/js/image.js"></script>
 <script src="../..<?= $ROOT_URL .  $ADMIN_URL ?>/asset/js/orders.js"></script>
-<script src="../..<?= $ROOT_URL .  $ADMIN_URL ?>/asset/js/validate.js"></script>
+<!-- <script src="../..<?= $ROOT_URL .  $ADMIN_URL ?>/asset/js/validate.js"></script> -->
 </body>
 
 <!-- Mirrored from themesflat.com/html/protend/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Nov 2022 08:41:46 GMT -->

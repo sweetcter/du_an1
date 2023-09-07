@@ -106,7 +106,7 @@
             
             ?>
             <div class="danhmuc opa error">
-                <input type="text" name="name_category" value="<?php echo $list_one['name_category']; ?>" checked placeholder="tên danh mục">
+                <input type="text" name="name_category" id = 'name_category' value="<?php echo $list_one['name_category']; ?>" checked placeholder="tên danh mục">
                 <small style=' float:left;margin-bottom:10px;'></small>
             </div>
             <div class="themmoi">
@@ -137,4 +137,36 @@
 
 
 <div class="overlay"></div>
+<script>
+      function  showError(input, message) 
+{
+    let parent = input.parentElement;
+    let small = parent.querySelector('small');
+    parent.classList.add('error')
+    small.innerText = message
+}
+
+function  showSuccess(input) 
+{
+    let parent = input.parentElement;
+    let small = parent.querySelector('small');
+    parent.classList.remove('error')
+    small.innerText = ''
+}
+function validateFormx(){
+    let name = document.querySelector('#name_category');
+//   let x = document.forms["form_category_update"]["name_category"].value;
+  if (name.value == "") {
+    showError(name, "trường này không dược bỏ trống")
+    return false;
+  }else if(name.value.length < 5){
+    showError(name, "trường này không nhỏ hơn 5 ký tự")
+    return false;
+  }else{
+    showSuccess(name,)
+    return true;
+  }
+}
+
+</script>
 

@@ -5,8 +5,8 @@ include "../model/taikhoan.php";
 session_start();
 
 if (isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_POST['username_loign'];
+    $password = $_POST['password3'];
 
     $checkuser = checkuser($username, $password);
 

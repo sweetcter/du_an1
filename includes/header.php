@@ -24,5 +24,19 @@
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/spct.css" />
   <link rel="stylesheet" href="../<?= $ROOTt_URL ?>/asset/css/style.css" />
 </head>   
-
+<style>
+  .form-group {
+    margin-bottom: 0px;
+  }
+  .error small{
+    color:red;
+    font-size: 16px;
+  }
+  /* Error Message */
+.error {
+  color: #000;
+  font-weight: bold;
+  margin-top: 10px;
+}
+</style>
 <body>
