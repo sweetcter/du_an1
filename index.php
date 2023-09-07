@@ -282,6 +282,9 @@ switch ($action) {
   case 'thanks':
     require ".$VIEW_URL/thanks.php";
     break;
+  case 'receive':
+    require ".$VIEW_URL/receive.php";
+    break;
   default:
     echo "Không có gì";
     break;

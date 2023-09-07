@@ -98,10 +98,10 @@ $(document).ready(function () {
       success: function (responve) {
         console.log(responve);
         reloadShowQuantity();
-        if(typeof responve === "number"){
+        if (typeof responve === "number") {
           $("#payMenttotalPrice").val(responve);
           $("#startPayment").click();
-        }else {
+        } else {
           alert("Đặt hàng thành công, đang xử lý đơn hàng");
           setTimeout(() => {
             location.href = `/du_an1/order_details_infomation`;
@@ -117,7 +117,7 @@ $(document).ready(function () {
     const that = this;
     let ischeck = confirm("Bạn có muốn hủy đơn hàng ?");
     let orderId = $(that).attr("order_id");
-    console.log(orderId);
+    // console.log(orderId);
     if (ischeck) {
       $.ajax({
         type: "POST",
@@ -126,11 +126,38 @@ $(document).ready(function () {
           orderId: orderId,
         },
         success: function (responve) {
+          console.log(responve);
           if (responve === 0) {
             alert("Xóa thất bại có lỗi");
           } else {
+            console.log(responve);
             console.log("Hủy đơn hàng thành công");
           }
+          // location.reload();
+        },
+        error: function (error) {
+          console.log(error);
+        },
+      });
+    }
+  });
+  $(".receive").on("click", function () {
+    const that = this;
+    let ischeck = confirm(
+      "Bạn xác nhận đã nhận được hàng ?,sau khi xác nhận không thể hoàn trả lại."
+    );
+    let orderId = $(that).attr("order_id");
+    // console.log(orderId);
+    if (ischeck) {
+      $.ajax({
+        type: "POST",
+        url: "../../du_an1/index.php?action=receive",
+        data: {
+          orderId: orderId,
+        },
+        success: function (responve) {
+          // console.log(responve);
+          console.log("Xác nhận đơn hàng thành công");
           location.reload();
         },
         error: function (error) {
@@ -139,15 +166,6 @@ $(document).ready(function () {
       });
     }
   });
-  
-  // let status = $(".status_name").attr("status");
-  // const that = this;
-  // if (status === "1" || status === "6") {
-  //   $(".status_name").css("color", "#dd0d0d");
-  // } else {
-  //   $(".status_name").css("color", "#2eab09");
-  // }
-
   let isCheckGetCustomer = false;
   $("#getCustomerInfo").on("click", function () {
     if (isCheckGetCustomer) {

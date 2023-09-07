@@ -275,7 +275,9 @@
                   <!-- <img src="../../du_an1/asset/images/payment-cards.png" alt=""> -->
                 </div>
               </div>
-              <button type="button" class="site-btn" id="btn-pay" style="display:<?= isset($_SESSION['cart']) ? "block" : "none"; ?>">Thanh toán <span class="btn-pay"><?= $total_new_price ?></span></button>
+              <?php if (isset($_SESSION['cart'])) : ?>
+                <button type="button" class="site-btn" id="btn-pay">Thanh toán <span class="btn-pay"><?= $total_new_price ?></span></button>
+              <?php endif ?>
             </div>
           </div>
         </div>

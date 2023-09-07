@@ -1951,6 +1951,33 @@ span.quenmk a {
   text-decoration: none;
   margin-top: 40px;
 }
+.receive{
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #000;
+  background: var(--primary-color);
+  text-transform: uppercase;
+  padding: 12px 5px;
+  width: calc((100% - 18px) / 2);
+  width: -moz-calc((100% - 18px)/2);
+  width: -webkit-calc((100% - 18px)/2);
+  width: -o-calc((100% - 18px)/2);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 0 0 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 40px;
+}
+.receive,
 .view_product,
 .cancel_order:hover {
   opacity: 0.9;
