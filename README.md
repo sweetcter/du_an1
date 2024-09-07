@@ -4,4 +4,4 @@ English:
 
 Tiếng việt:
 - Chạy dự án với xampp
-- Hưỡng dẫn cài extention định dạng giá tiền, mở xampp -> apache -> config-> php(php.ini)-> rồi kéo cuối file vứt cái này vào ->extension=php_intl.dll
+- Hưỡng dẫn cài extention định dạng giá tiền, mở xampp -> apache -> config-> php(php.ini)-> rồi kéo cuối file bỏ cái này vào extension=php_intl.dll
